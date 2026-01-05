@@ -1,6 +1,5 @@
 package com.incloud.hcp.jco.balanza.Series.services.impl;
 
-import com.incloud.hcp.jco.balanza.Series.dto.SerieConsultaMapper;
 import com.incloud.hcp.jco.balanza.Series.dto.SerieConsultaResponse;
 import com.incloud.hcp.jco.balanza.Series.services.JCOSeriesService;
 import com.sap.conn.jco.*;

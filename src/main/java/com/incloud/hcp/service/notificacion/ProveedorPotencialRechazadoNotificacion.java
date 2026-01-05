@@ -1,14 +1,10 @@
 package com.incloud.hcp.service.notificacion;
 
 import com.incloud.hcp.domain.PreRegistroProveedor;
-import org.apache.commons.mail.EmailException;
-import org.apache.velocity.VelocityContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-
-import java.util.Optional;
 
 /**
  * Created by Administrador on 13/11/2017.

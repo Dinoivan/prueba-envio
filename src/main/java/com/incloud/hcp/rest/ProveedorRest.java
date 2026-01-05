@@ -544,4 +544,13 @@ public class ProveedorRest extends AppRest {
         }
     }
 
+    @GetMapping(value = "getAllProveedores")
+    public List<Proveedor> consultaTransportistas() {
+        try{
+            return this.proveedorRepository.findAll();
+        }catch (Exception e){
+            throw new RuntimeException(e);
+        }
+    }
+
 }

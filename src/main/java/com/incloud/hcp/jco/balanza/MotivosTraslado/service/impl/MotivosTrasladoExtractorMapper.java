@@ -1,7 +1,5 @@
 package com.incloud.hcp.jco.balanza.MotivosTraslado.service.impl;
 
-import com.incloud.hcp.jco.balanza.Chofer.dto.SapTableChoferDto;
-import com.incloud.hcp.jco.balanza.Chofer.service.impl.ChoferExtractorMapper;
 import com.incloud.hcp.jco.balanza.MotivosTraslado.dto.*;
 import com.sap.conn.jco.JCoParameterList;
 import com.sap.conn.jco.JCoTable;

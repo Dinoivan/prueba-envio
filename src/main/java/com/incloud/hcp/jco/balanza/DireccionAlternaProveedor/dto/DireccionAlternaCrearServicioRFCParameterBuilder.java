@@ -1,7 +1,5 @@
 package com.incloud.hcp.jco.balanza.DireccionAlternaProveedor.dto;
 
-import com.incloud.hcp.jco.balanza.Chofer.dto.ChoferGrabarServicioRFCParameterBuilder;
-import com.incloud.hcp.jco.balanza.Chofer.dto.ChoferResponseDTO;
 import com.sap.conn.jco.JCoFunction;
 import com.sap.conn.jco.JCoParameterList;
 import com.sap.conn.jco.JCoStructure;

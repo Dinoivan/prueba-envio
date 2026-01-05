@@ -3,16 +3,11 @@ package com.incloud.hcp.jco.balanza.DocumentoMaterial.dto;
 import com.incloud.hcp.jco.balanza.DocumentoMaterial.service.JCODocumentoMaterialService;
 import com.sap.conn.jco.JCoFunction;
 import com.sap.conn.jco.JCoParameterList;
-import com.sap.conn.jco.JCoStructure;
-
 import com.sap.conn.jco.JCoTable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.sql.Timestamp;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 

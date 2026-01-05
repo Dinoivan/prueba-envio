@@ -2,10 +2,10 @@ package com.incloud.hcp.dto;
 
 import com.incloud.hcp.domain.LineaComercial;
 import com.incloud.hcp.domain.ProveedorPreguntaInformacion;
-import org.springframework.validation.annotation.Validated;
-
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import org.springframework.validation.annotation.Validated;
+
 import java.util.List;
 
 /**

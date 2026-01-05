@@ -1,6 +1,5 @@
 package com.incloud.hcp.jco.peticionOferta.dto;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 
 public class PeticionOfertaRFCDto {

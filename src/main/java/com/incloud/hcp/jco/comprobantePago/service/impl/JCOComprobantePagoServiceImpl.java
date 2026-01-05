@@ -6,7 +6,6 @@ import com.incloud.hcp.jco.comprobantePago.dto.ComprobantePagoDto;
 import com.incloud.hcp.jco.comprobantePago.dto.ComprobantePagoItemDto;
 import com.incloud.hcp.jco.comprobantePago.service.JCOComprobantePagoService;
 import com.incloud.hcp.repository.SociedadRepository;
-import com.incloud.hcp.util.DateUtils;
 import com.sap.conn.jco.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +14,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;

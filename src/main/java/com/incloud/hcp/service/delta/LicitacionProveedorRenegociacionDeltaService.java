@@ -13,7 +13,6 @@ package com.incloud.hcp.service.delta;
 import com.incloud.hcp.domain.LicitacionProveedorRenegociacion;
 import com.incloud.hcp.service.LicitacionProveedorRenegociacionService;
 import com.sap.cloud.security.xsuaa.token.Token;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 
 /**
  * Simple Interface for LicitacionProveedorRenegociacion.

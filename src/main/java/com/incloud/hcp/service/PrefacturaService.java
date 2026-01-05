@@ -8,7 +8,6 @@ import com.sap.cloud.security.xsuaa.token.Token;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 
-import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
 

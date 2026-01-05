@@ -13,6 +13,8 @@ import com.incloud.hcp.service.LicitacionService;
 import com.incloud.hcp.service.ProveedorService;
 import com.incloud.hcp.service.reporte.proveedor.*;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -28,6 +30,7 @@ import java.util.regex.Pattern;
 @Service
 @Transactional(propagation= Propagation.REQUIRED, rollbackFor=Exception.class)
 public class DescargaServiceImpl implements DescargaService {
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private ProveedorService proveedorService;
@@ -59,11 +62,12 @@ public class DescargaServiceImpl implements DescargaService {
     @Override
     @Transactional(readOnly = true)
     public HSSFWorkbook getProveedores(String selection)  {
-
+        logger.error(">>> getProveedores llamado con selection=" + selection);
         Pattern p = Pattern.compile("[0-1]{6}");
         Matcher m = p.matcher(selection);
 
         if (!m.matches()) {
+            logger.error("Selección inválida: " + selection);
             throw new PortalException("La selección es incorrecta");
         }
         String[] opciones = selection.split("");
@@ -75,32 +79,37 @@ public class DescargaServiceImpl implements DescargaService {
             List<ProveedorDatosGeneralesDTO> list = this.proveedorService.getProveedorDatosGenerales(
                     fechaCreacionIni, fechaCreacionFin
             );
-
+            logger.error("Cantidad de proveedores recuperados: " + (list != null ? list.size() : 0));
             ProveedorReporte rptProveedor = new ProveedorReporte(book);
             rptProveedor.agregar(list);
         }
 
         if (opciones[1].equals("1")) {
+            logger.error("Agregando sucursales...");
             SucursalReporte rptSucursal = new SucursalReporte(book);
             rptSucursal.agregar(contactoMapper.getListAllSucursalContactoProveedor());
         }
 
         if (opciones[2].equals("1")) {
+            logger.error("Agregando cuentas bancarias...");
             CuentaBancoReporte rptCuentaBancaria = new CuentaBancoReporte(book);
             rptCuentaBancaria.agregar(cuentaBancariaMapper.getListAllCuentasBancariasProveedor());
         }
 
         if (opciones[3].equals("1")) {
+            logger.error("Agregando líneas comerciales...");
             LineaComercialReporte rptLineaComercial = new LineaComercialReporte(book);
             rptLineaComercial.agregar(lineaComercialMapper.getListAllLineasComercialesProveedor());
         }
 
         if (opciones[4].equals("1")) {
+            logger.error("Agregando productos...");
             ProductoReporte rptProducto = new ProductoReporte(book);
             rptProducto.agregar(productoMapper.getListAllProductoProveedor());
         }
 
         if (opciones[5].equals("1")) {
+            logger.error("Agregando solicitudes blacklist...");
             List<SolicitudBlacklist> listSolicitudBlacklist = solicitudBlackListRepository.findAll();
 
             if (listSolicitudBlacklist != null && listSolicitudBlacklist.size() > 0) {
@@ -113,7 +122,7 @@ public class DescargaServiceImpl implements DescargaService {
                 rptNoConforme.agregar(listSolicitudBlacklist);
             }
         }
-
+        logger.error(">>> Excel armado con " + book.getNumberOfSheets() + " hoja(s)");
         return book;
     }
 

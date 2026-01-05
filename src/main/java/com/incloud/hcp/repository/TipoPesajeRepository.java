@@ -1,6 +1,5 @@
 package com.incloud.hcp.repository;
 
-import com.incloud.hcp.domain.balanza.Carreta;
 import com.incloud.hcp.domain.balanza.TipoPesaje;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

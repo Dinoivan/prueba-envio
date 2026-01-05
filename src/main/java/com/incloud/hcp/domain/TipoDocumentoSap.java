@@ -12,10 +12,10 @@ package com.incloud.hcp.domain;
 
 import com.incloud.hcp.domain._framework.Identifiable;
 import com.incloud.hcp.domain._framework.IdentifiableHashBuilder;
-import org.hibernate.validator.constraints.NotEmpty;
-
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
+import org.hibernate.validator.constraints.NotEmpty;
+
 import java.io.Serializable;
 import java.util.logging.Logger;
 

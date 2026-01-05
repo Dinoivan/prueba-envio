@@ -1,6 +1,5 @@
 package com.incloud.hcp.repository;
 
-import com.incloud.hcp.domain.balanza.GuiaRemision;
 import com.incloud.hcp.domain.balanza.GuiaRemisionDetalle;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.data.jpa.repository.JpaRepository;

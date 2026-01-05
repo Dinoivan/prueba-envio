@@ -2,7 +2,6 @@ package com.incloud.hcp.service;
 
 import com.incloud.hcp.domain.Homologacion;
 import com.incloud.hcp.domain.Proveedor;
-import com.incloud.hcp.dto.ProveedorDto;
 import com.incloud.hcp.dto.ProveedorVerNotaDto;
 import com.incloud.hcp.dto.homologacion.LineaComercialHomologacionDto;
 import com.incloud.hcp.exception.PortalException;

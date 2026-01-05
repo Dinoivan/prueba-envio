@@ -4,6 +4,7 @@ import com.incloud.hcp.bean.UserSession;
 import com.incloud.hcp.domain.Proveedor;
 import com.incloud.hcp.exception.PortalException;
 import com.incloud.hcp.exception.ServiceException;
+import com.incloud.hcp.supplieruser.services.interfaces.ISupplierUserService;
 import com.incloud.hcp.repository.ProveedorRepository;
 import com.incloud.hcp.repository.UsuarioRepository;
 import com.incloud.hcp.service.UsuarioAutoService;
@@ -41,17 +42,20 @@ public class SystemLoggedUser {
     private UsuarioRepository usuarioRepository;
     private UsuarioAutoService usuarioAutoService;
     private IUserIASService userIASService;
+    private ISupplierUserService iSupplierUserService;
 
     @Autowired
     public SystemLoggedUser(ProveedorRepository proveedorRepository,
                             UsuarioRepository usuarioRepository,
                             UsuarioAutoService usuarioAutoService,
-                            IUserIASService userIASService
+                            IUserIASService userIASService,
+                            ISupplierUserService iSupplierUserService
                             ) throws PortalException {
         this.proveedorRepository = proveedorRepository;
         this.usuarioRepository = usuarioRepository;
         this.usuarioAutoService = usuarioAutoService;
         this.userIASService = userIASService;
+        this.iSupplierUserService = iSupplierUserService;
     }
 
     /*public User getUserSCP(HttpServletRequest request) {
@@ -159,6 +163,57 @@ public class SystemLoggedUser {
             logger.error("Error al obtener el usuario de la sesión", ex);
             throw new PortalException("Error al obtener el usuario de la sesión");
         }
+    }
+
+    public UserSession getUserSessionByToken( Token token ) throws PortalException {
+
+        try {
+
+            IASResponse response = userIASService.getUserByEmail( token.getEmail() );
+
+            if ( response.getStatus().equals("200") ) {
+
+                IASUserInfoResponse.Resource resource = response.getResult().getResources().get(0);
+
+                //--- Verificamos si el usuario tiene su registro en la tabla de usuarios proveedor
+                String ruc = iSupplierUserService.findRucByEmail( token.getEmail() )
+                        .orElse( resource.getUserName() ); // se considera en IAS el userName como el RUC
+
+                UserSession session = new UserSession();
+
+                session.setRuc(ruc);
+                if (ruc != null && !ruc.isEmpty() && (ruc.startsWith("1") || ruc.startsWith("2"))) {
+                    this.guardarUsuarioIdpDeProveedor(session);
+                } else {
+                    List<String> listSociedad = new ArrayList<>();
+                    listSociedad.add("0001");
+                    session.setCodigoSociedades(listSociedad);
+                }
+
+                session.setId(resource.getId());
+                session.setMail(token.getEmail());
+                session.setUserName(resource.getDisplayName());
+                session.setFirstName(resource.getName().getGivenName());
+                session.setLastName(resource.getName().getFamilyName());
+                session.setDisplayName(resource.getName().getGivenName() + " " + resource.getName().getFamilyName());
+
+                if (response.getResult() != null && response.getResult().getGroups() != null) {
+                    session.setListaGrupos(response.getResult().getGroups());
+                }
+
+                return session;
+
+            } else {
+                throw new PortalException("Usuario no habilitado " + token.getGivenName() + " " + token.getFamilyName() + ", " + token.getEmail());
+            }
+
+        } catch ( Exception ex ) {
+
+            logger.error( "Error al obtener el usuario de la sesión", ex );
+            throw new PortalException( "Error al obtener el usuario de la sesión. " + ex.getMessage() );
+
+        }
+
     }
 
     /*public UserSession getUserSession() throws PortalException {

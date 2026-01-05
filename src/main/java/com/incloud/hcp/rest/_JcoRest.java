@@ -1,6 +1,5 @@
 package com.incloud.hcp.rest;
 
-
 import com.incloud.hcp.domain.RubroBien;
 import com.incloud.hcp.jco.centro.dto.CentroRFCResponseDto;
 import com.incloud.hcp.jco.centro.service.JCOCentroServiceNew;
@@ -39,7 +38,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URISyntaxException;
-import java.util.*;
+import java.util.Collections;
+import java.util.Date;
+import java.util.List;
+import java.util.Optional;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
@@ -357,9 +359,8 @@ public class _JcoRest {
     @PostMapping(value = "/getListaCentroAlmacenRFCTodos", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<CentroAlmacenRFCResponseDto> getListaCentroAlmacenRFCTodos() throws URISyntaxException {
         try {
-            List<String> elementos =  new ArrayList<>();
             // Enviamos lista vacía (como si fuera el string vacío en el otro método)
-            CentroAlmacenRFCResponseDto response = jcoCentroAlmacenServiceNew.getListaCentroAlmacenRFC(elementos);
+            CentroAlmacenRFCResponseDto response = jcoCentroAlmacenServiceNew.getListaCentroAlmacenRFC(Collections.emptyList());
 
             if (response != null && response.getListaCentroAlmacenRFC() != null && !response.getListaCentroAlmacenRFC().isEmpty()) {
                 return new ResponseEntity<>(response, HttpStatus.OK);

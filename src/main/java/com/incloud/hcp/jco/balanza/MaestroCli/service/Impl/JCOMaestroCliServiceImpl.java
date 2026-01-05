@@ -1,7 +1,6 @@
 package com.incloud.hcp.jco.balanza.MaestroCli.service.Impl;
 
 import com.incloud.hcp.domain.balanza.Cliente;
-import com.incloud.hcp.domain.balanza.Transportista;
 import com.incloud.hcp.jco.balanza.MaestroCli.dto.MaestroCliImport;
 import com.incloud.hcp.jco.balanza.MaestroCli.dto.MaestroCliMapper;
 import com.incloud.hcp.jco.balanza.MaestroCli.dto.MaestroCliResponse;

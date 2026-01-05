@@ -5,18 +5,15 @@ import com.incloud.hcp.domain.OrdenCompra;
 import com.incloud.hcp.domain.Sociedad;
 import com.incloud.hcp.domain.Usuario;
 import com.incloud.hcp.enums.OrdenCompraEstadoEnum;
+import com.incloud.hcp.repository.LogTransaccionRepository;
 import com.incloud.hcp.repository.SociedadRepository;
 import com.incloud.hcp.util.DateUtils;
-import com.incloud.hcp.repository.LogTransaccionRepository;
 import com.incloud.hcp.util.StrUtils;
-import org.apache.velocity.VelocityContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-
-import java.util.Optional;
 
 @Component
 public class ContactoAprobadaRechazadaOCNotificacion extends NotificarMail {

@@ -121,9 +121,17 @@ public class ProveedorRFCParameterBuilder {
         String pais = Optional.ofNullable(beanProveedor.getPais())
                 .map(tp -> tp.getCodigoUbigeoSapErp())
                 .map(c -> c.trim()).get();
+        logger.error("beanProveedor.getRegion()" + beanProveedor.getRegion());
         String region = Optional.ofNullable(beanProveedor.getRegion())
-                .map(tp -> Optional.ofNullable(tp.getCodigoUbigeoSapErp()).orElse(""))
-                .map(c -> c.trim()).get();
+                .map(tp -> {
+                    String codigoErp = tp.getCodigoUbigeoSapErp();
+                    if (codigoErp == null || "null".equalsIgnoreCase(codigoErp.trim())) {
+                        return tp.getCodigoUbigeoSap(); // usa el código alternativo
+                    }
+                    return codigoErp;
+                })
+                .map(String::trim)
+                .orElse("");
         logger.error("REGION"+region.toString());
         String provincia = Optional.ofNullable(beanProveedor.getProvincia())
                 .map(tp -> Optional.ofNullable(tp.getDescripcion()).orElse(""))
@@ -268,7 +276,7 @@ public class ProveedorRFCParameterBuilder {
         jcoEstructuraGen.setValue("RECARGO_EQUIV", "");
         jcoEstructuraGen.setValue("PERSONA_FISICA", "");
 //        jcoEstructuraGen.setValue("RAMO", RAMO);
-        jcoEstructuraGen.setValue("RAMO", "");
+        jcoEstructuraGen.setValue("RAMO", "M002");
 
 
 

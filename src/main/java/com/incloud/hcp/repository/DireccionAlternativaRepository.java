@@ -1,7 +1,6 @@
 package com.incloud.hcp.repository;
 
 
-import com.incloud.hcp.domain.balanza.Chofer;
 import com.incloud.hcp.domain.balanza.DireccionAlternativa;
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -12,13 +12,13 @@ package com.incloud.hcp.domain;
 
 import com.incloud.hcp.domain._framework.BaseDomain;
 import com.incloud.hcp.domain._framework.Identifiable;
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotEmpty;
-
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.logging.Logger;

@@ -1,11 +1,7 @@
 package com.incloud.hcp.service.notificacion;
 
-import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.HtmlEmail;
-
-import java.io.File;
-import java.util.Optional;
 
 /**
  * Created by Administrador on 13/11/2017.

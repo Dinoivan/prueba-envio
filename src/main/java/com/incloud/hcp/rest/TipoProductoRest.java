@@ -29,21 +29,19 @@ public class TipoProductoRest extends AppRest {
     @Autowired
     private TipoProductoService tipoProductoService;
     private final Logger log = LoggerFactory.getLogger(TipoProductoRest.class);
-
     @GetMapping(value = "/findAll", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<List<TipoProducto>> findAll() throws URISyntaxException {
-        List<TipoProducto> list = new ArrayList<>();
-        try {
+        List <TipoProducto> list = new ArrayList<>();
+        try{
             list = tipoProductoRepository.listaTipoProductosActivos();
             return Optional.ofNullable(new ResponseEntity<>(list, HttpStatus.OK))
                     .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
-        } catch (Exception e) {
+        }catch (Exception e){
             String error = Utils.obtieneMensajeErrorException(e);
             throw new RuntimeException(error);
         }
 
     }
-
     @PostMapping(value = "/save", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<Map> save(@RequestBody TipoProducto tipoProducto)
             throws URISyntaxException {

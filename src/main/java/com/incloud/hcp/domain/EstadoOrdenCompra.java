@@ -1,8 +1,8 @@
 package com.incloud.hcp.domain;
 
 import com.incloud.hcp.domain._framework.BaseDomain;
-
 import jakarta.persistence.*;
+
 import java.io.Serializable;
 
 @Entity

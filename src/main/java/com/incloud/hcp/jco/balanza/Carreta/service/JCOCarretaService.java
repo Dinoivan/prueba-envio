@@ -1,6 +1,5 @@
 package com.incloud.hcp.jco.balanza.Carreta.service;
 
-import com.incloud.hcp.domain.balanza.Carreta;
 import com.incloud.hcp.jco.balanza.Carreta.dto.CarretaResponseDTO;
 
 public interface JCOCarretaService {

@@ -1,7 +1,6 @@
 package com.incloud.hcp.service.notificacion;
 
 import com.incloud.hcp.domain.OrdenCompra;
-import com.incloud.hcp.domain.Proveedor;
 import com.incloud.hcp.domain.Sociedad;
 import com.incloud.hcp.domain.Usuario;
 import com.incloud.hcp.repository.SociedadRepository;

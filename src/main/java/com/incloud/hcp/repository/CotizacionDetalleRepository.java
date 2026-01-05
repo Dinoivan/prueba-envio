@@ -1,6 +1,9 @@
 package com.incloud.hcp.repository;
 
-import com.incloud.hcp.domain.*;
+import com.incloud.hcp.domain.Cotizacion;
+import com.incloud.hcp.domain.CotizacionDetalle;
+import com.incloud.hcp.domain.Licitacion;
+import com.incloud.hcp.domain.Proveedor;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;

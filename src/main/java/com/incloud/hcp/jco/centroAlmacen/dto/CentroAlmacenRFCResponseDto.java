@@ -1,9 +1,6 @@
 package com.incloud.hcp.jco.centroAlmacen.dto;
 
 
-
-import com.incloud.hcp.domain.CentroAlmacenBalanzaSap;
-import com.incloud.hcp.domain.TempCentroAlmacen;
 import com.incloud.hcp.domain.balanza.CentroAlmacenBlz;
 import com.incloud.hcp.sap.SapLog;
 

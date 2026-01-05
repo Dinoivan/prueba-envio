@@ -7,8 +7,6 @@ import com.incloud.hcp.jco.balanza.Carreta.dto.CarretaUpdateServicioRFCParameter
 import com.incloud.hcp.jco.balanza.Carreta.dto.SapTableCarretaDto;
 import com.incloud.hcp.jco.balanza.Carreta.service.JCOCarretaService;
 import com.incloud.hcp.repository.CarretaRepository;
-import com.incloud.hcp.sap.SapLog;
-import com.incloud.hcp.util.DateUtils;
 import com.sap.conn.jco.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,8 +16,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;

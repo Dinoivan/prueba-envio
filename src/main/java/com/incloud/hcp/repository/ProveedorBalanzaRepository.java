@@ -1,7 +1,6 @@
 package com.incloud.hcp.repository;
 
 import com.incloud.hcp.domain.balanza.ProveedorBLZ;
-import com.incloud.hcp.domain.balanza.Transportista;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

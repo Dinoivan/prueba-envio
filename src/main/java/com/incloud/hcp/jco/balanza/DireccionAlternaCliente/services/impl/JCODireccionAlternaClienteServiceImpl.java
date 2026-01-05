@@ -5,8 +5,6 @@ import com.incloud.hcp.jco.balanza.DireccionAlternaCliente.dto.DireccionAlternaC
 import com.incloud.hcp.jco.balanza.DireccionAlternaCliente.dto.DireccionAlternaClienteParameterBuilder;
 import com.incloud.hcp.jco.balanza.DireccionAlternaCliente.dto.DireccionAlternaClienteResponse;
 import com.incloud.hcp.jco.balanza.DireccionAlternaCliente.services.JCODireccionAlternaClienteService;
-import com.incloud.hcp.jco.balanza.Series.dto.SerieConsultaMapper;
-import com.incloud.hcp.jco.balanza.Series.dto.SerieConsultaResponse;
 import com.sap.conn.jco.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

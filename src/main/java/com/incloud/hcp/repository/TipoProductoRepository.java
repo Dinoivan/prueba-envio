@@ -1,14 +1,12 @@
 package com.incloud.hcp.repository;
 
-import com.incloud.hcp.domain.balanza.TicketPesaje;
-import com.incloud.hcp.domain.balanza.TipoPesaje;
 import com.incloud.hcp.domain.balanza.TipoProducto;
+import jakarta.transaction.Transactional;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
-import jakarta.transaction.Transactional;
 import java.util.List;
 
 public interface TipoProductoRepository extends JpaRepository<TipoProducto,Integer> {

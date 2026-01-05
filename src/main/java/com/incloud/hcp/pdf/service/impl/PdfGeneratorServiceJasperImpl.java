@@ -1,8 +1,10 @@
 package com.incloud.hcp.pdf.service.impl;
 
 import com.incloud.hcp.jco.ordenCompra.dto.OrdenCompraPdfDto;
-import com.incloud.hcp.pdf.PdfGeneratorFactory;
-import com.incloud.hcp.pdf.bean.*;
+import com.incloud.hcp.pdf.bean.ParameterComprobanteRetencionPdfDTO;
+import com.incloud.hcp.pdf.bean.ParameterConformidadServicioPdfDTO;
+import com.incloud.hcp.pdf.bean.ParameterEntradaMercaderiaPdfDTO;
+import com.incloud.hcp.pdf.bean.PrefacturaPdfDto;
 import com.incloud.hcp.pdf.exception.PdfException;
 import com.incloud.hcp.pdf.service.PdfGeneratorService;
 import com.incloud.hcp.pdf.util.ResourceUtil;
@@ -13,11 +15,11 @@ import net.sf.jasperreports.engine.util.JRLoader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.*;
-import java.util.Base64;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
 
 public class PdfGeneratorServiceJasperImpl extends GenericJasperGenerator implements PdfGeneratorService {
 

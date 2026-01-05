@@ -37,7 +37,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.data.domain.Sort;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -289,65 +288,93 @@ public class LicitacionSubetapaDeltaServiceImpl extends LicitacionSubetapaServic
     }
 
     public TrazabilidadRespuestaDto findTrazabilidad(Integer id) throws Exception {
+
+        log.error("Iniciando búsqueda de trazabilidad para licitación con ID: {}", id);
+
         TrazabilidadRespuestaDto trazabilidadRespuestaDto = new TrazabilidadRespuestaDto();
         Optional<Licitacion> optionalLicitacion = this.licitacionRepository.findById(id);
         if (!Optional.ofNullable(optionalLicitacion.get()).isPresent()) {
+            log.error("No se encontró la licitación con ID: {}", id);
             return null;
         }
         Licitacion licitacion = optionalLicitacion.get();
         trazabilidadRespuestaDto.setStartTime(licitacion.getFechaCreacion());
         List<TrazabilidadEtapaRespuestaDto> trazabilidadEtapaRespuestaDtoList = new ArrayList<TrazabilidadEtapaRespuestaDto>();
 
-        /* Etapa de Creación */
-        TrazabilidadEtapaRespuestaDto trazabilidadEtapaRespuestaDto = new TrazabilidadEtapaRespuestaDto();
-        trazabilidadEtapaRespuestaDto.setIcon("sap-icon://create-form");
-        trazabilidadEtapaRespuestaDto.setDescription(ETAPA_CREACION);
+        try{
 
-        List<TrazabilidadFechaEtapaRespuestaDto> etapasList = new ArrayList<TrazabilidadFechaEtapaRespuestaDto>();
-        TrazabilidadFechaEtapaRespuestaDto etapa = new TrazabilidadFechaEtapaRespuestaDto();
-        etapa.setStart(licitacion.getFechaCreacion());
-        etapa.setEnd(DateUtils.sumarRestarHoras(licitacion.getFechaCreacion(), 1));
-        etapa.setType(TrazabilidadTypeEnum.TYPE_01.getEstado());
-        etapa.setTitle(ETAPA_CREACION);
-        etapasList.add(etapa);
-        trazabilidadEtapaRespuestaDto.setEtapas(etapasList);
-        trazabilidadEtapaRespuestaDtoList.add(trazabilidadEtapaRespuestaDto);
+            /* Etapa de Creación */
+            TrazabilidadEtapaRespuestaDto trazabilidadEtapaRespuestaDto = new TrazabilidadEtapaRespuestaDto();
+            trazabilidadEtapaRespuestaDto.setIcon("sap-icon://create-form");
+            trazabilidadEtapaRespuestaDto.setDescription(ETAPA_CREACION);
 
-        /* Etapa de Publicación */
-        TrazabilidadEtapaRespuestaDto trazabilidadEtapaRespuestaDto01 = new TrazabilidadEtapaRespuestaDto();
-        trazabilidadEtapaRespuestaDto01.setIcon("sap-icon://travel-expense-report");
-        trazabilidadEtapaRespuestaDto01.setDescription(ETAPA_PUBLICACION);
+            List<TrazabilidadFechaEtapaRespuestaDto> etapasList = new ArrayList<TrazabilidadFechaEtapaRespuestaDto>();
+            TrazabilidadFechaEtapaRespuestaDto etapa = new TrazabilidadFechaEtapaRespuestaDto();
+            etapa.setStart(licitacion.getFechaCreacion());
+            etapa.setEnd(DateUtils.sumarRestarHoras(licitacion.getFechaCreacion(), 1));
+            etapa.setType(TrazabilidadTypeEnum.TYPE_01.getEstado());
+            etapa.setTitle(ETAPA_CREACION);
+            etapasList.add(etapa);
+            trazabilidadEtapaRespuestaDto.setEtapas(etapasList);
+            trazabilidadEtapaRespuestaDtoList.add(trazabilidadEtapaRespuestaDto);
 
-        List<TrazabilidadFechaEtapaRespuestaDto> etapasList01 = new ArrayList<TrazabilidadFechaEtapaRespuestaDto>();
-        TrazabilidadFechaEtapaRespuestaDto etapa01 = new TrazabilidadFechaEtapaRespuestaDto();
-        etapa01.setStart(licitacion.getFechaPublicacion());
-        etapa01.setEnd(DateUtils.sumarRestarHoras(licitacion.getFechaPublicacion(), 1));
-        etapa01.setType(TrazabilidadTypeEnum.TYPE_02.getEstado());
-        etapa01.setTitle(ETAPA_PUBLICACION);
-        etapasList01.add(etapa01);
-        trazabilidadEtapaRespuestaDto01.setEtapas(etapasList01);
-        trazabilidadEtapaRespuestaDtoList.add(trazabilidadEtapaRespuestaDto01);
-
-        /* Subetapas */
-        List<LicitacionSubetapa> licitacionSubetapaList = this.licitacionSubetapaRepository.
-                findLicitacionSubetapaByIdLicitacionOrderByFechaCierreSubetapa(licitacion);
-        Date fechaStart = DateUtils.sumarRestarMinutos(licitacion.getFechaPublicacion(), 1);
-        for(LicitacionSubetapa bean:licitacionSubetapaList) {
-            TrazabilidadEtapaRespuestaDto trazabilidadEtapaRespuestaDtoSub = new TrazabilidadEtapaRespuestaDto();
-            trazabilidadEtapaRespuestaDtoSub.setIcon("sap-icon://filter-fields");
-            trazabilidadEtapaRespuestaDtoSub.setDescription(bean.getIdSubetapa().getDescripcionSubetapa());
-
-            List<TrazabilidadFechaEtapaRespuestaDto> etapasListSub = new ArrayList<TrazabilidadFechaEtapaRespuestaDto>();
-            TrazabilidadFechaEtapaRespuestaDto etapaSub = new TrazabilidadFechaEtapaRespuestaDto();
-            etapaSub.setStart(fechaStart);
-            etapaSub.setEnd(bean.getFechaCierreSubetapa());
-            etapaSub.setType(TrazabilidadTypeEnum.TYPE_03.getEstado());
-            etapaSub.setTitle(bean.getIdSubetapa().getDescripcionSubetapa());
-            etapasListSub.add(etapaSub);
-            trazabilidadEtapaRespuestaDtoSub.setEtapas(etapasListSub);
-            trazabilidadEtapaRespuestaDtoList.add(trazabilidadEtapaRespuestaDtoSub);
-            fechaStart = DateUtils.sumarRestarMinutos(bean.getFechaCierreSubetapa(), 1);
+            log.error("Etapa de creación agregada correctamente");
+        }catch(Exception e){
+            log.error("Error al construir la etapa de creación", e);
         }
+        try{
+
+            /* Etapa de Publicación */
+            TrazabilidadEtapaRespuestaDto trazabilidadEtapaRespuestaDto01 = new TrazabilidadEtapaRespuestaDto();
+            trazabilidadEtapaRespuestaDto01.setIcon("sap-icon://travel-expense-report");
+            trazabilidadEtapaRespuestaDto01.setDescription(ETAPA_PUBLICACION);
+
+            List<TrazabilidadFechaEtapaRespuestaDto> etapasList01 = new ArrayList<TrazabilidadFechaEtapaRespuestaDto>();
+            TrazabilidadFechaEtapaRespuestaDto etapa01 = new TrazabilidadFechaEtapaRespuestaDto();
+            etapa01.setStart(licitacion.getFechaPublicacion());
+            etapa01.setEnd(DateUtils.sumarRestarHoras(licitacion.getFechaPublicacion(), 1));
+            etapa01.setType(TrazabilidadTypeEnum.TYPE_02.getEstado());
+            etapa01.setTitle(ETAPA_PUBLICACION);
+            etapasList01.add(etapa01);
+            trazabilidadEtapaRespuestaDto01.setEtapas(etapasList01);
+            trazabilidadEtapaRespuestaDtoList.add(trazabilidadEtapaRespuestaDto01);
+            log.error("Etapa de publicación agregada correctamente");
+
+        }catch (Exception e){
+
+            log.error("Error al construir la etapa de publicación", e);
+        }
+
+        try{
+
+            /* Subetapas */
+            List<LicitacionSubetapa> licitacionSubetapaList = this.licitacionSubetapaRepository.
+                    findLicitacionSubetapaByIdLicitacionOrderByFechaCierreSubetapa(licitacion);
+            Date fechaStart = DateUtils.sumarRestarMinutos(licitacion.getFechaPublicacion(), 1);
+            for(LicitacionSubetapa bean:licitacionSubetapaList) {
+                TrazabilidadEtapaRespuestaDto trazabilidadEtapaRespuestaDtoSub = new TrazabilidadEtapaRespuestaDto();
+                trazabilidadEtapaRespuestaDtoSub.setIcon("sap-icon://filter-fields");
+                trazabilidadEtapaRespuestaDtoSub.setDescription(bean.getIdSubetapa().getDescripcionSubetapa());
+
+                List<TrazabilidadFechaEtapaRespuestaDto> etapasListSub = new ArrayList<TrazabilidadFechaEtapaRespuestaDto>();
+                TrazabilidadFechaEtapaRespuestaDto etapaSub = new TrazabilidadFechaEtapaRespuestaDto();
+                etapaSub.setStart(fechaStart);
+                etapaSub.setEnd(bean.getFechaCierreSubetapa());
+                etapaSub.setType(TrazabilidadTypeEnum.TYPE_03.getEstado());
+                etapaSub.setTitle(bean.getIdSubetapa().getDescripcionSubetapa());
+                etapasListSub.add(etapaSub);
+                trazabilidadEtapaRespuestaDtoSub.setEtapas(etapasListSub);
+                trazabilidadEtapaRespuestaDtoList.add(trazabilidadEtapaRespuestaDtoSub);
+                fechaStart = DateUtils.sumarRestarMinutos(bean.getFechaCierreSubetapa(), 1);
+
+
+            }
+
+        }catch(Exception e){
+            log.error("Error al procesar las subetapas de la licitación ID: {}", id, e);
+        }
+
+        log.error("Finalizó correctamente la construcción de la trazabilidad para la licitación ID: {}", id);
         trazabilidadRespuestaDto.setEtapas(trazabilidadEtapaRespuestaDtoList);
         return trazabilidadRespuestaDto;
     }

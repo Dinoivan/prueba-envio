@@ -1,12 +1,11 @@
 package com.incloud.hcp.domain.balanza;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import jakarta.persistence.*;
+
 import java.io.Serializable;
 import java.time.LocalTime;
 import java.util.Date;
-import java.util.List;
 @Entity
 @Access(AccessType.FIELD)
 @Table(name="BLZ_GUIA_REMISION")

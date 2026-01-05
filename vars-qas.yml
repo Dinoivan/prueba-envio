@@ -1,7 +1,7 @@
 # Application
 application-name: copeincaprovider-api
 application-instances: 1
-application-memory: 1G
+application-memory: 2G
 #application-disk: 1G
 application-timeout: 600
 application-route: qas-copeincaprovider.cfapps.us10-001.hana.ondemand.com

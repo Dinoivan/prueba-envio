@@ -3,7 +3,6 @@ package com.incloud.hcp.jco.consultaProveedor.dto;
 import com.incloud.hcp.jco.centro.dto.CentroRFCParameterBuilder;
 import com.sap.conn.jco.JCoFunction;
 import com.sap.conn.jco.JCoParameterList;
-import com.sap.conn.jco.JCoStructure;
 import com.sap.conn.jco.JCoTable;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;

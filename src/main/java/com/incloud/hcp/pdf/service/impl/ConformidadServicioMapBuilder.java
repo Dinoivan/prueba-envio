@@ -2,7 +2,6 @@ package com.incloud.hcp.pdf.service.impl;
 
 import com.incloud.hcp.pdf.bean.FieldConformidadServicioPdfDTO;
 import com.incloud.hcp.pdf.bean.ParameterConformidadServicioPdfDTO;
-import com.incloud.hcp.pdf.bean.ParameterEntradaMercaderiaPdfDTO;
 
 import java.util.*;
 

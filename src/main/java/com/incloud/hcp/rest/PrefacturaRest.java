@@ -25,6 +25,8 @@ import com.incloud.hcp.service.cmiscf.bean.CmisFile;
 import com.incloud.hcp.util.DateUtils;
 import com.incloud.hcp.util.Utils;
 import com.sap.cloud.security.xsuaa.token.Token;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import org.apache.chemistry.opencmis.client.api.*;
@@ -42,8 +44,6 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;

@@ -3,6 +3,8 @@ package com.incloud.hcp.rest;
 import com.incloud.hcp.bean.UserSession;
 import com.incloud.hcp.domain.*;
 import com.incloud.hcp.dto.CuentaBancariaDto;
+import com.incloud.hcp.dto.ProveedorAdjuntoSunatDto;
+import com.incloud.hcp.dto.ProveedorCatalogoDto;
 import com.incloud.hcp.exception.PortalException;
 import com.incloud.hcp.repository.*;
 import com.incloud.hcp.rest._framework.AppRest;
@@ -12,6 +14,7 @@ import com.incloud.hcp.service.cmiscf.bean.CmisFile;
 import com.incloud.hcp.service.delta.ProveedorAdjuntoSunatDeltaService;
 import com.incloud.hcp.util.Utils;
 import com.sap.cloud.security.xsuaa.token.Token;
+import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +26,6 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import jakarta.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -93,13 +95,20 @@ public class CmisRest extends AppRest {
             String folderId = folderId = cmisService.createFolder(newFolder).getId();
             com.incloud.hcp.service.cmiscf.bean.CmisFile cmisFile = cmisService.createDocumento(folderId, file);
             logger.debug("Archivo cargado al repositorio : " + cmisFile);
-            ProveedorCatalogo proveedorCatalogo = new ProveedorCatalogo();
-            proveedorCatalogo.setArchivoId(cmisFile.getId());
-            proveedorCatalogo.setArchivoNombre(cmisFile.getName());
-            proveedorCatalogo.setRutaCatalogo(cmisFile.getUrl());
-            proveedorCatalogo.setArchivoTipo(cmisFile.getType());
+            ProveedorCatalogoDto proveedorCatalogoDto = new ProveedorCatalogoDto();
+            proveedorCatalogoDto.setArchivoId(cmisFile.getId());
+            proveedorCatalogoDto.setArchivoNombre(cmisFile.getName());
+            proveedorCatalogoDto.setRutaCatalogo(cmisFile.getUrl());
+            proveedorCatalogoDto.setArchivoTipo(cmisFile.getType());
 
-            return this.processObject(proveedorCatalogo);
+            proveedorCatalogoDto.setArchivoNombreFinal(cmisFile.getNameFinal());
+            proveedorCatalogoDto.setArchivoExtension(cmisFile.getExtension());
+            proveedorCatalogoDto.setArchivoSize(cmisFile.getSize());
+            proveedorCatalogoDto.setArchivoCarpetaId(cmisFile.getCarpetaId());
+            proveedorCatalogoDto.setArchivoNombreFolder(cmisFile.getNombreFolder());
+            proveedorCatalogoDto.setArchivoParentPath(cmisFile.getParentPath());
+
+            return this.processObject(proveedorCatalogoDto);
         } catch (Exception e) {
 
             headers = this.devuelveErrorHeaders(e);
@@ -123,15 +132,22 @@ public class CmisRest extends AppRest {
             //Long current = System.currentTimeMillis();
             String newFolder = "temp";
             String folderId = cmisService.createFolder(newFolder).getNameFolder();//Id();
-            com.incloud.hcp.service.cmiscf.bean.CmisFile cmisFile = cmisService.createDocumento(folderId, file);
-            logger.debug("Archivo cargado al repositorio : " + cmisFile);
-            ProveedorAdjuntoSunat proveedorAdjuntoSunat = new ProveedorAdjuntoSunat();
-            proveedorAdjuntoSunat.setArchivoId(cmisFile.getId());
-            proveedorAdjuntoSunat.setArchivoNombre(cmisFile.getName());
-            proveedorAdjuntoSunat.setRutaAdjunto(cmisFile.getUrl());
-            proveedorAdjuntoSunat.setArchivoTipo(cmisFile.getType());
+            CmisFile cmisFile = cmisService.createDocumento(folderId, file);
+            logger.error("Archivo adjuntoSunat cargado al repositorio : " + cmisFile);
+            ProveedorAdjuntoSunatDto proveedorAdjuntoSunatDto = new ProveedorAdjuntoSunatDto();
+            proveedorAdjuntoSunatDto.setArchivoId(cmisFile.getId());
+            proveedorAdjuntoSunatDto.setArchivoNombre(cmisFile.getName());
+            proveedorAdjuntoSunatDto.setRutaAdjunto(cmisFile.getUrl());
+            proveedorAdjuntoSunatDto.setArchivoTipo(cmisFile.getType());
 
-            return this.processObject(proveedorAdjuntoSunat);
+            proveedorAdjuntoSunatDto.setArchivoNombreFinal(cmisFile.getNameFinal());
+            proveedorAdjuntoSunatDto.setArchivoExtension(cmisFile.getExtension());
+            proveedorAdjuntoSunatDto.setArchivoSize(cmisFile.getSize());
+            proveedorAdjuntoSunatDto.setArchivoCarpetaId(cmisFile.getCarpetaId());
+            proveedorAdjuntoSunatDto.setArchivoNombreFolder(cmisFile.getNombreFolder());
+            proveedorAdjuntoSunatDto.setArchivoParentPath(cmisFile.getParentPath());
+
+            return this.processObject(proveedorAdjuntoSunatDto);
         }catch (Exception e){
             HttpHeaders headers = new HttpHeaders();
             headers = this.devuelveErrorHeaders(e);
@@ -458,6 +474,7 @@ public class CmisRest extends AppRest {
         licitacionAdjunto.setArchivoNombre(cmisFile.getName());
         licitacionAdjunto.setRutaAdjunto(cmisFile.getUrl());
         licitacionAdjunto.setArchivoTipo(cmisFile.getType());
+        licitacionAdjunto.setCarpetaId(cmisFile.getCarpetaId());
 
         return this.processObject(licitacionAdjunto);
     }

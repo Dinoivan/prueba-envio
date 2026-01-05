@@ -1,6 +1,5 @@
 package com.incloud.hcp.service.impl;
 
-import com.incloud.hcp.domain.Proveedor;
 import com.incloud.hcp.domain.balanza.*;
 import com.incloud.hcp.dto.DatosBLZProveedorDTO;
 import com.incloud.hcp.dto.FiltroProveedorDTO;
@@ -38,12 +37,10 @@ import org.springframework.util.ResourceUtils;
 import java.awt.Color;
 import java.io.*;
 import java.sql.Time;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
 import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service

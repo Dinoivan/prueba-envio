@@ -96,7 +96,7 @@ class NotificarMail {
 
             String valueURL = this.destinationEmail;
 
-            logger.error("Ingresando enviarCorreoSap 09 - urlConnection: " + urlConnection);
+            logger.error("Ingresando enviarCorreoSap 09 - urlConnection: " + valueURL);
 
             logger.error("Ingresando enviarCorreoSap 09");
 

@@ -2,8 +2,8 @@ package com.incloud.hcp.domain;
 
 import com.incloud.hcp.domain._framework.BaseDomain;
 import com.incloud.hcp.domain._framework.Identifiable;
-
 import jakarta.persistence.*;
+
 import java.io.Serializable;
 import java.util.logging.Logger;
 

@@ -1,7 +1,5 @@
 package com.incloud.hcp.jco.balanza.PedidosVentas.service.impl;
 
-import com.incloud.hcp.jco.balanza.DireccionAlternaCliente.dto.DireccionAlternaClienteMapper;
-import com.incloud.hcp.jco.balanza.DireccionAlternaCliente.dto.DireccionAlternaClienteResponse;
 import com.incloud.hcp.jco.balanza.PedidosVentas.dto.PedidosVentasParameterBuilder;
 import com.incloud.hcp.jco.balanza.PedidosVentas.dto.PedidosVentasResponse;
 import com.incloud.hcp.jco.balanza.PedidosVentas.service.JCOPedidoVentasService;

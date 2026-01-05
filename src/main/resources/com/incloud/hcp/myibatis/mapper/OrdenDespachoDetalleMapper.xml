@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.incloud.hcp.myibatis.mapper.OrdenDespachoDetalleMapper">
+    <resultMap id="OrdenDespachoDetalleResult" type="com.incloud.hcp.dto.OrdenDespachoDetalleDto">
+        <id property="id" jdbcType="INTEGER" column="id_orden_despacho_detalle"/>
+        <result property="cantidad" column="CANTIDAD" jdbcType="DECIMAL"/>
+        <result property="posicion" column="POSICION" jdbcType="VARCHAR"/>
+        <result property="numeroOrdenCompra" column="NUMERO_ORDEN_COMPRA" jdbcType="VARCHAR"/>
+        <result property="codigoSapAlmacen" column="CODIGO_SAP_ALMACEN" jdbcType="VARCHAR"/>
+        <result property="denominacionAlmacen" column="DENOMINACION_ALMACEN" jdbcType="VARCHAR"/>
+        <result property="codigoSapBienServicio" column="CODIGO_SAP_BIEN_SERVICIO" jdbcType="VARCHAR"/>
+        <result property="descripcionBienServicio" column="DESCRIPCION_BIEN_SERVICIO" jdbcType="VARCHAR"/>
+        <result property="codigoSapCentro" column="CODIGO_SAP_CENTRO" jdbcType="VARCHAR"/>
+        <result property="denominacionCentro" column="DENOMINACION_CENTRO" jdbcType="VARCHAR"/>
+        <result property="direccionCentro" column="DIRECCION_CENTRO" jdbcType="VARCHAR"/>
+        <result property="fechaEntrega" column="FECHA_ENTREGA" jdbcType="TIMESTAMP"/>
+        <result property="precioTotal" column="PRECIO_TOTAL" jdbcType="DECIMAL"/>
+        <result property="precioUnitario" column="PRECIO_UNITARIO" jdbcType="DECIMAL"/>
+        <result property="indicadorImpuesto" column="INDICADOR_IMPUESTO" jdbcType="VARCHAR"/>
+        <result property="unidadMedidaBienServicio" column="UNIDAD_MEDIDA_BIEN_SERVICIO" jdbcType="VARCHAR"/>
+        <result property="totalDespachado" column="TOTAL_DESPACHADO" jdbcType="DECIMAL"/>
+        <result property="cantidadRestante" column="CANTIDAD_RESTANTE" jdbcType="DECIMAL"/>
+    </resultMap>
+    <select id="getAllByIdOrdenDespachoLiberada" resultMap="OrdenDespachoDetalleResult">
+        SELECT
+        godd.ID_ORDEN_DESPACHO_DETALLE,
+        godd.CANTIDAD,
+        godd.POSICION,
+        godd.NUMERO_ORDEN_COMPRA,
+        godd.CODIGO_SAP_ALMACEN,
+        godd.DENOMINACION_ALMACEN,
+        godd.CODIGO_SAP_BIEN_SERVICIO,
+        godd.DESCRIPCION_BIEN_SERVICIO,
+        godd.CODIGO_SAP_CENTRO,
+        godd.DENOMINACION_CENTRO,
+        godd.DIRECCION_CENTRO,
+        godd.FECHA_ENTREGA,
+        godd.ID_ORDEN_DESPACHO,
+        godd.INDICADOR_IMPUESTO,
+        godd.PRECIO_TOTAL,
+        godd.PRECIO_UNITARIO,
+        godd.TIPO_POSICION,
+        godd.UNIDAD_MEDIDA_BIEN_SERVICIO,
+        COALESCE(
+        SUM(
+            CASE
+                WHEN ggd.ID_ESTADO_DESPACHO IN (1,5)
+                THEN ggdd.CANTIDAD_ESTE_DESPACHO
+                ELSE 0
+            END
+        ), 0
+        ) AS TOTAL_DESPACHADO,
+        godd.CANTIDAD -
+        COALESCE(
+            SUM(
+                CASE
+                    WHEN ggd.ID_ESTADO_DESPACHO IN (1,5)
+                    THEN ggdd.CANTIDAD_ESTE_DESPACHO
+                    ELSE 0
+                END
+        ), 0
+        ) AS CANTIDAD_RESTANTE
+        FROM GA_ORDEN_DESPACHO_DETALLE godd
+        INNER JOIN GA_ORDEN_DESPACHO god
+        ON god.NUMERO_ORDEN_COMPRA = godd.NUMERO_ORDEN_COMPRA
+        LEFT JOIN GA_GUIA_DESPACHO_DETALLE ggdd
+        ON ggdd.POSICION = godd.POSICION
+        AND ggdd.NUMERO_ORDEN_DESPACHO  = godd.NUMERO_ORDEN_COMPRA
+        LEFT JOIN GA_GUIA_DESPACHO ggd
+        ON ggd.ID_GUIA_DESPACHO  = ggdd.ID_GUIA_DESPACHO
+        WHERE god.IS_ACTIVE = '1'
+        <if test="numeroOrdenCompra != null and numeroOrdenCompra != ''">
+            AND godd.NUMERO_ORDEN_COMPRA = #{numeroOrdenCompra}
+        </if>
+        <if test="ruc != null and ruc != ''">
+            AND god.PROVEEDOR_RUC = #{ruc}
+        </if>
+        GROUP BY
+        godd.ID_ORDEN_DESPACHO_DETALLE,
+        godd.CANTIDAD,
+        godd.POSICION,
+        godd.NUMERO_ORDEN_COMPRA,
+        godd.CODIGO_SAP_ALMACEN,
+        godd.DENOMINACION_ALMACEN,
+        godd.CODIGO_SAP_BIEN_SERVICIO,
+        godd.DESCRIPCION_BIEN_SERVICIO,
+        godd.CODIGO_SAP_CENTRO,
+        godd.DENOMINACION_CENTRO,
+        godd.DIRECCION_CENTRO,
+        godd.FECHA_ENTREGA,
+        godd.ID_ORDEN_DESPACHO,
+        godd.INDICADOR_IMPUESTO,
+        godd.PRECIO_TOTAL,
+        godd.PRECIO_UNITARIO,
+        godd.TIPO_POSICION,
+        godd.UNIDAD_MEDIDA_BIEN_SERVICIO
+        ORDER BY godd.POSICION ASC
+    </select>
+</mapper>

@@ -2,6 +2,7 @@ package com.incloud.hcp.repository;
 
 import com.incloud.hcp.domain.LogTransaccion;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -16,4 +17,10 @@ public interface LogTransaccionRepository extends JpaRepository<LogTransaccion, 
 //    @Query("SELECT lt.logUsuario FROM LogTransaccion lt where lt.tipoTransaccion =?1 and lt.tipoRegistro=?2 and lt.idRegistro=?3 ")
     String getUsuarioTransaccionBD(String transaccion, String tipoRegistro, Integer idRegistro);
 
+    @Query("SELECT l FROM LogTransaccion l WHERE l.tipoRegistro = ?1")
+    List<LogTransaccion> getLogsSincronizacionOC(String tipoRegistro);
+
+    @Modifying
+    @Query("DELETE FROM LogTransaccion l WHERE l.logFecha <= ?1 AND l.tipoRegistro = ?2")
+    void deleteLogSincronizacionOC(String fechaInicio, String tipoRegistro);
 }

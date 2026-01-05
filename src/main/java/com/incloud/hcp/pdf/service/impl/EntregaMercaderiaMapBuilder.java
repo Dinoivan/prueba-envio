@@ -3,8 +3,6 @@ package com.incloud.hcp.pdf.service.impl;
 import com.incloud.hcp.pdf.bean.FieldEntradaMercaderiaPdfDTO;
 import com.incloud.hcp.pdf.bean.ParameterEntradaMercaderiaPdfDTO;
 
-import javax.swing.text.html.Option;
-import java.lang.reflect.Parameter;
 import java.util.*;
 
 class EntregaMercaderiaMapBuilder {

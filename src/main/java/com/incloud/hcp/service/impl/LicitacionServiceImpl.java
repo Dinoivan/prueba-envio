@@ -6,7 +6,6 @@ import com.incloud.hcp.enums.EstadoLicitacionEnum;
 import com.incloud.hcp.exception.PortalException;
 import com.incloud.hcp.myibatis.mapper.*;
 import com.incloud.hcp.repository.*;
-import com.incloud.hcp.service.CmisService;
 import com.incloud.hcp.service.ExportDataService;
 import com.incloud.hcp.service.LicitacionService;
 import com.incloud.hcp.service._framework.BaseServiceImpl;
@@ -26,7 +25,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -377,6 +375,9 @@ public class LicitacionServiceImpl extends BaseServiceImpl implements Licitacion
 
         Moneda moneda = new Moneda();
         ClaseDocumento claseDocumento = new ClaseDocumento();
+        //Nuevo
+        CentroAlmacen almacen1 = new CentroAlmacen();
+        CentroAlmacen almacen2 =  new CentroAlmacen();
         if (Optional.ofNullable(objLicitacion.getIdClaseDocumento()).isPresent()) {
             if (objLicitacion.getIdClaseDocumento() != 0) {
                 logger.error("INGRESSNDO GESPINOZA");
@@ -385,7 +386,9 @@ public class LicitacionServiceImpl extends BaseServiceImpl implements Licitacion
         }
 
         moneda.setIdMoneda(objLicitacion.getIdMoneda());
-
+        //Nuevo
+        almacen1.setIdCentroAlmacen(objLicitacion.getIdCentroLogistico());
+        almacen2.setIdCentroAlmacen(objLicitacion.getIdAlmacen());
         UserSession userSession = this.getUserSession(token);
 
         if (longitudListaEtapa > 1) {
@@ -405,6 +408,10 @@ public class LicitacionServiceImpl extends BaseServiceImpl implements Licitacion
                         licitacion.setClaseDocumento(claseDocumento);
                     }
                 }
+
+                //Nuevo
+                licitacion.setCentroAlmacen1(almacen1);
+                licitacion.setCentroAlmacen2(almacen2);
 
                 licitacion.setMoneda(moneda);
                 licitacion.setFechaEntregaInicio(this.convertToTimestamp(objLicitacion.getFechaEntregaInicio(), false));
@@ -464,6 +471,10 @@ public class LicitacionServiceImpl extends BaseServiceImpl implements Licitacion
                     licitacion.setClaseDocumento(claseDocumento);
                 }
             }
+
+            //Nuevo
+            licitacion.setCentroAlmacen1(almacen1);
+            licitacion.setCentroAlmacen2(almacen2);
 
             licitacion.setMoneda(moneda);
             licitacion.setFechaEntregaInicio(this.convertToTimestamp(objLicitacion.getFechaEntregaInicio(), false));
@@ -553,6 +564,13 @@ public class LicitacionServiceImpl extends BaseServiceImpl implements Licitacion
 
         licitacionRequest.setCodGradoUrgencia(licitacion.getNecesidadUrgencia());
         String desGradoUrg = ("01").equals(licitacion.getNecesidadUrgencia()) ? "Normal" : "Urgente";
+        //Nuevo
+        licitacionRequest.setIdCentroLogistico(licitacion.getCentroAlmacen1().getIdCentroAlmacen());
+        licitacionRequest.setDesCentroLogistico(licitacion.getCentroAlmacen1().getDenominacion());
+
+        licitacionRequest.setIdAlmacen(licitacion.getCentroAlmacen2().getIdCentroAlmacen());
+        licitacionRequest.setDesAlmacen(licitacion.getCentroAlmacen2().getDenominacion());
+
         licitacionRequest.setDesGradoUrgencia(desGradoUrg);
         licitacionRequest.setIdMoneda(licitacion.getMoneda().getIdMoneda());
         licitacionRequest.setDesMoneda(licitacion.getMoneda().getTextoBreve());
@@ -1268,7 +1286,7 @@ public class LicitacionServiceImpl extends BaseServiceImpl implements Licitacion
         if (listAdjunto != null && listAdjunto.size() > 0) {
             listAdjunto.forEach(item -> {
                 if (item.getIdLicitacionAdjunto() == null) {
-                    listAdjuntoNew.add(new com.incloud.hcp.service.cmiscf.bean.CmisFile(item.getArchivoId(), item.getArchivoNombre(), item.getRutaAdjunto(), item.getArchivoTipo()));
+                    listAdjuntoNew.add(new com.incloud.hcp.service.cmiscf.bean.CmisFile(item.getArchivoId(), item.getArchivoNombre(), item.getRutaAdjunto(), item.getArchivoTipo(), null, null, null, item.getCarpetaId(), null, null));
                 }
             });
         }

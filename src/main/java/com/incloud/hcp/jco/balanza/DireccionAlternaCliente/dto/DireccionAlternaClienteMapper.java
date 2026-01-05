@@ -1,6 +1,5 @@
 package com.incloud.hcp.jco.balanza.DireccionAlternaCliente.dto;
 
-import com.incloud.hcp.jco.balanza.Series.dto.SerieConsultaResponse;
 import com.sap.conn.jco.JCoParameterList;
 import com.sap.conn.jco.JCoTable;
 import org.slf4j.Logger;

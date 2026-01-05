@@ -3,9 +3,6 @@ package com.incloud.hcp.service;
 import com.incloud.hcp.domain.balanza.Carreta;
 import com.incloud.hcp.jco.balanza.Carreta.dto.CarretaResponseDTO;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Map;

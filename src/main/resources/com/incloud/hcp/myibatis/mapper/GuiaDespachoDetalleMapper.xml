@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.incloud.hcp.myibatis.mapper.GuiaDespachoDetalleMapper">
+    <resultMap id="GuiaDespachoDetalleResult" type="com.incloud.hcp.domain.almacen.GuiaDespachoDetalle">
+        <id property="id" jdbcType="INTEGER" column="ID_DESPACHO_DETALLE"/>
+        <result property="cantidadEsteDespacho" column="CANTIDAD_ESTE_DESPACHO" jdbcType="DECIMAL"/>
+        <result property="cantidadOriginal" column="CANTIDAD_ORIGINAL" jdbcType="DECIMAL"/>
+        <result property="centro" column="CENTRO" jdbcType="VARCHAR"/>
+        <result property="codigoMaterial" column="CODIGO_MATERIAL" jdbcType="VARCHAR"/>
+        <result property="descripcionMaterial" column="DESCRIPCION_MATERIAL" jdbcType="VARCHAR"/>
+        <result property="fechaEntregaOc" column="FECHA_ENTREGA_OC" jdbcType="TIMESTAMP"/>
+        <result property="idGuiaDespacho" jdbcType="INTEGER" column="ID_GUIA_DESPACHO"/>
+        <result property="posicion" column="POSICION" jdbcType="VARCHAR"/>
+        <result property="unidadMedida" column="UNIDAD_MEDIDA" jdbcType="VARCHAR"/>
+        <result property="denominacionCentro" column="DENOMINACION_CENTRO" jdbcType="VARCHAR"/>
+        <result property="numeroOrdenDespacho" column="NUMERO_ORDEN_DESPACHO" jdbcType="VARCHAR"/>
+        <result property="cantidadEntregadaAnterior" column="CANTIDAD_ENTREGADA_ANTERIOR" jdbcType="DECIMAL"/>
+    </resultMap>
+    <select id="getAllGuiaDepachoDetalleByIdMap" resultMap="GuiaDespachoDetalleResult">
+        SELECT
+        r.ID_DESPACHO_DETALLE,
+        r.CANTIDAD_ESTE_DESPACHO,
+        r.CANTIDAD_ORIGINAL,
+        r.CENTRO,
+        r.CODIGO_MATERIAL,
+        r.DESCRIPCION_MATERIAL,
+        r.FECHA_ENTREGA_OC,
+        r.ID_GUIA_DESPACHO,
+        r.ID_ORDEN_DESPACHO_DETALLE,
+        r.POSICION,
+        r.UNIDAD_MEDIDA,
+        r.DENOMINACION_CENTRO,
+        r.NUMERO_ORDEN_DESPACHO,
+        r.CANTIDAD_ENTREGADA_ANTERIOR
+        FROM (
+        SELECT
+        ggdd.ID_DESPACHO_DETALLE,
+        ggdd.ID_ORDEN_DESPACHO_DETALLE,
+        ggdd.CANTIDAD_ESTE_DESPACHO,
+        ggdd.CANTIDAD_ORIGINAL,
+        ggdd.CENTRO,
+        ggdd.CODIGO_MATERIAL,
+        ggdd.DESCRIPCION_MATERIAL,
+        ggdd.FECHA_ENTREGA_OC,
+        ggdd.ID_GUIA_DESPACHO,
+        ggdd.POSICION,
+        ggdd.UNIDAD_MEDIDA,
+        ggdd.DENOMINACION_CENTRO,
+        ggdd.NUMERO_ORDEN_DESPACHO,
+        SUM(
+        CASE
+        WHEN ggd.ID_ESTADO_DESPACHO IN (1,5)
+        THEN ggdd.CANTIDAD_ESTE_DESPACHO
+        ELSE 0
+        END
+        ) OVER (
+        PARTITION BY
+        ggdd.NUMERO_ORDEN_DESPACHO,
+        ggdd.POSICION
+        ) AS CANTIDAD_ENTREGADA_ANTERIOR
+        FROM GA_GUIA_DESPACHO_DETALLE ggdd
+        INNER JOIN GA_GUIA_DESPACHO ggd
+        ON ggd.ID_GUIA_DESPACHO = ggdd.ID_GUIA_DESPACHO
+        ) r
+        WHERE
+        <if test="id != null and id != ''">
+            r.ID_GUIA_DESPACHO = #{id}
+        </if>
+        ORDER BY r.POSICION ASC
+    </select>
+</mapper>

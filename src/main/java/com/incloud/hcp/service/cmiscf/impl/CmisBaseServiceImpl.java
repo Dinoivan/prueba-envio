@@ -22,8 +22,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -149,6 +147,8 @@ public class CmisBaseServiceImpl implements CmisBaseService {
         log.error("kg_4");
         cmisFolder.setId(newFolder.getId());
         log.error("kg_5");
+        cmisFolder.setId(newFolder.getId());
+        cmisFolder.setNameFolder(newFolder.getName());
         cmisFolder.setMensaje("Se ha creado un folder en " + newFolder.getPath());
         log.error("kg_6");
         return cmisFolder;
@@ -227,20 +227,18 @@ public class CmisBaseServiceImpl implements CmisBaseService {
         String original = "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýÿ";
         String ascii = "AAAAAAACEEEEIIIIDNOOOOOOUUUUYBaaaaaaaceeeeiiiionoooooouuuuyy";
 
-        //String nombreFinal =fileNewName;
         for (int i = 0; i < original.length(); i++) {
-            // Reemplazamos los caracteres especiales.
             fileNewName = fileNewName.replace(original.charAt(i), ascii.charAt(i));
         }
         log.error("createDocumento 02 fileNewName: " + fileNewName);
         fileNewName = fileNewName.replaceAll("[^a-zA-Z0-9]", "");
         log.error("createDocumento 03 fileNewName: " + fileNewName);
-        log.error("createDocumento 04: " + extension + " fileName: " + fileNewName);
+
         String fileNamePattern = String.format(FILENAME_PATTERN, fileNewName, DateTimeFormatter.ofPattern(DATETIME_FORMAT).format(DateUtils.getDefaultCurrentZonedDateTime()), extension);
         fileNewName = fileNewName + extension;
         log.error("createDocumento 05 fileNewName: " + fileNewName);
 
-        Map<String, Object> properties = new HashMap<String, Object>();
+        Map<String, Object> properties = new HashMap<>();
         properties.put(PropertyIds.OBJECT_TYPE_ID, "cmis:document");
         properties.put(PropertyIds.NAME, fileNamePattern); //fileNewName
         Folder folder = (Folder) session.getObject(cmisFolder.getId());
@@ -264,6 +262,7 @@ public class CmisBaseServiceImpl implements CmisBaseService {
             }
         }
 
+        // Crear el objeto CmisFile
         CmisFile cmisFile = new CmisFile();
         cmisFile.setId(doc.getId());
         cmisFile.setName(file.getOriginalFilename());
@@ -273,6 +272,10 @@ public class CmisBaseServiceImpl implements CmisBaseService {
         cmisFile.setNombreFolder(nameFolder);
         cmisFile.setType(file.getContentType());
         cmisFile.setSize(file.getSize());
+
+        // Configurar el parentPath solo con el path de la carpeta
+        cmisFile.setParentPath(folder.getPath()); // Almacena el path de la carpeta
+
         StringBuilder path = new StringBuilder("/");
         path.append(session.getRootFolder().getId());
         path.append("/root/");
@@ -376,62 +379,68 @@ public class CmisBaseServiceImpl implements CmisBaseService {
     public List<CmisFile> updateFileAndMoveVerificar(List<CmisFile> files, String nameFolder) {
         try {
             List<CmisFile> newFiles = new ArrayList<>();
-            if (files == null || files.size() <= 0) {
+            if (files == null || files.isEmpty()) {
                 return newFiles;
             }
-            log.error("Actualización de version del archivo");
-            log.error("updateFileAndMoveVerificar nameFolder " + nameFolder);
-            log.error("updateFileAndMoveVerificar files size " + files.size());
-            log.error("updateFileAndMoveVerificar files " + files.toString());
+
+            log.error("Actualización de versión del archivo");
+            log.error("updateFileAndMoveVerificar nameFolder: " + nameFolder);
+            log.error("updateFileAndMoveVerificar files size: " + files.size());
+            log.error("updateFileAndMoveVerificar files: " + files.toString());
+
             CmisFolderSession cmisFolderSession = this.obtenerFolderSession(nameFolder);
             Session session = cmisFolderSession.getSession();
             CmisFolder cmisFolder = cmisFolderSession.getCmisFolder();
+            Folder targetFolder = (Folder) session.getObject(cmisFolder.getId());
 
-            //InitialContext ctx = new InitialContext();
-            //EcmService ecmSvc = (EcmService) ctx.lookup(LOOKUP_NAME);
+            for (CmisFile item : files) {
+                log.error("Actualizando el archivo id: " + item.getId());
 
-            //Session openCmisSession = ecmSvc.connect(repositoryName, repositoryKey);
+                if (!session.exists(item.getId())) {
+                    log.error("El archivo no existe en la sesión actual: " + item.getId());
+                    continue;
+                }
 
+                FileableCmisObject object = (FileableCmisObject) session.getObject(item.getId());
 
-            Optional.ofNullable(files)
-                    .ifPresent(l -> l.stream()
-                            .peek(item -> log.error("Actualizando el archivo id " + item.getId()))
-                            .filter(item -> session.exists(item.getId())) //openCmisSession
-                            .forEach(item -> {
-                                FileableCmisObject object = (FileableCmisObject) session.getObject(item.getId());
-                                log.error("updateFileAndMoveVerificar entrando 0 ");
+                // Comparamos si el archivo ya está en la carpeta destino
+                String currentFolderId = item.getCarpetaId();
+                if (currentFolderId == null || !currentFolderId.equals(cmisFolder.getId())) {
+                    log.error("El archivo está en una carpeta diferente. Moviendo...");
 
-                                CmisObject sourceFolderId = object.getParents().get(0);
-                                CmisObject targetFolderId = session.getObject(cmisFolder.getId());//folderId
-                                Folder folder = (Folder) session.getObject(cmisFolder.getId());//folderId
-                                log.error("updateFileAndMoveVerificar sourceFolderId " + sourceFolderId);
-                                log.error("updateFileAndMoveVerificar targetFolderId " + targetFolderId);
+                    Folder sourceFolder = (Folder) session.getObject(currentFolderId);
+                    CmisObject movedObject = object.move(sourceFolder, targetFolder);
 
-                                if (!sourceFolderId.getId().equals(targetFolderId.getId())) {
-                                    log.error("updateFileAndMoveVerificar entrando 1");
-                                    CmisObject fileMove = object.move(sourceFolderId, targetFolderId);
+                    // Actualizamos la nueva ruta
+                    StringBuilder path = new StringBuilder("/");
+                    path.append(session.getRootFolder().getId());
+                    path.append("/root/");
+                    path.append(targetFolder.getName());
+                    path.append("/");
+                    path.append(movedObject.getName());
 
-                                    StringBuilder path = new StringBuilder("/");
-                                    path.append(session.getRootFolder().getId());
-                                    path.append("/root/");
-                                    path.append(folder.getName());
-                                    path.append("/");
-                                    path.append(fileMove.getName());
-                                    item.setUrl(path.toString());
+                    item.setUrl(path.toString());
+                    item.setCarpetaId(targetFolder.getId());
+                    item.setNombreFolder(targetFolder.getName());
 
-                                    newFiles.add(item);
-                                    log.error("updateFileAndMoveVerificar entrando 2");
-                                    log.error("ARCHIVO MOVIDO !!!: ");
-                                    Map<String, Object> properties = new HashMap<>();
-                                    properties.put(PropertyIds.DESCRIPTION, "REGISTRADO");
-                                    log.error("updateFileAndMoveVerificar entrando 3");
-                                    fileMove.updateProperties(properties, true);
-                                }
-                            }));
+                    // Actualizamos la metadata del archivo si se desea
+                    Map<String, Object> properties = new HashMap<>();
+                    properties.put(PropertyIds.DESCRIPTION, "REGISTRADO");
+                    movedObject.updateProperties(properties, true);
+
+                    newFiles.add(item);
+
+                    log.error("Archivo movido y actualizado: " + item.getId());
+                } else {
+                    log.info("El archivo ya se encuentra en la carpeta destino: " + item.getId());
+                    newFiles.add(item); // opcional si deseas devolver todos
+                }
+            }
+
             return newFiles;
         } catch (Exception ex) {
-            log.error("Error al actualizar la version de los archivos", ex);
-            throw new ServiceException("Error al actualizar la version de los archivos");
+            log.error("Error al actualizar la versión de los archivos", ex);
+            throw new ServiceException("Error al actualizar la versión de los archivos");
         }
     }
 

@@ -15,7 +15,6 @@ import com.incloud.hcp.domain.LicitacionSubetapa;
 import com.incloud.hcp.dto.TrazabilidadRespuestaDto;
 import com.incloud.hcp.service.LicitacionSubetapaService;
 import com.sap.cloud.security.xsuaa.token.Token;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 
 import java.util.List;
 

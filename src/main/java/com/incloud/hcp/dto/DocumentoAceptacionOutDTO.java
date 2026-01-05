@@ -1,8 +1,5 @@
 package com.incloud.hcp.dto;
 
-import com.incloud.hcp.domain.DocumentoAceptacion;
-
-import java.util.Date;
 import java.util.List;
 
 public class DocumentoAceptacionOutDTO {

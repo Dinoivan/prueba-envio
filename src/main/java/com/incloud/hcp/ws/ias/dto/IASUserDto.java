@@ -13,6 +13,10 @@ public class IASUserDto implements Serializable{
     private List<IASValue> groups;
     private List<IASValue> emails;
 
+    private Boolean active;
+
+
+
     public IASName getName() {
         return name;
     }
@@ -69,6 +73,14 @@ public class IASUserDto implements Serializable{
         this.emails = emails;
     }
 
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
     @Override
     public String toString() {
         return "IASUserDto{" +
@@ -121,6 +133,7 @@ public class IASUserDto implements Serializable{
 
     public static class IASValue implements Serializable {
         private String value;
+        private Boolean primary;
 
         public IASValue(String value) {
             this.value = value;
@@ -135,6 +148,14 @@ public class IASUserDto implements Serializable{
 
         public void setValue(String value) {
             this.value = value;
+        }
+
+        public Boolean getPrimary() {
+            return primary;
+        }
+
+        public void setPrimary(Boolean primary) {
+            this.primary = primary;
         }
 
         @Override

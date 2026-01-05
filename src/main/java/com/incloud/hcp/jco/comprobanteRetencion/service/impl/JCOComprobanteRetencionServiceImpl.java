@@ -4,11 +4,9 @@ import com.incloud.hcp.enums.ComprobanteRetencionEstadoEnum;
 import com.incloud.hcp.enums.ComprobanteTipoEnum;
 import com.incloud.hcp.jco.comprobanteRetencion.dto.*;
 import com.incloud.hcp.jco.comprobanteRetencion.service.JCOComprobanteRetencionService;
-import com.incloud.hcp.repository.SociedadRepository;
 import com.sap.conn.jco.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 

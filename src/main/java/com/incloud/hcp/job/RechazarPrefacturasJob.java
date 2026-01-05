@@ -44,6 +44,7 @@ public class RechazarPrefacturasJob {
             logTransaccion.setLogFecha(DateUtils.getCurrentTimestamp());
             logTransaccion.setTipoRegistro("RechazarPrefacturasSinAdjuntos");
             try {
+                logger.error("try jobRechazarFacturas" + fechaInicio);
                 String rpta = this.prefacturaService.rechazarPrefacturasSinAdjuntos(fechaInicio,null);
                 logTransaccion.setEnvioTrama(rpta);
                 this.logTransaccionRepository.save(logTransaccion);

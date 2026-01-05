@@ -705,13 +705,6 @@
 		</plugins>
 	</build>
 
-	<repositories>
-		<repository>
-			<id>jaspersoft-third-party</id>
-			<url>https://jasperreports.jfrog.io/jasperreports/third-party-ce-artifacts/</url>
-		</repository>
-	</repositories>
-
 	<pluginRepositories>
 		<pluginRepository>
 			<id>spring-releases</id>

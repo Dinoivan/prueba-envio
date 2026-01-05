@@ -13,6 +13,9 @@ import com.incloud.hcp.repository.*;
 import com.incloud.hcp.service.ProveedorService;
 import com.incloud.hcp.service.notificacion.ContactoPublicadaOCNotificacion;
 import com.incloud.hcp.util.DateUtils;
+import com.incloud.hcp.ws.ias.bean.IASResponse;
+import com.incloud.hcp.ws.ias.bean.IASUserInfoResponse;
+import com.incloud.hcp.ws.ias.service.IUserIASService;
 import com.sap.conn.jco.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,9 +24,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-import com.incloud.hcp.ws.ias.bean.IASResponse;
-import com.incloud.hcp.ws.ias.bean.IASUserInfoResponse;
-import com.incloud.hcp.ws.ias.service.IUserIASService;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -426,8 +426,7 @@ public class JCOOrdenCompraPublicarOneServiceImpl implements JCOOrdenCompraPubli
 
             logger.error(header1 + "FINISHED");
             return ordenCompraSapDataDto;
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             logger.error(e.getMessage(), e.getCause());
             throw new Exception(e);
         }
@@ -450,13 +449,13 @@ public class JCOOrdenCompraPublicarOneServiceImpl implements JCOOrdenCompraPubli
     }
 
 
-    private boolean evaluarModificacionDeOrdenCompra (Date fechaModAnterior, Time horaModAnterior, Date fechaModNueva, Time horaModNueva){
+    private boolean evaluarModificacionDeOrdenCompra(Date fechaModAnterior, Time horaModAnterior, Date fechaModNueva, Time horaModNueva) {
         logger.error("FECHA_MOD_ANTERIOR: " + DateUtils.utilDateToString(fechaModAnterior));
         logger.error("HORA_MOD_ANTERIOR: " + horaModAnterior);
         logger.error("FECHA_MOD_NUEVA: " + DateUtils.utilDateToString(fechaModNueva));
         logger.error("HORA_MOD_NUEVA: " + horaModNueva);
 
-        if(fechaModAnterior == null || horaModAnterior == null){
+        if (fechaModAnterior == null || horaModAnterior == null) {
             if (fechaModNueva == null || horaModNueva == null)
                 return false;
 

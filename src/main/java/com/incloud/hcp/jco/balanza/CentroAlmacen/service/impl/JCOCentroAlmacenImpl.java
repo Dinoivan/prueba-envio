@@ -2,7 +2,6 @@ package com.incloud.hcp.jco.balanza.CentroAlmacen.service.impl;
 
 import com.incloud.hcp.domain.balanza.CentroAlmacenBlz;
 import com.incloud.hcp.jco.balanza.CentroAlmacen.dto.SapTableCentroAlmacenBlz;
-import com.incloud.hcp.jco.balanza.centroCorrelativo.dto.SapTableCentroCorrelativoBlz;
 import com.incloud.hcp.jco.balanza.CentroAlmacen.service.JCOCentroAlmacenBlzService;
 import com.incloud.hcp.repository.CentroAlmacenBlzRepository;
 import com.sap.conn.jco.*;

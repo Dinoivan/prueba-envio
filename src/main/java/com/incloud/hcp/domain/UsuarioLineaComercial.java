@@ -14,9 +14,9 @@ import com.google.common.base.MoreObjects;
 import com.incloud.hcp.domain._framework.BaseDomain;
 import com.incloud.hcp.domain._framework.Identifiable;
 import com.incloud.hcp.validation.FixedLength;
-
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+
 import java.io.Serializable;
 import java.util.logging.Logger;
 

@@ -11,6 +11,7 @@ import com.incloud.hcp.myibatis.mapper.TicketPesajeMapper;
 import com.incloud.hcp.repository.*;
 import com.incloud.hcp.service.GuiaRemisionDetalleService;
 import com.incloud.hcp.service.GuiaRemisionService;
+import com.incloud.hcp.service.TicketPesajeService;
 import com.incloud.hcp.util.DateUtils;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
@@ -22,7 +23,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-import com.incloud.hcp.service.TicketPesajeService;
 import org.springframework.util.ResourceUtils;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -170,22 +170,44 @@ public class TicketPesajeServiceImpl implements TicketPesajeService {
                     List<DetalleTicket> listaAux = this.detalleTicketRepository.findxSubticketList(detalleBD.getSubticket());
                     if(listaAux != null && listaAux.size() > 0) {
                         for (DetalleTicket objAux : listaAux) {
-                            //Nuevo
 
-                            if (detalleBD.getFechaModificacion() != null && detalleBD.getPeso_final() != null) {
-                                logger.error("jescudero 03.1");
-                                objAux.setFechaModificacion(Timestamp.valueOf(fechaActual));
+                            //Nuevo
+                            if (detalleBD.getPeso_final() != null) {
+                                boolean pesoFinalCambio = (objAux.getPeso_final() == null || (!objAux.getPeso_final().equals(detalleBD.getPeso_final())));
+                                if(pesoFinalCambio){
+                                    logger.error("jescudero 03.1 - Peso final Cambió de  + " + objAux.getPeso_final() + "a" + detalleBD.getPeso_final());
+                                    objAux.setFechaModificacion(Timestamp.valueOf(fechaActual));
+                                }else{
+                                    logger.error("jescurdero 03.1.1 - Peso final no cambió, manteniendo fecha: " + objAux.getFechaModificacion());
+                                }
+
                                 objAux.setPeso_final(detalleBD.getPeso_final());
                                 objAux.setPeso_neto(detalleBD.getPeso_neto());
+
                             }
 
-                            //validación y actualización del peso_inicial si realmente viene nuevo
-                            if (detalleBD.getPeso_inicial() != null && detalleBD.getPeso_inicial() > 0) {
-                                objAux.setPeso_inicial(detalleBD.getPeso_inicial());
-                                if (detalleBD.getFechaCreacion() != null) {
-                                    objAux.setFechaCreacion(Timestamp.valueOf(fechaActual));
+                            //Solo actualiza peso_inicial y fechaCreación si realmente viene nuevo
+                            if(detalleBD.getPeso_inicial() !=null && detalleBD.getPeso_inicial()>0){
+                                //Verificar si el peso inicial cambio
+                                boolean pesoInicialCambio = (objAux.getPeso_inicial() == null) ||(!objAux.getPeso_inicial().equals(detalleBD.getPeso_inicial()));
+                                if(pesoInicialCambio){
+                                    logger.error("jescudero 03.2 - Peso inicial Cambió de " + objAux.getPeso_inicial() + "a" + detalleBD.getPeso_inicial());
+                                    objAux.setPeso_inicial(detalleBD.getPeso_inicial());
+                                    //Solo establece fecha de creación si todavía es NULL
+                                    if(objAux.getFechaCreacion() == null){
+                                        logger.error("jescudero 03.2.1 - Estableciendo fecha entrada (era NULL)");
+                                        objAux.setFechaCreacion(Timestamp.valueOf(fechaActual));
+                                    }else{
+                                        logger.error("jescudero 03.2.2 - Manteniendo fecha entrada existente: " +
+                                                objAux.getFechaCreacion());
+                                    }
+
+                                }else{
+                                    logger.error("jescudero 03.3 - Peso inicial NO cambió, manteniendo fecha: " +
+                                            objAux.getFechaCreacion());
                                 }
                             }
+
                             listaDetalle.add(this.detalleTicketRepository.save(objAux));
                         }
                     }
@@ -194,9 +216,6 @@ public class TicketPesajeServiceImpl implements TicketPesajeService {
             ticketPesajeSave.setDetalleTicketList(listaDetalle);
 
         }
-
-
-
         return ticketPesajeRepository.save(ticketPesajeSave);
     }
 

@@ -4,7 +4,6 @@ import com.incloud.hcp.jco.balanza.Chofer.dto.ChoferGrabarServicioRFCParameterBu
 import com.sap.conn.jco.JCoFunction;
 import com.sap.conn.jco.JCoParameterList;
 import com.sap.conn.jco.JCoStructure;
-import com.sap.conn.jco.JCoTable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

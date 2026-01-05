@@ -2,11 +2,9 @@ package com.incloud.hcp.repository;
 
 import com.incloud.hcp.bean.ProveedorCustom;
 import com.incloud.hcp.domain.Proveedor;
-import com.incloud.hcp.dto.DatosBLZProveedorDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
@@ -70,6 +68,8 @@ public interface ProveedorRepository extends JpaRepository<Proveedor, Integer> {
     public List<Proveedor> findAllByOrderByRuc();
 
     Optional<Proveedor> findByRuc(String ruc);
+
+    Optional<Proveedor> findByAcreedorCodigoSap(String acreedor);
 
     @Query("SELECT p.idHcp FROM Proveedor p WHERE p.idHcp = ?1")
     List<Proveedor> getProveedorIdHcp(String idHcp);

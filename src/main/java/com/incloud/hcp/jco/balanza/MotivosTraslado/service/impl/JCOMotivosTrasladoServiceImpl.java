@@ -1,24 +1,17 @@
 package com.incloud.hcp.jco.balanza.MotivosTraslado.service.impl;
 
-import com.incloud.hcp.domain.balanza.Chofer;
-import com.incloud.hcp.jco.balanza.Chofer.dto.SapTableChoferDto;
-import com.incloud.hcp.jco.balanza.Chofer.service.impl.ChoferExtractorMapper;
 import com.incloud.hcp.jco.balanza.MotivosTraslado.dto.*;
 import com.incloud.hcp.jco.balanza.MotivosTraslado.service.JCOMotivosTrasladoService;
-import com.incloud.hcp.util.DateUtils;
 import com.sap.conn.jco.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.stream.Collectors;
 
 @Service
 @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)

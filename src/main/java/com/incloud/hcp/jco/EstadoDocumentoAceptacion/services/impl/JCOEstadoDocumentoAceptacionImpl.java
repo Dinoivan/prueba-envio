@@ -5,7 +5,6 @@ import com.incloud.hcp.jco.EstadoDocumentoAceptacion.dto.EstadoDocumentoAceptaci
 import com.incloud.hcp.jco.EstadoDocumentoAceptacion.dto.EstadoDocumentoAceptacionResponse;
 import com.incloud.hcp.jco.EstadoDocumentoAceptacion.dto.RangeSap;
 import com.incloud.hcp.jco.EstadoDocumentoAceptacion.services.JCOEstadoDocumentoAceptacionService;
-import com.incloud.hcp.sap.SapLog;
 import com.sap.conn.jco.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,7 +12,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-import org.w3c.dom.ranges.Range;
 
 import java.util.ArrayList;
 import java.util.List;

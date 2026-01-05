@@ -21,7 +21,6 @@ import com.incloud.hcp.service.delta.TasaCambioDeltaService;
 import com.incloud.hcp.service.impl.TasaCambioServiceImpl;
 import com.incloud.hcp.service.support.PageRequestByExample;
 import com.incloud.hcp.util.DateUtils;
-import com.incloud.hcp.util.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
@@ -30,7 +29,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;

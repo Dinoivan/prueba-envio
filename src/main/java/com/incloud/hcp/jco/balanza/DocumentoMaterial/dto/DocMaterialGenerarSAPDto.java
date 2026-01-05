@@ -1,7 +1,6 @@
 package com.incloud.hcp.jco.balanza.DocumentoMaterial.dto;
 
 import java.util.Date;
-import java.util.List;
 
 public class DocMaterialGenerarSAPDto {
 

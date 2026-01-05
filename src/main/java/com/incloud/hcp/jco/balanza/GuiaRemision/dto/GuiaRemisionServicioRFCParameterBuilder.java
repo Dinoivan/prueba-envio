@@ -1,13 +1,11 @@
 package com.incloud.hcp.jco.balanza.GuiaRemision.dto;
 
-import com.incloud.hcp.repository.TipoProductoRepository;
 import com.sap.conn.jco.JCoFunction;
 import com.sap.conn.jco.JCoStructure;
 import com.sap.conn.jco.JCoTable;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 

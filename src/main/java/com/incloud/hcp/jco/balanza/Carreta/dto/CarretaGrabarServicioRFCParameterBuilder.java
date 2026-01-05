@@ -2,7 +2,6 @@ package com.incloud.hcp.jco.balanza.Carreta.dto;
 
 import com.sap.conn.jco.JCoFunction;
 import com.sap.conn.jco.JCoStructure;
-import com.sap.conn.jco.JCoTable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

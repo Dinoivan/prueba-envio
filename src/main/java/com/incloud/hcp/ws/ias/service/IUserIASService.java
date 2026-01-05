@@ -12,4 +12,6 @@ public interface IUserIASService {
     IASResponse createUserProveedor(IASUserDto iasUserDto);
 
     IASResponse getUserByLoginName(String loginName);
+
+    IASResponse deleteUsuarioIas(String usuarioId);
 }

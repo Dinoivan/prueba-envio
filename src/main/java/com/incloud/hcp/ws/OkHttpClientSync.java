@@ -113,6 +113,16 @@ public class OkHttpClientSync {
         return request;
     }
 
+    public Request getRequestDeleteIASAuthBasic(String url, String usuario, String clave) {
+        return new Request.Builder()
+                .url(url)
+                .cacheControl(CacheControl.FORCE_NETWORK)
+                .addHeader("Content-Type", "application/scim+json")
+                .addHeader("Authorization", getAuthorizationHeader(usuario, clave))
+                .delete()
+                .build();
+    }
+
     public Request getRequestPostAuthToken(String url, RequestBody body, String token) {
         Request request = new Request.Builder()
                 .url(url)

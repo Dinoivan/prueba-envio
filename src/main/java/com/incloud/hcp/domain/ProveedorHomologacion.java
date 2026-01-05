@@ -1,9 +1,9 @@
 package com.incloud.hcp.domain;
 
 import com.incloud.hcp.domain._framework.BaseDomain;
-
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
+
 import java.io.Serializable;
 
 

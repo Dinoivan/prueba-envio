@@ -1,17 +1,9 @@
 package com.incloud.hcp.service.impl;
 
-import com.incloud.hcp.bean.CmisFile;
-import com.incloud.hcp.exception.PortalException;
 import com.incloud.hcp.service.CmisService;
 import com.incloud.hcp.util.constant.CmisRepositorioConstant;
-import org.apache.chemistry.opencmis.client.api.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Component;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.util.List;
 
 /**
  * Created by Administrador on 26/09/2017.

@@ -1,8 +1,6 @@
 package com.incloud.hcp.rest;
 
 
-import com.incloud.hcp.bean.UserSession;
-import com.incloud.hcp.domain.balanza.Carreta;
 import com.incloud.hcp.domain.balanza.Chofer;
 import com.incloud.hcp.exception.PortalException;
 import com.incloud.hcp.jco.balanza.Chofer.dto.ChoferResponseDTO;
@@ -10,14 +8,12 @@ import com.incloud.hcp.jco.balanza.Chofer.service.JCOChoferService;
 import com.incloud.hcp.rest._framework.AppRest;
 import com.incloud.hcp.service.ChoferService;
 import com.incloud.hcp.util.Utils;
-import com.sap.cloud.security.xsuaa.token.Token;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

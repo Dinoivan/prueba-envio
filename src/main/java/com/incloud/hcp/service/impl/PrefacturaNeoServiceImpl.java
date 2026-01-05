@@ -3,7 +3,6 @@ package com.incloud.hcp.service.impl;
 import com.incloud.hcp.domain.OrdenCompra;
 import com.incloud.hcp.domain.Prefactura;
 import com.incloud.hcp.dto.PrefacturaAprobacionDTO;
-import com.incloud.hcp.jco.comprobantePago.dto.ComprobantePagoDto;
 import com.incloud.hcp.jco.comprobantePago.service.JCOComprobantePagoService;
 import com.incloud.hcp.myibatis.mapper.PrefacturaNeoMapper;
 import com.incloud.hcp.service.LogTransaccionService;

@@ -1,6 +1,5 @@
 package com.incloud.hcp.bean;
 
-import com.incloud.hcp.domain.Prefactura;
 import com.incloud.hcp.dto.PrefacturaDto;
 
 /**

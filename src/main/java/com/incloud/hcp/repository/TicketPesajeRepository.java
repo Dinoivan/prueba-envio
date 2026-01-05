@@ -1,12 +1,10 @@
 package com.incloud.hcp.repository;
 
-import com.incloud.hcp.domain.balanza.GuiaRemision;
 import com.incloud.hcp.domain.balanza.TicketPesaje;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
-import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 

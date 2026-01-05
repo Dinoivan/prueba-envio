@@ -1,6 +1,5 @@
 package com.incloud.hcp.myibatis.mapper;
 
-import com.incloud.hcp.domain.Prefactura;
 import com.incloud.hcp.dto.PrefacturaAprobacionDTO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;

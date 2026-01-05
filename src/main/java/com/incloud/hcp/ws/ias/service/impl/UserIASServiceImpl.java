@@ -60,17 +60,22 @@ public class UserIASServiceImpl implements IUserIASService {
                 Map<String, Object> resultMap = new ObjectMapper().readValue(respuestaJson, HashMap.class);
 
                 if (String.valueOf(resultMap.get("totalResults")).equals("1")) {
+                    logger.error("ingresa_if_email");
                     responseWS.setStatus(String.valueOf(HttpStatus.OK.value()));
                     responseWS.setMessage("Email " + email + " found");
                     responseWS.setBody(respuestaJson);
                     responseWS.setResultMap(resultMap);
                     responseWS.setResult(this.convertInfoResponse(resultMap));
                 } else {
+                    logger.error("ingresa_else_email");
                     responseWS.setStatus(String.valueOf(HttpStatus.NO_CONTENT.value()));
                     responseWS.setMessage("Email " + email + " not found");
                     responseWS.setBody("");
                     responseWS.setResultMap(new HashMap<>());
-                    responseWS.setResult(new IASUserInfoResponse());
+                    IASUserInfoResponse emptyResponse = new IASUserInfoResponse();
+                    emptyResponse.setTotalResults(0);             // <--- inicializamos totalResults
+                    emptyResponse.setResources(Collections.emptyList());  // <--- inicializamos resources
+                    responseWS.setResult(emptyResponse);
                 }
                 //responseWS = g.fromJson(respuestaJson, ObtenerGuiaResponse.class);
             } else {
@@ -314,58 +319,149 @@ public class UserIASServiceImpl implements IUserIASService {
 
     @Override
     public IASResponse createUserProveedor(IASUserDto iasUserDto) {
+        OkHttpClientSync mOkHttpClientSync = new OkHttpClientSync("IAS");
+        IASResponse responseWS = new IASResponse();
+
+        try {
+            // Ajuste del payload para SCIM
+            iasUserDto.setActive(true); // obligatorio
+            if (iasUserDto.getEmails() != null) {
+                for (IASUserDto.IASValue email : iasUserDto.getEmails()) {
+                    email.setPrimary(true); // marcar email principal
+                }
+            }
+
+            Gson gson = new Gson();
+            RequestBody body = RequestBody.create(SCIM_JSON_MEDIA_TYPE, gson.toJson(iasUserDto));
+            logger.error("createUserProveedor -> {}, {}", iasUserDto.getDisplayName(), gson.toJson(iasUserDto));
+
+            Request request = mOkHttpClientSync.getRequestPostIASAuthBasic(
+                    String.format("%s/%s", url, WSConstant.PATH_API_IAS_USER),
+                    body,
+                    user,
+                    pass
+            );
+
+            Call call = mOkHttpClientSync.getmOkHttpClient().newCall(request);
+            Response response = call.execute();
+
+            IASUserInfoResponse result = new IASUserInfoResponse();
+            result.setResources(Collections.emptyList());
+            result.setGroups(Collections.emptyList());
+            result.setSchemas(Collections.emptyList());
+            result.setTotalResults(0);
+
+            if (response.isSuccessful()) {
+                String respuestaJson = response.body().string();
+                logger.error("Respuesta create user IAS -> {}", respuestaJson);
+
+                Map<String, Object> resultMap = new ObjectMapper().readValue(respuestaJson, HashMap.class);
+                responseWS.setBody(respuestaJson);
+                responseWS.setResultMap(resultMap);
+                responseWS.setId(String.valueOf(resultMap.get("id")));
+
+                if (resultMap.get("id") != null && !resultMap.get("id").toString().isEmpty()) {
+                    responseWS.setStatus(String.valueOf(HttpStatus.OK.value()));
+                    responseWS.setMessage("Usuario creado correctamente");
+
+                    IASUserInfoResponse.Resource resource = new IASUserInfoResponse.Resource();
+                    resource.setId(String.valueOf(resultMap.get("id")));
+                    resource.setUserUuid(String.valueOf(resultMap.get("id")));
+                    resource.setUserName((String) resultMap.getOrDefault("userName", iasUserDto.getUserName()));
+                    resource.setDisplayName((String) resultMap.getOrDefault("displayName", iasUserDto.getDisplayName()));
+
+                    result.setResources(Collections.singletonList(resource));
+                    result.setTotalResults(1);
+                } else {
+                    responseWS.setStatus(String.valueOf(HttpStatus.NO_CONTENT.value()));
+                    responseWS.setMessage("Usuario no creado");
+                }
+            } else {
+                // manejar errores 400, 409, 500 de IAS
+                String errorBody = response.body() != null ? response.body().string() : "";
+                logger.error("Error al crear usuario IAS: HTTP {} -> {}", response.code(), errorBody);
+
+                responseWS.setStatus(String.valueOf(response.code()));
+                responseWS.setMessage(response.message());
+                responseWS.setBody(errorBody);
+            }
+
+            responseWS.setResult(result); // siempre setear result para evitar NPE
+            return responseWS;
+
+        } catch (Exception ex) {
+            logger.error(ex.getMessage(), ex);
+
+            IASUserInfoResponse emptyResult = new IASUserInfoResponse();
+            emptyResult.setResources(Collections.emptyList());
+            emptyResult.setGroups(Collections.emptyList());
+            emptyResult.setSchemas(Collections.emptyList());
+            emptyResult.setTotalResults(0);
+
+            responseWS.setStatus(String.valueOf(HttpStatus.INTERNAL_SERVER_ERROR.value()));
+            responseWS.setMessage("Error al crear Usuario IAS: " + ex.getMessage());
+            responseWS.setMessageException(ex.getMessage());
+            responseWS.setMessageCause(ex.toString());
+            responseWS.setCause(ex.getCause());
+            responseWS.setBody("");
+            responseWS.setResultMap(new HashMap<>());
+            responseWS.setId("");
+            responseWS.setResult(emptyResult);
+
+            return responseWS;
+        }
+
+    }
+
+
+
+    @Override
+    public IASResponse deleteUsuarioIas(String usuarioId) {
         String respuestaJson = "";
         OkHttpClientSync mOkHttpClientSync = new OkHttpClientSync("IAS");
 
         try {
             IASResponse responseWS = new IASResponse();
 
-            Gson gson = new Gson();
-            RequestBody body = RequestBody.create(SCIM_JSON_MEDIA_TYPE, gson.toJson(iasUserDto));
-            logger.info("createUserProveedor -> {}, {}", iasUserDto.getDisplayName() ,gson.toJson(iasUserDto));
-            Request request = mOkHttpClientSync.getRequestPostIASAuthBasic(String.format("%s/%s", url, WSConstant.PATH_API_IAS_USER), body, user, pass);
+            // Construimos la URL para eliminar el usuario
+            String urlDelete = String.format("%s/%s/%s", url, "service/scim/Users", usuarioId);
+            logger.info("deleteUsuarioIas -> {}", urlDelete);
+
+            // Preparamos la request DELETE con autenticación básica
+            Request request = mOkHttpClientSync.getRequestDeleteIASAuthBasic(urlDelete, user, pass);
 
             Call call = mOkHttpClientSync.getmOkHttpClient().newCall(request);
             Response response = call.execute();
 
             if (response.isSuccessful()) {
-                // Respuesta OK: 200
-                respuestaJson = response.body().string();
-                logger.info("Respuesta create user IAS -> {}", respuestaJson);
-                Map<String, Object> resultMap = new ObjectMapper().readValue(respuestaJson, HashMap.class);
+                // Usuario eliminado correctamente
+                respuestaJson = response.body() != null ? response.body().string() : "";
+                logger.info("Respuesta deleteUsuarioIas -> {}", respuestaJson);
 
-                if (!String.valueOf(resultMap.get("id")).equals("")) {
-                    responseWS.setStatus(String.valueOf(HttpStatus.OK.value()));
-                    responseWS.setMessage("Usuario creado correctamente");
-                    responseWS.setBody(respuestaJson);
-                    responseWS.setResultMap(resultMap);
-                    responseWS.setId(String.valueOf(resultMap.get("id")));
-                } else {
-                    responseWS.setStatus(String.valueOf(HttpStatus.NO_CONTENT.value()));
-                    responseWS.setMessage("Usuario no creado");
-                    responseWS.setBody("");
-                    responseWS.setResultMap(new HashMap<>());
-                    responseWS.setId("");
-                }
-                //responseWS = g.fromJson(respuestaJson, ObtenerGuiaResponse.class);
+                responseWS.setStatus(String.valueOf(HttpStatus.OK.value()));
+                responseWS.setMessage("Usuario eliminado correctamente");
+                responseWS.setBody(respuestaJson);
+                responseWS.setResultMap(new HashMap<>());
+                responseWS.setId(usuarioId);
+
             } else {
-                // Respuesta ERROR: 500, 404, 403, entre otros.
-                //respuestaJson = String.format("%s : %s", String.valueOf(response.code()), response.message());
-                //responseWS = g.fromJson(respuestaJson, ObtenerCompraResponse.class);
+                // Error al eliminar usuario
                 responseWS.setStatus(String.valueOf(response.code()));
                 responseWS.setMessage(response.message());
                 responseWS.setBody("");
                 responseWS.setResultMap(new HashMap<>());
                 responseWS.setId("");
             }
+
             return responseWS;
+
         } catch (Exception ex) {
             logger.error(ex.getMessage(), ex.getCause());
-            // Instanciamos el response del ws e ingresamos los datos de exception
+
             IASResponse responseWS = new IASResponse();
             StringWriter errors = new StringWriter();
             ex.printStackTrace(new PrintWriter(errors));
-            responseWS.setMessageException("Error al crear Usuario IAS: " + ex.getMessage());
+            responseWS.setMessageException("Error al eliminar Usuario IAS: " + ex.getMessage());
             responseWS.setMessageCause(ex.toString());
             responseWS.setCause(ex.getCause());
 
@@ -374,8 +470,10 @@ public class UserIASServiceImpl implements IUserIASService {
             responseWS.setBody("");
             responseWS.setResultMap(new HashMap<>());
             responseWS.setId("");
+
             return responseWS;
         }
     }
+
 
 }

@@ -1,5 +1,6 @@
 package com.incloud.hcp.service;
-import  com.incloud.hcp.domain.DocumentoAceptacion;
+
+import com.incloud.hcp.domain.DocumentoAceptacion;
 import com.incloud.hcp.dto.DocumentoAceptacionDto;
 import com.incloud.hcp.pdf.bean.ParameterConformidadServicioPdfDTO;
 import com.incloud.hcp.pdf.bean.ParameterEntradaMercaderiaPdfDTO;
@@ -17,6 +18,7 @@ public interface DocumentoAceptacionService {
     List<DocumentoAceptacion> getDocumentoAceptacionPorFechasAndRuc(Date fechaInicio, Date fechaFin, String ruc);
 
     void extraerDocumentoAceptacionMasivoByRangoFechas(LocalDate fechaInicio, LocalDate fechaFin, boolean aprobarOrdenCompra, boolean enviarCorreoAprobacion);
+    void extraerGuiasAnuladasDespacho(LocalDate fechaInicio, LocalDate fechaFin, boolean aprobarOrdenCompra, boolean enviarCorreoAprobacion);
 
     String extraerDocumentoAceptacionByNumOrdenCompraAndNumDocAceptacion(String numeroOrdenCompra, String numeroDocumentoAceptacion, boolean aprobarOrdenCompra, boolean enviarCorreoAprobacion);
 

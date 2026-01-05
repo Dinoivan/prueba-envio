@@ -9,6 +9,12 @@ public class ProveedorCatalogoDto {
     private String rutaCatalogo;
     private String archivoNombre;
     private String archivoTipo;
+    private String archivoNombreFinal;
+    private String archivoExtension;
+    private Long archivoSize;
+    private String archivoCarpetaId;
+    private String archivoNombreFolder;
+    private String archivoParentPath;
 
     public Integer getId() {
         return id;
@@ -50,6 +56,54 @@ public class ProveedorCatalogoDto {
         this.archivoTipo = archivoTipo;
     }
 
+    public String getArchivoNombreFinal() {
+        return archivoNombreFinal;
+    }
+
+    public void setArchivoNombreFinal(String archivoNombreFinal) {
+        this.archivoNombreFinal = archivoNombreFinal;
+    }
+
+    public String getArchivoExtension() {
+        return archivoExtension;
+    }
+
+    public void setArchivoExtension(String archivoExtension) {
+        this.archivoExtension = archivoExtension;
+    }
+
+    public Long getArchivoSize() {
+        return archivoSize;
+    }
+
+    public void setArchivoSize(Long archivoSize) {
+        this.archivoSize = archivoSize;
+    }
+
+    public String getArchivoCarpetaId() {
+        return archivoCarpetaId;
+    }
+
+    public void setArchivoCarpetaId(String archivoCarpetaId) {
+        this.archivoCarpetaId = archivoCarpetaId;
+    }
+
+    public String getArchivoNombreFolder() {
+        return archivoNombreFolder;
+    }
+
+    public void setArchivoNombreFolder(String archivoNombreFolder) {
+        this.archivoNombreFolder = archivoNombreFolder;
+    }
+
+    public String getArchivoParentPath() {
+        return archivoParentPath;
+    }
+
+    public void setArchivoParentPath(String archivoParentPath) {
+        this.archivoParentPath = archivoParentPath;
+    }
+
     @Override
     public String toString() {
         return "ProveedorCatalogoDto{" +
@@ -58,6 +112,12 @@ public class ProveedorCatalogoDto {
                 ", url='" + rutaCatalogo + '\'' +
                 ", nombre='" + archivoNombre + '\'' +
                 ", tipo='" + archivoTipo + '\'' +
+                ", archivoNombreFinal='" + archivoNombreFinal + '\'' +
+                ", archivoExtension='" + archivoExtension + '\'' +
+                ", archivoSize='" + archivoSize + '\'' +
+                ", archivoCarpetaId='" + archivoCarpetaId + '\'' +
+                ", archivoNombreFolder='" + archivoNombreFolder + '\'' +
+                ", archivoParentPath='" + archivoParentPath + '\'' +
                 '}';
     }
 }

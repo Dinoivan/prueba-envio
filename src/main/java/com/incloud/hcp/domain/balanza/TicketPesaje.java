@@ -2,12 +2,11 @@ package com.incloud.hcp.domain.balanza;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+
 import java.io.Serializable;
 import java.sql.Timestamp;
-
 import java.util.List;
 
 @Entity

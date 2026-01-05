@@ -1,7 +1,5 @@
 package com.incloud.hcp.dto;
 
-import java.util.Date;
-
 public class FiltroTicketPesajeDTO {
 
 

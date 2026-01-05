@@ -5,9 +5,11 @@ import com.incloud.hcp.domain.EstadoDocumentoAceptacion;
 import com.incloud.hcp.domain.OrdenCompra;
 import com.incloud.hcp.dto.DocumentoAceptacionDto;
 import com.incloud.hcp.jco.documentoAceptacion.service.JCODocumentoAceptacionService;
+import com.incloud.hcp.myibatis.mapper.DocumentoAceptacionNeoMapper;
 import com.incloud.hcp.pdf.PdfGeneratorFactory;
 import com.incloud.hcp.pdf.bean.ParameterConformidadServicioPdfDTO;
 import com.incloud.hcp.pdf.bean.ParameterEntradaMercaderiaPdfDTO;
+import com.incloud.hcp.repository.DocumentoAceptacionRepository;
 import com.incloud.hcp.repository.EstadoDocumentoAceptacionRepository;
 import com.incloud.hcp.repository.OrdenCompraRepository;
 import com.incloud.hcp.service.DocumentoAceptacionService;
@@ -17,8 +19,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.incloud.hcp.repository.DocumentoAceptacionRepository;
-import com.incloud.hcp.myibatis.mapper.DocumentoAceptacionNeoMapper;
 
 import java.time.LocalDate;
 import java.util.*;
@@ -83,6 +83,25 @@ public class DocumentoAceptacionServiceImpl implements DocumentoAceptacionServic
             try {
                 String currentDateAsSapString = DateUtils.localDateToSapString(fechaInicio);
                 jcoDocumentoAceptacionService.extraerDocumentoAceptacionListRFC(currentDateAsSapString, currentDateAsSapString, false, aprobarOrdenCompra, enviarCorreoAprobacion);
+                fechaInicio = fechaInicio.plusDays(1);
+            }
+            catch(Exception e){
+                String error = Utils.obtieneMensajeErrorException(e);
+                logger.error("ERROR al extraer Documentos de Aceptacion de la fecha " + DateUtils.localDateToString(fechaInicio) + " : " + error);
+                fechaInicio = fechaInicio.plusDays(1);
+            }
+        }
+    }
+
+    @Override
+    public void extraerGuiasAnuladasDespacho(LocalDate fechaInicio, LocalDate fechaFin, boolean aprobarOrdenCompra, boolean enviarCorreoAprobacion){
+        logger.error("EXTRACCION DOC_ACEP MASIVA - INICIO: " + fechaInicio.toString());
+        logger.error("EXTRACCION DOC_ACEP MASIVA - FIN: " + fechaFin.toString());
+
+        while (fechaInicio.isBefore(fechaFin.plusDays(1))){
+            try {
+                String currentDateAsSapString = DateUtils.localDateToSapString(fechaInicio);
+                jcoDocumentoAceptacionService.extraerDespachosAnuladosListRFC(currentDateAsSapString, currentDateAsSapString, false, aprobarOrdenCompra, enviarCorreoAprobacion);
                 fechaInicio = fechaInicio.plusDays(1);
             }
             catch(Exception e){

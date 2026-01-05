@@ -1,6 +1,7 @@
 package com.incloud.hcp.domain.balanza;
 
 import jakarta.persistence.*;
+
 import java.sql.Timestamp;
 
 @Entity

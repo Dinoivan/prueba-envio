@@ -1,6 +1,7 @@
 package com.incloud.hcp.domain.balanza;
 
 import jakarta.persistence.*;
+
 import java.io.Serializable;
 import java.sql.Timestamp;
 
@@ -124,7 +125,7 @@ public class TipoProducto implements Serializable {
         this.tipoMovimiento = tipoMovimiento;
     }
 
-    public TipoProducto(Integer id, String codigo, String descripcion, Timestamp fechaCreacion, Timestamp fechaModificacion, Boolean estado, Boolean isDeleted, String correlativo, String tipoMovimiento, String unidadMedida) {
+    public TipoProducto(Integer id, String codigo, String descripcion, Timestamp fechaCreacion, Timestamp fechaModificacion, Boolean estado, Boolean isDeleted, String correlativo, String tipoMovimiento,String unidadMedida) {
         this.id = id;
         this.codigo = codigo;
         this.descripcion = descripcion;
@@ -134,6 +135,7 @@ public class TipoProducto implements Serializable {
         this.isDeleted = isDeleted;
         this.correlativo = correlativo;
         this.tipoMovimiento = tipoMovimiento;
+        this.unidadMedida = unidadMedida;
     }
 
     @Override

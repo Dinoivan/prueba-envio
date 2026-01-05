@@ -1,6 +1,5 @@
 package com.incloud.hcp.jco.materiales.service.impl;
 
-import com.google.gson.Gson;
 import com.incloud.hcp.jco.materiales.dto.MaterialesRFCResponseDto;
 import com.incloud.hcp.jco.materiales.service.JCOMaterialesService;
 import com.incloud.hcp.jco.materiales.service.JCOMaterialesServiceNew;

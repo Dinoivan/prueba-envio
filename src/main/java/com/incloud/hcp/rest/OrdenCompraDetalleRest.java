@@ -1,7 +1,6 @@
 package com.incloud.hcp.rest;
 
 import com.incloud.hcp.bean.UserSession;
-import com.incloud.hcp.domain.OrdenCompra;
 import com.incloud.hcp.domain.OrdenCompraDetalle;
 import com.incloud.hcp.rest._framework.AppRest;
 import com.incloud.hcp.service.OrdenCompraDetalleService;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/api/OrdenCompraDetalle")

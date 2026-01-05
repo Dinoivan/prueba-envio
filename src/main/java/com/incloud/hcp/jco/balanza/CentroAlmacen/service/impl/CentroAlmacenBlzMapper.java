@@ -1,7 +1,6 @@
 package com.incloud.hcp.jco.balanza.CentroAlmacen.service.impl;
 
 import com.incloud.hcp.jco.balanza.CentroAlmacen.dto.SapTableCentroAlmacenBlz;
-import com.incloud.hcp.jco.balanza.Chofer.dto.SapTableChoferDto;
 import com.sap.conn.jco.JCoParameterList;
 import com.sap.conn.jco.JCoTable;
 import org.slf4j.Logger;

@@ -4,6 +4,8 @@ import com.incloud.hcp.domain.OrdenCompra;
 import com.incloud.hcp.domain.Prefactura;
 import com.incloud.hcp.domain.Usuario;
 import com.incloud.hcp.enums.PrefacturaEstadoEnum;
+import com.incloud.hcp.repository.OrdenCompraRepository;
+import com.incloud.hcp.repository.UsuarioRepository;
 import com.incloud.hcp.util.StrUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.text.StringEscapeUtils;
@@ -12,8 +14,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-import com.incloud.hcp.repository.OrdenCompraRepository;
-import com.incloud.hcp.repository.UsuarioRepository;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

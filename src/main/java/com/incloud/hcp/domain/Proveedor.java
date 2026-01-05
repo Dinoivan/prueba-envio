@@ -1,18 +1,13 @@
 package com.incloud.hcp.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.incloud.hcp.domain._framework.BaseDomain;
-import com.incloud.hcp.domain.balanza.DetalleTicket;
-import com.incloud.hcp.domain.balanza.DireccionAlternativa;
 import com.incloud.hcp.validation.FixedLength;
-
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
 
 
 /**

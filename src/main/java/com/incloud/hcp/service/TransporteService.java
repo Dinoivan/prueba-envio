@@ -1,6 +1,5 @@
 package com.incloud.hcp.service;
 
-import com.incloud.hcp.domain.balanza.Chofer;
 import com.incloud.hcp.domain.balanza.Transporte;
 import com.incloud.hcp.jco.balanza.Transporte.dto.TransporteResponseDTO;
 import org.springframework.http.ResponseEntity;

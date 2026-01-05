@@ -5,6 +5,7 @@ import com.incloud.hcp.domain.CriteriosBlacklist;
 import com.incloud.hcp.rest._framework.AppRest;
 import com.incloud.hcp.service.CriterioBlackListService;
 import com.sap.cloud.security.xsuaa.token.Token;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -12,7 +13,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
-import jakarta.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;

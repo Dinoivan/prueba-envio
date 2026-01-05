@@ -3,9 +3,9 @@ package com.incloud.hcp.domain.balanza;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.incloud.hcp.domain.balanza.convertir.BooleanConverters;
-
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+
 import java.io.Serializable;
 import java.sql.Timestamp;
 

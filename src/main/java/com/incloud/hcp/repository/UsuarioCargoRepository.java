@@ -1,6 +1,7 @@
 package com.incloud.hcp.repository;
 
-import com.incloud.hcp.domain.*;
+import com.incloud.hcp.domain.Usuario;
+import com.incloud.hcp.domain.UsuarioCargo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

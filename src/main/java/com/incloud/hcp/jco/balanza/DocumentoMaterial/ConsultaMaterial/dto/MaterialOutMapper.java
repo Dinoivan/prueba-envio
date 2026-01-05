@@ -5,9 +5,6 @@ import com.sap.conn.jco.JCoTable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class MaterialOutMapper {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
     private final String TABLE = "PO_MATERIAL";

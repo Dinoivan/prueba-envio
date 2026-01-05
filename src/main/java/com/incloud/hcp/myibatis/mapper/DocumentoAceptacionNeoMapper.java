@@ -1,6 +1,5 @@
 package com.incloud.hcp.myibatis.mapper;
 
-import com.incloud.hcp.domain.DocumentoAceptacion;
 import com.incloud.hcp.dto.DocumentoAceptacionDto;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;

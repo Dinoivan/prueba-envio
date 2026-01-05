@@ -12,6 +12,7 @@ package com.incloud.hcp.domain;
 
 import jakarta.persistence.metamodel.SingularAttribute;
 import jakarta.persistence.metamodel.StaticMetamodel;
+
 import java.math.BigDecimal;
 import java.util.Date;
 

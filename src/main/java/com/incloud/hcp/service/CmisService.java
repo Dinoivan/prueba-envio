@@ -1,11 +1,5 @@
 package com.incloud.hcp.service;
 
-import com.incloud.hcp.bean.CmisFile;
-import org.apache.chemistry.opencmis.client.api.Session;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.util.List;
-
 /**
  * Created by Administrador on 26/09/2017.
  */

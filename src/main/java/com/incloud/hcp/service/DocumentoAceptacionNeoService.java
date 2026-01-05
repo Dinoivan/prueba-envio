@@ -1,6 +1,5 @@
 package com.incloud.hcp.service;
 
-import com.incloud.hcp.domain.DocumentoAceptacion;
 import com.incloud.hcp.dto.DocumentoAceptacionDto;
 
 import java.util.Date;

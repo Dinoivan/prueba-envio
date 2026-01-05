@@ -2,6 +2,7 @@ package com.incloud.hcp.rest;
 
 import com.incloud.hcp.domain.OrdenCompra;
 import com.incloud.hcp.domain.Proveedor;
+import com.incloud.hcp.domain.almacen.OrdenDespacho;
 import com.incloud.hcp.dto.InfoMessage;
 import com.incloud.hcp.dto.OrdenCompraSapDataDto;
 import com.incloud.hcp.dto.PrefacturaAnuladaRespuestaDto;
@@ -11,11 +12,13 @@ import com.incloud.hcp.jco.documentoAceptacion.dto.SapTableItemDto;
 import com.incloud.hcp.jco.documentoAceptacion.service.JCODocumentoAceptacionService;
 import com.incloud.hcp.jco.ordenCompra.service.JCOOrdenCompraPublicacionService;
 import com.incloud.hcp.jco.ordenCompra.service.JCOOrdenCompraPublicarOneService;
+import com.incloud.hcp.jco.ordenCompra.service.impl.JCOOrdenDespachoPublicarOneServiceImpl;
 import com.incloud.hcp.jco.peticionOferta.dto.PeticionOfertaRFCResponseDto;
 import com.incloud.hcp.jco.peticionOferta.service.JCOPeticionOfertaService;
 import com.incloud.hcp.jco.proveedor.dto.ProveedorRFCResponseDto;
 import com.incloud.hcp.jco.proveedor.service.JCOProveedorService;
 import com.incloud.hcp.repository.OrdenCompraRepository;
+import com.incloud.hcp.repository.OrdenDespachoRepository;
 import com.incloud.hcp.repository.ProveedorRepository;
 import com.incloud.hcp.service.PrefacturaService;
 import com.incloud.hcp.util.StrUtils;
@@ -56,6 +59,8 @@ public class TestServiceRest {
     private ProveedorRepository proveedorRepository;
     private JCOPeticionOfertaService jcoPeticionOfertaService;
     private OrdenCompraRepository ordenCompraRepository;
+    private OrdenDespachoRepository ordenDespachoRepository;
+    private JCOOrdenDespachoPublicarOneServiceImpl jcoOrdenDespachoPublicarOneService;
 
     @Autowired
     public TestServiceRest(JCOOrdenCompraPublicacionService jcoOrdenCompraPublicacionService,
@@ -65,7 +70,9 @@ public class TestServiceRest {
                            JCOProveedorService jcoProveedorService,
                            ProveedorRepository proveedorRepository,
                            JCOPeticionOfertaService jcoPeticionOfertaService,
-                           OrdenCompraRepository ordenCompraRepository) {
+                           OrdenCompraRepository ordenCompraRepository,
+                           OrdenDespachoRepository ordenDespachoRepository,
+                           JCOOrdenDespachoPublicarOneServiceImpl jcoOrdenDespachoPublicarOneService) {
         this.jcoOrdenCompraPublicacionService = jcoOrdenCompraPublicacionService;
         this.jcoOrdenCompraPublicarOneService = jcoOrdenCompraPublicarOneService;
         this.jcoDocumentoAceptacionService = jcoDocumentoAceptacionService;
@@ -74,6 +81,8 @@ public class TestServiceRest {
         this.proveedorRepository = proveedorRepository;
         this.jcoPeticionOfertaService = jcoPeticionOfertaService;
         this.ordenCompraRepository = ordenCompraRepository;
+        this.ordenDespachoRepository = ordenDespachoRepository;
+        this.jcoOrdenDespachoPublicarOneService = jcoOrdenDespachoPublicarOneService;
     }
 
     @PostMapping(value = "extraerOrdenCompraListManual/{fechaInicio}/{fechaFin}/{enviarCorreoPublicacionOpcion}")
@@ -138,7 +147,6 @@ public class TestServiceRest {
 
         try {
             logger.error("sinc manual ");
-
             Optional<OrdenCompra> optOrdenCompra = this.ordenCompraRepository.getOrdenCompraActivaByNumero(numeroOrdenCompra);
             InfoMessage infoMessage = new InfoMessage();
             if(optOrdenCompra.isPresent()) {
@@ -147,6 +155,41 @@ public class TestServiceRest {
                 infoMessage.setMessageText2("El pedido " + numeroOrdenCompra +" ya se encontraba publicado con el estado " + optOrdenCompra.get().getEstadoOrdenCompra().getDescripcion());
             }else {
                 infoMessage = jcoOrdenCompraPublicarOneService.extraerOneOrdenCompraRFC(numeroOrdenCompra, enviarCorreoPublicacion);
+            }
+
+            return new ResponseEntity<>(infoMessage,HttpStatus.OK);
+        } catch (Exception e) {
+            String error = StrUtils.obtieneMensajeErrorExceptionCustom(e);
+            throw new RuntimeException(error);
+        }
+    }
+
+    @GetMapping(value = "publicarPedidoManualAlmacen/{numeroOrdenCompra}/{enviarCorreoPublicacionOpcion}",  produces = APPLICATION_JSON_VALUE)
+    public ResponseEntity<InfoMessage> publicarPedidoManualAlmacen(@PathVariable(value = "numeroOrdenCompra") String numeroOrdenCompra,
+                                                            @PathVariable(value = "enviarCorreoPublicacionOpcion") Integer enviarCorreoPublicacionOpcion){
+        /*String opcion = enviarCorreoPublicacionOpcion.toString().trim().toUpperCase();
+        boolean enviarCorreoPublicacion = OpcionGenericaEnum.NO.getValor();
+
+        if (!opcion.equals(OpcionGenericaEnum.SI.toString()) && !opcion.equals(OpcionGenericaEnum.NO.toString()))
+            throw new InvalidOptionException(String.format(OPCION_INVALIDA, opcion, OpcionGenericaEnum.SI.toString(), OpcionGenericaEnum.NO.toString()));
+
+        if(opcion.equals(OpcionGenericaEnum.SI.toString()))
+            enviarCorreoPublicacion = OpcionGenericaEnum.SI.getValor();*/
+        boolean enviarCorreoPublicacion = false;
+        if(enviarCorreoPublicacionOpcion == 1) {
+            enviarCorreoPublicacion = true;
+        }
+
+        try {
+            logger.error("sinc manual ");
+            Optional<OrdenDespacho> optOrdenCompra = this.ordenDespachoRepository.getOrdenDespachoActivaByNumero(numeroOrdenCompra);
+            InfoMessage infoMessage = new InfoMessage();
+            if(optOrdenCompra.isPresent()) {
+                infoMessage.setMessageCode("ERROR");
+                infoMessage.setMessageText1("El pedido " + numeroOrdenCompra +" ya se encontraba publicado con el estado " + optOrdenCompra.get().getEstadoOrdenCompra().getDescripcion());
+                infoMessage.setMessageText2("El pedido " + numeroOrdenCompra +" ya se encontraba publicado con el estado " + optOrdenCompra.get().getEstadoOrdenCompra().getDescripcion());
+            }else {
+                infoMessage = jcoOrdenDespachoPublicarOneService.extraerOneOrdenDespachoRFC(numeroOrdenCompra, enviarCorreoPublicacion);
             }
 
             return new ResponseEntity<>(infoMessage,HttpStatus.OK);

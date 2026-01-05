@@ -1,12 +1,9 @@
 package com.incloud.hcp.jco.balanza.GuiaRemision.service.impl;
 
-import com.incloud.hcp.domain.balanza.Chofer;
-import com.incloud.hcp.jco.balanza.GuiaRemision.dto.GuiaRemisionPosResponseDTO;
 import com.incloud.hcp.jco.balanza.GuiaRemision.dto.GuiaRemisionResponseDTO;
 import com.incloud.hcp.jco.balanza.GuiaRemision.dto.GuiaRemisionServicioRFCParameterBuilder;
 import com.incloud.hcp.jco.balanza.GuiaRemision.service.JCOGuiaRemisionService;
 import com.incloud.hcp.sap.SapLog;
-import com.incloud.hcp.util.DateUtils;
 import com.sap.conn.jco.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +11,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Service

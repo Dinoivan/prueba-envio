@@ -1,20 +1,23 @@
 package com.incloud.hcp.rest;
 
 import com.incloud.hcp.domain.*;
-import com.incloud.hcp.domain.balanza.TicketPesaje;
-import com.incloud.hcp.dto.*;
+import com.incloud.hcp.dto.DocumentoAceptacionDto;
+import com.incloud.hcp.dto.DocumentoAceptacionOutDTO;
+import com.incloud.hcp.dto.EstadoDocumentoAceptacionDto;
+import com.incloud.hcp.dto.FiltroDocumentoDto;
 import com.incloud.hcp.enums.OpcionGenericaEnum;
 import com.incloud.hcp.exception.InvalidOptionException;
 import com.incloud.hcp.pdf.bean.FieldConformidadServicioPdfDTO;
 import com.incloud.hcp.pdf.bean.FieldEntradaMercaderiaPdfDTO;
 import com.incloud.hcp.pdf.bean.ParameterConformidadServicioPdfDTO;
 import com.incloud.hcp.pdf.bean.ParameterEntradaMercaderiaPdfDTO;
-import com.incloud.hcp.pdf.service.PdfGeneratorService;
 import com.incloud.hcp.repository.DocumentoAceptacionDetalleRepository;
 import com.incloud.hcp.repository.EstadoDocumentoAceptacionRepository;
 import com.incloud.hcp.service.*;
 import com.incloud.hcp.util.DateUtils;
 import com.incloud.hcp.util.Utils;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +26,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -171,6 +172,43 @@ public class DocumentoAceptacionRest {
             LocalDate localDateFechaFin = DateUtils.utilDateToLocalDate(fechaFin);
 
             documentoAceptacionService.extraerDocumentoAceptacionMasivoByRangoFechas(localDateFechaInicio, localDateFechaFin, aprobarOrdenCompra, enviarCorreoAprobacion);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (Exception e) {
+            String error = Utils.obtieneMensajeErrorException(e);
+            throw new RuntimeException(error);
+        }
+    }
+
+    @PostMapping(value = "extraerGuiasAnuladasDespacho/{fechaInicio}/{fechaFin}/{aprobarOrdenCompraOpcion}/{enviarCorreoAprobacionOpcion}")
+    public ResponseEntity<Void> extraerGuiasAnuladasDespacho(@PathVariable(value = "fechaInicio") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date fechaInicio,
+                                                                 @PathVariable(value = "fechaFin") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date fechaFin,
+                                                                 @PathVariable(value = "aprobarOrdenCompraOpcion") OpcionGenericaEnum aprobarOrdenCompraOpcion,
+                                                                 @PathVariable(value = "enviarCorreoAprobacionOpcion") OpcionGenericaEnum enviarCorreoAprobacionOpcion) {
+        String opcionAprobarOC = aprobarOrdenCompraOpcion.toString().trim().toUpperCase();
+        boolean aprobarOrdenCompra = OpcionGenericaEnum.NO.getValor();
+
+        if (!opcionAprobarOC.equals(OpcionGenericaEnum.SI.toString()) && !opcionAprobarOC.equals(OpcionGenericaEnum.NO.toString())) {
+            throw new InvalidOptionException(String.format(OPCION_INVALIDA, opcionAprobarOC, OpcionGenericaEnum.SI.toString(), OpcionGenericaEnum.NO.toString()));
+        }else {
+            if (opcionAprobarOC.equals(OpcionGenericaEnum.SI.toString()))
+                aprobarOrdenCompra = OpcionGenericaEnum.SI.getValor();
+        }
+
+        String opcionEnviarCorreo = enviarCorreoAprobacionOpcion.toString().trim().toUpperCase();
+        boolean enviarCorreoAprobacion = OpcionGenericaEnum.NO.getValor();
+
+        if (!opcionEnviarCorreo.equals(OpcionGenericaEnum.SI.toString()) && !opcionEnviarCorreo.equals(OpcionGenericaEnum.NO.toString())) {
+            throw new InvalidOptionException(String.format(OPCION_INVALIDA, opcionEnviarCorreo, OpcionGenericaEnum.SI.toString(), OpcionGenericaEnum.NO.toString()));
+        }else {
+            if (opcionEnviarCorreo.equals(OpcionGenericaEnum.SI.toString()))
+                enviarCorreoAprobacion = OpcionGenericaEnum.SI.getValor();
+        }
+
+        try {
+            LocalDate localDateFechaInicio = DateUtils.utilDateToLocalDate(fechaInicio);
+            LocalDate localDateFechaFin = DateUtils.utilDateToLocalDate(fechaFin);
+
+            documentoAceptacionService.extraerGuiasAnuladasDespacho(localDateFechaInicio, localDateFechaFin, aprobarOrdenCompra, enviarCorreoAprobacion);
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (Exception e) {
             String error = Utils.obtieneMensajeErrorException(e);

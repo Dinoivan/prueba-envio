@@ -4,9 +4,7 @@ import com.incloud.hcp.domain.balanza.Carreta;
 import com.incloud.hcp.jco.balanza.Carreta.dto.CarretaResponseDTO;
 import com.incloud.hcp.jco.balanza.Carreta.service.JCOCarretaService;
 import com.incloud.hcp.repository.CarretaRepository;
-
 import com.incloud.hcp.service.CarretaService;
-
 import com.incloud.hcp.util.DateUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

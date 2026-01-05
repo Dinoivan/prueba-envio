@@ -1,6 +1,6 @@
 package com.incloud.hcp.service.impl;
 
-import com.incloud.hcp.bean.UserSession;
+import com.incloud.hcp.config.SystemLoggedUser;
 import com.incloud.hcp.domain.LogTransaccion;
 import com.incloud.hcp.domain.Usuario;
 import com.incloud.hcp.repository.LogTransaccionRepository;
@@ -12,10 +12,7 @@ import com.sap.cloud.security.xsuaa.token.Token;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Service;
-
-import com.incloud.hcp.config.SystemLoggedUser;
 
 @Service
 public class LogTransaccionServiceImpl implements LogTransaccionService {

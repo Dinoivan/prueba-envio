@@ -262,7 +262,7 @@ public class ProveedorServiceImpl implements ProveedorService {
     @Override
     @Transactional(readOnly = true)
     public ProveedorDto getProveedorDtoById(Integer idProveedor) throws PortalException {
-        logger.error("Ingresando getProveedorDtoById 00");
+        logger.error("Ingresando getProveedorDtoById 00" + idProveedor);
         return Optional.ofNullable(this)
                 .map(r -> r.getOne(idProveedor))
                 .map(this::toDto)
@@ -527,6 +527,7 @@ public class ProveedorServiceImpl implements ProveedorService {
         logger.error("Finalizando GRABAR Sector trabajo");
         /////guardar AdjuntoSunat
 
+        logger.error("proveedor_adjuntos " + proveedor);
         List<ProveedorAdjuntoSunat> listAdjuntosSunat = this.guardarAdjuntoSunat(proveedor, dto.getAdjuntosSunat(), null);
         logger.error("Finalizando GRABAR AdjuntoSunat");
 
@@ -1553,7 +1554,18 @@ public class ProveedorServiceImpl implements ProveedorService {
         if (listAdjunto.size() > 0) {
             listAdjunto.forEach(item -> {
                 if (item.getId() == null) {
-                    listAdjuntoNew.add(new CmisFile(item.getArchivoId(), item.getArchivoNombre(), item.getRutaAdjunto(), item.getArchivoTipo()));
+                    listAdjuntoNew.add(new CmisFile(
+                            item.getArchivoId(),
+                            item.getArchivoNombre(),
+                            item.getRutaAdjunto(),
+                            item.getArchivoTipo(),
+                            item.getArchivoSize(),
+                            item.getArchivoNombreFinal(),
+                            item.getArchivoExtension(),
+                            item.getArchivoCarpetaId(),
+                            item.getArchivoNombreFolder(),
+                            item.getArchivoParentPath()
+                    ));
                     logger.error("Creo una segunda lista con los adjuntos no guardados");
                 }
             });
@@ -1561,14 +1573,15 @@ public class ProveedorServiceImpl implements ProveedorService {
 
         //Se crea folder destino -> Nro de licitacion
         String newFolder = proveedor.getRuc();
+        logger.error("newFolder_sunat " + newFolder);
 
         String folderId = cmisService.createFolder(newFolder).getNameFolder();//Id();
-        logger.debug("FOLDER_DESTINO: " + folderId);
+        logger.error("folderId_sunat: " + folderId);
 
         //Se mueven los adjuntos al folder destino y se obtiene la lista de los mismos con su nuevo URL
         Optional<List<CmisFile>> listAdjuntoMove = Optional.ofNullable(listAdjuntoNew)
                 .map(list -> {
-                    logger.debug("Actualizando la version de los archivos adjuntos");
+                    logger.error("Actualizando la version de los archivos adjuntos sunat");
                     return cmisService.updateFileAndMoveVerificar(listAdjuntoNew, folderId);
                 });
 
@@ -1616,7 +1629,18 @@ public class ProveedorServiceImpl implements ProveedorService {
         if (catalogosList.size() > 0) {
             catalogosList.forEach(item -> {
                 if (item.getId() == null) {
-                    listAdjuntoNew.add(new CmisFile(item.getArchivoId(), item.getArchivoNombre(), item.getRutaCatalogo(), item.getArchivoTipo()));
+                    listAdjuntoNew.add(new CmisFile(
+                            item.getArchivoId(),
+                            item.getArchivoNombre(),
+                            item.getRutaCatalogo(),
+                            item.getArchivoTipo(),
+                            item.getArchivoSize(),
+                            item.getArchivoNombreFinal(),
+                            item.getArchivoExtension(),
+                            item.getArchivoCarpetaId(),
+                            item.getArchivoNombreFolder(),
+                            item.getArchivoParentPath()
+                    ));
 
                     logger.error("Creo una segunda lista con los adjuntos no catalogos");
                 }
@@ -1625,6 +1649,7 @@ public class ProveedorServiceImpl implements ProveedorService {
 
 
         String newFolder = proveedor.getRuc() + "-catalogos";
+        logger.error("newFolder_catalogo: " + newFolder);
 
         String folderId = cmisService.createFolder(newFolder).getNameFolder();//Id();
         logger.error("FOLDER_DESTINO: " + folderId);

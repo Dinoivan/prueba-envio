@@ -6,6 +6,7 @@ import com.incloud.hcp.domain.Parametro;
 import com.incloud.hcp.jco.centro.service.JCOCentroServiceNew;
 import com.incloud.hcp.jco.centroAlmacen.service.JCOCentroAlmacenService;
 import com.incloud.hcp.jco.consultaProveedor.service.impl.JCOConsultaProveedorServiceImpl;
+import com.incloud.hcp.jco.documentoAceptacion.service.JCODocumentoAceptacionService;
 import com.incloud.hcp.jco.grupoArticulo.service.JCOGrupoArticuloService;
 import com.incloud.hcp.jco.materiales.service.JCOMaterialesService;
 import com.incloud.hcp.jco.servicios.service.JCOServiciosService;
@@ -13,6 +14,7 @@ import com.incloud.hcp.jco.tipoCambio.service.JCOTipoCambioService;
 import com.incloud.hcp.jco.unidadMedida.service.JCOUnidadMedidaServiceNew;
 import com.incloud.hcp.myibatis.mapper.OrdenCompraMapper;
 import com.incloud.hcp.repository.AppProcesoLogRepository;
+import com.incloud.hcp.repository.LogTransaccionRepository;
 import com.incloud.hcp.repository.ParametroRepository;
 import com.incloud.hcp.service.BienServicioService;
 import com.incloud.hcp.service.LicitacionService;
@@ -26,6 +28,7 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -80,6 +83,12 @@ public class ScheduledTasks {
 
     @Autowired
     private JCOConsultaProveedorServiceImpl jcoConsultaProveedorService;
+
+    @Autowired
+    private LogTransaccionRepository logTransaccionRepository;
+
+    @Autowired
+    private JCODocumentoAceptacionService jcoDocumentoAceptacionService;
 
 
     @Scheduled(cron = "0 1,30 * * * ?")
@@ -204,7 +213,8 @@ public class ScheduledTasks {
         }
     }
 
-    @Scheduled(cron = "0 0/6 * * * ?")
+    //@Scheduled(cron = "0 0/6 * * * ?")
+    @Scheduled(initialDelay = 1000 * 60 * 5, fixedDelay = 1000 * 60 * 6) // Inicia 5 minutos después del despliegue y se ejecuta cada 6 min
     public void scheduleSincronizarProveedores() {
         logger.error("Cron Task scheduleSincronizarProveedores :: Execution Time - {}", dateTimeFormatter.format(LocalDateTime.now()));
         try {
@@ -215,6 +225,54 @@ public class ScheduledTasks {
         }
         catch (Exception e) {
             logger.error("Cron Task Fin JOB scheduleSincronizarProveedores ERROR: " + Utils.obtieneMensajeErrorException(e));
+        }
+    }
+
+    @Scheduled(cron = "0 0 12 * * ?")
+    public void scheduleEliminarLogsSincronizacionOC() {
+        logger.error("Cron Task scheduleEliminarLogsSincronizacionOC :: Execution Time - {}", dateTimeFormatter.format(LocalDateTime.now()));
+        try {
+            List<Integer> listDias = Arrays.asList(11, 21, 30);
+            Integer dia = DateUtils.getCurrentDay();
+            if(listDias.contains(dia)){
+                Date fecha = DateUtils.obtenerFechaActual();
+                String fechaInicio = DateUtils.convertDateToString("yyyy-MM-dd", fecha);
+                logger.error("FechaInicio logs: " + fechaInicio);
+                List<String> tiposRegistro = Arrays.asList(
+                        "runOrdenCompraExtractor - ocDuplicada",
+                        "runOrdenCompraExtractor - guardarOCnoExiste",
+                        "runOrdenCompraExtractor - enviarCorreoNuevaOC",
+                        "runOrdenCompraExtractor - noGuardarOCNuevaBloqueada",
+                        "runOrdenCompraExtractor - guardarOCExiste",
+                        "runOrdenCompraExtractor - enviarCorreoOCexiste",
+                        "runOrdenCompraExtractor - noGuardarOCExiste",
+                        "runOrdenCompraExtractor - proveedorExtranjero",
+                        "runOrdenCompraExtractor - proveedorRucNoExiste",
+                        "runOrdenCompraExtractor - proveedorSinRuc"
+                );
+                logger.error("eliminando logs de sincronizacion: ");
+                for (String tipoRegistro : tiposRegistro) {
+                    this.logTransaccionRepository.deleteLogSincronizacionOC(fechaInicio, tipoRegistro);
+                }
+                logger.error("Eliminación de logs completada.");
+            }
+        }
+        catch (Exception e) {
+            logger.error("Cron Task Fin JOB scheduleSincronizarProveedores ERROR: " + Utils.obtieneMensajeErrorException(e));
+        }
+    }
+
+    @Scheduled(fixedRate = 3 * 60 * 1000 , initialDelay = 5 * 60 * 1000)
+    public void scheduleAnularGuiaDespachos() {
+        try {
+            logger.error("Inicio Ejecucion (rango 2 dias) de Job Extraccion de Documentos de Aceptacion. Fecha y hora: " + DateUtils.getCurrentTimestamp());
+            jcoDocumentoAceptacionService.extraerDespachosAnuladosListRFC(DateUtils.getFechaInicioAsSapStringByDiasAtras(1), DateUtils.getFechaActualAsSapString(), false, true, true);
+            logger.error("Fin Ejecucion (rango 2 dias) de Extraccion de guia anulada de despachos. Tiempo Total: ");
+
+            }
+        catch(Exception e){
+            String error = Utils.obtieneMensajeErrorException(e);
+            throw new RuntimeException(error);
         }
     }
 

@@ -1,12 +1,9 @@
 package com.incloud.hcp.jco.EstadoDocumentoAceptacion.dto;
 
-import com.incloud.hcp.jco.balanza.DireccionAlternaProveedor.dto.DireccionAlternaCrearServicioRFCParameterBuilder;
 import com.sap.conn.jco.JCoFunction;
-import com.sap.conn.jco.JCoParameterList;
 import com.sap.conn.jco.JCoTable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.w3c.dom.ranges.Range;
 
 import java.util.List;
 

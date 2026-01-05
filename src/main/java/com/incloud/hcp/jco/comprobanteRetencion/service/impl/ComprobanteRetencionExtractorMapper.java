@@ -1,6 +1,9 @@
 package com.incloud.hcp.jco.comprobanteRetencion.service.impl;
 
-import com.incloud.hcp.jco.comprobanteRetencion.dto.*;
+import com.incloud.hcp.jco.comprobanteRetencion.dto.SapTableCRHeaderDto;
+import com.incloud.hcp.jco.comprobanteRetencion.dto.SapTableCRItemDto;
+import com.incloud.hcp.jco.comprobanteRetencion.dto.SapTableCRSociedadDto;
+import com.incloud.hcp.jco.comprobanteRetencion.dto.SapTableCRTotalDto;
 import com.sap.conn.jco.JCoParameterList;
 import com.sap.conn.jco.JCoTable;
 

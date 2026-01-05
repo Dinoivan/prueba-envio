@@ -1,6 +1,5 @@
 package com.incloud.hcp.service.impl;
 
-import com.incloud.hcp.domain.balanza.Carreta;
 import com.incloud.hcp.domain.balanza.CentroAlmacenBalanza;
 import com.incloud.hcp.repository.CentroAlmacenBalanzaRepository;
 import com.incloud.hcp.service.CentroAlmacenBalanzaService;

@@ -4,6 +4,7 @@ import com.incloud.hcp.domain.EstadoProveedor;
 import com.incloud.hcp.domain.Homologacion;
 import com.incloud.hcp.domain.Proveedor;
 import com.incloud.hcp.domain.ProveedorHomologacion;
+import com.incloud.hcp.dto.ProveedorDto;
 import com.incloud.hcp.dto.ProveedorVerNotaDto;
 import com.incloud.hcp.dto.homologacion.LineaComercialHomologacionDto;
 import com.incloud.hcp.enums.EstadoProveedorEnum;
@@ -45,7 +46,7 @@ public class HomologacionServiceImpl implements HomologacionService {
     private ProveedorRepository proveedorRepository;
     @Autowired
     private HomologacionMapper homologacionMapper;
-    //@Autowired
+    @Autowired
     private ProveedorService proveedorService;
     @Autowired
     private ProveedorHomologacionRepository proveedorHomologacionRepository;
@@ -150,7 +151,11 @@ public class HomologacionServiceImpl implements HomologacionService {
             this.homologacionDesaprobadaNotificacion.enviar(this.parametroMapper.getMailSetting(), p);
         }
 
-        proveedorResponse.setProveedorDto(proveedorService.getProveedorDtoById(p.getIdProveedor()));
+        logger.error("prove_save " + p);
+        logger.error("prove_save_id " + p.getIdProveedor());
+        ProveedorDto dtoProveedorNew = proveedorService.getProveedorDtoById(p.getIdProveedor());
+        logger.error("dtoProveedorNew " + dtoProveedorNew);
+        proveedorResponse.setProveedorDto(dtoProveedorNew);
 
         return proveedorResponse;
     }

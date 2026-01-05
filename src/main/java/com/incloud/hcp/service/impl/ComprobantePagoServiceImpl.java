@@ -1,6 +1,5 @@
 package com.incloud.hcp.service.impl;
 
-import com.incloud.hcp.exception.PortalException;
 import com.incloud.hcp.jco.comprobantePago.dto.ComprobantePagoDto;
 import com.incloud.hcp.jco.comprobantePago.service.JCOComprobantePagoService;
 import com.incloud.hcp.service.ComprobantePagoService;

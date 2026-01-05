@@ -1,6 +1,7 @@
 package com.incloud.hcp.jco.ordenCompra.dto;
 
 import com.incloud.hcp.domain._framework.BaseDomain;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;

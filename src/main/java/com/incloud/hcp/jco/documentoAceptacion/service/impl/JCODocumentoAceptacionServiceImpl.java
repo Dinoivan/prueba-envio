@@ -1,7 +1,10 @@
 package com.incloud.hcp.jco.documentoAceptacion.service.impl;
 
-import com.google.gson.Gson;
 import com.incloud.hcp.domain.*;
+import com.incloud.hcp.domain.almacen.GuiaDespacho;
+import com.incloud.hcp.domain.almacen.GuiaDespachoDetalle;
+import com.incloud.hcp.domain.almacen.OrdenDespacho;
+import com.incloud.hcp.domain.almacen.OrdenDespachoDetalle;
 import com.incloud.hcp.enums.*;
 import com.incloud.hcp.jco.documentoAceptacion.dto.SapTableItemDto;
 import com.incloud.hcp.jco.documentoAceptacion.service.JCODocumentoAceptacionService;
@@ -9,10 +12,8 @@ import com.incloud.hcp.jco.ordenCompra.service.JCOOrdenCompraPublicarOneService;
 import com.incloud.hcp.repository.*;
 import com.incloud.hcp.service.ProveedorService;
 import com.incloud.hcp.service.notificacion.ContactoAprobadaRechazadaOCNotificacion;
+import com.incloud.hcp.service.notificacion.GuiaDespachoEstadoNotificacion;
 import com.incloud.hcp.util.DateUtils;
-import com.incloud.hcp.ws.ias.bean.IASResponse;
-import com.incloud.hcp.ws.ias.bean.IASUserInfoResponse;
-import com.incloud.hcp.ws.ias.service.IUserIASService;
 import com.sap.conn.jco.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,6 +24,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Collectors;
@@ -44,8 +46,13 @@ public class JCODocumentoAceptacionServiceImpl implements JCODocumentoAceptacion
     private ContactoAprobadaRechazadaOCNotificacion contactoAprobadaRechazadaOCNotificacion;
     private UsuarioRepository usuarioRepository;
     private ProveedorService proveedorService;
-    private IUserIASService userIASService;
-    private LogTransaccionRepository logTransaccionRepository;
+    private GuiaDespachoRepository guiaDespachoRepository;
+    private GuiaDespachoDetalleRepository guiaDespachoDetalleRepository;
+    private OrdenDespachoRepository ordenDespachoRepository;
+    private OrdenDespachoDetalleRepository ordenDespachoDetalleRepository;
+    private ResponsableAlmacenRepository responsableAlmacenRepository;
+    private GuiaDespachoEstadoNotificacion guiaDespachoEstadoNotificacion;
+    private ProveedorRepository proveedorRepository;
 
     @Autowired
     public JCODocumentoAceptacionServiceImpl(DocumentoAceptacionRepository documentoAceptacionRepository,
@@ -55,8 +62,13 @@ public class JCODocumentoAceptacionServiceImpl implements JCODocumentoAceptacion
                                              ContactoAprobadaRechazadaOCNotificacion contactoAprobadaRechazadaOCNotificacion,
                                              UsuarioRepository usuarioRepository,
                                              ProveedorService proveedorService,
-                                             IUserIASService userIASService,
-                                             LogTransaccionRepository logTransaccionRepository) {
+                                             GuiaDespachoRepository guiaDespachoRepository,
+                                             GuiaDespachoDetalleRepository guiaDespachoDetalleRepository,
+                                             OrdenDespachoRepository ordenDespachoRepository,
+                                             OrdenDespachoDetalleRepository ordenDespachoDetalleRepository,
+                                             ResponsableAlmacenRepository responsableAlmacenRepository,
+                                             GuiaDespachoEstadoNotificacion guiaDespachoEstadoNotificacion,
+                                             ProveedorRepository proveedorRepository) {
         this.documentoAceptacionRepository = documentoAceptacionRepository;
         this.documentoAceptacionDetalleRepository = documentoAceptacionDetalleRepository;
         this.ordenCompraRepository = ordenCompraRepository;
@@ -64,8 +76,13 @@ public class JCODocumentoAceptacionServiceImpl implements JCODocumentoAceptacion
         this.contactoAprobadaRechazadaOCNotificacion = contactoAprobadaRechazadaOCNotificacion;
         this.usuarioRepository = usuarioRepository;
         this.proveedorService = proveedorService;
-        this.userIASService = userIASService;
-        this.logTransaccionRepository = logTransaccionRepository;
+        this.guiaDespachoRepository = guiaDespachoRepository;
+        this.guiaDespachoDetalleRepository = guiaDespachoDetalleRepository;
+        this.ordenDespachoRepository = ordenDespachoRepository;
+        this.ordenDespachoDetalleRepository = ordenDespachoDetalleRepository;
+        this.responsableAlmacenRepository = responsableAlmacenRepository;
+        this.guiaDespachoEstadoNotificacion = guiaDespachoEstadoNotificacion;
+        this.proveedorRepository = proveedorRepository;
     }
 
     @Override
@@ -151,58 +168,32 @@ public class JCODocumentoAceptacionServiceImpl implements JCODocumentoAceptacion
                             entradaMercaderia.setFechaEmision(primerItem.getFechaEmision());
                             entradaMercaderia.setFechaContabilizacion(primerItem.getFechaContabilizacion());
 
-                            List<OrdenCompra> optionalOrdenCompra = ordenCompraRepository.getListOrdenCompraLiberadaActivaValidaByNumero(numeroOrdenCompra);
+                            Optional<OrdenCompra> optionalOrdenCompra = ordenCompraRepository.getOrdenCompraLiberadaActivaValidaByNumero(numeroOrdenCompra);
                             OrdenCompra ordenCompra = new OrdenCompra();
-                            Boolean continuarOC = true;
-                            if (optionalOrdenCompra.size() > 1) {
-                                continuarOC = false;
-                                logger.error("cotinuarOc false");
-                                //String sLogValidarOC = ;
-                                LogTransaccion logValidarOC = new LogTransaccion();
-                                logValidarOC.setLogFecha(DateUtils.getCurrentTimestamp());
-                                logValidarOC.setTipoRegistro("runDocumentoAceptacionExtractor - ocDuplicada procedePublicar");
-                                logValidarOC.setEnvioTrama("Existe OC duplicada " + numeroOrdenCompra);
-                                this.logTransaccionRepository.save(logValidarOC);
-                            }
 
-                            if (continuarOC) {
-                                if (optionalOrdenCompra.size() == 1) {
-                                    ordenCompra = optionalOrdenCompra.get(0);
-                                    logger.error(header2 + " // OC ENCONTRADA: " + ordenCompra.toString());
+                            if (optionalOrdenCompra.isPresent()) {
+                                ordenCompra = optionalOrdenCompra.get();
+                                logger.error(header2 + " // OC ENCONTRADA: " + ordenCompra.toString());
 
-                                    // AQUI MECANICA QUE MODIFICA OC ENCONTRADA A ESTADO "APROBADA" (por proveedor) (SOLO SI EM tiene Mov 101,105)
-                                    entradaMercaderia = this.actualizarDocumentoAceptacionAndOrdenCompra("EM", entradaMercaderia, ordenCompra, aprobarOrdenCompra, enviarCorreoAprobacion);
-                                } else {
-                                    if (!esEmDeAnulacion) { // trata de publicar su OC solo si no es una EM de anulacion
-                                        try {
-                                            jcoOrdenCompraPublicarOneService.extraerOneOrdenCompraRFC(numeroOrdenCompra, false);
-                                            List<OrdenCompra> optionalOrdenCompraExtraida = ordenCompraRepository.getListOrdenCompraLiberadaActivaValidaByNumero(numeroOrdenCompra);
-                                            Boolean continuarOCd = true;
-                                            if (optionalOrdenCompra.size() > 1) {
-                                                continuarOCd = false;
-                                                logger.error("continuarOCd false");
-                                                //String sLogValidarOC = ;
-                                                LogTransaccion logValidarOC = new LogTransaccion();
-                                                logValidarOC.setLogFecha(DateUtils.getCurrentTimestamp());
-                                                logValidarOC.setTipoRegistro("runDocumentoAceptacionExtractor - ocDuplicada esEmDeAnulacion");
-                                                logValidarOC.setEnvioTrama("Existe OC duplicada " + numeroOrdenCompra);
-                                                this.logTransaccionRepository.save(logValidarOC);
-                                            }
+                                // AQUI MECANICA QUE MODIFICA OC ENCONTRADA A ESTADO "APROBADA" (por proveedor) (SOLO SI EM tiene Mov 101,105)
+                                entradaMercaderia = this.actualizarDocumentoAceptacionAndOrdenCompra("EM", entradaMercaderia, ordenCompra, aprobarOrdenCompra, enviarCorreoAprobacion);
+                            } else {
+                                if (!esEmDeAnulacion) { // trata de publicar su OC solo si no es una EM de anulacion
+                                    try {
+                                        jcoOrdenCompraPublicarOneService.extraerOneOrdenCompraRFC(numeroOrdenCompra, false);
+                                        Optional<OrdenCompra> optionalOrdenCompraExtraida = ordenCompraRepository.getOrdenCompraLiberadaActivaValidaByNumero(numeroOrdenCompra);
 
-                                            if (continuarOCd) {
-                                                if (optionalOrdenCompraExtraida.size() == 1) {
-                                                    ordenCompra = optionalOrdenCompraExtraida.get(0);
-                                                    logger.error(header2 + " // OC PUBLICADA: " + ordenCompra.toString());
+                                        if (optionalOrdenCompraExtraida.isPresent()) {
+                                            ordenCompra = optionalOrdenCompraExtraida.get();
+                                            logger.error(header2 + " // OC PUBLICADA: " + ordenCompra.toString());
 
-                                                    // AQUI MECANICA QUE MODIFICA OC PUBLICADA A ESTADO "APROBADA" (por proveedor) (SOLO SI EM tiene Mov 101,105)
-                                                    entradaMercaderia = this.actualizarDocumentoAceptacionAndOrdenCompra("EM", entradaMercaderia, ordenCompra, aprobarOrdenCompra, enviarCorreoAprobacion);
-                                                } else {
-                                                    logger.error(header2 + " // NO SE PUBLICO OC: " + numeroOrdenCompra);
-                                                }
-                                            }
-                                        } catch (Exception e) {
-                                            logger.error(header2 + " // ERROR AL EXTRAER OC: " + numeroOrdenCompra);
+                                            // AQUI MECANICA QUE MODIFICA OC PUBLICADA A ESTADO "APROBADA" (por proveedor) (SOLO SI EM tiene Mov 101,105)
+                                            entradaMercaderia = this.actualizarDocumentoAceptacionAndOrdenCompra("EM", entradaMercaderia, ordenCompra, aprobarOrdenCompra, enviarCorreoAprobacion);
+                                        } else {
+                                            logger.error(header2 + " // NO SE PUBLICO OC: " + numeroOrdenCompra);
                                         }
+                                    } catch (Exception e) {
+                                        logger.error(header2 + " // ERROR AL EXTRAER OC: " + numeroOrdenCompra);
                                     }
                                 }
                             }
@@ -340,56 +331,30 @@ public class JCODocumentoAceptacionServiceImpl implements JCODocumentoAceptacion
                                 hojaServicio.setIdEstadoDocumentoAceptacion(DocumentoAceptacionEstadoEnum.ANULADO.getId());
 
                             OrdenCompra ordenCompra = new OrdenCompra();
-                            List<OrdenCompra> optionalOrdenCompra = ordenCompraRepository.getListOrdenCompraLiberadaActivaValidaByNumero(numeroOrdenCompra);
-                            Boolean continuarOCa = true;
-                            if (optionalOrdenCompra.size() > 1) {
-                                continuarOCa = false;
-                                logger.error("cotinuarOc false");
-                                //String sLogValidarOC = ;
-                                LogTransaccion logValidarOC = new LogTransaccion();
-                                logValidarOC.setLogFecha(DateUtils.getCurrentTimestamp());
-                                logValidarOC.setTipoRegistro("runDocumentoAceptacionExtractor - ocDuplicada hojaServicioa");
-                                logValidarOC.setEnvioTrama("Existe OC duplicada " + numeroOrdenCompra);
-                                this.logTransaccionRepository.save(logValidarOC);
-                            }
+                            Optional<OrdenCompra> optionalOrdenCompra = ordenCompraRepository.getOrdenCompraLiberadaActivaValidaByNumero(numeroOrdenCompra);
 
-                            if(continuarOCa) {
-                                if (optionalOrdenCompra.size() == 1) {
-                                    ordenCompra = optionalOrdenCompra.get(0);
-                                    logger.error(header2 + " // OC ENCONTRADA: " + ordenCompra.toString());
+                            if (optionalOrdenCompra.isPresent()) {
+                                ordenCompra = optionalOrdenCompra.get();
+                                logger.error(header2 + " // OC ENCONTRADA: " + ordenCompra.toString());
 
-                                    // AQUI MECANICA QUE MODIFICA OC ENCONTRADA A ESTADO "APROBADA" (por proveedor) (SOLO SI HES SUBE ACEPTADA)
-                                    hojaServicio = this.actualizarDocumentoAceptacionAndOrdenCompra("HES", hojaServicio, ordenCompra, aprobarOrdenCompra, enviarCorreoAprobacion);
-                                } else {
-                                    try {
-                                        jcoOrdenCompraPublicarOneService.extraerOneOrdenCompraRFC(numeroOrdenCompra, false);
-                                        List<OrdenCompra> optionalOrdenCompraExtraida = ordenCompraRepository.getListOrdenCompraLiberadaActivaValidaByNumero(numeroOrdenCompra);
-                                        Boolean continuarOCb = true;
-                                        if (optionalOrdenCompra.size() > 1) {
-                                            continuarOCb = false;
-                                            logger.error("cotinuarOc false");
-                                            //String sLogValidarOC = ;
-                                            LogTransaccion logValidarOC = new LogTransaccion();
-                                            logValidarOC.setLogFecha(DateUtils.getCurrentTimestamp());
-                                            logValidarOC.setTipoRegistro("runDocumentoAceptacionExtractor - ocDuplicada hojaServiciob");
-                                            logValidarOC.setEnvioTrama("Existe OC duplicada " + numeroOrdenCompra);
-                                            this.logTransaccionRepository.save(logValidarOC);
-                                        }
+                                // AQUI MECANICA QUE MODIFICA OC ENCONTRADA A ESTADO "APROBADA" (por proveedor) (SOLO SI HES SUBE ACEPTADA)
+                                hojaServicio = this.actualizarDocumentoAceptacionAndOrdenCompra("HES", hojaServicio, ordenCompra, aprobarOrdenCompra, enviarCorreoAprobacion);
+                            } else {
+                                try {
+                                    jcoOrdenCompraPublicarOneService.extraerOneOrdenCompraRFC(numeroOrdenCompra,false);
+                                    Optional<OrdenCompra> optionalOrdenCompraExtraida = ordenCompraRepository.getOrdenCompraLiberadaActivaValidaByNumero(numeroOrdenCompra);
 
-                                        if(continuarOCb) {
-                                            if (optionalOrdenCompraExtraida.size() == 1) {
-                                                ordenCompra = optionalOrdenCompraExtraida.get(0);
-                                                logger.error(header2 + " // OC PUBLICADA: " + ordenCompra.toString());
+                                    if (optionalOrdenCompraExtraida.isPresent()) {
+                                        ordenCompra = optionalOrdenCompraExtraida.get();
+                                        logger.error(header2 + " // OC PUBLICADA: " + ordenCompra.toString());
 
-                                                // AQUI MECANICA QUE MODIFICA OC PUBLICADA A ESTADO "APROBADA" (por proveedor) (SOLO SI HES SUBE ACEPTADA)
-                                                hojaServicio = this.actualizarDocumentoAceptacionAndOrdenCompra("HES", hojaServicio, ordenCompra, aprobarOrdenCompra, enviarCorreoAprobacion);
-                                            } else {
-                                                logger.error(header2 + " // NO SE PUBLICO OC: " + numeroOrdenCompra);
-                                            }
-                                        }
-                                    } catch (Exception e) {
-                                        logger.error(header2 + " // ERROR AL EXTRAER OC: " + numeroOrdenCompra + " // " + e.getClass().getName() + " -- " + e.getMessage());
+                                        // AQUI MECANICA QUE MODIFICA OC PUBLICADA A ESTADO "APROBADA" (por proveedor) (SOLO SI HES SUBE ACEPTADA)
+                                        hojaServicio = this.actualizarDocumentoAceptacionAndOrdenCompra("HES", hojaServicio, ordenCompra, aprobarOrdenCompra, enviarCorreoAprobacion);
+                                    } else {
+                                        logger.error(header2 + " // NO SE PUBLICO OC: " + numeroOrdenCompra);
                                     }
+                                } catch (Exception e) {
+                                    logger.error(header2 + " // ERROR AL EXTRAER OC: " + numeroOrdenCompra + " // " + e.getClass().getName() + " -- " + e.getMessage());
                                 }
                             }
 
@@ -472,10 +437,89 @@ public class JCODocumentoAceptacionServiceImpl implements JCODocumentoAceptacion
         }
     }
 
+    @Override
+    public void extraerDespachosAnuladosListRFC(String parametro1, String parametro2, boolean extraccionUnicoDocumento, boolean aprobarOrdenCompra, boolean enviarCorreoAprobacion) throws Exception {
+        try {
+            String FUNCION_RFC = "ZPE_MM_ENTRADA_MERCADERIAS";
+
+            JCoDestination destination = JCoDestinationManager.getDestination(destinationProfit);
+            JCoRepository repository = destination.getRepository();
+
+            JCoFunction jCoFunction = repository.getFunction(FUNCION_RFC);
+            this.mapFilters(jCoFunction, parametro1, parametro2, extraccionUnicoDocumento);
+            jCoFunction.execute(destination);
+
+            JCoParameterList exportParameterList = jCoFunction.getTableParameterList();
+            DocumentoAceptacionExtractorMapper documentoAceptacionExtractorMapper = DocumentoAceptacionExtractorMapper.newMapper(exportParameterList);
+
+            List<SapTableItemDto> sapTableItemDtoList = documentoAceptacionExtractorMapper.getSapTableItemDtoList();
+            List<String> movimientosDeAnulacion = Arrays.asList(MovimientoEntregaMercaderiaTipoEnum.ANULACION_EM.getCodigo(), MovimientoEntregaMercaderiaTipoEnum.ANULACION_1_PASO.getCodigo(), MovimientoEntregaMercaderiaTipoEnum.ANULACION_2_PASO.getCodigo());
+
+
+            Map<String, List<SapTableItemDto>> entradaMercaderiaAnuladaItemMap = sapTableItemDtoList.stream()
+                    .filter(item -> movimientosDeAnulacion.contains(item.getMovimiento())) // solo items de EM con movimiento 102,104,106
+                    .collect(Collectors.groupingBy(SapTableItemDto::getNumeroDocumentoAceptacion, Collectors.toList()));
+
+            String header1 = "INI: " + DateUtils.getCurrentTimestamp().toString() + " -- EXTR DA -- RANGO: " + parametro1 + " - " + parametro2 + " // ";
+            logger.error(header1 + "CANTIDAD DE EM ANULADAS ENCONTRADAS: " + entradaMercaderiaAnuladaItemMap.size());
+            logger.error(header1 + "EM ENCONTRADAS ANULADAS: " + entradaMercaderiaAnuladaItemMap);
+
+            entradaMercaderiaAnuladaItemMap.forEach((numeroEntradaMercaderia, itemList) -> {
+                logger.error("itemList " + itemList);
+                SapTableItemDto primerItem = itemList.get(0); // trae primer item para obtener datos comunes de la EM
+                Boolean actualizarGDespacho = true;
+
+                Optional<GuiaDespacho> opGuiaDespacho = this.guiaDespachoRepository.findByDocumentoMaterial(primerItem.getNumDocApectacionRelacionado());
+                GuiaDespacho guiaDespacho = new GuiaDespacho();
+                if (opGuiaDespacho.isPresent()){
+                    guiaDespacho = opGuiaDespacho.get();
+                } else {
+                    actualizarGDespacho = false;
+                }
+
+                if(actualizarGDespacho){
+                    if(guiaDespacho.getIdEstadoDespacho().equals(GuiaDespachoEstadoEnum.INGRESADA.getId())) {
+                        guiaDespacho.setIdEstadoDespacho(GuiaDespachoEstadoEnum.ANULADA.getId());
+                        this.guiaDespachoRepository.save(guiaDespacho);
+                        List<GuiaDespachoDetalle> listGuiaDetalle = this.guiaDespachoDetalleRepository.listFindGuiaDetalleByIdGuia(guiaDespacho.getId());
+                        for (GuiaDespachoDetalle gddItem : listGuiaDetalle) {
+                            logger.error("ingreso for despacho anualdo ");
+                            Optional<OrdenDespachoDetalle> opOrdenDespachoDetalle = this.ordenDespachoDetalleRepository.getOrdenDespachoDetalleById(gddItem.getNumeroOrdenDespacho(), gddItem.getPosicion());
+                            if (opOrdenDespachoDetalle.isPresent()) {
+                                logger.error("ingreso opOrdenDespachoDetalle despacho anualdo ");
+                                OrdenDespachoDetalle ordenDespachoDetalle = opOrdenDespachoDetalle.get();
+                                BigDecimal cantidadDetalle = ordenDespachoDetalle.getCantidad();
+                                BigDecimal cantidadGuiaAnulada = gddItem.getCantidadEsteDespacho();
+                                BigDecimal cantidadRecuperada = cantidadDetalle.add(cantidadGuiaAnulada).setScale(4, RoundingMode.HALF_UP);
+                                ordenDespachoDetalle.setCantidad(cantidadRecuperada);
+                                this.ordenDespachoDetalleRepository.save(ordenDespachoDetalle);
+
+                                List<ResponsableAlmacen> listResponsableAlmacen = this.responsableAlmacenRepository.findAll();
+                                String aprobador = null;
+                                String accion = "Anulada";
+                                Proveedor proveedor = this.proveedorRepository.getProveedorByRuc(guiaDespacho.getProveedorRuc());
+                                // enviar correo
+                                if (enviarCorreoAprobacion) {
+                                    guiaDespachoEstadoNotificacion.enviar(guiaDespacho, proveedor, listResponsableAlmacen, aprobador, accion);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            logger.error(header1 + "FINISHED");
+
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e.getCause());
+            throw new Exception(e);
+        }
+    }
+
 
     @Override
     public List<SapTableItemDto> extraerDataDocumentoAceptacionRFC(String parametro1, String parametro2, boolean unicoDocumentoAceptacion) throws Exception {
-        try{
+        try {
             String FUNCION_RFC = "ZPE_MM_ENTRADA_MERCADERIAS";
 
             JCoDestination destination = JCoDestinationManager.getDestination(destinationProfit);
@@ -489,21 +533,21 @@ public class JCODocumentoAceptacionServiceImpl implements JCODocumentoAceptacion
             DocumentoAceptacionExtractorMapper documentoAceptacionExtractorMapper = DocumentoAceptacionExtractorMapper.newMapper(exportParameterList);
 
             List<SapTableItemDto> sapTableItemDtoList = documentoAceptacionExtractorMapper.getSapTableItemDtoList();
-            List<String> movimientosIncluidos = Arrays.asList("101","102","105","106");
+            List<String> movimientosIncluidos = Arrays.asList("101", "102", "105", "106");
 
-            if (unicoDocumentoAceptacion){
+            if (unicoDocumentoAceptacion) {
                 sapTableItemDtoList = sapTableItemDtoList.stream()
                         .filter(item -> item.getNumeroDocumentoAceptacion().equals(parametro2))
                         .collect(Collectors.toList());
             }
 
-            Map<String,List<SapTableItemDto>> entradaMercaderiaItemMap = sapTableItemDtoList.stream()
+            Map<String, List<SapTableItemDto>> entradaMercaderiaItemMap = sapTableItemDtoList.stream()
                     .filter(item -> movimientosIncluidos.contains(item.getMovimiento())) // solo items de EM con movimiento 101,102,105,106
-                    .collect(Collectors.groupingBy(SapTableItemDto::getNumeroDocumentoAceptacion,Collectors.toList()));
+                    .collect(Collectors.groupingBy(SapTableItemDto::getNumeroDocumentoAceptacion, Collectors.toList()));
 
-            Map<String,List<SapTableItemDto>> hojaServicioItemMap = sapTableItemDtoList.stream()
+            Map<String, List<SapTableItemDto>> hojaServicioItemMap = sapTableItemDtoList.stream()
                     .filter(item -> item.getMovimiento().equals("")) // solo items de HES (sin movimiento)
-                    .collect(Collectors.groupingBy(SapTableItemDto::getNumeroDocumentoAceptacion,Collectors.toList()));
+                    .collect(Collectors.groupingBy(SapTableItemDto::getNumeroDocumentoAceptacion, Collectors.toList()));
 
             Long cantidadEntregaMercaderiaExcluida = sapTableItemDtoList.stream()
                     .filter(item -> !movimientosIncluidos.contains(item.getMovimiento()) && !item.getMovimiento().equals("")) // solo items de EM con movimientos que no son 101,102,103,104,105,106
@@ -519,59 +563,49 @@ public class JCODocumentoAceptacionServiceImpl implements JCODocumentoAceptacion
             logger.error(header1 + "CANTIDAD DE EM EXCLUIDAS: " + cantidadEntregaMercaderiaExcluida);
             logger.error(header1 + "CANTIDAD DE HES ENCONTRADAS: " + hojaServicioItemMap.size());
 
-            for(int i=0 ; i < sapTableItemDtoList.size() ; i++){
+            for (int i = 0; i < sapTableItemDtoList.size(); i++) {
                 logger.error(header1 + "SAP ITEM " + i + ": " + sapTableItemDtoList.get(i).toString());
             }
 
             logger.error(header1 + "FINISHED");
 
             return sapTableItemDtoList;
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             logger.error(e.getMessage(), e.getCause());
             throw new Exception(e);
         }
     }
 
 
-    private DocumentoAceptacion actualizarDocumentoAceptacionAndOrdenCompra(String tipoDocAceptacion, DocumentoAceptacion documentoAceptacion, OrdenCompra ordenCompra, boolean aprobarOrdenCompra, boolean enviarCorreo){
-        if(aprobarOrdenCompra
-                && documentoAceptacion.getIdEstadoDocumentoAceptacion().compareTo(DocumentoAceptacionEstadoEnum.ACTIVO.getId())==0
-                && (ordenCompra.getIdEstadoOrdenCompra().compareTo(OrdenCompraEstadoEnum.ACTIVA.getId())==0 || ordenCompra.getIdEstadoOrdenCompra().compareTo(OrdenCompraEstadoEnum.VISUALIZADA.getId())==0))
-        {
+    private DocumentoAceptacion actualizarDocumentoAceptacionAndOrdenCompra(String tipoDocAceptacion, DocumentoAceptacion documentoAceptacion, OrdenCompra ordenCompra, boolean aprobarOrdenCompra, boolean enviarCorreo) {
+        if (aprobarOrdenCompra
+                && documentoAceptacion.getIdEstadoDocumentoAceptacion().compareTo(DocumentoAceptacionEstadoEnum.ACTIVO.getId()) == 0
+                && (ordenCompra.getIdEstadoOrdenCompra().compareTo(OrdenCompraEstadoEnum.ACTIVA.getId()) == 0 || ordenCompra.getIdEstadoOrdenCompra().compareTo(OrdenCompraEstadoEnum.VISUALIZADA.getId()) == 0)) {
             ordenCompra.setIdEstadoOrdenCompra(OrdenCompraEstadoEnum.APROBADA.getId());
             ordenCompra.setFechaAprobacion(DateUtils.getCurrentTimestamp());
             ordenCompraRepository.save(ordenCompra);
 
             if (enviarCorreo) {
-            /*Enviando correo*/
+                /*Enviando correo*/
                 Usuario comprador = usuarioRepository.findByCodigoSap(ordenCompra.getCompradorUsuarioSap());
                 if (comprador != null && comprador.getEmail() != null && !comprador.getEmail().isEmpty())
-                    contactoAprobadaRechazadaOCNotificacion.enviar(ordenCompra,null, comprador);
+                    contactoAprobadaRechazadaOCNotificacion.enviar(ordenCompra, null, comprador);
 
-                //Proveedor proveedor = proveedorService.getProveedorByRuc(ordenCompra.getProveedorRuc());
+                Proveedor proveedor = proveedorService.getProveedorByRuc(ordenCompra.getProveedorRuc());
                 Usuario proveedorUsuario = null;
-                if (!ordenCompra.getProveedorRuc().equalsIgnoreCase("")) {
-                    IASResponse response = userIASService.getUserByLoginName(ordenCompra.getProveedorRuc());
-                    if (response.getStatus().equals("200")) {
-                        proveedorUsuario = new Usuario();
-                        Gson gson = new Gson();
-                        logger.error("<--MC_LOG-->:JCODocumentoAceptacionServiceImpl-actualizarDocumentoAceptacionAndOrdenCompra:" + gson.toJson(response.getResult().getResources().get(0).getEmails()));
-                        IASUserInfoResponse.Resource resource = response.getResult().getResources().get(0);
-                        String givenName = resource.getName().getGivenName() != null ? resource.getName().getGivenName() + " " : "";
-                        String familyName = resource.getName().getFamilyName() == null ? "" : resource.getName().getFamilyName();
-                        proveedorUsuario.setApellido(givenName + familyName);
-                        proveedorUsuario.setEmail(resource.getEmails().get(0).getValue());
-                        logger.error("proveedorUsuario- " + proveedorUsuario);
-                    } else {
-                        List<Usuario> posibleProveedorList = usuarioRepository.findByCodigoUsuarioIdp(ordenCompra.getProveedorRuc());
-                        if (posibleProveedorList != null && !posibleProveedorList.isEmpty() && posibleProveedorList.size() == 1)
-                            proveedorUsuario = posibleProveedorList.get(0);
-                    }
-
+                if (proveedor != null && proveedor.getEmail() != null && !proveedor.getEmail().isEmpty()) {
+                    proveedorUsuario = new Usuario();
+                    logger.error("<--MC_LOG-->:JCODocumentoAceptacionServiceImpl-actualizarDocumentoAceptacionAndOrdenCompra:");
+                    logger.error("<--MC_LOG-->:JCODocumentoAceptacionServiceImpl-actualizarDocumentoAceptacionAndOrdenCompra:" + proveedor.getEmail());
+                    proveedorUsuario.setEmail(proveedor.getEmail());
+                    proveedorUsuario.setApellido(proveedor.getRazonSocial());
+                } else {
+                    List<Usuario> posibleProveedorList = usuarioRepository.findByCodigoUsuarioIdp(ordenCompra.getProveedorRuc());
+                    if (posibleProveedorList != null && !posibleProveedorList.isEmpty() && posibleProveedorList.size() == 1)
+                        proveedorUsuario = posibleProveedorList.get(0);
                 }
 
-                if(proveedorUsuario != null && proveedorUsuario.getEmail() != null && !proveedorUsuario.getEmail().isEmpty())
+                if (proveedorUsuario != null && proveedorUsuario.getEmail() != null && !proveedorUsuario.getEmail().isEmpty())
                     contactoAprobadaRechazadaOCNotificacion.enviar(ordenCompra, proveedorUsuario, null);
             }
         }
@@ -580,7 +614,7 @@ public class JCODocumentoAceptacionServiceImpl implements JCODocumentoAceptacion
         documentoAceptacion.setProveedorRuc(ordenCompra.getProveedorRuc());
         documentoAceptacion.setProveedorRazonSocial(ordenCompra.getProveedorRazonSocial());
 
-        if(tipoDocAceptacion.equals("HES")){
+        if (tipoDocAceptacion.equals("HES")) {
             documentoAceptacion.setUsuarioSapAutoriza(ordenCompra.getUltimoLiberadorUsuarioSap());
         }
 
@@ -588,7 +622,7 @@ public class JCODocumentoAceptacionServiceImpl implements JCODocumentoAceptacion
     }
 
 
-    private int asignarIdEstadoDocumentoAceptacion(String movimiento){
+    private int asignarIdEstadoDocumentoAceptacion(String movimiento) {
         switch (movimiento) {
             case "101": // Liberación EM
                 return DocumentoAceptacionEstadoEnum.ACTIVO.getId();
@@ -605,7 +639,7 @@ public class JCODocumentoAceptacionServiceImpl implements JCODocumentoAceptacion
     private void mapFilters(JCoFunction function, String parametro1, String parametro2, boolean extraccionUnicoDocumento) {
         JCoParameterList paramList = function.getImportParameterList();
 
-        if(extraccionUnicoDocumento){
+        if (extraccionUnicoDocumento) {
             JCoTable jcoTableEBELN = paramList.getTable("I_EBELN");
 
             if (parametro1 != null && !parametro1.isEmpty()) {
@@ -616,8 +650,7 @@ public class JCODocumentoAceptacionServiceImpl implements JCODocumentoAceptacion
                 jcoTableEBELN.setValue("LOW", parametro1); // parametro numero orden compra a la cual se extraera sus doc aceptacion
                 jcoTableEBELN.setValue("HIGH", "");
             }
-        }
-        else {
+        } else {
             if (parametro1 != null && !parametro1.isEmpty())
                 paramList.setValue("I_CPUDTI", parametro1); // parametro fecha inicio desde la cual se extraera los doc aceptacion
 

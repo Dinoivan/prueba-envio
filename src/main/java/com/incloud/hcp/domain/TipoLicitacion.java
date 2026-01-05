@@ -1,11 +1,11 @@
 package com.incloud.hcp.domain;
 
 import com.incloud.hcp.domain._framework.BaseDomain;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 

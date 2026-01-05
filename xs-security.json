@@ -26,7 +26,7 @@
   }
 ],
   "oauth2-configuration": {
-    "redirect-uris": ["https://prd-copeincaprovider.cfapps.us10-001.hana.ondemand.com/**",
-      "https://prd-copeincaprovider-web.cfapps.us10-001.hana.ondemand.com/**"]
+    "redirect-uris": ["https://qas-copeincaprovider.cfapps.us10-001.hana.ondemand.com/**",
+      "https://qas-copeincaprovider-web.cfapps.us10-001.hana.ondemand.com/**"]
   }
 }

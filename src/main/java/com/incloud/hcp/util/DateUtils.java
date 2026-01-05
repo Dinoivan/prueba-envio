@@ -16,7 +16,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoField;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -1030,6 +1029,10 @@ public class DateUtils {
 
     public static int getCurrentHourOfDay(){
         return LocalDateTime.ofInstant(Instant.now(), ZoneId.of(DEFAULT_TIMEZONE)).getHour();
+    }
+
+    public static int getCurrentDay() {
+        return LocalDateTime.ofInstant(Instant.now(), ZoneId.of(DEFAULT_TIMEZONE)).getDayOfMonth();
     }
 
 

@@ -17,16 +17,27 @@ public class CmisFile {
 
     private CmisFile parent;
 
+    private String parentPath;
+
     public CmisFile() {
         this.parent = null;
     }
 
-    public CmisFile(String id, String name, String url, String type) {
+    public CmisFile(String id, String name, String url, String type,
+                    Long size, String nameFinal, String extension,
+                    String carpetaId, String nombreFolder, String parentPath) {
         this.id = id;
         this.name = name;
         this.url = url;
         this.type = type;
+        this.size = size;
+        this.nameFinal = nameFinal;
+        this.extension = extension;
+        this.carpetaId = carpetaId;
+        this.nombreFolder = nombreFolder;
+        this.parentPath = parentPath;
     }
+
 
     public CmisFile(String id, String name, String url, String type, Long size) {
         this.id = id;
@@ -133,6 +144,10 @@ public class CmisFile {
         this.other = other;
     }
 
+    public String getParentPath() {return parentPath;}
+
+    public void setParentPath(String parentPath) {this.parentPath = parentPath;}
+
     @Override
     public String toString() {
         return "CmisFile{" +
@@ -146,6 +161,7 @@ public class CmisFile {
                 ", carpetaId='" + carpetaId + '\'' +
                 ", nombreFolder='" + nombreFolder + '\'' +
                 ", parent=" + parent +
+                ", parentPath=" + parentPath +
                 '}';
     }
 }

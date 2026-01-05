@@ -60,7 +60,7 @@ public class LineaComercialRest extends AppRest {
                 .orElse(this.lineaComercialFacade.getListLineaWithoutIndGeneral()));
     }
 
-    @RequestMapping(value = "{id_linea}/familia", method = RequestMethod.GET, produces = {
+    @RequestMapping(value = "/{id_linea}/familia", method = RequestMethod.GET, produces = {
             MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public ResponseEntity<Map> getListFamiliaLineaComercial(@PathVariable("id_linea") int idLinea) {
         return this.processObject(this.lineaComercialFacade.getLineaFamilia(idLinea));

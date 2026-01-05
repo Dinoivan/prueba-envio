@@ -1,12 +1,9 @@
 package com.incloud.hcp.repository;
 
 import com.incloud.hcp.domain.balanza.Carreta;
-
-import com.incloud.hcp.domain.balanza.Chofer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import java.util.Optional;
 import java.util.List;
 
 public interface CarretaRepository extends JpaRepository<Carreta, Integer> {

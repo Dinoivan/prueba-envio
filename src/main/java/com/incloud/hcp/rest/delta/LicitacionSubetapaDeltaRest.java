@@ -65,13 +65,16 @@ public class LicitacionSubetapaDeltaRest extends LicitacionSubetapaRest {
     @Operation(summary = "Busca lista de tipo TrazabilidadRespuestaDto para la trazabilidad")
     @GetMapping(value = "/_findTrazabilidad/{id}", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<TrazabilidadRespuestaDto> findTrazabilidad(@PathVariable Integer id) throws URISyntaxException {
-        log.debug("Find by id trazabilidad : {}", id);
+        log.error("Find by id trazabilidad : {}", id);
         try {
             TrazabilidadRespuestaDto result = this.licitacionSubetapaDeltaService.findTrazabilidad(id);
+            log.error("Trazabilidad encontrada para licitación ID: {}", id);
+            log.error("Contenido de la trazabilidad: {}", result);
             return Optional.ofNullable(result)
                     .map(licitacionSubetapa -> new ResponseEntity<>(licitacionSubetapa, HttpStatus.OK)).orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
         } catch (Exception e) {
             String error = Utils.obtieneMensajeErrorException(e);
+            log.error("Error al buscar trazabilidad para licitación ID: {}. Detalles: {}", id, error, e);
             throw new RuntimeException(error);
         }
     }
@@ -79,13 +82,16 @@ public class LicitacionSubetapaDeltaRest extends LicitacionSubetapaRest {
     @Operation(summary = "Busca lista de tipo TrazabilidadRespuestaDto para la trazabilidad en detalle")
     @GetMapping(value = "/_findTrazabilidadRenegociacion/{id}", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<TrazabilidadRespuestaDto> findTrazabilidadRenegociacion(@PathVariable Integer id) throws URISyntaxException {
-        log.debug("Find by id trazabilidad : {}", id);
+        log.error("Find by id trazabilidad renegociacion : {}", id);
         try {
             TrazabilidadRespuestaDto result = this.licitacionSubetapaDeltaService.findTrazabilidadRenegociacion(id);
+            log.error("Trazabilidad encontrada para licitación ID Renegociación: {}", id);
+            log.error("Contenido de la trazabilidad Renegociación: {}", result);
             return Optional.ofNullable(result)
                     .map(licitacionSubetapa -> new ResponseEntity<>(licitacionSubetapa, HttpStatus.OK)).orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
         } catch (Exception e) {
             String error = Utils.obtieneMensajeErrorException(e);
+            log.error("Error al buscar trazabilidad Renegociacion para licitación ID: {}. Detalles: {}", id, error, e);
             throw new RuntimeException(error);
         }
     }

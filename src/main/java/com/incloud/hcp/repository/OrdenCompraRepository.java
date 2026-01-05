@@ -56,9 +56,6 @@ public interface OrdenCompraRepository extends JpaRepository<OrdenCompra, Intege
     @Query("SELECT oc FROM OrdenCompra oc where oc.numeroOrdenCompra = ?1 and oc.isActive = '1' and oc.estadoSap = 'L' and oc.idEstadoOrdenCompra not in (4,5)")
     Optional<OrdenCompra> getOrdenCompraLiberadaActivaValidaByNumero(String numeroOrdenCompra);
 
-    @Query("SELECT oc FROM OrdenCompra oc where oc.numeroOrdenCompra = ?1 and oc.isActive = '1' and oc.estadoSap = 'L' and oc.idEstadoOrdenCompra not in (4,5)")
-    List<OrdenCompra> getListOrdenCompraLiberadaActivaValidaByNumero(String numeroOrdenCompra);
-
     @Query(nativeQuery = true,
             value="SELECT top 1 oc.* FROM ORDEN_COMPRA oc WHERE NUMERO_ORDEN_COMPRA=?1 ")
     OrdenCompra getOrdenCompraByNOCompra(String nOrdenCompra);

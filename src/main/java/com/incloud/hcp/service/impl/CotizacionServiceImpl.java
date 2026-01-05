@@ -485,7 +485,7 @@ public class CotizacionServiceImpl extends BaseServiceImpl implements Cotizacion
             listAdjunto.forEach(item -> {
                 //item.setIdCotizacionAdjunto(null);
                 if (item.getIdCotizacionAdjunto() == null) {
-                    listAdjuntoNew.add(new com.incloud.hcp.service.cmiscf.bean.CmisFile(item.getArchivoId(), item.getArchivoNombre(), item.getRutaAdjunto(), item.getArchivoTipo()));
+                    listAdjuntoNew.add(new com.incloud.hcp.service.cmiscf.bean.CmisFile(item.getArchivoId(), item.getArchivoNombre(), item.getRutaAdjunto(), item.getArchivoTipo(), null, null, null, null, null, null));
                     logger.error("Creo una segunda lista con los adjuntos no guardados");
                 }else{
                     logger.error("Añadiendo adjuntos guardados a new Cotizacion");

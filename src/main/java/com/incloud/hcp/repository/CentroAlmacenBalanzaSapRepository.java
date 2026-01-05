@@ -1,6 +1,5 @@
 package com.incloud.hcp.repository;
 
-import com.incloud.hcp.domain.Banco;
 import com.incloud.hcp.domain.CentroAlmacenBalanzaSap;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;

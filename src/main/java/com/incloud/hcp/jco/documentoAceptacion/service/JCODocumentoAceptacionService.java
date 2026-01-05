@@ -9,6 +9,8 @@ public interface JCODocumentoAceptacionService {
 
     void extraerDocumentoAceptacionListRFC(String parametro1, String parametro2, boolean extraccionUnicoDocumento, boolean aprobarOrdenCompra, boolean enviarCorreoAprobacion) throws Exception;
 
+    void extraerDespachosAnuladosListRFC(String parametro1, String parametro2, boolean extraccionUnicoDocumento, boolean aprobarOrdenCompra, boolean enviarCorreoAprobacion) throws Exception;
+
     List<SapTableItemDto> extraerDataDocumentoAceptacionRFC(String parametro1, String parametro2, boolean unicoDocumentoAceptacion) throws Exception;
 
     boolean toggleDocumentoAceptacionExtractionProcessingState();

@@ -1,6 +1,5 @@
 package com.incloud.hcp.util;
 
-import com.incloud.hcp.domain.Moneda;
 import com.incloud.hcp.domain.TasaCambio;
 import com.incloud.hcp.exception.ServiceException;
 import org.apache.commons.lang.StringUtils;

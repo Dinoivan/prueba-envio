@@ -1,9 +1,7 @@
 package com.incloud.hcp.jco.balanza.DocumentoMaterial.ConsultaMaterial.service;
 
-import com.incloud.hcp.jco.balanza.DocumentoMaterial.ConsultaMaterial.dto.MaterialOutDto;
 import com.incloud.hcp.jco.balanza.DocumentoMaterial.ConsultaMaterial.dto.MaterialIDto;
-
-import java.util.List;
+import com.incloud.hcp.jco.balanza.DocumentoMaterial.ConsultaMaterial.dto.MaterialOutDto;
 
 public interface JCOMaterialOutService {
     MaterialOutDto consultaMaterialRFC(MaterialIDto materialIResponse) throws Exception;

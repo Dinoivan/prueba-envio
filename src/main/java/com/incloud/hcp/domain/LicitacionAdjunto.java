@@ -1,8 +1,8 @@
 package com.incloud.hcp.domain;
 
 import com.incloud.hcp.domain._framework.BaseDomain;
-
 import jakarta.persistence.*;
+
 import java.io.Serializable;
 
 
@@ -35,6 +35,10 @@ public class LicitacionAdjunto extends BaseDomain implements Serializable {
 
 	@Column(name="archivo_tipo", nullable=true, length=100)
 	private String archivoTipo;
+
+	//Nuevo
+	@Transient
+	private String carpetaId; //Campo transitorio para uso temporal (no se persiste)
 
 
 	//bi-directional many-to-one association to Licitacion
@@ -110,6 +114,14 @@ public class LicitacionAdjunto extends BaseDomain implements Serializable {
 		this.archivoTipo = archivoTipo;
 	}
 
+	public String getCarpetaId(){
+		return carpetaId;
+	}
+
+	public void setCarpetaId(String carpetaId){
+		this.carpetaId = carpetaId;
+	}
+
 	@Override
 	public String toString() {
 		return "LicitacionAdjunto{" +
@@ -119,6 +131,7 @@ public class LicitacionAdjunto extends BaseDomain implements Serializable {
 				", archivoId='" + archivoId + '\'' +
 				", archivoNombre='" + archivoNombre + '\'' +
 				", archivoTipo='" + archivoTipo + '\'' +
+				", carpetaId='" + carpetaId + '\'' +
 				", licitacion=" + licitacion +
 				'}';
 	}

@@ -4,8 +4,6 @@ import com.incloud.hcp.domain.AprobadorSolicitud;
 import com.incloud.hcp.domain.Proveedor;
 import com.incloud.hcp.domain.SolicitudBlacklist;
 import com.incloud.hcp.domain.Usuario;
-import org.apache.commons.mail.EmailException;
-import org.apache.velocity.VelocityContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;

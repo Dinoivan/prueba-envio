@@ -1,11 +1,7 @@
 package com.incloud.hcp.service.impl;
 
-import com.incloud.hcp.domain.balanza.DetalleTicket;
-import com.incloud.hcp.domain.balanza.GuiaRemision;
 import com.incloud.hcp.domain.balanza.GuiaRemisionDetalle;
-import com.incloud.hcp.domain.balanza.TicketPesaje;
 import com.incloud.hcp.repository.GuiaRemisionDetalleRepository;
-import com.incloud.hcp.repository.GuiaRemisionRepository;
 import com.incloud.hcp.service.GuiaRemisionDetalleService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +10,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service

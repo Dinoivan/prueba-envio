@@ -1,9 +1,9 @@
 package com.incloud.hcp.domain;
 
 import com.incloud.hcp.domain._framework.BaseDomain;
+import jakarta.persistence.*;
 import org.apache.commons.lang.StringUtils;
 
-import jakarta.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
 

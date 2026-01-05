@@ -57,6 +57,33 @@ public class DocumentoAceptacionExtractionJob {
         }
     }
 
+    //@Scheduled(fixedRate = 2 * 60 * 1000 , initialDelay = 3 * 60 * 1000)
+    public void runDespachosAnuladosExtractor() {
+        if (enabled.get()) {
+            try {
+                long l = System.currentTimeMillis();
+                if(DateUtils.getCurrentHourOfDay() == 0) {
+                    logger.error("Inicio Ejecucion (rango 2 dias) de Job Extraccion de Documentos de Aceptacion. Fecha y hora: " + DateUtils.getCurrentTimestamp());
+                    jcoDocumentoAceptacionService.extraerDocumentoAceptacionListRFC(DateUtils.getFechaInicioAsSapStringByDiasAtras(1), DateUtils.getFechaActualAsSapString(), false, true, true);
+                    logger.error("Fin Ejecucion (rango 2 dias) de Extraccion de Documentos de Aceptacion. Tiempo Total: " + (System.currentTimeMillis() - l) / 1000 + " segundos");
+                }
+                else if(DateUtils.getCurrentHourOfDay() == 2){
+                    logger.error("Ejecucion de Job Extraccion de Documentos de Aceptacion en PAUSA. Fecha y hora: " + DateUtils.getCurrentTimestamp());
+                }
+                else{
+                    logger.error("Inicio Ejecucion de Job Extraccion de Documentos de Aceptacion. Fecha y hora: " + DateUtils.getCurrentTimestamp());
+                    jcoDocumentoAceptacionService.extraerDocumentoAceptacionListRFC(DateUtils.getFechaActualAsSapString(), DateUtils.getFechaActualAsSapString(), false, true, true);
+                    logger.error("Fin Ejecucion de Extraccion de Documentos de Aceptacion. Tiempo Total: " + (System.currentTimeMillis() - l) / 1000 + " segundos");
+                }
+
+            }
+            catch(Exception e){
+                String error = Utils.obtieneMensajeErrorException(e);
+                throw new RuntimeException(error);
+            }
+        }
+    }
+
     public boolean toggle() {
         enabled.set(!enabled.get());
         return enabled.get();

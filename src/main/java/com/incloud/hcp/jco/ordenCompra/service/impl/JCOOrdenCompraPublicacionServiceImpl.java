@@ -28,7 +28,6 @@ import java.math.RoundingMode;
 import java.sql.Time;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 
@@ -51,10 +50,9 @@ public class JCOOrdenCompraPublicacionServiceImpl implements JCOOrdenCompraPubli
     private OrdenCompraTextoCabeceraRepository ordenCompraTextoCabeceraRepository;
     private OrdenCompraDetalleTextoRegistroInfoRepository ordenCompraDetalleTextoRegistroInfoRepository;
     private OrdenCompraDetalleTextoMaterialAmpliadoRepository ordenCompraDetalleTextoMaterialAmpliadoRepository;
-
     private LogTransaccionRepository logTransaccionRepository;
-    private ProveedorService proveedorService;
     private ProveedorRepository proveedorRepository;
+    private ProveedorService proveedorService;
     private IUserIASService userIASService;
 
 
@@ -68,8 +66,8 @@ public class JCOOrdenCompraPublicacionServiceImpl implements JCOOrdenCompraPubli
                                                 OrdenCompraDetalleTextoRegistroInfoRepository ordenCompraDetalleTextoRegistroInfoRepository,
                                                 OrdenCompraDetalleTextoMaterialAmpliadoRepository ordenCompraDetalleTextoMaterialAmpliadoRepository,
                                                 ProveedorService proveedorService,
-                                                ProveedorRepository proveedorRepository,
                                                 LogTransaccionRepository logTransaccionRepository,
+                                                ProveedorRepository proveedorRepository,
                                                 IUserIASService userIASService) {
         this.usuarioRepository = usuarioRepository;
         this.ordenCompraRepository = ordenCompraRepository;
@@ -79,9 +77,9 @@ public class JCOOrdenCompraPublicacionServiceImpl implements JCOOrdenCompraPubli
         this.ordenCompraTextoCabeceraRepository = ordenCompraTextoCabeceraRepository;
         this.ordenCompraDetalleTextoRegistroInfoRepository = ordenCompraDetalleTextoRegistroInfoRepository;
         this.ordenCompraDetalleTextoMaterialAmpliadoRepository = ordenCompraDetalleTextoMaterialAmpliadoRepository;
-        this.proveedorService = proveedorService;
-        this.proveedorRepository = proveedorRepository;
         this.logTransaccionRepository = logTransaccionRepository;
+        this.proveedorRepository = proveedorRepository;
+        this.proveedorService = proveedorService;
         this.userIASService = userIASService;
     }
 

@@ -1,7 +1,5 @@
 package com.incloud.hcp.jco.balanza.Proveedor.dto;
 
-import java.util.Date;
-
 public class ProveedorBlzFiltroBusquedaDTO {
     private String ruc;
     private String razonSocial;

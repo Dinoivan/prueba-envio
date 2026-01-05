@@ -1,20 +1,7 @@
 package com.incloud.hcp.rest;
 
-import com.incloud.hcp.domain.balanza.DetalleTicket;
-
-import com.incloud.hcp.exception.PortalException;
-import com.incloud.hcp.service.DetalleTicketService;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.Map;
-import java.util.Optional;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/api/subticketPesaje")

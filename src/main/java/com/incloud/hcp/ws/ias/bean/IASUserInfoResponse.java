@@ -2,7 +2,6 @@ package com.incloud.hcp.ws.ias.bean;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.google.gson.annotations.SerializedName;
 import com.incloud.hcp.dto.GroupDto;
 
 import java.io.Serializable;

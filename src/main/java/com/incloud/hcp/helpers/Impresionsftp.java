@@ -8,9 +8,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.print.*;
-import javax.print.attribute.AttributeSet;
-import javax.print.attribute.HashAttributeSet;
-import javax.print.attribute.standard.PrinterName;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.incloud.hcp.myibatis.mapper.ISupplierUserMapper">
+
+    <!-- Result Map -->
+    <resultMap id="supplierUserMap" type="com.incloud.hcp.dto.SupplierUserDto">
+        <result property="supplierUserId" column="SUPPLIER_USER_ID" />
+        <result property="supplierId" column="SUPPLIER_ID" />
+        <result property="email" column="EMAIL" />
+        <result property="displayName" column="DISPLAY_NAME" />
+        <result property="firstName" column="FIRST_NAME" />
+        <result property="lastName" column="LAST_NAME" />
+        <result property="userName" column="USER_NAME" />
+        <result property="creationDate" column="CREATION_DATE" />
+        <result property="updateDate" column="UPDATE_DATE" />
+        <result property="razonSocial" column="RAZON_SOCIAL" />
+        <result property="ruc" column="RUC" />
+    </resultMap>
+
+    <!-- Select -->
+    <select id="getAllSuppliers" resultMap="supplierUserMap" parameterType="list">
+        SELECT
+        su.SUPPLIER_USER_ID, su.SUPPLIER_ID, su.EMAIL, su.DISPLAY_NAME, su.FIRST_NAME, su.LAST_NAME, su.USER_NAME, su.CREATION_DATE, su.UPDATE_DATE, p.RAZON_SOCIAL, p.RUC
+        FROM SUPPLIER_USER su
+        INNER JOIN PROVEEDOR p ON p.ID_PROVEEDOR = su.SUPPLIER_ID
+        WHERE 1 = 1
+        ORDER BY su.CREATION_DATE DESC
+    </select>
+
+</mapper>

@@ -1,10 +1,5 @@
 package com.incloud.hcp.rest;
 
-import com.incloud.hcp.bean.MensajeBean;
-import com.incloud.hcp.bean.UserSession;
-import com.incloud.hcp.domain.Proveedor;
-import com.incloud.hcp.domain.Usuario;
-import com.incloud.hcp.dto.UsuarioBtpDto;
 import com.incloud.hcp.repository.ProveedorRepository;
 import com.incloud.hcp.repository.UsuarioRepository;
 import com.incloud.hcp.rest._framework.AppRest;
@@ -12,7 +7,6 @@ import com.incloud.hcp.service.UsuarioService;
 import com.incloud.hcp.ws.ias.bean.IASResponse;
 import com.incloud.hcp.ws.ias.service.IUserIASService;
 import com.sap.cloud.security.xsuaa.token.Token;
-import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,10 +14,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 /**

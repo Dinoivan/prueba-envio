@@ -2,7 +2,6 @@ package com.incloud.hcp.jco.comprobanteRetencion.dto;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Date;
 
 public class SapTableCRTotalDto implements Serializable {
     private String numeroDocumentoErp;

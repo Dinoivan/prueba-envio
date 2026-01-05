@@ -2,7 +2,6 @@ package com.incloud.hcp.jco.proveedor.service.impl;
 
 import com.incloud.hcp.domain.Proveedor;
 import com.incloud.hcp.domain.ProveedorCuentaBancaria;
-import com.incloud.hcp.exception.ServiceException;
 import com.incloud.hcp.jco.proveedor.dto.ProveedorRFCParameterBuilder;
 import com.incloud.hcp.jco.proveedor.dto.ProveedorRFCResponseDto;
 import com.incloud.hcp.jco.proveedor.dto.ProveedorResponseRFC;

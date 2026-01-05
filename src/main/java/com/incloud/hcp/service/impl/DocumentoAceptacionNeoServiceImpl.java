@@ -1,6 +1,5 @@
 package com.incloud.hcp.service.impl;
 
-import com.incloud.hcp.domain.DocumentoAceptacion;
 import com.incloud.hcp.dto.DocumentoAceptacionDto;
 import com.incloud.hcp.myibatis.mapper.DocumentoAceptacionNeoMapper;
 import com.incloud.hcp.service.DocumentoAceptacionNeoService;
@@ -11,7 +10,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 

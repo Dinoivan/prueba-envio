@@ -2,8 +2,8 @@ package com.incloud.hcp.domain;
 
 import com.incloud.hcp.domain._framework.BaseDomain;
 import com.incloud.hcp.util.constant.CotizacionConstant;
-
 import jakarta.persistence.*;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
