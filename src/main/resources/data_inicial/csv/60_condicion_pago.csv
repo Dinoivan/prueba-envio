@@ -1,0 +1,25 @@
+codigoSap,descripcion,diasPago,factorDenominadorTasa
+K000,PE Contado,0,360
+K001,PE Contado Comercial,0,360
+K003,PE Factura a 10 Días,10,360
+K004,PE Factura a 15 Días,15,360
+K005,PE Factura a 20 Días,20,360
+K006,PE Factura a 30 Días,30,360
+K007,PE Factura a 45 Días,45,360
+K008,PE Factura a 60 Días,60,360
+K009,PE Factura a 90 Días,90,360
+K010,PE Factura a 120 Días,120,360
+K011,PE Factura a 180 Días,180,360
+K012,PE Factura a 25 Días,25,360
+K013,PE Factura a 75 Días,75,360
+K015,PE Letra a 45 Días S/G,45,360
+K016,PE Letra a 60 Días S/G,60,360
+K017,PE Letra a 90 Días S/G,90,360
+K018,PE Letra a 120 Días S/G,120,360
+K019,PE Letra a 180 Días S/G,180,360
+K025,PE Letra a 45 Días C/G,45,360
+K026,PE Letra a 60 Días C/G,60,360
+K027,PE Letra a 75 Días C/G,75,360
+K028,PE Letra a 90 Días C/G,90,360
+K029,PE Letra a 120 Días C/G,120,360
+K030,PE Letra a 180 Días C/G,180,360

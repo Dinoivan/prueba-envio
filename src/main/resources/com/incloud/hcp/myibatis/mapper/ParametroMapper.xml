@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.incloud.hcp.myibatis.mapper.ParametroMapper">
+
+    <resultMap id="parametroResultMap" type="com.incloud.hcp.domain.Parametro">
+        <id property="idParametro" column="id_parametro"/>
+        <result property="codigo" column="codigo"/>
+        <result property="descripcion" column="descripcion"/>
+        <result property="modulo" column="id_padre"/>
+        <result property="tipo" column="tipo"/>
+        <result property="valor" column="valor"/>
+    </resultMap>
+
+    <resultMap id="mailSettingMap" type="com.incloud.hcp.service.notificacion.MailSetting">
+        <result property="host" column="MAIL_HOST"/>
+        <result property="port" column="MAIL_PORT"/>
+        <result property="user" column="MAIL_USERNAME"/>
+        <result property="emailFrom" column="MAIL_FROM_EMAIL"/>
+        <result property="nameFrom" column="MAIL_FROM_NAME"/>
+        <result property="password" column="MAIL_PASSWORD"/>
+    </resultMap>
+
+    <resultMap id="sapSettingMap" type="com.incloud.hcp.sap.SapSetting">
+        <result property="user" column="USER"/>
+        <result property="password" column="PASSWORD"/>
+        <result property="wsdlSolped" column="WSDL_SOLPED"/>
+        <result property="wsdlMaterial" column="WSDL_MATERIAL"/>
+        <result property="wsdlProveedor" column="WSDL_PROVEEDOR"/>
+        <result property="wsdlOrdenCompra" column="WSDL_ORDEN_COMPRA"/>
+        <result property="wsdlHomologacion" column="WSDL_HOMOLOGACION"/>
+    </resultMap>
+
+    <select id="getListParametro" resultMap="parametroResultMap">
+        SELECT p.* FROM PARAMETROS p WHERE p.modulo = #{parametro.name}  AND p.tipo = #{tipo.name}
+    </select>
+
+    <select id="getListParametrobyModuloandTipo" resultMap="parametroResultMap">
+        SELECT p.* FROM PARAMETROS p WHERE p.modulo = #{modulo}  AND p.tipo = #{tipo}
+    </select>
+
+    <select id="getMailSetting" resultMap="mailSettingMap">
+        SELECT
+            MAX(CASE WHEN TIPO = 'MAIL_HOST' THEN VALOR ELSE NULL END) AS MAIL_HOST,
+            MAX(CASE WHEN TIPO = 'MAIL_PORT' THEN VALOR ELSE NULL END) AS MAIL_PORT,
+            MAX(CASE WHEN TIPO = 'MAIL_SENDER_NAME' THEN VALOR ELSE NULL END) AS MAIL_FROM_EMAIL,
+            MAX(CASE WHEN TIPO = 'MAIL_SENDER_NAME' THEN DESCRIPCION ELSE NULL END) AS MAIL_FROM_NAME,
+            MAX(CASE WHEN TIPO = 'MAIL_USERNAME' THEN VALOR ELSE NULL END) AS MAIL_USERNAME,
+            MAX(CASE WHEN TIPO = 'MAIL_PASSWORD' THEN VALOR ELSE NULL END) AS MAIL_PASSWORD
+            FROM
+            (   SELECT TIPO, VALOR, DESCRIPCION, row_number () over (partition by MODULO) as ROW_NUM
+                FROM PARAMETROS
+                WHERE MODULO = 'GENERAL'
+                ORDER BY TIPO
+            );
+    </select>
+
+    <select id="getSapSetting" resultMap="sapSettingMap">
+        SELECT
+        MAX(CASE WHEN TIPO = 'SAP_USERNAME' THEN VALOR ELSE NULL END) AS USER,
+        MAX(CASE WHEN TIPO = 'SAP_PASSWORD' THEN VALOR ELSE NULL END) AS PASSWORD,
+        MAX(CASE WHEN TIPO = 'URL_WSDL_SOLPED' THEN VALOR ELSE NULL END) AS WSDL_SOLPED,
+        MAX(CASE WHEN TIPO = 'URL_WSDL_MATERIAL' THEN VALOR ELSE NULL END) AS WSDL_MATERIAL,
+        MAX(CASE WHEN TIPO = 'URL_WSDL_PROVEEDOR' THEN VALOR ELSE NULL END) AS WSDL_PROVEEDOR,
+        MAX(CASE WHEN TIPO = 'URL_WSDL_ORDEN_COMPRA' THEN VALOR ELSE NULL END) AS WSDL_ORDEN_COMPRA,
+        MAX(CASE WHEN TIPO = 'URL_WSDL_HOMOLOGACION' THEN VALOR ELSE NULL END) AS WSDL_HOMOLOGACION
+        FROM
+        (   SELECT TIPO, VALOR, row_number () over (partition by MODULO) as ROW_NUM
+            FROM PARAMETROS
+            WHERE MODULO = 'WEB_SERVICE'
+            ORDER BY TIPO
+        );
+    </select>
+</mapper>

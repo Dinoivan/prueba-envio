@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <!--<display-name>ovp.example</display-name>-->
+    <!-- ============================================================== -->
+    <!-- UI5 resource servlet used to handle application resources      -->
+    <!-- ============================================================== -->
+
+    <!--Database connection to HANA-->
+    <!--<resource-ref>
+        <res-ref-name>jdbc/DefaultDB</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+    </resource-ref>
+
+    <resource-ref>
+        <res-ref-name>EcmService</res-ref-name>
+        <res-type>com.sap.ecm.api.EcmService</res-type>
+    </resource-ref>
+
+    <resource-ref>
+        <res-ref-name>user/Provider</res-ref-name>
+        <res-type>com.sap.security.um.user.UserProvider</res-type>
+    </resource-ref>
+
+    <resource-ref>
+        <res-ref-name>connectivityConfiguration</res-ref-name>
+        <res-type>com.sap.core.connectivity.api.configuration.ConnectivityConfiguration</res-type>
+    </resource-ref>-->
+
+    <!--<login-config>
+        <auth-method>BASIC</auth-method>
+        <auth-method>FORM</auth-method>
+    </login-config>
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Protected Area</web-resource-name>
+            <url-pattern>/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>Everyone</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-role>
+        <description>All SAP HANA Cloud users</description>
+        <role-name>Everyone</role-name>
+    </security-role>-->
+
+</web-app>

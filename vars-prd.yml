@@ -1,0 +1,19 @@
+# Application
+application-name: copeincaprovider-api
+application-instances: 1
+application-memory: 4096M
+#application-disk: 4G
+application-timeout: 600
+application-route: prd-copeincaprovider.cfapps.us10-001.hana.ondemand.com
+application-path: target/copeincaproviderapp.war
+
+profile: prd
+
+# Router
+router-name: approuter-copeincaprovider-api
+router-path: approuter
+router-instances: 1
+router-memory: 512M
+router-route: prd-copeincaprovider-web.cfapps.us10-001.hana.ondemand.com
+
+# XSUAA

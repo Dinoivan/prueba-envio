@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4_Landscape" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2e10e99c-80bf-4507-9fae-e7b01a493782">
+
+
+    <field name="placa" class="java.lang.String">
+    </field>
+
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="87" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="0" width="380" height="30" uuid="fbda0061-d9f9-42d0-9e3b-4d81405831e7"/>
+                <textElement>
+                    <font size="20"/>
+                </textElement>
+                <text><![CDATA[CFG INVESTMENT S.A.C.]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="30" width="210" height="20" uuid="6cdd9cf9-7c72-467a-9ace-b3387730c72b"/>
+                <text><![CDATA[CALLLE 2 Lt10  Lotizacion Gran TRAP]]></text>
+            </staticText>
+            <textField pattern="MMMMM dd, yyyy">
+                <reportElement x="690" y="0" width="90" height="20" uuid="837592b6-3688-48f6-b867-bc3f683d8c88"/>
+                <textElement textAlignment="Right"/>
+                <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+            </textField>
+            <textField pattern="HH:mm">
+                <reportElement x="690" y="20" width="85" height="30" uuid="91483e36-6d84-4331-a906-a5e4391dded8"/>
+                <textElement textAlignment="Right"/>
+                <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="0" y="50" width="140" height="20" uuid="3434c95c-99e5-43a4-9cd2-7072c9857226"/>
+                <text><![CDATA[Ancash - Santa - Chimbote]]></text>
+            </staticText>
+        </band>
+    </title>
+    <pageHeader>
+        <band height="42" splitType="Stretch">
+            <staticText>
+                <reportElement x="180" y="6" width="400" height="30" uuid="8b84e7ff-ef17-4784-a270-bbf081b8ae54"/>
+                <textElement textAlignment="Center">
+                    <font size="20"/>
+                </textElement>
+                <text><![CDATA[TABLA DE BALANZA]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="620" y="10" width="80" height="25" uuid="8313c6e0-8c0c-42e2-82bf-67d9ef11b6aa"/>
+                <textElement>
+                    <font size="14"/>
+                </textElement>
+                <text><![CDATA[TICKET N°: ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="700" y="11" width="80" height="25" uuid="4fb53e8c-47e3-46a7-a938-b4e583f2b45b"/>
+                <textElement textAlignment="Center">
+                    <font size="14"/>
+                </textElement>
+                <text><![CDATA[00194945]]></text>
+            </staticText>
+            <line>
+                <reportElement x="0" y="41" width="780" height="1" uuid="a0e076c6-05b6-4650-be61-b00743e6c14a"/>
+            </line>
+        </band>
+    </pageHeader>
+    <detail>
+        <band height="219" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="10" width="100" height="20" uuid="45800866-32b8-429e-9f0d-99527e089f54"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[N° DE PLACA:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="40" width="100" height="20" uuid="e36032e1-104c-43bd-a6dd-34705d8b7fe4"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[PRODUCTO:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="70" width="100" height="20" uuid="01bd6af6-0302-43d2-8743-ef6ef3896488"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[GUIA ENTREGA:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="100" width="100" height="20" uuid="5c3ec196-28e9-4dbb-b2ce-660efe25b359"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[CODIGO/RUC:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="128" width="150" height="20" uuid="90a268eb-a34a-4c81-93a7-11fd78637fa0"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[CLIENTE/PROVEEDOR:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="160" width="120" height="20" uuid="dfa08114-dc69-44ee-93e5-b2e998912c30"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[CONDUCTOR:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="190" width="170" height="20" uuid="84f88eed-f30b-406d-b9c2-ea1ad1333bf2"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[DESTINO:]]></text>
+            </staticText>
+            <textField isStretchWithOverflow="true">
+                <reportElement x="100" y="10" width="80" height="20" uuid="44554db5-a885-4d79-982d-f727911b0781">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e59d3e26-f8c0-47d3-a304-1560b4c41059"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{carreta.placa}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="100" y="40" width="170" height="20" uuid="b49163be-06fe-4c25-9097-51651b716c0d"/>
+                <textElement textAlignment="Center">
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[001-  HARINA DE PESCADO]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="100" y="98" width="100" height="22" uuid="85e3516a-2630-4454-844f-2110d68f659b"/>
+                <textElement textAlignment="Center">
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[20601413005]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="150" y="128" width="83" height="20" uuid="b13df0f2-a3c7-414f-b274-614e0be5ee19"/>
+                <textElement textAlignment="Center">
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[GETRANSAC]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="120" y="160" width="140" height="20" uuid="f3d4788e-34d3-468c-9b68-c350f80de8fc"/>
+                <textElement textAlignment="Center">
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[JAVIER GOMEZ DURAN]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="310" y="10" width="70" height="20" uuid="b7c10670-a512-479f-90d8-c74f02170eb8"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[CARRETA:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="380" y="10" width="80" height="20" uuid="3cf84497-e4b8-49ee-b5dd-7c36565ba37f"/>
+                <textElement textAlignment="Center">
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[C5G979]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="310" y="90" width="70" height="22" uuid="0c07b8e4-79da-4b15-ba6b-b58aa61428ae"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[PROCEDE:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="580" y="10" width="70" height="22" uuid="33f62e3c-b0ff-4255-aa89-e9693cbc7728"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[RUMA:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="580" y="90" width="70" height="22" uuid="b2c17d32-15ff-4808-a9b3-9473cf9ecee2"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[PRECIO S/:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="650" y="90" width="40" height="22" uuid="1e3be202-9ec0-4190-aa42-a6026ac3ec37"/>
+                <textElement textAlignment="Center">
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[0.00]]></text>
+            </staticText>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="76" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="18" width="120" height="20" uuid="e6ea2759-8a3d-44f6-8a14-246bf1ea30c8"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[FECHA ENTRADA:]]></text>
+            </staticText>
+            <line>
+                <reportElement x="0" y="11" width="780" height="1" uuid="8ad95409-be43-4fba-bd05-5459c8542f70"/>
+            </line>
+            <textField pattern="MMMMM dd, yyyy">
+                <reportElement x="120" y="18" width="90" height="20" uuid="94f52fad-38ca-46c2-88d2-ba19407e20a3"/>
+                <textElement textAlignment="Left">
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="570" y="19" width="110" height="20" uuid="1df02f6e-3f0d-4bec-9526-b3a5b855b7b5"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[FECHA SALIDA:]]></text>
+            </staticText>
+            <textField pattern="MMMMM dd, yyyy">
+                <reportElement x="680" y="19" width="90" height="20" uuid="b4a1e1e9-b3f6-42c5-a86b-9624c7789306"/>
+                <textElement textAlignment="Left">
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="0" y="39" width="120" height="20" uuid="688f3589-4b1e-43ed-8997-09ddbaeae99d"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[HORA ENTRADA:]]></text>
+            </staticText>
+            <textField pattern="HH:mm">
+                <reportElement x="120" y="39" width="90" height="20" uuid="c9285301-d80a-40fa-ad42-74211ad17af1"/>
+                <textElement textAlignment="Left">
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="570" y="38" width="110" height="20" uuid="fa734bcf-5fb9-489f-bfc7-59f5b8b6b439"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[HORA SALIDA:]]></text>
+            </staticText>
+            <textField pattern="HH:mm">
+                <reportElement x="680" y="40" width="90" height="20" uuid="c210b1ae-7aae-4164-a404-7ebf2d3ceac4"/>
+                <textElement textAlignment="Left">
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+            </textField>
+        </band>
+    </columnFooter>
+    <pageFooter>
+        <band height="108" splitType="Stretch">
+            <staticText>
+                <reportElement x="5" y="59" width="150" height="20" uuid="73054a85-4dd0-46a0-ae01-b3105343d4c6"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[OBSERVACIONES:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="150" y="39" width="190" height="20" uuid="8da46518-d775-438c-9075-789014a7f0c2"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[PEDRO RAFAILE SAAVEDRA]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="430" y="39" width="150" height="20" uuid="c2d7ca71-4496-4b8a-a940-e7fba26c1e1c"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[OPERADOR SALIDA:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="580" y="40" width="200" height="20" uuid="4ddd497d-2b91-4b8f-84d3-a1ddfaff2d59"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[PEDRO RAFAILE SAAVEDRA]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="5" y="44" width="150" height="20" uuid="477b7031-e743-42e3-8835-41211bdd4f8b"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[OPERADOR ENTRADA:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="5" y="80" width="85" height="20" uuid="4ea0a7d6-e9f4-4ec8-a1ad-2fda4f381676"/>
+                <textElement>
+                    <font size="11"/>
+                </textElement>
+                <text><![CDATA[CO16220357 =]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="95" y="80" width="105" height="20" uuid="47d4907c-2d88-4f0f-a487-262587811c23"/>
+                <textElement>
+                    <font size="11"/>
+                </textElement>
+                <text><![CDATA[215 SACOS]]></text>
+            </staticText>
+        </band>
+    </pageFooter>
+</jasperReport>

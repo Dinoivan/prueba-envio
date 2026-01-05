@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<excel>
+    <header>
+        <title>CODIGO SAP PROVEEDOR</title>
+    </header>
+    <header>
+        <title>RUC</title>
+    </header>
+    <header>
+        <title>RAZON SOCIAL</title>
+    </header>
+    <header>
+        <title>TIPO SOLICITUD</title>
+    </header>
+    <header>
+        <title>CODIGO DE NO CONFORME</title>
+    </header>
+    <header>
+        <title>MOTIVO DE NO CONFORME</title>
+    </header>
+    <header>
+        <title>FECHA DE REGISTRO DEL NO CONFORME</title>
+    </header>
+    <header>
+        <title>ESTADO SOLICITUD</title>
+    </header>
+</excel>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<excel>
+    <header>
+        <title>RUC</title>
+    </header>
+    <header>
+        <title>RAZON SOCIAL</title>
+    </header>
+    <header>
+        <title>CODIGO SAP</title>
+    </header>
+    <header>
+        <title>PAIS</title>
+    </header>
+    <header>
+        <title>REGION</title>
+    </header>
+    <header>
+        <title>PROVINCIA</title>
+    </header>
+    <header>
+        <title>DIRECCION</title>
+    </header>
+    <header>
+        <title>PUNTO ATENCION</title>
+    </header>
+    <header>
+        <title>CONTACTO</title>
+    </header>
+    <header>
+        <title>CORREO CONTACTO</title>
+    </header>
+    <header>
+        <title>TELEFONO</title>
+    </header>
+</excel>

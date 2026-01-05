@@ -1,0 +1,9 @@
+idTipoLicitacion,descripcion,idPadre,indEvaluacionAuto,nivel,pesoCondicion,pesoEvaluacionTecnica,pesoMoneda
+1,Bienes,,,1,,,
+2,Servicio,,,1,,,
+3,Materiales Validados,1,1,2,20,0,80
+4,Materiales sin Validar,1,0,2,28,42,30
+5,Servicios Varios,2,0,2,20,30,50
+6,Activos diversos,1,0,2,28,42,30
+7,Proyectos,2,0,2,0,70,30
+8,Suministros Indirectos,1,1,2,0,0,100

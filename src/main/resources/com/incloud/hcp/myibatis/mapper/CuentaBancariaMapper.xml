@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.incloud.hcp.myibatis.mapper.CuentaBancariaMapper">
+
+    <resultMap id="contactoResultMap" type="com.incloud.hcp.bean.CuentaBancaria">
+        <id property="idCuenta" column="id_cuenta"/>
+        <result property="banco.idBanco" column="id_banco"/>
+        <result property="banco.descripcion" column="descripcion"/>
+
+        <result property="moneda.idMoneda" column="id_moneda"/>
+        <result property="moneda.textoBreve" column="texto_breve"/>
+
+        <result property="tipoCuenta.idTipoCuenta" column="id_tipo_cuenta"/>
+        <result property="tipoCuenta.codigo" column="codigo_tipo_cuenta"/>
+        <result property="tipoCuenta.descripcion" column="tipo_cuenta"/>
+
+        <result property="numeroCuenta" column="numero_cuenta"/>
+        <result property="numeroCuentaCci" column="numero_cuenta_cci"/>
+        <result property="contacto" column="contacto"/>
+        <result property="archivoId" column="archivo_id"/>
+        <result property="archivoNombre" column="archivo_nombre"/>
+        <result property="archivoTipo" column="archivo_tipo"/>
+        <result property="rutaAdjunto" column="ruta_adjunto"/>
+    </resultMap>
+
+    <resultMap id="cuentaBancariaDtoExcelResultMap" type="com.incloud.hcp.dto.reporte.CuentaBancoDtoExcel">
+        <result property="codigoSap" column="codigo_sap"/>
+        <result property="ruc" column="ruc"/>
+        <result property="razonSocial" column="razon_social"/>
+        <result property="banco" column="banco"/>
+        <result property="tipoCuenta" column="tipo_cuenta"/>
+        <result property="numeroCuenta" column="numero_cuenta"/>
+        <result property="codigoCci" column="numero_cuenta_cci"/>
+        <result property="moneda" column="moneda"/>
+        <result property="contacto" column="contacto"/>
+    </resultMap>
+
+    <select id="getListCuentaByIdProveedor" resultMap="contactoResultMap">
+
+        SELECT cb.id_cuenta,
+        b.id_banco,
+        b.descripcion,
+        m.id_moneda,
+        m.texto_breve,
+        COALESCE(p.id_parametro , 0) AS id_tipo_cuenta,
+        cb.clave_control_banco AS codigo_tipo_cuenta,
+        COALESCE(p.valor, '-') AS tipo_cuenta,
+        cb.numero_cuenta,
+        cb.numero_cuenta_cci,
+        cb.contacto,
+        cb.archivo_id,
+        cb.archivo_nombre,
+        cb.archivo_tipo,
+        cb.ruta_adjunto
+        FROM PROVEEDOR_CUENTA_BANCARIA cb
+        INNER JOIN BANCO b ON cb.id_banco = b.id_banco
+        INNER JOIN MONEDA m ON cb.id_moneda = m.id_moneda
+        LEFT JOIN PARAMETROS p ON p.modulo = #{parametro} AND
+                                  p.tipo = #{tipo} AND
+                                  cb.clave_control_banco = p.codigo
+
+        WHERE cb.id_proveedor = #{idProveedor}
+    </select>
+
+    <select id="getListAllCuentasBancariasProveedor" resultMap="cuentaBancariaDtoExcelResultMap">
+        SELECT
+            pv.acreedor_codigo_sap AS codigo_sap,
+            pv.ruc,
+            pv.razon_social,
+            b.descripcion AS banco,
+            COALESCE(p.valor, '-') AS tipo_cuenta,
+            pcb.numero_cuenta,
+            pcb.numero_cuenta_cci,
+            m.texto_breve AS moneda,
+            pcb.contacto
+        FROM PROVEEDOR_CUENTA_BANCARIA pcb
+        INNER JOIN PROVEEDOR pv ON pcb.id_proveedor = pv.id_proveedor
+        INNER JOIN BANCO b ON pcb.id_banco = b.id_banco
+        INNER JOIN MONEDA m ON pcb.id_moneda = m.id_moneda
+        LEFT JOIN PARAMETROS p ON p.modulo = 'CUENTA_BANCO'
+              AND p.tipo = 'TIPO'
+              AND p.codigo = pcb.clave_control_banco
+        ORDER BY pv.razon_social;
+    </select>
+</mapper>

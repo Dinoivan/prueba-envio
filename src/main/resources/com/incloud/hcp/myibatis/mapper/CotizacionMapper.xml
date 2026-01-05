@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.incloud.hcp.myibatis.mapper.CotizacionMapper">
+
+    <resultMap id="cotizacionResultMap" type="com.incloud.hcp.domain.Cotizacion">
+        <result property="proveedor.idProveedor" column="id_proveedor"/>
+        <result property="proveedor.ruc" column="ruc"/>
+        <result property="proveedor.razonSocial" column="razon_social"/>
+        <result property="proveedor.email" column="email"/>
+        <result property="estadoCotizacion" column="estado_cotizacion"/>
+    </resultMap>
+
+    <select id="getListCotizacionByLicitacion" resultMap="cotizacionResultMap">
+        SELECT
+          t.id_proveedor,
+          p.ruc,
+          p.razon_social,
+          p.email,
+          CASE WHEN (SELECT 1 FROM cotizacion c WHERE c.id_proveedor = t.id_proveedor AND c.id_licitacion=t.id_licitacion)
+            IS NULL THEN 'Pendiente' ELSE (
+              SELECT CASE c.estado_cotizacion WHEN 'EN' THEN 'Cotización recibida' WHEN 'NP' THEN 'No participa' ELSE 'Pendiente' END
+              from cotizacion c where c.id_proveedor = t.id_proveedor and c.id_licitacion=t.id_licitacion
+            ) END
+          AS estado_cotizacion
+        FROM licitacion_proveedor t, proveedor p
+        WHERE
+          p.id_proveedor = t.id_proveedor
+          and t.id_licitacion = #{idLicitacion};
+    </select>
+
+</mapper>

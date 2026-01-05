@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<excel>
+    <header>
+        <title>CLASE DOCUMENTO</title>
+    </header>
+    <header>
+        <title>MONEDA</title>
+    </header>
+    <header>
+        <title>PUNTO DE ENTREGA</title>
+    </header>
+    <header>
+        <title>GRADO DE URGENCIA</title>
+    </header>
+    <header>
+        <title>F.CIERRE RECEP.OFERTAS</title>
+    </header>
+    <header>
+        <title>COMENTARIOS</title>
+    </header>
+</excel>

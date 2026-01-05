@@ -1,0 +1,1647 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.incloud.hcp.myibatis.mapper.LicitacionMapper">
+
+
+	<resultMap id="licitacionResultMap" type="com.incloud.hcp.bean.LicitacionResponse">
+		<id property="idLicitacion" column="id_licitacion"/>
+		<result property="nroLicitacion" column="nro_licitacion"/>
+		<result property="claseDocumento" column="clase_documento"/>
+		<result property="fechaCreacion" column="fecha_creacion"/>
+		<result property="fechaInicioRecepcionOferta" column="fecha_inicio_recepcion_oferta"/>
+		<result property="fechaCierreRecepcionOferta" column="fecha_cierre_recepcion_oferta"/>
+		<result property="estadoLicitacion" column="estado_licitacion" />
+		<result property="fechaPublicacion" column="fecha_publicacion" />
+		<result property="fechaUltimaRenegociacionString" column="fecha_ultima_renegociacion"/>
+		<!--<result property="usuarioCreacion" column="user_alias" />-->
+	</resultMap>
+
+	<select id="getListLicitacionByCierre" resultMap="licitacionResultMap">
+		SELECT
+		li.id_licitacion,
+		CONCAT(li.ANIO_LICITACION,RIGHT(CONCAT('00000000',li.NRO_LICITACION),8)) as nro_licitacion,
+		to_char(li.FECHA_CREACION,'dd/mm/yyyy') as fecha_creacion,
+		to_char(li.FECHA_INICIO_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fecha_inicio_recepcion_oferta,
+		to_char(li.FECHA_CIERRE_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fecha_cierre_recepcion_oferta,
+		to_char(li.FECHA_PUBLICACION,'dd/mm/yyyy') as fecha_publicacion,
+		to_char(li.FECHA_ULTIMA_RENEGOCIACION,'dd/mm/yyyy HH24:MI:SS') as fecha_ultima_renegociacion
+		FROM LICITACION li
+		WHERE li.estado_licitacion = #{estadoLicitacion}
+		  AND (SELECT MAX(FECHA_CIERRE_RECEPCION)
+		       FROM LICITACION_PROVEEDOR X
+		       <![CDATA[
+				WHERE X.ID_LICITACION = LI.ID_LICITACION) <= #{fechaCierreRecepcionOferta}
+				]]>
+	</select>
+
+
+	<select id="getListLicitacionByEstado" resultMap="licitacionResultMap">
+		SELECT
+		li.id_licitacion,
+		CONCAT(li.ANIO_LICITACION,RIGHT(CONCAT('00000000',li.NRO_LICITACION),8)) as nro_licitacion,
+		'' as clase_documento,
+		to_char(li.FECHA_CREACION,'dd/mm/yyyy') as fecha_creacion,
+		to_char(li.FECHA_INICIO_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fecha_inicio_recepcion_oferta,
+		to_char(li.FECHA_CIERRE_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fecha_cierre_recepcion_oferta,
+		p.VALOR as estado_licitacion,
+		to_char(li.FECHA_PUBLICACION,'dd/mm/yyyy') as fecha_publicacion,
+		to_char(li.FECHA_ULTIMA_RENEGOCIACION,'dd/mm/yyyy HH24:MI:SS') as fecha_ultima_renegociacion
+		FROM LICITACION li, PARAMETROS p
+		WHERE p.codigo = li.ESTADO_LICITACION
+		AND li.estado_licitacion IN
+		<foreach item="item" index="index" collection="estados"
+				 open="(" separator="," close=")">
+			#{item}
+		</foreach>
+		ORDER BY nro_licitacion desc
+	</select>
+
+	<select id="getListLicitacionByNumero" resultMap="licitacionResultMap">
+		SELECT
+			li.id_licitacion,
+			CONCAT(li.ANIO_LICITACION,RIGHT(CONCAT('00000000',li.NRO_LICITACION),8)) as nro_licitacion,
+			'' as clase_documento,
+			to_char(li.FECHA_CREACION,'dd/mm/yyyy') as fecha_creacion,
+			to_char(li.FECHA_INICIO_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fecha_inicio_recepcion_oferta,
+			to_char(li.FECHA_CIERRE_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fecha_cierre_recepcion_oferta,
+			p.VALOR as estado_licitacion,
+			to_char(li.FECHA_PUBLICACION,'dd/mm/yyyy') as fecha_publicacion,
+			to_char(li.FECHA_ULTIMA_RENEGOCIACION,'dd/mm/yyyy HH24:MI:SS') as fecha_ultima_renegociacion
+		FROM LICITACION li, PARAMETROS p
+		WHERE
+			    p.codigo = li.ESTADO_LICITACION
+            AND p.MODULO = 'LICITACION' AND p.TIPO = 'ESTADO'
+			AND li.NRO_LICITACION=#{num}
+            AND li.ANIO_LICITACION=#{annio}
+    </select>
+
+	<select id="getListLicitacionByRuc" resultMap="licitacionResultMap">
+		SELECT
+			li.id_licitacion,
+			CONCAT(li.ANIO_LICITACION,RIGHT(CONCAT('00000000',li.NRO_LICITACION),8)) as nro_licitacion,
+			'' as clase_documento,
+			to_char(li.FECHA_CREACION,'dd/mm/yyyy') as fecha_creacion,
+			to_char(li.FECHA_INICIO_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fecha_inicio_recepcion_oferta,
+			to_char(li.FECHA_CIERRE_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fecha_cierre_recepcion_oferta,
+			p.VALOR as estado_licitacion,
+			to_char(li.FECHA_PUBLICACION,'dd/mm/yyyy') as fecha_publicacion,
+			to_char(li.FECHA_ULTIMA_RENEGOCIACION,'dd/mm/yyyy HH24:MI:SS') as fecha_ultima_renegociacion
+		FROM LICITACION li, PARAMETROS p, LICITACION_PROVEEDOR lp, PROVEEDOR pv
+		WHERE p.codigo = li.ESTADO_LICITACION
+			AND p.MODULO = 'LICITACION' AND p.TIPO = 'ESTADO'
+			AND lp.ID_LICITACION = li.ID_LICITACION
+			AND pv.ID_PROVEEDOR = lp.ID_PROVEEDOR
+			AND pv.RUC = #{ruc}
+		ORDER BY nro_licitacion desc
+	</select>
+
+	<select id="getListLicitacionByDescripcion" resultMap="licitacionResultMap">
+		SELECT
+			li.id_licitacion,
+			CONCAT(li.ANIO_LICITACION,RIGHT(CONCAT('00000000',li.NRO_LICITACION),8)) as nro_licitacion,
+			'' as clase_documento,
+			to_char(li.FECHA_CREACION,'dd/mm/yyyy') as fecha_creacion,
+			to_char(li.FECHA_INICIO_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fecha_inicio_recepcion_oferta,
+			to_char(li.FECHA_CIERRE_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fecha_cierre_recepcion_oferta,
+			p.VALOR as estado_licitacion,
+			to_char(li.FECHA_PUBLICACION,'dd/mm/yyyy') as fecha_publicacion,
+			to_char(li.FECHA_ULTIMA_RENEGOCIACION,'dd/mm/yyyy HH24:MI:SS') as fecha_ultima_renegociacion
+		FROM LICITACION li, PARAMETROS p, LICITACION_DETALLE ld
+		WHERE p.codigo = li.ESTADO_LICITACION
+			AND p.MODULO = 'LICITACION' AND p.TIPO = 'ESTADO'
+			AND ld.ID_LICITACION = li.ID_LICITACION
+			AND UPPER(ld.DESCRIPCION) LIKE '%'||UPPER(#{descripcion})||'%'
+		ORDER BY nro_licitacion desc
+	</select>
+
+	<select id="getListLicitacionByFiltroHistorico" resultMap="licitacionResultMap">
+		SELECT
+		li.id_licitacion,
+		CONCAT(li.ANIO_LICITACION,RIGHT(CONCAT('00000000',li.NRO_LICITACION),8)) as nro_licitacion,
+		'' as clase_documento,
+		to_char(li.FECHA_CREACION,'dd/mm/yyyy') as fecha_creacion,
+		to_char(li.FECHA_INICIO_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fecha_inicio_recepcion_oferta,
+		to_char(li.FECHA_CIERRE_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fecha_cierre_recepcion_oferta,
+		p.VALOR as estado_licitacion,
+		to_char(li.FECHA_PUBLICACION,'dd/mm/yyyy') as fecha_publicacion,
+		to_char(li.FECHA_ULTIMA_RENEGOCIACION,'dd/mm/yyyy HH24:MI:SS') as fecha_ultima_renegociacion
+
+		FROM LICITACION li,  PARAMETROS p
+		WHERE
+		p.codigo = li.ESTADO_LICITACION
+		AND p.MODULO = 'LICITACION' AND p.TIPO = 'ESTADO'
+		<if test="claseDocumento != null and claseDocumento != '' ">
+			AND li.id_clase_documento = #{claseDocumento}
+		</if>
+		<if test="estadoLicitacion != null and estadoLicitacion != '' ">
+			AND li.estado_licitacion = #{estadoLicitacion}
+		</if>
+		<if test="tipoLicitacion != null and tipoLicitacion != ''">
+			AND EXISTS (SELECT X.ID_LICITACION_GRUPO_CONDICION
+			FROM
+			LICITACION_GRUPO_CONDICION_LIC X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_TIPO_LICITACION = #{tipoLicitacion}
+			)
+		</if>
+		<if test="tipoCuestionario != null and tipoCuestionario != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION_GRUPO_CONDICION FROM
+			LICITACION_GRUPO_CONDICION_LIC X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_TIPO_CUESTIONARIO = #{tipoCuestionario}
+			)
+		</if>
+		ORDER BY nro_licitacion desc
+	</select>
+
+	<resultMap id="licitacionFiltroBusquedaResultMap" type="com.incloud.hcp.domain.Licitacion">
+		<id property="idLicitacion" column="ID_LICITACION"/>
+		<result property="estadoLicitacion" column="ESTADO_LICITACION" />
+		<result property="nroLicitacion" column="NRO_LICITACION"/>
+		<result property="anioLicitacion" column="ANIO_LICITACION"/>
+		<result property="puntoEntrega" column="PUNTO_ENTREGA"/>
+		<result property="descripcionPuntoEntrega" column="descripcionPuntoEntrega"/>
+		<result property="fechaEntregaInicio" column="FECHA_ENTREGA_INICIO"/>
+		<result property="fechaEntregaInicioString" column="fechaEntregaInicioString"/>
+
+		<result property="moneda.idMoneda" column="ID_MONEDA"/>
+		<result property="moneda.codigoMoneda" column="CODIGO_MONEDA"/>
+		<result property="moneda.sigla" column="SIGLA"/>
+		<result property="centroAlmacen1.idCentroAlmacen" column="ID_CENTRO"/>
+		<result property="centroAlmacen1.denominacion" column="DenominacionCentro"/>
+		<result property="centroAlmacen2.idCentroAlmacen" column="ID_ALMACEN"/>
+		<result property="centroAlmacen2.denominacion" column="DenominacionAlmacen"/>
+		<result property="fechaPublicacionString" column="fechaPublicacionString"/>
+		<result property="fechaInicioRecepcionOfertaString" column="fechaInicioRecepcionOfertaString"/>
+		<result property="fechaCierreRecepcionOfertaString" column="fechaCierreRecepcionOfertaString"/>
+		<result property="nroProveedoresACotizar" column="nroProveedoresACotizar"/>
+		<result property="nroProveedoresEnviaronCotizacion" column="nroProveedoresEnviaronCotizacion"/>
+
+		<result property="usuarioPublicacionId" column="USUARIO_PUBLICACION_ID"/>
+		<result property="usuarioPublicacionName" column="USUARIO_PUBLICACION_NAME"/>
+		<result property="usuarioPublicacionEmail" column="USUARIO_PUBLICACION_EMAIL"/>
+		<result property="fechaUltimaRenegociacionString" column="fecha_ultima_renegociacion"/>
+
+	</resultMap>
+
+	<select id="getListLicitacionrByFiltroBusqueda" resultMap="licitacionFiltroBusquedaResultMap">
+		SELECT U.ID_LICITACION ,
+		U.ESTADO_LICITACION ,
+		U.NRO_LICITACION ,
+		U.ANIO_LICITACION,
+		U.PUNTO_ENTREGA ,
+		P.VALOR as descripcionPuntoEntrega,
+		U.FECHA_ENTREGA_INICIO ,
+		to_char(U.FECHA_ENTREGA_INICIO,'dd/mm/yyyy') as fechaEntregaInicioString,
+		U.ID_MONEDA ,
+		M.CODIGO_MONEDA,
+		M.SIGLA,
+		U.ID_CENTRO ,
+		'' as DenominacionCentro,
+		U.ID_ALMACEN,
+		'' as DenominacionAlmacen,
+		to_char(U.FECHA_PUBLICACION,'dd/mm/yyyy') as fechaPublicacionString,
+		to_char(U.FECHA_INICIO_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fechaInicioRecepcionOfertaString,
+		to_char(U.FECHA_CIERRE_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fechaCierreRecepcionOfertaString,
+		(select count(1) from LICITACION_PROVEEDOR X
+		WHERE X.ID_LICITACION = U.ID_LICITACION) nroProveedoresACotizar,
+		(select count(1) from COTIZACION Y
+		WHERE Y.ID_LICITACION = U.ID_LICITACION and y.estado_cotizacion = 'EN') nroProveedoresEnviaronCotizacion,
+		U.USUARIO_PUBLICACION_ID ,
+		U.USUARIO_PUBLICACION_NAME,
+		U.USUARIO_PUBLICACION_EMAIL,
+		to_char(u.FECHA_ULTIMA_RENEGOCIACION,'dd/mm/yyyy HH24:MI:SS') as fecha_ultima_renegociacion
+
+		FROM LICITACION U,
+		MONEDA M,
+		PARAMETROS P
+		WHERE U.ID_MONEDA = M.ID_MONEDA
+		AND P.MODULO = 'LICITACION'
+		AND P.TIPO = 'PUNTO_ENTREGA'
+		AND U.PUNTO_ENTREGA = P.CODIGO
+
+		<if test="estadoLicitacionLectura == null or estadoLicitacionLectura == '' ">
+			AND U.ESTADO_LICITACION = #{estadoLicitacion}
+		</if>
+		<if test="estadoLicitacionLectura != null or estadoLicitacionLectura != '' ">
+			AND (U.ESTADO_LICITACION = #{estadoLicitacion} or U.ESTADO_LICITACION = #{estadoLicitacionLectura})
+		</if>
+
+
+		<if test="numeroLicitacion != null and numeroLicitacion != '' ">
+			AND U.NRO_LICITACION = #{numeroLicitacion}
+		</if>
+		<if test="puntoEntrega != null and puntoEntrega != '' ">
+			AND U.PUNTO_ENTREGA = #{puntoEntrega}
+		</if>
+		<if test="moneda != null and moneda != '' ">
+			AND U.ID_MONEDA = #{moneda}
+		</if>
+
+		<if test="listaCentroLogistico != null and listaCentroLogistico.size() > 0">
+			AND EXISTS (SELECT ID_LICITACION
+			FROM LICITACION_DETALLE DETALLE
+			WHERE DETALLE.ID_LICITACION = U.ID_LICITACION
+			AND	DETALLE.ID_CENTRO IN
+			<foreach item="item" index="index" collection="listaCentroLogistico"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+		<if test="listaAlmacen != null and listaAlmacen.size() > 0 ">
+			AND EXISTS (SELECT ID_LICITACION
+			FROM LICITACION_DETALLE DETALLE
+			WHERE DETALLE.ID_LICITACION = U.ID_LICITACION
+			AND DETALLE.ID_ALMACEN IN
+			<foreach item="item" index="index" collection="listaAlmacen"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+
+		<if test="solicitudPedido != null and solicitudPedido != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION_DETALLE FROM
+			LICITACION_DETALLE X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.SOLICITUD_PEDIDO = #{solicitudPedido}
+			)
+		</if>
+		<if test="codigoSap != null and codigoSap != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION_DETALLE FROM
+			LICITACION_DETALLE X,
+			BIEN_SERVICIO BIEN
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_BIEN_SERVICIO = BIEN.ID_BIEN_SERVICIO
+			AND BIEN.CODIGO_SAP =#{codigoSap}
+			)
+		</if>
+		<if test="listaTipoLicitacion != null and listaTipoLicitacion.size() > 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION_GRUPO_CONDICION
+			FROM
+			LICITACION_GRUPO_CONDICION_LIC X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_TIPO_LICITACION IN
+			<foreach item="item" index="index" collection="listaTipoLicitacion"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+		<if test="listaTipoCuestionario != null and listaTipoCuestionario.size() > 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION_GRUPO_CONDICION FROM
+			LICITACION_GRUPO_CONDICION_LIC X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_TIPO_CUESTIONARIO IN
+			<foreach item="item" index="index" collection="listaTipoCuestionario"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+		<if test="idProveedor != null and idProveedor != 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = #{idProveedor}
+			)
+		</if>
+
+		<if test="numeroRUC != null and numeroRUC != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X,
+			PROVEEDOR PROV
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = PROV.ID_PROVEEDOR
+			AND PROV.RUC = #{numeroRUC}
+			)
+		</if>
+		<if test="razonSocial != null and razonSocial != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X,
+			PROVEEDOR PROV
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = PROV.ID_PROVEEDOR
+			AND UPPER(PROV.RAZON_SOCIAL) LIKE '%'||UPPER(#{razonSocial})||'%'
+			)
+		</if>
+		<if test="listaRegion != null and listaRegion.size() > 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X,
+			PROVEEDOR PROV
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = PROV.ID_PROVEEDOR
+			AND PROV.ID_REGION IN
+			<foreach item="item" index="index" collection="listaRegion"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+		<if test="usuarioPublicacion != null and usuarioPublicacion != ''">
+			AND UPPER(U.USUARIO_PUBLICACION_NAME) like '%'||UPPER(#{usuarioPublicacion})||'%'
+		</if>
+		<if test="emailUsuario != null and emailUsuario != ''">
+			AND
+			(
+			EXISTS (SELECT US.CODIGO_USUARIO_IDP FROM USUARIO US
+					WHERE US.EMAIL = #{emailUsuario} and US.CODIGO_USUARIO_IDP = U.USUARIO_CREACION)
+			OR
+			EXISTS (SELECT US.CODIGO_USUARIO_IDP FROM USUARIO US
+					WHERE US.EMAIL = #{emailUsuario} and US.CODIGO_USUARIO_IDP = U.USUARIO_PUBLICACION_ID)
+			)
+		</if>
+		ORDER BY U.ANIO_LICITACION DESC, U.NRO_LICITACION DESC
+	</select>
+
+	<select id="getListLicitacionrByFiltroBusquedaPaginado" resultMap="licitacionFiltroBusquedaResultMap">
+		SELECT U.ID_LICITACION ,
+		U.ESTADO_LICITACION ,
+		U.NRO_LICITACION ,
+		U.ANIO_LICITACION,
+		U.PUNTO_ENTREGA ,
+		P.VALOR as descripcionPuntoEntrega,
+		U.FECHA_ENTREGA_INICIO ,
+		to_char(U.FECHA_ENTREGA_INICIO,'dd/mm/yyyy') as fechaEntregaInicioString,
+		U.ID_MONEDA ,
+		M.CODIGO_MONEDA,
+		M.SIGLA,
+		U.ID_CENTRO ,
+		'' as DenominacionCentro,
+		U.ID_ALMACEN,
+		'' as DenominacionAlmacen,
+		to_char(U.FECHA_PUBLICACION,'dd/mm/yyyy') as fechaPublicacionString,
+		to_char(U.FECHA_INICIO_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fechaInicioRecepcionOfertaString,
+		to_char(U.FECHA_CIERRE_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fechaCierreRecepcionOfertaString,
+		(select count(1) from LICITACION_PROVEEDOR X
+		WHERE X.ID_LICITACION = U.ID_LICITACION) nroProveedoresACotizar,
+		(select count(1) from COTIZACION Y
+		WHERE Y.ID_LICITACION = U.ID_LICITACION and y.estado_cotizacion = 'EN') nroProveedoresEnviaronCotizacion,
+		U.USUARIO_PUBLICACION_ID ,
+		U.USUARIO_PUBLICACION_NAME,
+		U.USUARIO_PUBLICACION_EMAIL,
+		to_char(u.FECHA_ULTIMA_RENEGOCIACION,'dd/mm/yyyy HH24:MI:SS') as fecha_ultima_renegociacion
+
+		FROM LICITACION U,
+		MONEDA M,
+		PARAMETROS P
+		WHERE U.ID_MONEDA = M.ID_MONEDA
+		AND P.MODULO = 'LICITACION'
+		AND P.TIPO = 'PUNTO_ENTREGA'
+		AND U.PUNTO_ENTREGA = P.CODIGO
+
+		<if test="estadoLicitacionLectura == null or estadoLicitacionLectura == '' ">
+			AND U.ESTADO_LICITACION = #{estadoLicitacion}
+		</if>
+		<if test="estadoLicitacionLectura != null or estadoLicitacionLectura != '' ">
+			AND (U.ESTADO_LICITACION = #{estadoLicitacion} or U.ESTADO_LICITACION = #{estadoLicitacionLectura})
+		</if>
+
+
+		<if test="numeroLicitacion != null and numeroLicitacion != '' ">
+			AND U.NRO_LICITACION = #{numeroLicitacion}
+		</if>
+		<if test="puntoEntrega != null and puntoEntrega != '' ">
+			AND U.PUNTO_ENTREGA = #{puntoEntrega}
+		</if>
+		<if test="moneda != null and moneda != '' ">
+			AND U.ID_MONEDA = #{moneda}
+		</if>
+
+		<if test="listaCentroLogistico != null and listaCentroLogistico.size() > 0">
+			AND EXISTS (SELECT ID_LICITACION
+			FROM LICITACION_DETALLE DETALLE
+			WHERE DETALLE.ID_LICITACION = U.ID_LICITACION
+			AND	DETALLE.ID_CENTRO IN
+			<foreach item="item" index="index" collection="listaCentroLogistico"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+		<if test="listaAlmacen != null and listaAlmacen.size() > 0 ">
+			AND EXISTS (SELECT ID_LICITACION
+			FROM LICITACION_DETALLE DETALLE
+			WHERE DETALLE.ID_LICITACION = U.ID_LICITACION
+			AND DETALLE.ID_ALMACEN IN
+			<foreach item="item" index="index" collection="listaAlmacen"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+
+		<if test="solicitudPedido != null and solicitudPedido != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION_DETALLE FROM
+			LICITACION_DETALLE X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.SOLICITUD_PEDIDO = #{solicitudPedido}
+			)
+		</if>
+		<if test="codigoSap != null and codigoSap != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION_DETALLE FROM
+			LICITACION_DETALLE X,
+			BIEN_SERVICIO BIEN
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_BIEN_SERVICIO = BIEN.ID_BIEN_SERVICIO
+			AND BIEN.CODIGO_SAP =#{codigoSap}
+			)
+		</if>
+		<if test="listaTipoLicitacion != null and listaTipoLicitacion.size() > 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION_GRUPO_CONDICION
+			FROM
+			LICITACION_GRUPO_CONDICION_LIC X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_TIPO_LICITACION IN
+			<foreach item="item" index="index" collection="listaTipoLicitacion"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+		<if test="listaTipoCuestionario != null and listaTipoCuestionario.size() > 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION_GRUPO_CONDICION FROM
+			LICITACION_GRUPO_CONDICION_LIC X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_TIPO_CUESTIONARIO IN
+			<foreach item="item" index="index" collection="listaTipoCuestionario"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+		<if test="idProveedor != null and idProveedor != 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = #{idProveedor}
+			)
+		</if>
+
+		<if test="numeroRUC != null and numeroRUC != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X,
+			PROVEEDOR PROV
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = PROV.ID_PROVEEDOR
+			AND PROV.RUC = #{numeroRUC}
+			)
+		</if>
+		<if test="razonSocial != null and razonSocial != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X,
+			PROVEEDOR PROV
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = PROV.ID_PROVEEDOR
+			AND UPPER(PROV.RAZON_SOCIAL) LIKE '%'||UPPER(#{razonSocial})||'%'
+			)
+		</if>
+		<if test="listaRegion != null and listaRegion.size() > 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X,
+			PROVEEDOR PROV
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = PROV.ID_PROVEEDOR
+			AND PROV.ID_REGION IN
+			<foreach item="item" index="index" collection="listaRegion"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+		<if test="usuarioPublicacion != null and usuarioPublicacion != ''">
+			AND UPPER(U.USUARIO_PUBLICACION_NAME) like '%'||UPPER(#{usuarioPublicacion})||'%'
+		</if>
+
+		<if test="emailUsuario != null and emailUsuario != ''">
+			AND
+			(
+			EXISTS (SELECT US.CODIGO_USUARIO_IDP FROM USUARIO US
+					WHERE US.EMAIL = #{emailUsuario} and US.CODIGO_USUARIO_IDP = U.USUARIO_CREACION)
+			OR
+			EXISTS (SELECT US.CODIGO_USUARIO_IDP FROM USUARIO US
+					WHERE US.EMAIL = #{emailUsuario} and US.CODIGO_USUARIO_IDP = U.USUARIO_PUBLICACION_ID)
+			)
+		</if>
+
+		ORDER BY U.ANIO_LICITACION DESC, U.NRO_LICITACION DESC
+		LIMIT #{nroRegistros} OFFSET #{paginaMostrar}
+	</select>
+
+
+	<select id="getListLicitacionrByFiltroBusquedaEstadoTerminal" resultMap="licitacionFiltroBusquedaResultMap">
+		SELECT U.ID_LICITACION ,
+		U.ESTADO_LICITACION ,
+		U.NRO_LICITACION ,
+		U.ANIO_LICITACION,
+		U.PUNTO_ENTREGA ,
+		P.VALOR as descripcionPuntoEntrega,
+		U.FECHA_ENTREGA_INICIO ,
+		to_char(U.FECHA_ENTREGA_INICIO,'dd/mm/yyyy') as fechaEntregaInicioString,
+		U.ID_MONEDA ,
+		M.CODIGO_MONEDA,
+		M.SIGLA,
+		U.ID_CENTRO ,
+		'' as DenominacionCentro,
+		U.ID_ALMACEN,
+		'' as DenominacionAlmacen,
+		to_char(U.FECHA_PUBLICACION,'dd/mm/yyyy') as fechaPublicacionString,
+		to_char(U.FECHA_INICIO_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fechaInicioRecepcionOfertaString,
+		to_char(U.FECHA_CIERRE_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fechaCierreRecepcionOfertaString,
+		(select count(1) from LICITACION_PROVEEDOR X
+		WHERE X.ID_LICITACION = U.ID_LICITACION) nroProveedoresACotizar,
+		(select count(1) from COTIZACION Y
+		WHERE Y.ID_LICITACION = U.ID_LICITACION and y.estado_cotizacion = 'EN') nroProveedoresEnviaronCotizacion,
+		U.USUARIO_PUBLICACION_ID ,
+		U.USUARIO_PUBLICACION_NAME,
+		U.USUARIO_PUBLICACION_EMAIL,
+		to_char(u.FECHA_ULTIMA_RENEGOCIACION,'dd/mm/yyyy HH24:MI:SS') as fecha_ultima_renegociacion
+
+		FROM LICITACION U,
+		MONEDA M,
+		PARAMETROS P
+		WHERE U.ID_MONEDA = M.ID_MONEDA
+		AND P.MODULO = 'LICITACION'
+		AND P.TIPO = 'PUNTO_ENTREGA'
+		AND U.PUNTO_ENTREGA = P.CODIGO
+		AND U.ESTADO_LICITACION IN ('AD','AN','ES')
+
+
+		<if test="numeroLicitacion != null and numeroLicitacion != '' ">
+			AND U.NRO_LICITACION = #{numeroLicitacion}
+		</if>
+		<if test="puntoEntrega != null and puntoEntrega != '' ">
+			AND U.PUNTO_ENTREGA = #{puntoEntrega}
+		</if>
+		<if test="moneda != null and moneda != '' ">
+			AND U.ID_MONEDA = #{moneda}
+		</if>
+
+		<if test="listaCentroLogistico != null and listaCentroLogistico.size() > 0">
+			AND EXISTS (SELECT ID_LICITACION
+			FROM LICITACION_DETALLE DETALLE
+			WHERE DETALLE.ID_LICITACION = U.ID_LICITACION
+			AND	DETALLE.ID_CENTRO IN
+			<foreach item="item" index="index" collection="listaCentroLogistico"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+		<if test="listaAlmacen != null and listaAlmacen.size() > 0 ">
+			AND EXISTS (SELECT ID_LICITACION
+			FROM LICITACION_DETALLE DETALLE
+			WHERE DETALLE.ID_LICITACION = U.ID_LICITACION
+			AND DETALLE.ID_ALMACEN IN
+			<foreach item="item" index="index" collection="listaAlmacen"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+
+		<if test="solicitudPedido != null and solicitudPedido != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION_DETALLE FROM
+			LICITACION_DETALLE X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.SOLICITUD_PEDIDO = #{solicitudPedido}
+			)
+		</if>
+		<if test="codigoSap != null and codigoSap != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION_DETALLE FROM
+			LICITACION_DETALLE X,
+			BIEN_SERVICIO BIEN
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_BIEN_SERVICIO = BIEN.ID_BIEN_SERVICIO
+			AND BIEN.CODIGO_SAP =#{codigoSap}
+			)
+		</if>
+		<if test="listaTipoLicitacion != null and listaTipoLicitacion.size() > 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION_GRUPO_CONDICION
+			FROM
+			LICITACION_GRUPO_CONDICION_LIC X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_TIPO_LICITACION IN
+			<foreach item="item" index="index" collection="listaTipoLicitacion"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+		<if test="listaTipoCuestionario != null and listaTipoCuestionario.size() > 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION_GRUPO_CONDICION FROM
+			LICITACION_GRUPO_CONDICION_LIC X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_TIPO_CUESTIONARIO IN
+			<foreach item="item" index="index" collection="listaTipoCuestionario"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+		<if test="idProveedor != null and idProveedor != 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = #{idProveedor}
+			)
+		</if>
+
+		<if test="numeroRUC != null and numeroRUC != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X,
+			PROVEEDOR PROV
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = PROV.ID_PROVEEDOR
+			AND PROV.RUC = #{numeroRUC}
+			)
+		</if>
+		<if test="razonSocial != null and razonSocial != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X,
+			PROVEEDOR PROV
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = PROV.ID_PROVEEDOR
+			AND UPPER(PROV.RAZON_SOCIAL) LIKE '%'||UPPER(#{razonSocial})||'%'
+			)
+		</if>
+		<if test="listaRegion != null and listaRegion.size() > 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X,
+			PROVEEDOR PROV
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = PROV.ID_PROVEEDOR
+			AND PROV.ID_REGION IN
+			<foreach item="item" index="index" collection="listaRegion"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+		<if test="usuarioPublicacion != null and usuarioPublicacion != ''">
+			AND UPPER(U.USUARIO_PUBLICACION_NAME) like '%'||UPPER(#{usuarioPublicacion})||'%'
+		</if>
+
+		<if test="emailUsuario != null and emailUsuario != ''">
+			AND
+			(
+			EXISTS (SELECT US.CODIGO_USUARIO_IDP FROM USUARIO US
+					WHERE US.EMAIL = #{emailUsuario} and US.CODIGO_USUARIO_IDP = U.USUARIO_CREACION)
+			OR
+			EXISTS (SELECT US.CODIGO_USUARIO_IDP FROM USUARIO US
+					WHERE US.EMAIL = #{emailUsuario} and US.CODIGO_USUARIO_IDP = U.USUARIO_PUBLICACION_ID)
+			)
+		</if>
+
+		ORDER BY U.ANIO_LICITACION DESC, U.NRO_LICITACION DESC
+	</select>
+
+	<select id="getListLicitacionrByFiltroBusquedaEstadoTerminalPaginado" resultMap="licitacionFiltroBusquedaResultMap">
+		SELECT U.ID_LICITACION ,
+		U.ESTADO_LICITACION ,
+		U.NRO_LICITACION ,
+		U.ANIO_LICITACION,
+		U.PUNTO_ENTREGA ,
+		P.VALOR as descripcionPuntoEntrega,
+		U.FECHA_ENTREGA_INICIO ,
+		to_char(U.FECHA_ENTREGA_INICIO,'dd/mm/yyyy') as fechaEntregaInicioString,
+		U.ID_MONEDA ,
+		M.CODIGO_MONEDA,
+		M.SIGLA,
+		U.ID_CENTRO ,
+		'' as DenominacionCentro,
+		U.ID_ALMACEN,
+		'' as DenominacionAlmacen,
+		to_char(U.FECHA_PUBLICACION,'dd/mm/yyyy') as fechaPublicacionString,
+		to_char(U.FECHA_INICIO_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fechaInicioRecepcionOfertaString,
+		to_char(U.FECHA_CIERRE_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fechaCierreRecepcionOfertaString,
+		(select count(1) from LICITACION_PROVEEDOR X
+		WHERE X.ID_LICITACION = U.ID_LICITACION) nroProveedoresACotizar,
+		(select count(1) from COTIZACION Y
+		WHERE Y.ID_LICITACION = U.ID_LICITACION and y.estado_cotizacion = 'EN') nroProveedoresEnviaronCotizacion,
+		U.USUARIO_PUBLICACION_ID ,
+		U.USUARIO_PUBLICACION_NAME,
+		U.USUARIO_PUBLICACION_EMAIL,
+		to_char(u.FECHA_ULTIMA_RENEGOCIACION,'dd/mm/yyyy HH24:MI:SS') as fecha_ultima_renegociacion
+
+		FROM LICITACION U,
+		MONEDA M,
+		PARAMETROS P
+		WHERE U.ID_MONEDA = M.ID_MONEDA
+		AND P.MODULO = 'LICITACION'
+		AND P.TIPO = 'PUNTO_ENTREGA'
+		AND U.PUNTO_ENTREGA = P.CODIGO
+		AND U.ESTADO_LICITACION IN ('AD','AN','ES')
+
+
+		<if test="numeroLicitacion != null and numeroLicitacion != '' ">
+			AND U.NRO_LICITACION = #{numeroLicitacion}
+		</if>
+		<if test="puntoEntrega != null and puntoEntrega != '' ">
+			AND U.PUNTO_ENTREGA = #{puntoEntrega}
+		</if>
+		<if test="moneda != null and moneda != '' ">
+			AND U.ID_MONEDA = #{moneda}
+		</if>
+
+		<if test="listaCentroLogistico != null and listaCentroLogistico.size() > 0">
+			AND EXISTS (SELECT ID_LICITACION
+			FROM LICITACION_DETALLE DETALLE
+			WHERE DETALLE.ID_LICITACION = U.ID_LICITACION
+			AND	DETALLE.ID_CENTRO IN
+			<foreach item="item" index="index" collection="listaCentroLogistico"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+		<if test="listaAlmacen != null and listaAlmacen.size() > 0 ">
+			AND EXISTS (SELECT ID_LICITACION
+			FROM LICITACION_DETALLE DETALLE
+			WHERE DETALLE.ID_LICITACION = U.ID_LICITACION
+			AND DETALLE.ID_ALMACEN IN
+			<foreach item="item" index="index" collection="listaAlmacen"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+
+		<if test="solicitudPedido != null and solicitudPedido != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION_DETALLE FROM
+			LICITACION_DETALLE X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.SOLICITUD_PEDIDO = #{solicitudPedido}
+			)
+		</if>
+		<if test="codigoSap != null and codigoSap != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION_DETALLE FROM
+			LICITACION_DETALLE X,
+			BIEN_SERVICIO BIEN
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_BIEN_SERVICIO = BIEN.ID_BIEN_SERVICIO
+			AND BIEN.CODIGO_SAP =#{codigoSap}
+			)
+		</if>
+		<if test="listaTipoLicitacion != null and listaTipoLicitacion.size() > 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION_GRUPO_CONDICION
+			FROM
+			LICITACION_GRUPO_CONDICION_LIC X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_TIPO_LICITACION IN
+			<foreach item="item" index="index" collection="listaTipoLicitacion"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+		<if test="listaTipoCuestionario != null and listaTipoCuestionario.size() > 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION_GRUPO_CONDICION FROM
+			LICITACION_GRUPO_CONDICION_LIC X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_TIPO_CUESTIONARIO IN
+			<foreach item="item" index="index" collection="listaTipoCuestionario"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+		<if test="idProveedor != null and idProveedor != 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = #{idProveedor}
+			)
+		</if>
+
+		<if test="numeroRUC != null and numeroRUC != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X,
+			PROVEEDOR PROV
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = PROV.ID_PROVEEDOR
+			AND PROV.RUC = #{numeroRUC}
+			)
+		</if>
+		<if test="razonSocial != null and razonSocial != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X,
+			PROVEEDOR PROV
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = PROV.ID_PROVEEDOR
+			AND UPPER(PROV.RAZON_SOCIAL) LIKE '%'||UPPER(#{razonSocial})||'%'
+			)
+		</if>
+		<if test="listaRegion != null and listaRegion.size() > 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X,
+			PROVEEDOR PROV
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = PROV.ID_PROVEEDOR
+			AND PROV.ID_REGION IN
+			<foreach item="item" index="index" collection="listaRegion"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+		<if test="usuarioPublicacion != null and usuarioPublicacion != ''">
+			AND UPPER(U.USUARIO_PUBLICACION_NAME) like '%'||UPPER(#{usuarioPublicacion})||'%'
+		</if>
+
+		<if test="emailUsuario != null and emailUsuario != ''">
+			AND
+			(
+			EXISTS (SELECT US.CODIGO_USUARIO_IDP FROM USUARIO US
+					WHERE US.EMAIL = #{emailUsuario} and US.CODIGO_USUARIO_IDP = U.USUARIO_CREACION)
+			OR
+			EXISTS (SELECT US.CODIGO_USUARIO_IDP FROM USUARIO US
+					WHERE US.EMAIL = #{emailUsuario} and US.CODIGO_USUARIO_IDP = U.USUARIO_PUBLICACION_ID)
+			)
+		</if>
+
+		ORDER BY U.ANIO_LICITACION DESC, U.NRO_LICITACION DESC
+		LIMIT #{nroRegistros} OFFSET #{paginaMostrar}
+	</select>
+
+
+
+	<select id="getListLicitacionrByFiltroBusquedaAdjudicadoProveedor" resultMap="licitacionFiltroBusquedaResultMap">
+		SELECT U.ID_LICITACION ,
+		U.ESTADO_LICITACION ,
+		U.NRO_LICITACION ,
+		U.ANIO_LICITACION,
+		U.PUNTO_ENTREGA ,
+		P.VALOR as descripcionPuntoEntrega,
+		U.FECHA_ENTREGA_INICIO ,
+		to_char(U.FECHA_ENTREGA_INICIO,'dd/mm/yyyy') as fechaEntregaInicioString,
+		U.ID_MONEDA ,
+		M.CODIGO_MONEDA,
+		M.SIGLA,
+		U.ID_CENTRO ,
+		'' as DenominacionCentro,
+		U.ID_ALMACEN,
+		'' as DenominacionAlmacen,
+		to_char(U.FECHA_PUBLICACION,'dd/mm/yyyy') as fechaPublicacionString,
+		to_char(U.FECHA_INICIO_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fechaInicioRecepcionOfertaString,
+		to_char(U.FECHA_CIERRE_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fechaCierreRecepcionOfertaString,
+		(select count(1) from LICITACION_PROVEEDOR X
+		WHERE X.ID_LICITACION = U.ID_LICITACION) nroProveedoresACotizar,
+		(select count(1) from COTIZACION Y
+		WHERE Y.ID_LICITACION = U.ID_LICITACION and y.estado_cotizacion = 'EN') nroProveedoresEnviaronCotizacion,
+		U.USUARIO_PUBLICACION_ID ,
+		U.USUARIO_PUBLICACION_NAME,
+		U.USUARIO_PUBLICACION_EMAIL,
+		to_char(u.FECHA_ULTIMA_RENEGOCIACION,'dd/mm/yyyy HH24:MI:SS') as fecha_ultima_renegociacion
+
+		FROM LICITACION U,
+		MONEDA M,
+		PARAMETROS P,
+		CCOMPARATIVO COMPA
+
+		WHERE U.ID_MONEDA = M.ID_MONEDA
+		AND P.MODULO = 'LICITACION'
+		AND P.TIPO = 'PUNTO_ENTREGA'
+		AND U.PUNTO_ENTREGA = P.CODIGO
+
+		AND U.ESTADO_LICITACION IN ('AD','ES')
+		AND COMPA.ID_LICITACION = U.ID_LICITACION
+
+		AND EXISTS (SELECT ADJU.ID_CCOMPARATIVO
+		FROM
+		CCOMPARATIVO_ADJUDICADO ADJU
+		WHERE COMPA.ID_CCOMPARATIVO = ADJU.ID_CCOMPARATIVO
+		AND ADJU.ID_PROVEEDOR = #{idProveedor}
+		)
+
+		<if test="numeroLicitacion != null and numeroLicitacion != '' ">
+			AND U.NRO_LICITACION = #{numeroLicitacion}
+		</if>
+		<if test="puntoEntrega != null and puntoEntrega != '' ">
+			AND U.PUNTO_ENTREGA = #{puntoEntrega}
+		</if>
+		<if test="moneda != null and moneda != '' ">
+			AND U.ID_MONEDA = #{moneda}
+		</if>
+
+		<if test="listaCentroLogistico != null and listaCentroLogistico.size() > 0">
+			AND EXISTS (SELECT ID_LICITACION
+			FROM LICITACION_DETALLE DETALLE
+			WHERE DETALLE.ID_LICITACION = U.ID_LICITACION
+			AND	DETALLE.ID_CENTRO IN
+			<foreach item="item" index="index" collection="listaCentroLogistico"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+		<if test="listaAlmacen != null and listaAlmacen.size() > 0 ">
+			AND EXISTS (SELECT ID_LICITACION
+			FROM LICITACION_DETALLE DETALLE
+			WHERE DETALLE.ID_LICITACION = U.ID_LICITACION
+			AND DETALLE.ID_ALMACEN IN
+			<foreach item="item" index="index" collection="listaAlmacen"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+
+		<if test="solicitudPedido != null and solicitudPedido != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION_DETALLE FROM
+			LICITACION_DETALLE X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.SOLICITUD_PEDIDO = #{solicitudPedido}
+			)
+		</if>
+		<if test="codigoSap != null and codigoSap != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION_DETALLE FROM
+			LICITACION_DETALLE X,
+			BIEN_SERVICIO BIEN
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_BIEN_SERVICIO = BIEN.ID_BIEN_SERVICIO
+			AND BIEN.CODIGO_SAP =#{codigoSap}
+			)
+		</if>
+		<if test="listaTipoLicitacion != null and listaTipoLicitacion.size() > 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION_GRUPO_CONDICION
+			FROM
+			LICITACION_GRUPO_CONDICION_LIC X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_TIPO_LICITACION IN
+			<foreach item="item" index="index" collection="listaTipoLicitacion"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+		<if test="listaTipoCuestionario != null and listaTipoCuestionario.size() > 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION_GRUPO_CONDICION FROM
+			LICITACION_GRUPO_CONDICION_LIC X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_TIPO_CUESTIONARIO IN
+			<foreach item="item" index="index" collection="listaTipoCuestionario"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+		<if test="idProveedor != null and idProveedor != 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = #{idProveedor}
+			)
+		</if>
+
+		<if test="numeroRUC != null and numeroRUC != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X,
+			PROVEEDOR PROV
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = PROV.ID_PROVEEDOR
+			AND PROV.RUC = #{numeroRUC}
+			)
+		</if>
+		<if test="razonSocial != null and razonSocial != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X,
+			PROVEEDOR PROV
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = PROV.ID_PROVEEDOR
+			AND UPPER(PROV.RAZON_SOCIAL) LIKE '%'||UPPER(#{razonSocial})||'%'
+			)
+		</if>
+		<if test="listaRegion != null and listaRegion.size() > 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X,
+			PROVEEDOR PROV
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = PROV.ID_PROVEEDOR
+			AND PROV.ID_REGION IN
+			<foreach item="item" index="index" collection="listaRegion"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+
+		<if test="emailUsuario != null and emailUsuario != ''">
+			AND
+			(
+			EXISTS (SELECT US.CODIGO_USUARIO_IDP FROM USUARIO US
+					WHERE US.EMAIL = #{emailUsuario} and US.CODIGO_USUARIO_IDP = U.USUARIO_CREACION)
+			OR
+			EXISTS (SELECT US.CODIGO_USUARIO_IDP FROM USUARIO US
+					WHERE US.EMAIL = #{emailUsuario} and US.CODIGO_USUARIO_IDP = U.USUARIO_PUBLICACION_ID)
+			)
+		</if>
+
+		ORDER BY U.ANIO_LICITACION DESC, U.NRO_LICITACION DESC
+	</select>
+
+	<select id="getListLicitacionrByFiltroBusquedaAdjudicadoProveedorPaginado" resultMap="licitacionFiltroBusquedaResultMap">
+		SELECT U.ID_LICITACION ,
+		U.ESTADO_LICITACION ,
+		U.NRO_LICITACION ,
+		U.ANIO_LICITACION,
+		U.PUNTO_ENTREGA ,
+		P.VALOR as descripcionPuntoEntrega,
+		U.FECHA_ENTREGA_INICIO ,
+		to_char(U.FECHA_ENTREGA_INICIO,'dd/mm/yyyy') as fechaEntregaInicioString,
+		U.ID_MONEDA ,
+		M.CODIGO_MONEDA,
+		M.SIGLA,
+		U.ID_CENTRO ,
+		'' as DenominacionCentro,
+		U.ID_ALMACEN,
+		'' as DenominacionAlmacen,
+		to_char(U.FECHA_PUBLICACION,'dd/mm/yyyy') as fechaPublicacionString,
+		to_char(U.FECHA_INICIO_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fechaInicioRecepcionOfertaString,
+		to_char(U.FECHA_CIERRE_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fechaCierreRecepcionOfertaString,
+		(select count(1) from LICITACION_PROVEEDOR X
+		WHERE X.ID_LICITACION = U.ID_LICITACION) nroProveedoresACotizar,
+		(select count(1) from COTIZACION Y
+		WHERE Y.ID_LICITACION = U.ID_LICITACION and y.estado_cotizacion = 'EN') nroProveedoresEnviaronCotizacion,
+		U.USUARIO_PUBLICACION_ID ,
+		U.USUARIO_PUBLICACION_NAME,
+		U.USUARIO_PUBLICACION_EMAIL,
+		to_char(u.FECHA_ULTIMA_RENEGOCIACION,'dd/mm/yyyy HH24:MI:SS') as fecha_ultima_renegociacion
+
+		FROM LICITACION U,
+		MONEDA M,
+		PARAMETROS P
+
+		WHERE U.ID_MONEDA = M.ID_MONEDA
+		AND P.MODULO = 'LICITACION'
+		AND P.TIPO = 'PUNTO_ENTREGA'
+		AND U.PUNTO_ENTREGA = P.CODIGO
+
+		AND U.ESTADO_LICITACION IN ('AD','ES','AN')
+
+		<if test="numeroLicitacion != null and numeroLicitacion != '' ">
+			AND U.NRO_LICITACION = #{numeroLicitacion}
+		</if>
+		<if test="puntoEntrega != null and puntoEntrega != '' ">
+			AND U.PUNTO_ENTREGA = #{puntoEntrega}
+		</if>
+		<if test="moneda != null and moneda != '' ">
+			AND U.ID_MONEDA = #{moneda}
+		</if>
+
+		<if test="listaCentroLogistico != null and listaCentroLogistico.size() > 0">
+			AND EXISTS (SELECT ID_LICITACION
+			FROM LICITACION_DETALLE DETALLE
+			WHERE DETALLE.ID_LICITACION = U.ID_LICITACION
+			AND	DETALLE.ID_CENTRO IN
+			<foreach item="item" index="index" collection="listaCentroLogistico"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+		<if test="listaAlmacen != null and listaAlmacen.size() > 0 ">
+			AND EXISTS (SELECT ID_LICITACION
+			FROM LICITACION_DETALLE DETALLE
+			WHERE DETALLE.ID_LICITACION = U.ID_LICITACION
+			AND DETALLE.ID_ALMACEN IN
+			<foreach item="item" index="index" collection="listaAlmacen"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+
+		<if test="solicitudPedido != null and solicitudPedido != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION_DETALLE FROM
+			LICITACION_DETALLE X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.SOLICITUD_PEDIDO = #{solicitudPedido}
+			)
+		</if>
+		<if test="codigoSap != null and codigoSap != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION_DETALLE FROM
+			LICITACION_DETALLE X,
+			BIEN_SERVICIO BIEN
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_BIEN_SERVICIO = BIEN.ID_BIEN_SERVICIO
+			AND BIEN.CODIGO_SAP =#{codigoSap}
+			)
+		</if>
+		<if test="listaTipoLicitacion != null and listaTipoLicitacion.size() > 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION_GRUPO_CONDICION
+			FROM
+			LICITACION_GRUPO_CONDICION_LIC X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_TIPO_LICITACION IN
+			<foreach item="item" index="index" collection="listaTipoLicitacion"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+		<if test="listaTipoCuestionario != null and listaTipoCuestionario.size() > 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION_GRUPO_CONDICION FROM
+			LICITACION_GRUPO_CONDICION_LIC X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_TIPO_CUESTIONARIO IN
+			<foreach item="item" index="index" collection="listaTipoCuestionario"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+		<if test="idProveedor != null and idProveedor != 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = #{idProveedor}
+			)
+		</if>
+
+		<if test="numeroRUC != null and numeroRUC != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X,
+			PROVEEDOR PROV
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = PROV.ID_PROVEEDOR
+			AND PROV.RUC = #{numeroRUC}
+			)
+		</if>
+		<if test="razonSocial != null and razonSocial != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X,
+			PROVEEDOR PROV
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = PROV.ID_PROVEEDOR
+			AND UPPER(PROV.RAZON_SOCIAL) LIKE '%'||UPPER(#{razonSocial})||'%'
+			)
+		</if>
+		<if test="listaRegion != null and listaRegion.size() > 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X,
+			PROVEEDOR PROV
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = PROV.ID_PROVEEDOR
+			AND PROV.ID_REGION IN
+			<foreach item="item" index="index" collection="listaRegion"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+
+		<if test="emailUsuario != null and emailUsuario != ''">
+			AND
+			(
+			EXISTS (SELECT US.CODIGO_USUARIO_IDP FROM USUARIO US
+					WHERE US.EMAIL = #{emailUsuario} and US.CODIGO_USUARIO_IDP = U.USUARIO_CREACION)
+			OR
+			EXISTS (SELECT US.CODIGO_USUARIO_IDP FROM USUARIO US
+					WHERE US.EMAIL = #{emailUsuario} and US.CODIGO_USUARIO_IDP = U.USUARIO_PUBLICACION_ID)
+			)
+		</if>
+
+		ORDER BY U.ANIO_LICITACION DESC, U.NRO_LICITACION DESC
+		LIMIT #{nroRegistros} OFFSET #{paginaMostrar}
+	</select>
+
+
+
+	<resultMap id="licitacionFiltroResultMap" type="com.incloud.hcp.domain.Licitacion">
+		<id property="idLicitacion" column="ID_LICITACION"/>
+		<result property="estadoLicitacion" column="ESTADO_LICITACION" />
+		<result property="nroLicitacion" column="NRO_LICITACION"/>
+		<result property="nroLicitacionString" column="nroLicitacionString"/>
+		<result property="anioLicitacion" column="ANIO_LICITACION"/>
+		<result property="puntoEntrega" column="PUNTO_ENTREGA"/>
+		<result property="descripcionPuntoEntrega" column="descripcionPuntoEntrega"/>
+		<result property="fechaEntregaInicio" column="FECHA_ENTREGA_INICIO"/>
+		<result property="fechaEntregaInicioString" column="fechaEntregaInicioString"/>
+		<result property="moneda.idMoneda" column="ID_MONEDA"/>
+		<result property="moneda.codigoMoneda" column="CODIGO_MONEDA"/>
+		<result property="moneda.sigla" column="SIGLA"/>
+		<result property="centroAlmacen1.idCentroAlmacen" column="ID_CENTRO"/>
+		<result property="centroAlmacen1.denominacion" column="DenominacionCentro"/>
+		<result property="centroAlmacen2.idCentroAlmacen" column="ID_ALMACEN"/>
+		<result property="centroAlmacen2.denominacion" column="DenominacionAlmacen"/>
+		<result property="claseDocumento.idClaseDocumento" column="ID_CLASE_DOCUMENTO"/>
+		<result property="claseDocumento.descripcion" column="descripcionClaseDocumento"/>
+		<result property="fechaCreacion" column="FECHA_CREACION"/>
+		<result property="fechaCreacionString" column="fechaCreacionString"/>
+		<result property="fechaPublicacion" column="FECHA_CREACION"/>
+		<result property="fechaPublicacionString" column="fechaPublicacionString"/>
+		<result property="fechaCierreRecepcionOferta" column="FECHA_CIERRE_RECEPCION_OFERTA"/>
+		<result property="fechaInicioRecepcionOfertaString" column="fechaInicioRecepcionOfertaString"/>
+		<result property="fechaCierreRecepcionOfertaString" column="fechaCierreRecepcionOfertaString"/>
+
+		<result property="usuarioPublicacionId" column="USUARIO_PUBLICACION_ID"/>
+		<result property="usuarioPublicacionName" column="USUARIO_PUBLICACION_NAME"/>
+		<result property="usuarioPublicacionEmail" column="USUARIO_PUBLICACION_EMAIL"/>
+		<result property="fechaUltimaRenegociacionString" column="fecha_ultima_renegociacion"/>
+
+
+	</resultMap>
+
+	<select id="getListLicitacionByFiltro" resultMap="licitacionFiltroResultMap">
+		SELECT U.ID_LICITACION,
+		U.ESTADO_LICITACION,
+		U.NRO_LICITACION,
+		CONCAT(U.ANIO_LICITACION,RIGHT(CONCAT('00000000',U.NRO_LICITACION),8)) as nroLicitacionString,
+		U.ANIO_LICITACION,
+		U.PUNTO_ENTREGA ,
+		P.VALOR as descripcionPuntoEntrega,
+		U.FECHA_ENTREGA_INICIO ,
+		to_char(U.FECHA_ENTREGA_INICIO,'dd/mm/yyyy') as fechaEntregaInicioString,
+		U.ID_MONEDA ,
+		M.CODIGO_MONEDA,
+		M.SIGLA,
+		U.ID_CENTRO ,
+		'' as DenominacionCentro,
+		U.ID_ALMACEN,
+		'' as DenominacionAlmacen,
+		null ID_CLASE_DOCUMENTO,
+		'' as descripcionClaseDocumento,
+		U.FECHA_CREACION,
+		to_char(U.FECHA_CREACION,'dd/mm/yyyy') as fechaCreacionString,
+		U.FECHA_PUBLICACION,
+		to_char(U.FECHA_PUBLICACION,'dd/mm/yyyy') as fechaPublicacionString,
+		U.FECHA_CIERRE_RECEPCION_OFERTA,
+		to_char(U.FECHA_INICIO_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fechaInicioRecepcionOfertaString,
+		to_char(U.FECHA_CIERRE_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fechaCierreRecepcionOfertaString,
+		U.USUARIO_PUBLICACION_ID ,
+		U.USUARIO_PUBLICACION_NAME,
+		U.USUARIO_PUBLICACION_EMAIL,
+		to_char(u.FECHA_ULTIMA_RENEGOCIACION,'dd/mm/yyyy HH24:MI:SS') as fecha_ultima_renegociacion
+
+		FROM LICITACION U,
+		MONEDA M,
+		PARAMETROS P
+		WHERE U.ID_MONEDA = M.ID_MONEDA
+		AND P.MODULO = 'LICITACION'
+		AND P.TIPO = 'PUNTO_ENTREGA'
+		AND U.PUNTO_ENTREGA = P.CODIGO
+		<if test="listaEstadoLicitacion != null and listaEstadoLicitacion.size() > 0">
+			AND U.ESTADO_LICITACION IN
+			<foreach item="item" index="index" collection="listaEstadoLicitacion"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+		<if test="numeroLicitacion != null and numeroLicitacion != '' ">
+			AND U.NRO_LICITACION = #{numeroLicitacion}
+		</if>
+		<if test="annioLicitacion != null and annioLicitacion != '' ">
+			AND U.ANIO_LICITACION = #{annioLicitacion}
+		</if>
+		<if test="puntoEntrega != null and puntoEntrega != '' ">
+			AND U.PUNTO_ENTREGA = #{puntoEntrega}
+		</if>
+		<if test="moneda != null and moneda != '' ">
+			AND U.ID_MONEDA = #{moneda}
+		</if>
+		<if test="listaClaseDocumento != null and listaClaseDocumento.size() > 0 ">
+			AND U.ID_CLASE_DOCUMENTO IN
+			<foreach item="item" index="index" collection="listaClaseDocumento"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+
+		<if test="listaCentroLogistico != null and listaCentroLogistico.size() > 0">
+			AND EXISTS (SELECT ID_LICITACION
+			FROM LICITACION_DETALLE DETALLE
+			WHERE DETALLE.ID_LICITACION = U.ID_LICITACION
+			AND	DETALLE.ID_CENTRO IN
+			<foreach item="item" index="index" collection="listaCentroLogistico"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+		<if test="listaAlmacen != null and listaAlmacen.size() > 0 ">
+			AND EXISTS (SELECT ID_LICITACION
+			FROM LICITACION_DETALLE DETALLE
+			WHERE DETALLE.ID_LICITACION = U.ID_LICITACION
+			AND DETALLE.ID_ALMACEN IN
+			<foreach item="item" index="index" collection="listaAlmacen"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+
+		<if test="solicitudPedido != null and solicitudPedido != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION_DETALLE FROM
+			LICITACION_DETALLE X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.SOLICITUD_PEDIDO = #{solicitudPedido}
+			)
+		</if>
+		<if test="codigoSap != null and codigoSap != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION_DETALLE FROM
+			LICITACION_DETALLE X,
+			BIEN_SERVICIO BIEN
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_BIEN_SERVICIO = BIEN.ID_BIEN_SERVICIO
+			AND BIEN.CODIGO_SAP = #{codigoSap}
+			)
+		</if>
+		<if test="listaTipoLicitacion != null and listaTipoLicitacion.size() > 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION_GRUPO_CONDICION
+			FROM
+			LICITACION_GRUPO_CONDICION_LIC X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_TIPO_LICITACION IN
+			<foreach item="item" index="index" collection="listaTipoLicitacion"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+		<if test="listaTipoCuestionario != null and listaTipoCuestionario.size() > 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION_GRUPO_CONDICION FROM
+			LICITACION_GRUPO_CONDICION_LIC X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_TIPO_CUESTIONARIO IN
+			<foreach item="item" index="index" collection="listaTipoCuestionario"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+		<if test="idProveedor != null and idProveedor != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = #{idProveedor}
+			)
+		</if>
+
+		<if test="numeroRUC != null and numeroRUC != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X,
+			PROVEEDOR PROV
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = PROV.ID_PROVEEDOR
+			AND PROV.RUC = #{numeroRUC}
+			)
+		</if>
+		<if test="razonSocial != null and razonSocial != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X,
+			PROVEEDOR PROV
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = PROV.ID_PROVEEDOR
+			AND UPPER(PROV.RAZON_SOCIAL) LIKE '%'||UPPER(#{razonSocial})||'%'
+			)
+		</if>
+		<if test="descripcion != null and descripcion != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_DETALLE X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND UPPER(X.DESCRIPCION) LIKE '%'||UPPER(#{descripcion})||'%'
+			)
+		</if>
+		<if test="listaRegion != null and listaRegion.size() > 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X,
+			PROVEEDOR PROV
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = PROV.ID_PROVEEDOR
+			AND PROV.ID_REGION IN
+			<foreach item="item" index="index" collection="listaRegion"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+
+		<if test="emailUsuario != null and emailUsuario != ''">
+			AND
+			(
+			EXISTS (SELECT US.CODIGO_USUARIO_IDP FROM USUARIO US
+			        WHERE US.EMAIL = #{emailUsuario} and US.CODIGO_USUARIO_IDP = U.USUARIO_CREACION)
+			OR
+			EXISTS (SELECT US.CODIGO_USUARIO_IDP FROM USUARIO US
+			        WHERE US.EMAIL = #{emailUsuario} and US.CODIGO_USUARIO_IDP = U.USUARIO_PUBLICACION_ID)
+			)
+		</if>
+
+		ORDER BY U.nro_licitacion desc
+	</select>
+
+
+	<select id="getListLicitacionByFiltroPaginado" resultMap="licitacionFiltroResultMap">
+		SELECT U.ID_LICITACION,
+		U.ESTADO_LICITACION,
+		U.NRO_LICITACION,
+		CONCAT(U.ANIO_LICITACION,RIGHT(CONCAT('00000000',U.NRO_LICITACION),8)) as nroLicitacionString,
+		U.ANIO_LICITACION,
+		U.PUNTO_ENTREGA ,
+		P.VALOR as descripcionPuntoEntrega,
+		U.FECHA_ENTREGA_INICIO ,
+		to_char(U.FECHA_ENTREGA_INICIO,'dd/mm/yyyy') as fechaEntregaInicioString,
+		U.ID_MONEDA ,
+		M.CODIGO_MONEDA,
+		M.SIGLA,
+		U.ID_CENTRO ,
+		'' as DenominacionCentro,
+		U.ID_ALMACEN,
+		'' as DenominacionAlmacen,
+		null ID_CLASE_DOCUMENTO,
+		'' as descripcionClaseDocumento,
+		U.FECHA_CREACION,
+		to_char(U.FECHA_CREACION,'dd/mm/yyyy') as fechaCreacionString,
+		U.FECHA_PUBLICACION,
+		to_char(U.FECHA_PUBLICACION,'dd/mm/yyyy') as fechaPublicacionString,
+		U.FECHA_CIERRE_RECEPCION_OFERTA,
+		to_char(U.FECHA_INICIO_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fechaInicioRecepcionOfertaString,
+		to_char(U.FECHA_CIERRE_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fechaCierreRecepcionOfertaString,
+		U.USUARIO_PUBLICACION_ID ,
+		U.USUARIO_PUBLICACION_NAME,
+		U.USUARIO_PUBLICACION_EMAIL,
+		to_char(u.FECHA_ULTIMA_RENEGOCIACION,'dd/mm/yyyy HH24:MI:SS') as fecha_ultima_renegociacion
+
+		FROM LICITACION U,
+		MONEDA M,
+		PARAMETROS P
+		WHERE U.ID_MONEDA = M.ID_MONEDA
+		AND P.MODULO = 'LICITACION'
+		AND P.TIPO = 'PUNTO_ENTREGA'
+		AND U.PUNTO_ENTREGA = P.CODIGO
+		<if test="listaEstadoLicitacion != null and listaEstadoLicitacion.size() > 0">
+			AND U.ESTADO_LICITACION IN
+			<foreach item="item" index="index" collection="listaEstadoLicitacion"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+		<if test="numeroLicitacion != null and numeroLicitacion != '' ">
+			AND U.NRO_LICITACION = #{numeroLicitacion}
+		</if>
+		<if test="indEjecucionSapOk != null and indEjecucionSapOk != '' ">
+			AND U.IND_EJECUCION_SAP_OK = #{indEjecucionSapOk}
+		</if>
+		<if test="annioLicitacion != null and annioLicitacion != '' ">
+			AND U.ANIO_LICITACION = #{annioLicitacion}
+		</if>
+		<if test="puntoEntrega != null and puntoEntrega != '' ">
+			AND U.PUNTO_ENTREGA = #{puntoEntrega}
+		</if>
+		<if test="moneda != null and moneda != '' ">
+			AND U.ID_MONEDA = #{moneda}
+		</if>
+		<if test="listaClaseDocumento != null and listaClaseDocumento.size() > 0 ">
+			AND U.ID_CLASE_DOCUMENTO IN
+			<foreach item="item" index="index" collection="listaClaseDocumento"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+
+		<if test="listaCentroLogistico != null and listaCentroLogistico.size() > 0">
+			AND EXISTS (SELECT ID_LICITACION
+			FROM LICITACION_DETALLE DETALLE
+			WHERE DETALLE.ID_LICITACION = U.ID_LICITACION
+			AND	DETALLE.ID_CENTRO IN
+			<foreach item="item" index="index" collection="listaCentroLogistico"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+		<if test="listaAlmacen != null and listaAlmacen.size() > 0 ">
+			AND EXISTS (SELECT ID_LICITACION
+			FROM LICITACION_DETALLE DETALLE
+			WHERE DETALLE.ID_LICITACION = U.ID_LICITACION
+			AND DETALLE.ID_ALMACEN IN
+			<foreach item="item" index="index" collection="listaAlmacen"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+
+		<if test="solicitudPedido != null and solicitudPedido != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION_DETALLE FROM
+			LICITACION_DETALLE X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.SOLICITUD_PEDIDO = #{solicitudPedido}
+			)
+		</if>
+		<if test="codigoSap != null and codigoSap != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION_DETALLE FROM
+			LICITACION_DETALLE X,
+			BIEN_SERVICIO BIEN
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_BIEN_SERVICIO = BIEN.ID_BIEN_SERVICIO
+			AND BIEN.CODIGO_SAP = #{codigoSap}
+			)
+		</if>
+		<if test="listaTipoLicitacion != null and listaTipoLicitacion.size() > 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION_GRUPO_CONDICION
+			FROM
+			LICITACION_GRUPO_CONDICION_LIC X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_TIPO_LICITACION IN
+			<foreach item="item" index="index" collection="listaTipoLicitacion"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+		<if test="listaTipoCuestionario != null and listaTipoCuestionario.size() > 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION_GRUPO_CONDICION FROM
+			LICITACION_GRUPO_CONDICION_LIC X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_TIPO_CUESTIONARIO IN
+			<foreach item="item" index="index" collection="listaTipoCuestionario"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+		<if test="idProveedor != null and idProveedor != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = #{idProveedor}
+			)
+		</if>
+
+		<if test="numeroRUC != null and numeroRUC != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X,
+			PROVEEDOR PROV
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = PROV.ID_PROVEEDOR
+			AND PROV.RUC = #{numeroRUC}
+			)
+		</if>
+		<if test="razonSocial != null and razonSocial != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X,
+			PROVEEDOR PROV
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = PROV.ID_PROVEEDOR
+			AND UPPER(PROV.RAZON_SOCIAL) LIKE '%'||UPPER(#{razonSocial})||'%'
+			)
+		</if>
+		<if test="descripcion != null and descripcion != '' ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_DETALLE X
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND UPPER(X.DESCRIPCION) LIKE '%'||UPPER(#{descripcion})||'%'
+			)
+		</if>
+		<if test="listaRegion != null and listaRegion.size() > 0 ">
+			AND EXISTS (SELECT X.ID_LICITACION FROM
+			LICITACION_PROVEEDOR X,
+			PROVEEDOR PROV
+			WHERE X.ID_LICITACION = U.ID_LICITACION
+			AND X.ID_PROVEEDOR = PROV.ID_PROVEEDOR
+			AND PROV.ID_REGION IN
+			<foreach item="item" index="index" collection="listaRegion"
+					 open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+
+		<if test="emailUsuario != null and emailUsuario != ''">
+			AND
+			(
+			EXISTS (SELECT US.CODIGO_USUARIO_IDP FROM USUARIO US
+					WHERE US.EMAIL = #{emailUsuario} and US.CODIGO_USUARIO_IDP = U.USUARIO_CREACION)
+			OR
+			EXISTS (SELECT US.CODIGO_USUARIO_IDP FROM USUARIO US
+					WHERE US.EMAIL = #{emailUsuario} and US.CODIGO_USUARIO_IDP = U.USUARIO_PUBLICACION_ID)
+			)
+		</if>
+
+		ORDER BY U.nro_licitacion desc
+		LIMIT #{nroRegistros} OFFSET #{paginaMostrar}
+	</select>
+
+	<select id="countByFiltroBusquedaAdjudicadoProveedor" resultType="int">
+		SELECT count(1)
+
+		FROM LICITACION U,
+		CCOMPARATIVO COMPA,
+		CCOMPARATIVO_PROVEEDOR P
+
+		WHERE U.ESTADO_LICITACION IN ('AD','ES')
+		AND COMPA.ID_LICITACION = U.ID_LICITACION
+		AND COMPA.ID_CCOMPARATIVO = P.ID_CCOMPARATIVO
+		AND P.ID_PROVEEDOR = #{idProveedor}
+
+
+	</select>
+
+
+
+
+</mapper>

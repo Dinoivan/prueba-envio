@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.incloud.hcp.myibatis.mapper.CondicionMapper">
+
+    <resultMap id="condicionFilterResultMap" type="com.incloud.hcp.bean.Condicion">
+        <id property="idCondicion" column="ID_CONDICION"/>
+        <result property="idTipoLicitacion" column="ID_TIPO_LICITACION"/>
+        <result property="descripcionTipoLicitacion" column="DESCRIPCION_TIPO_LICITACION"/>
+        <result property="idTipoCuestionario" column="ID_TIPO_CUESTIONARIO"/>
+        <result property="descripcionTipoCuestionario" column="DESCRIPCION_TIPO_CUESTIONARIO"/>
+		<result property="pregunta" column="PREGUNTA" />
+		<result property="tipoCampo" column="TIPO_CAMPO" />
+		<result property="peso" column="PESO" />
+		<result property="indBloqueadoProveedor" column="IND_BLOQUEADO_PROVEEDOR" />
+		<result property="usuarioCreacion" column="USUARIO_CREACION" />
+		<result property="fechaCreacion" column="FECHA_CREACION" />
+		<result property="usuarioModificacion" column="USUARIO_MODIFICACION" />
+		<result property="fechaModificacion" column="FECHA_MODIFICACION" />
+	</resultMap>
+
+	<resultMap id="condicionLicResultMap" type="com.incloud.hcp.bean.Condicion">
+		<id property="idGrupoCondicionLic" column="ID_LICITACION_GRUPO_CONDICION"/>
+		<result property="idLicitacion" column="ID_LICITACION"/>
+		<result property="idTipoLicitacion" column="ID_TIPO_LICITACION"/>
+		<result property="descripcionTipoLicitacion" column="DESCRIPCION_TIPO_LICITACION"/>
+		<result property="idTipoCuestionario" column="ID_TIPO_CUESTIONARIO"/>
+		<result property="descripcionTipoCuestionario" column="DESCRIPCION_TIPO_CUESTIONARIO"/>
+		<result property="idCondicion" column="ID_CONDICION" />
+		<result property="pregunta" column="PREGUNTA" />
+		<result property="tipoCampo" column="TIPO_CAMPO" />
+		<result property="indBloqueadoProveedor" column="IND_BLOQUEADO_PROVEEDOR" />
+		<result property="peso" column="PESO" />
+	</resultMap>
+
+	<select id="getListCondicionByTipoLicitacionAndCuestionario" resultMap="condicionFilterResultMap">
+
+		SELECT
+			cl.ID_CONDICION,
+			cl.ID_TIPO_LICITACION,
+			(SELECT tl.DESCRIPCION FROM TIPO_LICITACION tl WHERE TL.ID_TIPO_LICITACION = CL.ID_TIPO_LICITACION) as DESCRIPCION_TIPO_LICITACION,
+			cl.ID_TIPO_CUESTIONARIO,
+			(SELECT tl.DESCRIPCION FROM TIPO_LICITACION tl WHERE TL.ID_TIPO_LICITACION = CL.ID_TIPO_CUESTIONARIO) as DESCRIPCION_TIPO_CUESTIONARIO,
+			cl.PREGUNTA,
+			CASE cl.TIPO_CAMPO WHEN 'L' THEN 'Lista' ELSE 'Texto' END AS TIPO_CAMPO,
+			cl.PESO,
+			cl.IND_BLOQUEADO_PROVEEDOR,
+			cl.USUARIO_CREACION,
+			cl.FECHA_CREACION,
+			cl.USUARIO_MODIFICACION,
+			cl.FECHA_MODIFICACION
+		FROM CONDICION_LIC cl
+		WHERE
+		cl.ID_TIPO_LICITACION=#{tipoLicitacion}
+		AND cl.ID_TIPO_CUESTIONARIO=#{tipoCuestionario};
+
+	</select>
+
+	<select id="getListCondicionByIdLicitacion" resultMap="condicionLicResultMap">
+
+		SELECT
+        cl.ID_LICITACION_GRUPO_CONDICION,
+        cl.ID_LICITACION,
+		cl.ID_TIPO_LICITACION,
+		(SELECT tl.DESCRIPCION FROM TIPO_LICITACION tl WHERE TL.ID_TIPO_LICITACION = CL.ID_TIPO_LICITACION) as DESCRIPCION_TIPO_LICITACION,
+		cl.ID_TIPO_CUESTIONARIO,
+		(SELECT tl.DESCRIPCION FROM TIPO_LICITACION tl WHERE TL.ID_TIPO_LICITACION = CL.ID_TIPO_CUESTIONARIO) as DESCRIPCION_TIPO_CUESTIONARIO,
+		cl.ID_CONDICION,
+		cl.PREGUNTA,
+		CASE cl.TIPO_CAMPO WHEN 'L' THEN 'Lista' ELSE 'Texto' END AS TIPO_CAMPO,
+		cl.IND_BLOQUEADO_PROVEEDOR,
+		cl.PESO
+		FROM LICITACION_GRUPO_CONDICION_LIC cl
+		WHERE
+		cl.ID_LICITACION=#{idLicitacion};
+
+	</select>
+
+</mapper>

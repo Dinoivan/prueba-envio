@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<excel>
+    <header>
+        <title>CODIGO SAP</title>
+    </header>
+    <header>
+        <title>RUC</title>
+    </header>
+    <header>
+        <title>RAZON SOCIAL</title>
+    </header>
+    <header>
+        <title>ENTIDAD BANCARIA</title>
+    </header>
+    <header>
+        <title>TIPO DE CUENTA</title>
+    </header>
+    <header>
+        <title>NUMERO DE CUENTA</title>
+    </header>
+    <header>
+        <title>CODIGO CCI</title>
+    </header>
+    <header>
+        <title>MONEDA</title>
+    </header>
+    <header>
+        <title>CONTACTO</title>
+    </header>
+</excel>

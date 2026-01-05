@@ -1,0 +1,72 @@
+{
+  "welcomeFile": "index.html",
+  "authenticationMethod": "route",
+  "routes": [
+    {
+      "source": "^/v1",
+      "target": "/v1",
+      "destination": "token-copeincaprovider-destination",
+      "authenticationType": "xsuaa"
+    },
+    {
+      "source": "^/v2",
+      "target": "/v2",
+      "destination": "token-copeincaprovider-destination",
+      "authenticationType": "xsuaa"
+    },
+    {
+      "source": "^/v3",
+      "target": "/v3",
+      "destination": "token-copeincaprovider-destination",
+      "authenticationType": "xsuaa"
+    },
+    {
+      "source": "^/api",
+      "target": "/api",
+      "destination": "token-copeincaprovider-destination",
+      "authenticationType": "xsuaa"
+    },
+    {
+      "source": "^/swagger-ui.html",
+      "target": "/swagger-ui.html",
+      "destination": "token-copeincaprovider-destination"
+    },
+    {
+      "source": "^/webjars",
+      "target": "/webjars",
+      "destination": "token-copeincaprovider-destination"
+    },
+    {
+      "source": "^/configuration/security",
+      "target": "/configuration/security",
+      "destination": "token-copeincaprovider-destination"
+    },
+    {
+      "source": "^/swagger-resources",
+      "target": "/swagger-resources",
+      "destination": "token-copeincaprovider-destination"
+    },
+    {
+      "source": "^/configuration/ui",
+      "target": "/configuration/ui",
+      "destination": "token-copeincaprovider-destination"
+    },
+    {
+      "source": "^/v2/api-docs",
+      "target": "/v2/api-docs",
+      "destination": "token-copeincaprovider-destination",
+      "authenticationType": "none"
+    },
+    {
+      "source": "^/v3/api-docs",
+      "target": "/v3/api-docs",
+      "destination": "token-copeincaprovider-destination",
+      "authenticationType": "none"
+    },
+    {
+      "source": "^/swagger-ui",
+      "target": "/swagger-ui",
+      "destination": "token-copeincaprovider-destination"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+pregunta,tipoCampo,peso,idTipoLicitacion1,idTipoLicitacion2,usuarioCreacion,fechaCreacion
+Tiempo de entrega (días calendarios),L,50,1,3,1,2020-06-25
+Asesoría técnica y/o capacitaciones al personal de Copeinca,L,25,1,3,1,2020-06-25
+Entrega de equipos en comodato,L,25,1,3,1,2020-06-25
+Lote mínimo de compra,T,0,1,3,1,2020-06-25
+Tiempo de entrega (días calendarios),L,50,1,4,1,2020-06-25
+Asesoría técnica y/o capacitaciones al personal de Copeinca,L,25,1,4,1,2020-06-25
+Entrega de equipos en comodato,L,25,1,4,1,2020-06-25
+Lote mínimo de compra,T,0,1,4,1,2020-06-25
+Tiempo de respuesta,L,20,2,5,1,2020-06-25
+¿Podrá cumplir con la fecha de entrega requerida?,L,50,2,5,1,2020-06-25
+Asesoría técnica y/o capacitaciones al personal de Copeinca,L,10,2,5,1,2020-06-25
+Garantía del servicio,L,20,2,5,1,2020-06-25
+Tiempo de respuesta,L,25,1,6,1,2020-06-25
+¿Podrá cumplir con la fecha de entrega requerida?,L,45,1,6,1,2020-06-25
+Asesoría técnica y/o capacitaciones al personal de Copeinca,L,5,1,6,1,2020-06-25
+Garantía del activo,L,25,1,6,1,2020-06-25
+Sin Condiciones de Licitación (No Responder),T,0,2,7,1,2020-06-25
+Sin Condiciones de Licitación (No Responder),T,0,1,8,1,2020-06-25

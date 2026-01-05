@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.incloud.hcp.myibatis.mapper.BlackListMapper">
+
+    <resultMap id="solicitudBlackListResultMap" type="com.incloud.hcp.domain.SolicitudBlacklist">
+        <id property="idSolicitud" column="id_solicitud"/>
+        <result property="codigoSolicitud" column="codigo_solicitud"/>
+        <result property="sede" column="sede"/>
+        <result property="motivo" column="motivo"/>
+        <result property="criteriosBlacklist.idCriterio" column="id_criterio"/>
+        <result property="criteriosBlacklist.descripcion" column="descripcion_criterio"/>
+        <result property="criteriosBlacklist.tipoSolicitudBlacklist.idTipoSolicitud" column="id_tipo_solicitud"/>
+        <result property="criteriosBlacklist.tipoSolicitudBlacklist.descripcion" column="descripcion_tipo_solicitud"/>
+        <result property="proveedor.idProveedor" column="id_proveedor"/>
+        <result property="proveedor.ruc" column="ruc"/>
+        <result property="proveedor.razonSocial" column="razon_social"/>
+        <result property="estadoSolicitud" column="estado_solicitud"/>
+        <result property="adminIdRevision" column="admin_id_revision"/>
+        <result property="adminNameRevision" column="admin_name_revision"/>
+        <result property="adminFechaRevision" column="admin_fecha_revision"/>
+        <result property="reglaAprobacion" column="regla_aprobacion"/>
+        <result property="fechaCreacion" column="fecha_creacion"/>
+        <result property="usuarioCreacion" column="usuario_creacion"/>
+        <result property="usuarioCreacionName" column="usuario_creacion_name"/>
+        <result property="usuarioCreacionEmail" column="usuario_creacion_email"/>
+    </resultMap>
+
+    <select id="getListSolicitudPendienteAprobacionByUser" resultMap="solicitudBlackListResultMap">
+        SELECT
+            s.id_solicitud,
+            s.codigo_solicitud,
+            s.sede,
+            s.motivo,
+            s.id_criterio,
+            c.descripcion as descripcion_criterio,
+            t.id_tipo_solicitud,
+            t.descripcion as descripcion_tipo_solicitud,
+            p.id_proveedor,
+            p.ruc,
+            p.razon_social,
+            s.estado_solicitud,
+            s.admin_id_revision,
+            s.admin_name_revision,
+            s.admin_fecha_revision,
+            s.regla_aprobacion,
+            s.fecha_creacion,
+            s.usuario_creacion,
+            s.usuario_creacion_name,
+            s.usuario_creacion_email
+        FROM solicitud_blacklist s, criterios_blacklist c, tipo_solicitud_blacklist t, aprobador_solicitud a, usuario u, proveedor p
+        WHERE
+            s.id_solicitud = a.id_solicitud
+            AND c.id_criterio = s.id_criterio
+            AND t.id_tipo_solicitud = c.id_tipo_solicitud
+            AND p.id_proveedor = s.id_proveedor
+            AND s.estado_solicitud=#{estadoPendiente}
+            AND a.estado=#{estadoPendiente}
+            AND a.ind_activo_aprobacion='1'
+            AND a.id_usuario = u.id_usuario
+            AND u.email=#{email}
+    </select>
+
+    <resultMap id="solicitudAdjuntoBlackListResultMap" type="com.incloud.hcp.domain.SolicitudAdjuntoBlacklist">
+        <id property="idSolicitudAdjunto" column="id_solicitud_adjunto"/>
+        <result property="adjuntoId" column="adjunto_id"/>
+        <result property="adjuntoNombre" column="adjunto_nombre"/>
+        <result property="adjuntoUrl" column="adjunto_url"/>
+        <result property="adjuntoTipo" column="adjunto_tipo"/>
+    </resultMap>
+
+    <select id="getListAdjuntosSolicitudBlackListByIdSolicitud" resultMap="solicitudAdjuntoBlackListResultMap">
+        SELECT
+          t.ID_SOLICITUD_ADJUNTO,
+          t.ADJUNTO_ID,
+          t.ADJUNTO_NOMBRE,
+          t.ADJUNTO_URL,
+          t.ADJUNTO_TIPO,
+          t.ID_SOLICITUD
+        FROM SOLICITUD_ADJUNTO_BLACKLIST t
+        WHERE ID_SOLICITUD=#{idSolicitud};
+    </select>
+
+    <insert id="registrarSolicitudAdjunto" statementType="PREPARED">
+        INSERT INTO SOLICITUD_ADJUNTO_BLACKLIST (
+        ID_SOLICITUD_ADJUNTO,
+        ID_SOLICITUD,
+        ADJUNTO_ID,
+        ADJUNTO_NOMBRE,
+        ADJUNTO_TIPO,
+        ADJUNTO_URL)
+        VALUES (solicitud_adjunto_blacklist_id_seq.NEXTVAL,
+        #{idSolicitud},
+        #{adjunto.id},
+        #{adjunto.name},
+        #{adjunto.type},
+        #{adjunto.url});
+    </insert>
+
+    <insert id="registrarSolicitud" statementType="CALLABLE">
+        { CALL SP_PROC_INS_SOLICITUD_BLACKLIST(
+        #{blacklist.sede},
+        #{blacklist.motivo},
+        #{blacklist.idCriterio},
+        #{blacklist.ruc},
+        #{blacklist.estado},
+        #{blacklist.id},
+        #{blacklist.usuario},
+        #{blacklist.correo},
+        #{blacklist.idSolicitud, jdbcType = INTEGER, javaType=java.lang.Integer, mode = OUT},
+        #{blacklist.codigoSolicitud, jdbcType=VARCHAR, javaType=java.lang.String, mode = OUT}
+        )}
+    </insert>
+
+    <select id="countByBlackListRegistrados" resultType="int">
+        SELECT count(1)
+        FROM SOLICITUD_BLACKLIST S,
+             CRITERIOS_BLACKLIST C,
+             TIPO_SOLICITUD_BLACKLIST T
+        WHERE S.ID_PROVEEDOR = #{idProveedor}
+          AND C.ID_CRITERIO = S.ID_CRITERIO
+          AND T.ID_TIPO_SOLICITUD = C.ID_TIPO_SOLICITUD
+          AND T.CODIGO_TIPO_SOLICITUD = #{codigoTipoSolicitud}
+
+    </select>
+
+</mapper>

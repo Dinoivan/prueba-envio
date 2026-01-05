@@ -1,0 +1,34 @@
+codigoClaseDocumento,descripcion,nivel,tipoClaseDocumento
+ZS01,PE Solped Nacional,1,SOLPED
+ZS03,PE Solped PM (S-Af),1,SOLPED
+ZS04,PE Solped Consignac,1,SOLPED
+ZS05,PE Solped Administr,1,SOLPED
+ZS07,PE Solped Imputada,1,SOLPED
+ZS08,PE Solped PP(Subco),1,SOLPED
+ZS09,PE Solped PS(M-S-Af),1,SOLPED
+ZS10,PE Solped Viveres(S),1,SOLPED
+ZS11,PE Solped Devolución,1,SOLPED
+ZS12,PE Solped MRP,1,SOLPED
+ZS13,PE Solped REPSOLPE,1,SOLPED
+ZS15,PE Solped AF Capital,1,SOLPED
+ZS16,PE Solped AF Menores,1,SOLPED
+ZS17,PE Solped Viveres(M),1,SOLPED
+ZCMK,Ped.abierto ctdad.,2,CM
+ZCP1,Ped.abierto de Pesca,2,CM
+ZCWK,Ped.abierto de valor,2,CM
+ZC01,PE Ped. Nacional,2,OC
+ZC02,PE Ped. Importacion,2,OC
+ZC03,PE Ped. Servicio,2,OC
+ZC04,PE Ped. Consigna,2,OC
+ZC05,PE Ped. Administrada,2,OC
+ZC06,PE Ped. de activos,2,OC
+ZC07,PE Ped. imputada,2,OC
+ZC08,PE Ped. Subcontrat,2,OC
+ZC09,PE Ped.Material CM,2,OC
+ZC10,PE Ped. traslado,2,OC
+ZC11,PE Ped.Devolución,2,OC
+ZC12,PE Ped.Comp MatPrima,2,OC
+ZC13,PE Ped.Intercompany,2,OC
+ZC14,PE Ped. Combustible,2,OC
+ZC17,PE Ped. Viveres(M),2,OC
+ZPAN,Petición de oferta,1,PO

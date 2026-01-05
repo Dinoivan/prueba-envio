@@ -1,0 +1,7 @@
+descripcion,nombreCargo,rolIdp
+COMPRADOR,COMPRADOR,iprovider_comprador
+LOGISTICA,LOGISTICA,iprovider_logistica
+ADMIN,ADMIN,iprovider_administrador
+IMPUESTO,IMPUESTO,iprovider_impuesto
+TESORERIA,TESORERIA,iprovider_tesoreria
+CONTABILIDAD,CONTABILIDAD,iProvider_Contabilidad

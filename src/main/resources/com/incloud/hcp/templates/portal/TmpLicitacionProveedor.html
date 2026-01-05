@@ -1,0 +1,130 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body style="width: 600px;margin: auto;padding: 0;font-family: Arial, Helvetica, sans-serif;font-size: 14px;color: #333">
+<!-- gold bar -->
+<table cellspacing="0" cellpadding="0" width="600px" class="header"
+       style="border-bottom-style: solid;border-bottom-color: #F0AB00;border-bottom-width: 8px;padding-top: 13px;
+       padding-bottom: 12px">
+    <tr style="border-collapse: collapse;width: 600px;padding: 0;margin: 0">
+        <td style="border-collapse: collapse;width: 600px;padding: 0;margin: 0">
+            <table cellspacing="0" cellpadding="0">
+                <tr style="border-collapse: collapse;width: 600px;padding: 0;margin: 0">
+                    <td class="logo" style="border-collapse: collapse;width: 61px;padding: 0;margin: 0">
+                        <img src="cid:${sm_logo}"  width="100"  height="100"
+                             style="border: 1px black;height: auto;line-height: 100%;outline: none;text-decoration: none"/>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td align="right" style="border-collapse: collapse;width: 600px;padding: 0;margin: 0">
+            <div class="companylogo" style="height: 45px;overflow: hidden">
+                <img src="cid:${vendor_logo}" width="100"  height="100"
+                     style="border: 0;height: 45px;line-height: 100%;outline: none;text-decoration: none;width: auto"/>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<table cellspacing="0" cellpadding="0" width="600px">
+    <tr style="border-collapse: collapse;width: 600px;padding: 0;margin: 0">
+        <td class="main_first"
+            style="border-collapse: collapse;width: 600px;padding: 0;margin: 0;padding-top: 36px;padding-bottom: 12px">
+            <h1 style="font-family: Arial, Helvetica, sans-serif;font-weight: bold;font-size: 20px;color: #555;margin-bottom: 24px">
+                Estimado ${nombreProveedor},</h1>
+            <p style="font-family: Arial, Helvetica, sans-serif;font-size: 14px;line-height: 18px">
+                Se le informa que ha sido invitado a participar en la Licitación <span style="font-weight: bold">Nro. ${nroLicitacion}, </span>
+                para lo cual tiene hasta el <span style="font-weight: bold">${fechaConfirmacion}</span> para poder confirmar su participación.
+            </p>
+        </td>
+    </tr>
+</table>
+
+<table cellspacing="0" cellpadding="0" border="1px #deb887">
+    <tr style="border-collapse: collapse;width: 600px;">
+        <td bgcolor="#add8e6" align="center"
+            style="border-collapse: collapse;width: 300px;padding: 0;margin-left: 5px;padding-top: 36px;padding-bottom: 12px">
+            <span style="font-weight: bold">Etapa de Licitación</span>
+        </td>
+        <td bgcolor="#add8e6" align="center"
+            style="border-collapse: collapse;width: 300px;padding: 0;margin-left: 5px;padding-top: 36px;padding-bottom: 12px">
+            <span style="font-weight: bold">Fecha de Cierre</span>
+        </td>
+    </tr>
+    #foreach( $bean in $licitacionSubetapaList )
+        <tr style="border-collapse: collapse;width: 600px;padding: 0;margin: 0; border: 1px #2b3f7b ">
+
+            <td align="center"
+                style="border-collapse: collapse;width: 300px;padding: 0;margin-left: 5px;padding-top: 36px;padding-bottom: 12px">
+                $bean.idSubetapa.descripcionSubetapa
+            </td>
+            <td align="center"
+                style="border-collapse: collapse;width: 300px;padding: 0;margin-left: 5px;padding-top: 36px;padding-bottom: 12px">
+                $bean.fechaCierreSubetapaString
+            </td>
+
+        </tr>
+    #end
+</table>
+
+<table cellspacing="0" cellpadding="0" width="600px">
+    <tr style="border-collapse: collapse;width: 600px;padding: 0;margin: 0">
+        <td class="main_first"
+            style="border-collapse: collapse;width: 600px;padding: 0;margin: 0;padding-top: 36px;padding-bottom: 12px">
+            <p style="font-family: Arial, Helvetica, sans-serif;font-size: 14px;line-height: 18px">
+                En caso tenga alguna duda, puede contactarse a <span style="font-weight: bold">${emailUsuarioPublicacion}</span>,
+                caso contrario sírvase remitir su cotización a través del portal o haciendo clic en el siguiente enlace para ingresar a su cuenta:
+            </p>
+        </td>
+    </tr>
+</table>
+
+<table cellspacing="0" cellpadding="0" width="600px">
+    <tr style="border-collapse: collapse;width: 600px;padding: 0;margin: 0">
+        <td align="middle" class="cta_container"
+            style="border-collapse: collapse; width: 600px; padding: 0; margin: 0; padding-top: 36px; padding-bottom: 36px">
+            <a href="${url}" id="activation-link" class="cta"
+               style="font-family: Arial, Helvetica, sans-serif;color: #fff;background-color: #226ca9;background: #226ca9;background-image: linear-gradient(top, #008fcc, #2b3f7b);border-radius: 4px;font-size: 16px;text-decoration: none;padding: 8px 12px">
+                Clic aquí para ingresar a su cuenta</a></td>
+    </tr>
+</table>
+<table cellspacing="0" cellpadding="0" width="600px">
+    <tr style="border-collapse: collapse;width: 600px;padding: 0;margin: 0">
+        <td class="main"
+            style="border-collapse: collapse;width: 600px;padding: 0;margin: 0;padding-top: 12px;padding-bottom: 12px;word-wrap: break-word">
+            <p style="font-family: Arial, Helvetica, sans-serif;font-size: 14px;line-height: 18px;word-wrap: break-word">
+                Si el enlace de arriba no se muestra o no funciona, copie y pegue el siguiente enlace en la barra de
+                direcciones de su navegador.
+            </p>
+            <p style="font-family: Arial, Helvetica, sans-serif;font-size: 14px;line-height: 18px;word-wrap: break-word">
+                ${url}
+            </p>
+        </td>
+    </tr>
+</table>
+<table cellspacing="0" cellpadding="0" width="600px">
+    <tr style="border-collapse: collapse;width: 600px;padding: 0;margin: 0">
+        <td class="main_last"
+            style="border-collapse: collapse;width: 600px;padding: 0;margin: 0;padding-top: 12px;padding-bottom: 36px">
+            <p style="font-family: Arial, Helvetica, sans-serif;font-size: 14px;line-height: 18px">
+                Atentamente,<br/>
+                Equipo IProvider - Copeinca</p>
+        </td>
+    </tr>
+</table>
+<table cellpadding="0" cellspacing="0" width="600px">
+    <tr style="border-collapse: collapse;width: 600px;padding: 0;margin: 0">
+        <td class="colophon"
+            style="border-collapse: collapse;width: 600px;padding: 0;margin: 0;font-size: 11px;color: #888;line-height: 13px">
+            <p style="font-family: Arial, Helvetica, sans-serif;font-size: 11px;line-height: 13px;color: #888">
+                Este correo electrónico puede contener secretos comerciales o información privilegiada, no divulgada o confidencial.
+                Si recibió este correo electrónico por error, se le notifica que cualquier revisión, copia o distribución
+                está estrictamente prohibida. Por favor, infórmenos de inmediato y destruya la transmisión original.
+                Gracias por su cooperación.
+            </p>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

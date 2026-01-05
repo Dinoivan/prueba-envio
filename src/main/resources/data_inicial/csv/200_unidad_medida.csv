@@ -1,0 +1,374 @@
+codigoSap,descripcion,textoUm
+M3,Metro cúbico,M3
+UN,Unidad,UN
+D,Días,D
+H,Hora,H
+T,Tonelada,T
+MIN,Minuto,MIN
+MON,Meses,MON
+KG,Kilogramo,KG
+HRA,Horas,HRA
+M2,Metro cuadrado,M2
+RS,Unidades enzimas,RS
+MIL,Millar,MIL
+HA,Hectárea,HA
+M,Metro,M
+GLN,Galón (EE.UU.),GLN
+L,Litro,L
+DSI,Dosis,DSI
+TF,Pie,TF
+PAA,Par,PAA
+CT,Ciento,CT
+LB,Libra (pound),LB
+G,Gramo,G
+DOC,Docena,DOC
+CM3,Centímetro cúbico,CM3
+ROL,Rollos,ROL
+CJ,Caja,CJ
+LC,Botella,LC
+BOL,Bolsa,BOL
+ML,Mililitro,ML
+PKG,Paquete,PKG
+%,Porcentaje,%
+%O,Tanto por mil,%O
+1,Lim.,1
+10,Días,10
+22S,Milímetro cuadrado/Segundo,22S
+2M,Centímetro/Segundo,2M
+2X,Metro/Minuto,2X
+4G,Microlitro,4G
+4O,Microfaradio,4O
+4T,Picofaradio,4T
+A,Amperio,A
+A87,Gigaohmio,A87
+A93,Gramo/Metro cúbico,A93
+ACR,Acre,ACR
+B34,Kilogramo/Decímetro cúbico,B34
+B45,Kilomol,B45
+B47,Kilonewton,B47
+B73,Meganewton,B73
+B75,Megaohmio,B75
+B78,Megavoltio,B78
+B84,Microamperio,B84
+BAG,Bolsa,BAG
+BAR,bar,BAR
+BOT,Botella,BOT
+BQK,Becquerel/Kilogramo,BQK
+C10,Milifaradio,C10
+C36,Mol por metro cúbico,C36
+C38,Mol por litro,C38
+C39,Nanoamperio,C39
+C3S,Centímetro cúbico/Segundo,C3S
+C41,Nanofaradio,C41
+C56,Newton/Milímetro cuadrado,C56
+CCM,Centímetro cúbico,CCM
+CD,Candela,CD
+CDM,Decímetro cúbico,CDM
+CM,Centímetros,CM
+CM2,Centímetro cuadrado,CM2
+CMH,Centímetro/Hora,CMH
+CS,Caja,CS
+CTL,Centilitro,CTL
+D10,Siemens por metro,D10
+D41,Tonelada/Metro cúbico,D41
+D46,Voltioamperio,D46
+DEG,Grado,DEG
+DM,Decímetro,DM
+DR,Tambor,DR
+DZ,Docena,DZ
+EA,cada uno,EA
+EE,Unidades enzimas,EE
+EML,Unidades enzimas/Milímetro,EML
+F,Faradio,F
+FA,Fahrenheit,FA
+FT,Pie,FT
+FT2,Pie cuadrado,FT2
+FT3,Pie cúbico,FT3
+G/L,Gramo aditivo/Litro,G/L
+GAU,Gramo oro,GAU
+GC,Grado centígrado,GC
+GHG,Gramo/Hectogramo,GHG
+GJ,Gigajulio,GJ
+GKG,Gramo/Kilogramo,GKG
+GLI,Gramo/Litro,GLI
+GLL,Galón (EE.UU.),GLL
+GLM,Galones por milla (EE.UU),GLM
+GM,Gramo/Mol,GM
+GM2,Gramo/Metro cuadrado,GM2
+GPH,Galones por hora (EE.UU),GPH
+GQ,Microgramo/Metro cúbico,GQ
+GRO,Grande,GRO
+GW,Gramo principio activo,GW
+HAR,Hectárea,HAR
+HL,Hectolitro,HL
+HPA,Hectopascal,HPA
+HZ,Hercio (1/segundo),HZ
+IN,Pulgada,IN
+IN2,Pulgada cuadrada,IN2
+IN3,Pulgada cúbica,IN3
+J,Julio,J
+JHR,Años (annum),JHR
+JKG,Julio/Kilogramo,JKG
+JKK,Capac.térmica espec.,JKK
+JMO,Julio/Mol,JMO
+K,Kelvin,K
+KA,Kiloamperio,KA
+KAN,Bidón,KAN
+KAR,Cartón,KAR
+KBK,Kilobecquerel/Kilogramo,KBK
+KGF,Kilogramo/Metro cuadrado,KGF
+KGK,Kilogramo/Kilogramo,KGK
+KGM,Kilogramo/Mol,KGM
+KGS,Kilogramo/Segundo,KGS
+KGV,Kilogramo/Metro cúbico,KGV
+KGW,Kilogramo principio activo,KGW
+KHZ,Kilohercio,KHZ
+KI,Caja,KI
+KJ,Kilojulio,KJ
+KJK,Kilojulio/Kilogramo,KJK
+KJM,Kilojulio/Mol,KJM
+KM,Kilómetro,KM
+KM2,Kilómetro cuadrado,KM2
+KMH,Kilómetro/Hora,KMH
+KMK,Metro cúbico/Metro cúbico,KMK
+KMN,Kelvin/Minuto,KMN
+KMS,Kelvin/Segundo,KMS
+KOH,Kiloohmio,KOH
+KPA,Kilopascal,KPA
+KT,Kilotoneladas,KT
+KV,Kilovoltio,KV
+KVA,Kilovoltioamperio,KVA
+KW,Kilovatio,KW
+KWH,Kilovatio-hora,KWH
+KWK,Kg principio activo/kg,KWK
+L2,Litro/Minuto,L2
+LE,Unidad de potencia,LE
+LHK,Litro por 100 km,LHK
+LMS,Litro/Molécula-segundo,LMS
+LPH,Litro por hora,LPH
+M%,Porcentaje-masa,M%
+M%O,Tanto por mil-masa,M%O
+M/S,Metro/Segundo,M/S
+M2I,1 / Metro cuadrado,M2I
+M2S,Metro cuadrado/Segundo,M2S
+M3D,Metro cúbico/día,M3D
+M3S,Metro cúbico/Segundo,M3S
+MA,Miliamperio,MA
+MBA,Milibar,MBA
+MBZ,Metrobaro/Segundo,MBZ
+MEJ,Megajulio,MEJ
+MG,Miligramo,MG
+MGF,Miligramo/Centímetro cuadrado,MGF
+MGG,Miligramo/Gramo,MGG
+MGK,Miligramo/Kilogramo,MGK
+MGL,Miligramo/Litro,MGL
+MGQ,Miligramo/Metro cúbico,MGQ
+MGW,Megavatio,MGW
+MHZ,Megahercio,MHZ
+MI,Milla,MI
+MI2,Milla cuadrada,MI2
+MIM,Micrometro,MIM
+MIS,Microsegundo,MIS
+MJ,Milijulio,MJ
+MLK,Mililitro/Metro cúbico,MLK
+MLW,Milílitro principio activo,MLW
+MM,Milímetro,MM
+MM2,Milímetro cuadrado,MM2
+MMA,Milímetro/Año,MMA
+MMG,Milimol/Gramo,MMG
+MMH,Milímetro/Hora,MMH
+MMK,Milimol/Kilogramo,MMK
+MMO,Milimol,MMO
+MMQ,Milímetro cúbico,MMQ
+MMS,Milímetro/Segundo,MMS
+MNM,Milinewton/Metro,MNM
+MOK,Mol/Kilogramo,MOK
+MOL,Mol,MOL
+MPA,Megapascal,MPA
+MPB,Partes por billón (masa),MPB
+MPG,Millas por galón (EEUU),MPG
+MPM,Partes por millón (masa),MPM
+MPS,Milipascal por segundo,MPS
+MPT,Partes por trillón (masa),MPT
+MPZ,Metropascal/Segundo,MPZ
+MQH,Metro cúbico/Hora,MQH
+MS,Milisegundo,MS
+MS2,Metro/Segundo al cuadrado,MS2
+MTE,Militesla,MTE
+MTS,Metro/Hora,MTS
+MV,Milivoltio,MV
+MVA,Megavoltioamperio,MVA
+MW,Milivatio,MW
+MWH,Megavatio/Hora,MWH
+N,Newton,N
+NAM,Nanometro,NAM
+NM,Numero máximo permisible/100,NM
+NS,Nanosegundo,NS
+OCM,Resistencia eléctrica espec.,OCM
+OHM,Ohmio,OHM
+OM,Resistencia eléctrica espec.,OM
+OZ,Onza,OZ
+OZA,Onza líquida EE.UU.,OZA
+P,Puntos,P
+PA,Pascal,PA
+PAK,Bulto,PAK
+PAL,Paleta,PAL
+PAS,Pascal-segundo,PAS
+PCT,Participación en grupo en %,PCT
+PMI,1/minuto,PMI
+PMR,Grado de permeación SI,PMR
+PPB,Partes por billón,PPB
+PPM,Parts per million,PPM
+PPT,Partes por trillón,PPT
+PRM,Grado de permeación,PRM
+PRS,Número de personas,PRS
+PS,Picosegundo,PS
+PT,Pinta EE.UU. líquido,PT
+QT,Cuarto galón EE.UU. líquido,QT
+RHO,Gramos/Centímetro cúbico,RHO
+S,Segundo,S
+ST,Pieza,ST
+STD,Horas,STD
+TAG,Días,TAG
+TC3,1/centímetro cúbico,TC3
+TES,Tesla,TES
+TH,Millar,TH
+TM3,1/metro cúbico,TM3
+TO,Tonelada,TO
+TON,Tonelada EE.UU.,TON
+TST,,TST
+UGL,Microgramo/Litro,UGL
+V,Voltio,V
+V%,Porcentaje en volumen,V%
+V%O,Volumen por mil,V%O
+V01,Microsiemens por centímetro,V01
+V02,Millimol por litro,V02
+VAL,Artículo de valor,VAL
+VPB,Partes de volumen por billón,VPB
+VPM,Partes de volumen por millón,VPM
+VPT,Partes de volumen por trillón,VPT
+W,Vatios,W
+WCH,Semanas,WCH
+WMK,Conductibilidad del calor,WMK
+WTL,Velocidad de evaporación,WTL
+YD,Yarda,YD
+YD2,Yarda cuadrada,YD2
+YD3,Yarda cúbica,YD3
+bbl,British Thermal Unit/Barril EU,bbl
+bft,British Thermal Unit/PieCúbico,bft
+bgl,British Thermal Unit/Galón EU,bgl
+btl,British Thermal Unit/Libra EU,btl
+gj3,Gigajulio/1000 metros cúbicos,gj3
+gjm,Gigajulio/Metro cúbico,gjm
+gjt,Gigajulio/Tonelada EE.UU.,gjt
+jm3,Julio/Metro cúbico,jm3
+kgb,Kilogramo/Barril EE.UU.,kgb
+kgj,Kilogramo/Julio,kgj
+kgm,Kilogramo/Millones BTU,kgm
+kgs,Kilogramo/Pie cúbico estándar,kgs
+kgt,Kulogramo/Tonelada EE.UU.,kgt
+kml,Kilogramo/Kilogramo mol,kml
+lbb,Libra EU/British Thermal Unit,lbb
+lbg,Libra EE.UU./Galón EE.UU.,lbg
+lbl,Libra EE.UU./Libra EE.UU. mol,lbl
+lbm,Libra EE.UU./Millones BTU,lbm
+lbs,Libra EU/Pie cúbico estándar,lbs
+lbt,Libra EE.UU./Tonelada EE.UU.,lbt
+mbb,Millones BTU/Barril EE.UU.,mbb
+mbt,Millones BTU/Tonelada EE.UU.,mbt
+tbl,Tonelada/Barril EE.UU.,tbl
+tbt,Tonelada/British Thermal Unit,tbt
+tgl,Tonelada EE.UU./Galón EE.UU.,tgl
+tjl,Tonelada/Julio,tjl
+tm3,Tonelada/1000 metros cúbicos,tm3
+tt,Tonelada/Tonelada,tt
+ttj,Tonelada/Terajulio,ttj
+AUG,Ausencia en 25 gramos,AUG
+BJA,Bandeja,BJA
+CTO,Cuarto galón EE.UU. líquido,CTO
+JB,Jaba,JB
+KMI,Kilos por minuto,KMI
+MGO,Megaohmio,MGO
+MP,Master Pack,MP
+MP2,Master Pack 2,MP2
+MQ2,Miliequivalente Oxigeno,MQ2
+NMP,Megavoltio,NMP
+UF2,unidad formadora colonias/c2,UF2
+UF3,unidad formadora colonias/m3,UF3
+UFA,unidad formadora colonias/ma,UFA
+UFC,unidad formadora de colonias/g,UFC
+UFL,UFC /mL,UFL
+UFS,unidad formadora colonias/s,UFS
+UNI,Unidad costeo CO,UNI
+USM,unidad formadora colonias/sm,USM
+UNO,Lim.,UNO
+CMS,Centímetro/Segundo,CMS
+000,Metro/Minuto,000
+µL,Microlitro,µL
+µF,Microfaradio,µF
+PF,Picofaradio,PF
+GOH,Gigaohmio,GOH
+GM3,Gramo/Metro cúbico,GM3
+KD3,Kilogramo/Decímetro cúbico,KD3
+KML,Kilomol,KML
+KN,Kilonewton,KN
+MN,Meganewton,MN
+µA,Microamperio,µA
+BQL,Becquerel/Kilogramo,BQL
+CO,Milifaradio,CO
+M/M,Mol por metro cúbico,M/M
+M/L,Mol por litro,M/L
+NR,Nanoamperio,NR
+NF,Nanofaradio,NF
+NMM,Newton/Milímetro cuadrado,NMM
+DM3,Decímetro cúbico,DM3
+CL,Centilitro,CL
+S/M,Siemens por metro,S/M
+TOM,Tonelada/Metro cúbico,TOM
+VA,Voltioamperio,VA
+TR,Tambor,TR
+C/U,cada uno,C/U
+°F,Fahrenheit,°F
+PI2,Pie cuadrado,PI2
+PI3,Pie cúbico,PI3
+°C,Grado centígrado,°C
+GPM,Galones por milla (EE.UU),GPM
+µGV,Microgramo/Metro cúbico,µGV
+GRD,Grande,GRD
+GPA,Gramo principio activo,GPA
+PUL,Pulgada,PUL
+''2,Pulgada cuadrada,''2
+''3,Pulgada cúbica,''3
+JAB,Jaba,JAB
+BID,Bidón,BID
+CAR,Cartón,CAR
+KBL,Kilobecquerel/Kilogramo,KBL
+KGP,Kilogramo principio activo,KGP
+CA,Caja,CA
+LMI,Litro/Minuto,LMI
+UP,Unidad de potencia,UP
+LCK,Litro por 100 km,LCK
+M-2,1 / Metro cuadrado,M-2
+MBT,Metrobaro/Segundo,MBT
+MGS,Miligramo/Centímetro cuadrado,MGS
+mgk,Miliigramos KOH,mgk
+MGV,Miligramo/Metro cúbico,MGV
+µM,Micrometro,µM
+MLS,Mililitro/Metro cúbico,MLS
+MM3,Milímetro cúbico,MM3
+MLG,Millas por galón (EEUU),MLG
+M3H,Metro cúbico/Hora,M3H
+MH,Metro/Hora,MH
+N/M,Newton/Metro,N/M
+AA,Resistencia eléctrica espec.,AA
+OZL,Onza líquida EE.UU.,OZL
+BTO,Bulto,BTO
+CEB,Participación en grupo en %,CEB
+PI,Pieza,PI
+DÍA,Días,DÍA
+001,,001
+UFa,unidad formadora colonias/ma,UFa
+UFs,unidad formadora colonias/s,UFs
+µGL,Microgramo/Litro,µGL
+MSC,Microsiemens por centímetro,MSC
+MLF,Millimol por litro,MLF

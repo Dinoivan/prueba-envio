@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<excel>
+    <header>
+        <title>TIPO LICITACION</title>
+    </header>
+    <header>
+        <title>TIPO CUESTIONARIO</title>
+    </header>
+    <header>
+        <title>DESCRIPCION</title>
+    </header>
+    <header>
+        <title>RESPUESTA DEFINIDA</title>
+    </header>
+
+   
+</excel>

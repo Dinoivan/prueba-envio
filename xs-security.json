@@ -1,0 +1,32 @@
+{
+  "xsappname": "copeincaprovider-api",
+  "tenant-mode": "dedicated",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.all-ip",
+      "description": "All ip Permissions."
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "Administrator-all-ip",
+      "description": "View Sensitive Data (ip-api)",
+      "scope-references": [
+        "$XSAPPNAME.all-ip",
+        "uaa.user"
+      ]
+    }
+  ],"role-collections": [
+  {
+    "name": "Administrator-all-ip",
+    "description": "Administrator (read all)",
+    "role-template-references": [
+      "$XSAPPNAME.Administrator-all-ip"
+    ]
+  }
+],
+  "oauth2-configuration": {
+    "redirect-uris": ["https://prd-copeincaprovider.cfapps.us10-001.hana.ondemand.com/**",
+      "https://prd-copeincaprovider-web.cfapps.us10-001.hana.ondemand.com/**"]
+  }
+}

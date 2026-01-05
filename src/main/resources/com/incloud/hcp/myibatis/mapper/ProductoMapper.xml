@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.incloud.hcp.myibatis.mapper.ProductoMapper">
+
+	<resultMap id="productoDtoExcelResultMap" type="com.incloud.hcp.dto.reporte.ProductoDtoExcel">
+		<result property="codigoSap" column="codigo_sap"/>
+		<result property="ruc" column="ruc"/>
+		<result property="razonSocial" column="razon_social"/>
+		<result property="marca" column="marca"/>
+		<result property="productoServicio" column="producto_servicio"/>
+		<result property="descripcionAdicional" column="descripcion_adicional"/>
+	</resultMap>
+
+	<resultMap id="bienServicioResultMap" type="com.incloud.hcp.domain.BienServicio">
+		<result property="idBienServicio" column="id_bien_servicio"/>
+		<result property="codigoSap" column="codigo_sap"/>
+		<result property="descripcion" column="descripcion"/>
+		<result property="numeroParte" column="numero_parte"/>
+		<result property="tipoItem" column="tipo_item"/>
+	</resultMap>
+
+	<select id="getListAllProductoProveedor" resultMap="productoDtoExcelResultMap">
+		SELECT
+			 pv.acreedor_codigo_sap AS codigo_sap,
+			 pv.ruc,
+			 pv.razon_social,
+			 pp.marca,
+			 pp.producto AS producto_servicio,
+			 pp.descripcion_adicional
+		FROM PROVEEDOR_PRODUCTO pp
+		INNER JOIN PROVEEDOR pv ON pp.id_proveedor = pv.id_proveedor
+		ORDER BY pv.razon_social
+	</select>
+
+	<select id="getBienServicioCodigoSap" resultMap="bienServicioResultMap">
+		SELECT
+		id_bien_servicio,
+		codigo_sap
+		FROM BIEN_SERVICIO
+		WHERE CODIGO_SAP = #{codigoSap}
+	</select>
+
+</mapper>

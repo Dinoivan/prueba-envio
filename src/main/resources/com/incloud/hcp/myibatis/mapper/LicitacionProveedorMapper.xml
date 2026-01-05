@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.incloud.hcp.myibatis.mapper.LicitacionProveedorMapper">
+
+    <resultMap id="proveedorCustomResultMap" type="com.incloud.hcp.bean.ProveedorCustom">
+        <id property="idProveedor" column="id_proveedor"/>
+        <result property="ruc" column="ruc"/>
+        <result property="razonSocial" column="razon_social"/>
+        <result property="direccionFiscal" column="direccion_fiscal"/>
+        <result property="email" column="email"/>
+        <result property="tipoProveedor" column="tipo_proveedor" />
+        <result property="tipoPersona" column="tipo_persona" />
+        <result property="estadoHomologacion" column="estado_homologacion" />
+        <result property="evaluacionHomologacion" column="evaluacion_homologacion" />
+    </resultMap>
+
+    <select id="getListProveedorByIdLicitacion" resultMap="proveedorCustomResultMap">
+		SELECT
+		p.id_proveedor,
+		p.ruc,
+		p.razon_social,
+		p.direccion_fiscal,
+		p.email,
+		tp.descripcion as tipo_proveedor,
+		pr.valor as tipo_persona,
+		CASE p.ind_homologado WHEN '1' THEN 'Homologado' ELSE 'No Homologado' END AS estado_homologacion,
+		p.evaluacion_homologacion
+		FROM PROVEEDOR p, TIPO_PROVEEDOR tp, PARAMETROS pr, LICITACION_PROVEEDOR lp
+		WHERE tp.ID_TIPO_PROVEEDOR = p.ID_TIPO_PROVEEDOR
+			AND pr.CODIGO = p.TIPO_PERSONA
+			AND pr.tipo = 'TIPO_PERSONA'
+            AND lp.ID_PROVEEDOR = P.ID_PROVEEDOR
+			AND lp.ID_LICITACION = #{idLicitacion}
+    </select>
+
+    <!--JRAMOS - UPDATE-->
+    <select id="getProveedorCustomByIdProveedor" resultMap="proveedorCustomResultMap">
+        SELECT
+        TOP 1
+        p.id_proveedor,
+        p.ruc,
+        p.razon_social,
+        p.direccion_fiscal,
+        p.email,
+        tp.descripcion as tipo_proveedor,
+        pr.valor as tipo_persona,
+        CASE p.ind_homologado WHEN '1' THEN 'Homologado' ELSE 'No Homologado' END AS estado_homologacion,
+        p.evaluacion_homologacion
+        FROM PROVEEDOR p, TIPO_PROVEEDOR tp, PARAMETROS pr, LICITACION_PROVEEDOR lp
+        WHERE tp.ID_TIPO_PROVEEDOR = p.ID_TIPO_PROVEEDOR
+        AND pr.CODIGO = p.TIPO_PERSONA
+        AND pr.tipo = 'TIPO_PERSONA'
+        AND p.ID_PROVEEDOR = #{idProveedor}
+        AND lp.ID_LICITACION = #{idLicitacion}
+    </select>
+
+    <select id="countByLicitacionesGanadas" resultType="int">
+        SELECT count(1)
+                FROM LICITACION_PROVEEDOR LICI,
+                     LICITACION L
+                WHERE LICI.ID_PROVEEDOR = #{idProveedor}
+                  AND LICI.ID_LICITACION = L.ID_LICITACION
+                  AND L.ESTADO_LICITACION IN ('AD','ES')
+                  AND EXISTS (SELECT COMPA.ID_CCOMPARATIVO
+                              FROM CCOMPARATIVO COMPA,
+                                   CCOMPARATIVO_PROVEEDOR CPROV,
+                                   CCOMPARATIVO_ADJUDICADO ADJU
+                              WHERE COMPA.ID_CCOMPARATIVO = CPROV.ID_CCOMPARATIVO
+                                AND CPROV.ID_PROVEEDOR = LICI.ID_PROVEEDOR
+                                AND CPROV.ID_CCOMPARATIVO_PROVEEDOR = ADJU.ID_CCOMPARATIVO_PROVEEDOR
+                                AND COMPA.ID_LICITACION = LICI.ID_LICITACION
+                              )
+    </select>
+
+
+
+</mapper>

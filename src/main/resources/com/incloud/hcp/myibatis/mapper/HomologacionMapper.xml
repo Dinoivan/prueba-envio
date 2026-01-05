@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.incloud.hcp.myibatis.mapper.HomologacionMapper">
+
+    <resultMap id="homologacionRespuestaResultMap"
+               type="com.incloud.hcp.dto.homologacion.LineaComercialHomologacionDto">
+        <result property="idProveedor" column="ID_PROVEEDOR"/>
+        <result property="idLinea" column="ID_LINEA_COMERCIAL"/>
+        <result property="linea" column="LINEA_COMERCIAL"/>
+
+        <collection property="preguntas" ofType="com.incloud.hcp.dto.homologacion.HomologacionDto">
+
+            <id property="idHomologacion" column="ID_HOMOLOGACION"/>
+            <result property="pregunta" column="PREGUNTA"/>
+            <result property="indicadorAdjunto" column="IND_ADJUNTO"/>
+            <result property="peso" column="PESO"/>
+            <result property="estado" column="ESTADO"/>
+            <result property="valorRespuestaLibre" column="VALOR_RESPUESTA_LIBRE"/>
+
+            <association property="respuestaProveedor"
+                         javaType="com.incloud.hcp.dto.homologacion.ProveedorRespuestaDto">
+                <id property="idHomologacionRespuesta" column="ID_HOMOLOGACION_RESPUESTA_PROVEEDOR"/>
+                <result property="archivoId" column="ARCHIVO_ID"/>
+                <result property="rutaAdjunto" column="RUTA_ADJUNTO"/>
+                <result property="nombreArchivo" column="ARCHIVO_NOMBRE"/>
+            </association>
+
+            <collection property="opciones" ofType="com.incloud.hcp.dto.homologacion.HomologacionRespuestaDto">
+                <result property="idHomologacionRespuesta" column="ID_HOMOLOGACION_RESPUESTA"/>
+                <result property="respuesta" column="RESPUESTA"/>
+            </collection>
+
+        </collection>
+    </resultMap>
+
+    <resultMap id="homologacionRespuestaExcelResultMap"
+               type="com.incloud.hcp.domain.HomologacionRespuesta">
+        <result property="homologacion.lineaComercial.descripcion" column="LINEA_DESCRIPCION"/>
+        <result property="homologacion.pregunta" column="pregunta"/>
+        <result property="homologacion.peso" column="peso"/>
+        <result property="homologacion.indAdjunto" column="ind_adjunto"/>
+        <result property="respuesta" column="respuesta"/>
+        <result property="puntaje" column="puntaje"/>
+    </resultMap>
+
+    <select id="getListHomologacionExcel" resultMap="homologacionRespuestaExcelResultMap">
+        select
+        linea.descripcion LINEA_DESCRIPCION,
+        homo.pregunta,
+        homo.peso,
+        homo.ind_adjunto,
+        rpta.respuesta,
+        rpta.puntaje
+        from
+        homologacion homo
+        inner join linea_comercial linea on (linea.id_linea_comercial = homo.id_linea_comercial)
+        left join homologacion_respuesta rpta on (rpta.id_homologacion = homo.id_homologacion)
+        order by
+        linea.descripcion
+    </select>
+
+    <insert id="evaluarProveedor" statementType="CALLABLE">
+        { CALL SP_PROC_HOMOLOGACION_PROVEEDOR(
+        #{proveedor.idProveedor},
+        #{proveedor.indHomologado, jdbcType=CHAR, javaType=java.lang.String, mode = OUT},
+        #{proveedor.evaluacionHomologacion, jdbcType = DECIMAL, javaType=java.math.BigDecimal, mode = OUT}
+        )}
+    </insert>
+
+
+    <select id="evaluarProveedorVerNota" statementType="CALLABLE">
+        { CALL SP_PROC_HOMOLOGACION_PROVEEDOR(
+        #{proveedorVerNota.idProveedor},
+        #{proveedorVerNota.indHomologado, jdbcType=CHAR, javaType=java.lang.String, mode = OUT},
+        #{proveedorVerNota.evaluacionHomologacion, jdbcType = DECIMAL, javaType=java.math.BigDecimal, mode = OUT}
+        )}
+    </select>
+
+
+    <select id="getAvanceHomologacionByIdProveedor" statementType="CALLABLE">
+        { CALL SP_PROC_AVANCE_HOMOLOGACION(
+        #{proveedor.idProveedor},
+        #{proveedor.evaluacionHomologacion, jdbcType = DECIMAL, javaType=java.math.BigDecimal, mode = OUT}
+        )}
+    </select>
+
+    <select id="getListHomologacionByIdProveedor" statementType="CALLABLE" resultMap="homologacionRespuestaResultMap">
+        {CALL SP_SEL_HOMOLOGACION_PROVEEDOR_02(#{idProveedor})}
+    </select>
+    <select id="getListHomologacionByIdProveedorResponder" statementType="CALLABLE" resultMap="homologacionRespuestaResultMap">
+        {CALL SP_SEL_HOMOLOGACION_PROVEEDOR_RESPONDER(#{idProveedor})}
+    </select>
+</mapper>

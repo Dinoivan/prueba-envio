@@ -1,0 +1,6429 @@
+idUbigeo,nivel,descripcion,idPadre,codigoUbigeoSap
+1743,1,Donets'ka,228,UA
+2677,2,Latina,1092,IT
+4216,3,Wallis-et-Futuna,2460,0000
+5057,3,Huac-Huas,3433,050607
+2678,2,Lucca,1093,IT
+2946,2,Los Santos,1361,PA
+4217,3,Hors-France,2461,0000
+1744,1,Harkivs'ka,228,UA
+3216,2,Glaris,1631,CH
+2679,2,Monza e Brianza,1094,IT
+4218,3,French S.Territ,2462,0000
+2947,2,Panamá,1362,PA
+1745,1,Hmel'nits'ka,228,UA
+4219,3,Gabón,2463,0000
+2680,2,Macerata,1095,IT
+5629,3,Nueve de Julio,3490,120212
+5474,3,Yarumayo,3473,100110
+2948,2,Veraguas,1363,PA
+4220,3,Gambia,2464,0000
+2681,2,Messina,1096,IT
+1746,1,Hersons'ka,228,UA
+2949,2,Panamá,1364,PA
+4221,3,Georgia,2465,0000
+2682,2,Milán,1097,IT
+5630,3,Orcotuna,3490,120213
+2950,2,PapuaNvaGuinea,1365,PG
+4222,3,Ghana,2466,0000
+5475,3,Pillco Marca,3473,100111
+2683,2,Mantova,1098,IT
+1747,1,Ivano-Frankivs'ka,228,UA
+2951,2,Paraguay,1366,PY
+4223,3,Gibraltar,2467,0000
+2684,2,Módena,1099,IT
+5631,3,San José de Quero,3490,120214
+2952,2,Polinesia fran.,1367,PF
+5476,3,Yacus,3473,100112
+4224,3,Granada,2468,0000
+2685,2,Massa Carrara,1100,IT
+1748,1,Kievs'ka,228,UA
+2953,2,Dolnoslaskie,1368,PL
+2686,2,Matera,1101,IT
+4225,3,Aitolia kai Akarnan,2469,0000
+2954,2,Kujawsko-Pomorskie,1369,PL
+5632,3,Santa Rosa de Ocopa,3490,120215
+5478,3,Ambo,3474,100201
+1749,1,Kirovograds'ka,228,UA
+2687,2,Nápoles,1102,IT
+4226,3,Akhaia,2470,0000
+2955,2,Lubelskie,1370,PL
+2688,2,Novara,1103,IT
+4227,3,Argolis,2471,0000
+1674,1,Bolu,226,TR
+2956,2,Lubuskie,1371,PL
+5479,3,Cayna,3474,100202
+5633,3,Chanchamayo,3491,120301
+1750,1,Respublika Krim,228,UA
+2689,2,Nuoro,1104,IT
+4228,3,Arkadhia,2472,0000
+2690,2,Ogliastra,1105,IT
+2957,2,Lódzkie,1372,PL
+4229,3,Arta,2473,0000
+5634,3,Perene,3491,120302
+1751,1,L'vivsbka,228,UA
+5480,3,Colpas,3474,100203
+2958,2,Malopolskie,1373,PL
+2691,2,Oristano,1106,IT
+1675,1,Burdur,226,TR
+4230,3,Attiki,2474,0000
+2959,2,Mazowieckie,1374,PL
+2692,2,Olbia-Tempio,1107,IT
+4231,3,Dhodhekanisos,2475,0000
+5635,3,Pichanaqui,3491,120303
+1752,1,Lugans'ka,228,UA
+5481,3,Conchamarca,3474,100204
+2960,2,Opolskie,1375,PL
+2693,2,Palermo,1108,IT
+4232,3,Dhrama,2476,0000
+4285,3,Guinea-Bissau,2529,0000
+2961,2,Podkarpackie,1376,PL
+2694,2,Piacenza,1109,IT
+1753,1,Mikolaivs'ka,228,UA
+4233,3,Evritania,2477,0000
+5636,3,San Luis de Shuaro,3491,120304
+5482,3,Huacar,3474,100205
+2962,2,Podlaskie,1377,PL
+2695,2,Padua,1110,IT
+4234,3,Evros,2478,0000
+4286,3,Guyana,2530,0000
+1754,1,m.Kiev,228,UA
+2963,2,Pomorskie,1378,PL
+2696,2,Pescara,1111,IT
+4235,3,Evvoia,2479,0000
+5637,3,San Ramón,3491,120305
+5483,3,San Francisco,3474,100206
+2964,2,Slaskie,1379,PL
+2697,2,Perugia,1112,IT
+4236,3,Florina,2480,0000
+4287,3,Haití,2531,0000
+1755,1,m.Sevastopil',228,UA
+2965,2,Swietokrzyskie,1380,PL
+2698,2,Pisa,1113,IT
+4237,3,Fokis,2481,0000
+5638,3,Vitoc,3491,120306
+5486,3,La Unión,3475,100301
+2699,2,Pola,1114,IT
+2966,2,Warminsko-mazurskie,1381,PL
+4238,3,Fthiotis,2482,0000
+1756,1,Odes'ka,228,UA
+4288,3,Honduras,2532,0000
+2967,2,Wielkopolskie,1382,PL
+5639,3,Jauja,3492,120401
+2700,2,Pordenone,1115,IT
+5489,3,Pachas,3475,100313
+4239,3,Grevena,2483,0000
+2701,2,Prato,1116,IT
+2968,2,Zachodnio-Pomorskie,1383,PL
+1757,1,Poltavs'ka,228,UA
+4289,3,Bacs-Kiskun,2533,0000
+4240,3,Ilia,2484,0000
+5640,3,Acolla,3492,120402
+2702,2,Parma,1117,IT
+5490,3,Quivilla,3475,100316
+2969,2,Minho-Lima,1384,PT
+4241,3,Imathia,2485,0000
+4290,3,Baranya,2534,0000
+2703,2,Pistoia,1118,IT
+1758,1,Rivnens'ka,228,UA
+2970,2,Cávado,1385,PT
+5641,3,Apata,3492,120403
+5491,3,Ripan,3475,100317
+2971,2,Ave,1386,PT
+4242,3,Ioannina,2486,0000
+2704,2,Pesaro-Urbino,1119,IT
+1759,1,Sums'ka,228,UA
+4291,3,Bekes,2535,0000
+2705,2,Pavia,1120,IT
+2972,2,Grande Porto,1387,PT
+4243,3,Iraklion,2487,0000
+5642,3,Ataura,3492,120404
+5492,3,Shunqui,3475,100321
+2706,2,Potenza,1121,IT
+4244,3,Kardhitsa,2488,0000
+1760,1,Ternopil's'ka,228,UA
+2973,2,Tâmega,1388,PT
+4292,3,Bekescsaba,2536,0000
+2707,2,Rávena,1122,IT
+5643,3,Canchayllo,3492,120405
+4245,3,Kastoria,2489,0000
+5496,3,Canchabamba,3476,100402
+2974,2,Entre Douro e Vouga,1389,PT
+2708,2,Reggio Calabria,1123,IT
+1761,1,Vinnits'ka,228,UA
+4246,3,Kavala,2490,0000
+2975,2,Douro,1390,PT
+2709,2,Reggio Emilia,1124,IT
+4293,3,Borsod-Abauj-Zemplen,2537,0000
+5644,3,Curicaca,3492,120406
+4247,3,Kefallinia,2491,0000
+5497,3,Cochabamba,3476,100403
+2710,2,Ragusa,1125,IT
+2976,2,Alto Trás-os-Montes,1391,PT
+1762,1,Volins'ka,228,UA
+4248,3,Kerkira,2492,0000
+2711,2,Rieti,1126,IT
+4294,3,Budapest,2538,0000
+2977,2,Baixo Vouga,1392,PT
+5645,3,El Mantaro,3492,120407
+5498,3,Pinra,3476,100404
+2712,2,Roma,1127,IT
+4249,3,Khalkidhiki,2493,0000
+1763,1,Zakarpats'ka,228,UA
+2978,2,Baixo Mondego,1393,PT
+2713,2,Rimini,1128,IT
+4250,3,Khania,2494,0000
+4295,3,Csongrad,2539,0000
+5499,3,Llata,3477,100501
+5646,3,Huamali,3492,120408
+2979,2,Pinhal Litoral,1394,PT
+2714,2,Rovigo,1129,IT
+1764,1,Zaporiz'ka,228,UA
+4251,3,Khios,2495,0000
+2715,2,Salerno,1130,IT
+2980,2,Pinhal Interior N.,1395,PT
+4252,3,Kikladhes,2496,0000
+5500,3,Arancay,3477,100502
+4296,3,Debrecen,2540,0000
+5647,3,Huaripampa,3492,120409
+2716,2,Siena,1131,IT
+1765,1,Zhitomirs'ka,228,UA
+2981,2,Pinhal Interior Sul,1396,PT
+4253,3,Kilkis,2497,0000
+2717,2,Sondrio,1132,IT
+2982,2,Dão-Lafoes,1397,PT
+4254,3,Korinthia,2498,0000
+5648,3,Huertas,3492,120410
+2718,2,La Spezia,1133,IT
+1766,1,Uganda,229,UG
+4297,3,Dunaujvaros,2541,0000
+5501,3,Chavín de Pariarca,3477,100503
+4255,3,Kozani,2499,0000
+2983,2,Serra da Estrela,1398,PT
+2719,2,Siracusa,1134,IT
+5649,3,Janjaillo,3492,120411
+1767,1,Unión Europea,230,EU
+2984,2,Beira Interior Norte,1399,PT
+4298,3,Eger,2542,0000
+2720,2,Sassari,1135,IT
+4256,3,Lakonia,2500,0000
+2721,2,Savona,1136,IT
+2985,2,Beira Interior Sul,1400,PT
+5650,3,Julcán,3492,120412
+4257,3,Larisa,2501,0000
+1768,1,Uruguay,231,UY
+4299,3,Fejer,2543,0000
+2722,2,Taranto,1137,IT
+2986,2,Cova da Beira,1401,PT
+4258,3,Lasithi,2502,0000
+2987,2,Oeste,1402,PT
+2723,2,Teramo,1138,IT
+5651,3,Leonor Ordóñez,3492,120413
+4259,3,Lesvos,2503,0000
+1769,1,Uzbekistán,232,UZ
+4300,3,Gyor,2544,0000
+2724,2,Trento,1139,IT
+2988,2,Grande Lisboa,1403,PT
+4260,3,Levkas,2504,0000
+2725,2,Turín,1140,IT
+5652,3,Llocllapampa,3492,120414
+1770,1,Vanuatu,233,VU
+4261,3,Magnisia,2505,0000
+2989,2,Península de Setúbal,1404,PT
+5502,3,Jacas Grande,3477,100504
+2726,2,Trapani,1141,IT
+4301,3,Gyor-Moson-Sopron,2545,0000
+2990,2,Médio Tejo,1405,PT
+4262,3,Messinia,2506,0000
+2727,2,Terni,1142,IT
+5653,3,Marco,3492,120415
+1771,1,Amazonas,234,VE
+2728,2,Trieste,1143,IT
+4263,3,Pella,2507,0000
+2991,2,Lezíria do Tejo,1406,PT
+5504,3,Miraflores,3477,100506
+4302,3,Hajdu-Bihar,2546,0000
+2729,2,Treviso,1144,IT
+5654,3,Masma,3492,120416
+1772,1,Anzoategui,234,VE
+4264,3,Pieria,2508,0000
+2992,2,Alentejo Litoral,1407,PT
+5505,3,Monzón,3477,100507
+2730,2,Udine,1145,IT
+4265,3,Piraievs,2509,0000
+2993,2,Alto Alentejo,1408,PT
+4303,3,Heves,2547,0000
+1773,1,Apure,234,VE
+2731,2,Varese,1146,IT
+5655,3,Masma Chicche,3492,120417
+4266,3,Preveza,2510,0000
+2994,2,Alentejo Central,1409,PT
+5507,3,Puños,3477,100509
+2732,2,Verbania,1147,IT
+1774,1,Aragua,234,VE
+2995,2,Baixo Alentejo,1410,PT
+4267,3,Rethimni,2511,0000
+4304,3,Hodmezovasarhely,2548,0000
+5656,3,Molinos,3492,120418
+2733,2,Vercelli,1148,IT
+4268,3,Rodhopi,2512,0000
+2996,2,Algarve,1411,PT
+1775,1,Barinas,234,VE
+2734,2,Venecia,1149,IT
+5512,3,Hermílio Valdizan,3478,100603
+4269,3,Samos,2513,0000
+2997,2,Reg.Aut.dos Açores,1412,PT
+5657,3,Monobamba,3492,120419
+2735,2,Vicenza,1150,IT
+4305,3,Jasz-Nagykun-Szolnok,2549,0000
+4270,3,Serrai,2514,0000
+1776,1,Bolívar,234,VE
+2736,2,Verona,1151,IT
+2998,2,Reg.Aut.da Madeira,1413,PT
+4271,3,Thesprotia,2515,0000
+5513,3,José Crespo y Castillo,3478,100604
+5658,3,Muqui,3492,120420
+4306,3,Kaposvar,2550,0000
+2737,2,Medio Campidano,1152,IT
+4272,3,Salónica,2516,0000
+1777,1,Carabobo,234,VE
+2999,2,Puerto Rico,1414,PR
+5514,3,Luyando,3478,100605
+4273,3,Trikala,2517,0000
+3000,2,Doha,1415,QA
+2738,2,Viterbo,1153,IT
+5659,3,Muquiyauyo,3492,120421
+1778,1,Cojedes,234,VE
+4307,3,Kecskemet,2551,0000
+4274,3,Voiotia,2518,0000
+3001,2,El norte,1416,QA
+2739,2,Vibo Valentia,1154,IT
+4275,3,Xanthi,2519,0000
+5660,3,Paca,3492,120422
+5515,3,Mariano Damaso Beraun,3478,100606
+3002,2,La costa oeste,1417,QA
+2740,2,Zara,1155,IT
+1779,1,Delta Amacuro,234,VE
+4276,3,Zakinthos,2520,0000
+3003,2,El sur,1418,QA
+2741,2,Jamaica,1156,JM
+5661,3,Paccha,3492,120423
+4277,3,Groenlandia,2521,0000
+5516,3,Pucayacu,3478,100607
+3004,2,Aberdeenshire,1419,GB
+1780,1,Distrito Federal,234,VE
+2742,2,Hokkaido,1157,JP
+4278,3,Guadalupe,2522,0000
+3005,2,Argyllshire,1420,GB
+2743,2,Aomori,1158,JP
+5662,3,Pancan,3492,120424
+5519,3,Cholon,3479,100702
+4279,3,Guam,2523,0000
+1781,1,Falcon,234,VE
+3006,2,Anglesey,1421,GB
+2744,2,Iwate,1159,JP
+4280,3,Guatemala,2524,0000
+3007,2,Armagh,1422,GB
+2745,2,Miyagi,1160,JP
+5663,3,Parco,3492,120425
+1782,1,Guarico,234,VE
+5520,3,San Buenaventura,3479,100703
+3008,2,Angus/Forfanshire,1423,GB
+4281,3,Guayana Franc.,2525,0000
+2746,2,Akita,1161,JP
+3009,2,Antrim,1424,GB
+2747,2,Yamagata,1162,JP
+5664,3,Pomacancha,3492,120426
+4282,3,Guernsey,2526,0000
+1783,1,Lara,234,VE
+5521,3,La Morada,3479,100704
+3010,2,Ayrshire,1425,GB
+2748,2,Fukushima,1163,JP
+4283,3,Guinea,2527,0000
+1784,1,Merida,234,VE
+3011,2,Bedfordshire,1426,GB
+5665,3,Ricran,3492,120427
+4284,3,Guinea Ecuator.,2528,0000
+2749,2,Ibaragi,1164,JP
+3012,2,Bracknell Forest,1427,GB
+5522,3,Santa Rosa de Alto Yanajanca,3479,100705
+2750,2,Tochigi,1165,JP
+3888,3,TUNGURAHUA,2132,0000
+1785,1,Miranda,234,VE
+4308,3,Komarom-Esztergom,2552,0000
+3013,2,Berkshire,1428,GB
+5666,3,San Lorenzo,3492,120428
+2751,2,Gunma,1166,JP
+3889,3,ZAMORA CHINCHIPE,2133,0000
+5523,3,Panao,3480,100801
+3014,2,Brecknockshire,1429,GB
+2752,2,Saitama,1167,JP
+1786,1,Monagas,234,VE
+3890,3,GALAPAGOS,2134,0000
+4309,3,Miskolc,2553,0000
+2753,2,Chiba,1168,JP
+3015,2,Bath&NthEstSomerset,1430,GB
+5667,3,San Pedro de Chunan,3492,120429
+3891,3,SUCUMBIOS,2135,0000
+5524,3,Chaglla,3480,100802
+2754,2,Tokio,1169,JP
+1787,1,Nueva Esparta,234,VE
+3016,2,Buteshire,1431,GB
+3892,3,ORELLANA,2136,0000
+2755,2,Kanagawa,1170,JP
+5668,3,Sausa,3492,120430
+4310,3,Nagykanizsa,2554,0000
+5525,3,Molino,3480,100803
+3017,2,Buckinghamshire,1432,GB
+1788,1,Portuguesa,234,VE
+2756,2,Niigata,1171,JP
+3893,3,STO DOMINGO TSACHILA,2137,0000
+3018,2,Berwickshire,1433,GB
+2757,2,Toyama,1172,JP
+5669,3,Sincos,3492,120431
+3894,3,SANTA ELENA,2138,0000
+5526,3,Umari,3480,100804
+1789,1,Sucre,234,VE
+4311,3,Nograd,2555,0000
+2758,2,Ishikawa,1173,JP
+3019,2,Cambridgeshire,1434,GB
+3895,3,ZONAS NO DELIMITADAS,2139,0000
+2759,2,Fukui,1174,JP
+3020,2,Carmarthenshire,1435,GB
+5670,3,Tunan Marca,3492,120432
+1790,1,Tachira,234,VE
+5527,3,Puerto Inca,3481,100901
+3896,3,Alaska,2140,00000
+4312,3,Nyiregyhaza,2556,0000
+2760,2,Yamanashi,1175,JP
+3021,2,Cardiganshire,1436,GB
+3897,3,Alabama,2141,00000
+1791,1,Trujillo,234,VE
+2761,2,Nagano,1176,JP
+5671,3,Yauli,3492,120433
+3022,2,Caernarfonshire,1437,GB
+5528,3,Codo del Pozuzo,3481,100902
+4313,3,Pecs,2557,0000
+3898,3,Arkansas,2142,00000
+2762,2,Gifu,1177,JP
+3023,2,Cheshire,1438,GB
+1792,1,Vargas,234,VE
+5672,3,Yauyos,3492,120434
+3899,3,Samoa americana,2143,00000
+2763,2,Shizuoka,1178,JP
+5529,3,Honoria,3481,100903
+3024,2,Cromartyshire,1439,GB
+4314,3,Pest,2558,0000
+2764,2,Aichi,1179,JP
+3900,3,Arizona,2144,00000
+1793,1,Yaracuy,234,VE
+3025,2,Clackmannanshire,1440,GB
+5673,3,Junin,3493,120501
+2765,2,Mie,1180,JP
+5530,3,Tournavista,3481,100904
+3901,3,California,2145,00000
+3026,2,Cornualles,1441,GB
+4315,3,Somogy,2559,0000
+2766,2,Shiga,1181,JP
+1794,1,Zulia,234,VE
+3902,3,Colorado,2146,00000
+5674,3,Carhuamayo,3493,120502
+3027,2,Caithness,1442,GB
+2767,2,Kioto,1182,JP
+5531,3,Yuyapichis,3481,100905
+3028,2,Cumberland,1443,GB
+3903,3,Connecticut,2147,00000
+1795,1,Vietnam,235,VN
+2768,2,Osaka,1183,JP
+4316,3,Sopron,2560,0000
+5675,3,Ondores,3493,120503
+3029,2,Derbyshire,1444,GB
+2769,2,Hyogo,1184,JP
+5532,3,Jesús,3482,101001
+3904,3,Distrito de Columbia,2148,00000
+3030,2,Denbighshire,1445,GB
+1796,1,Wallis Futuna,236,WF
+2770,2,Nara,1185,JP
+5676,3,Ulcumayo,3493,120504
+3905,3,Delaware,2149,00000
+4317,3,Szabolcs-Szat.-Bereg,2561,0000
+3031,2,Dumfriesshire,1446,GB
+2771,2,Wakayama,1186,JP
+5533,3,Baños,3482,101002
+3906,3,Florida,2150,00000
+1797,1,Yemen,237,YE
+3032,2,Down,1447,GB
+5677,3,Satipo,3494,120601
+2772,2,Tottori,1187,JP
+3907,3,Georgia,2151,00000
+4318,3,Szeged,2562,0000
+3033,2,Dorset,1448,GB
+2773,2,Shimane,1188,JP
+5534,3,Jivia,3482,101003
+1798,1,Yibuti,238,DJ
+3908,3,Guam,2152,00000
+5678,3,Coviriali,3494,120602
+2774,2,Okayama,1189,JP
+3034,2,Dunbartonshire,1449,GB
+3909,3,Hawai,2153,00000
+4319,3,Szekesfehervar,2563,0000
+1799,1,Zambia,239,ZM
+2775,2,Hiroshima,1190,JP
+5535,3,Queropalca,3482,101004
+3035,2,Durham,1450,GB
+3910,3,Iowa,2154,00000
+5679,3,Llaylla,3494,120603
+2776,2,Yamaguchi,1191,JP
+3036,2,Devon,1451,GB
+3911,3,Idaho,2155,00000
+4320,3,Szolnok,2564,0000
+1800,1,Zimbabue,240,ZW
+5536,3,Rondos,3482,101005
+2777,2,Tokushima,1192,JP
+3037,2,East Lothian,1452,GB
+5680,3,Mazamari,3494,120604
+3912,3,Illinois,2156,00000
+2778,2,Kagawa,1193,JP
+3038,2,Essex,1453,GB
+1801,1,Amazonas,175,01
+4321,3,Szombathely,2565,0000
+3913,3,Indiana,2157,00000
+3039,2,Fife,1454,GB
+2779,2,Ehime,1194,JP
+5537,3,San Francisco de Asís,3482,101006
+5681,3,Pampa Hermosa,3494,120605
+3914,3,Kansas,2158,00000
+2780,2,Kochi,1195,JP
+1802,1,Áncash,175,02
+3040,2,Flintshire,1455,GB
+4322,3,Tatabanya,2566,0000
+2781,2,Fukuoka,1196,JP
+3915,3,Kentucky,2159,00000
+3041,2,Fermanagh,1456,GB
+5682,3,Pangoa,3494,120606
+2782,2,Saga,1197,JP
+5538,3,San Miguel de Cauri,3482,101007
+1803,1,Apurímac,175,03
+4323,3,Tolna,2567,0000
+3916,3,Louisiana,2160,00000
+3042,2,Gloucestershire,1457,GB
+2783,2,Nagasaki,1198,JP
+3043,2,Hampshire,1458,GB
+5683,3,Río Negro,3494,120607
+3917,3,Massachusetts,2161,00000
+5539,3,Chavinillo,3483,101101
+2784,2,Kumamoto,1199,JP
+4324,3,Vas,2568,0000
+1804,1,Arequipa,175,04
+3044,2,Hertfordshire,1459,GB
+3918,3,Maryland,2162,00000
+2785,2,Oita,1200,JP
+5684,3,Río Tambo,3494,120608
+3045,2,Huntingdonshire,1460,GB
+3919,3,Maine,2163,00000
+2786,2,Miyazaki,1201,JP
+5540,3,Cahuac,3483,101102
+4325,3,Veszprem,2569,0000
+1805,1,Ayacucho,175,05
+2787,2,Kagoshima,1202,JP
+3920,3,Michigan,2164,00000
+3046,2,Hereford y Worcester,1461,GB
+5685,3,Vizcatan del Ene,3494,120609
+2788,2,Okinawa,1203,JP
+3047,2,Invernesshire,1462,GB
+3921,3,Minnesota,2165,00000
+5541,3,Chacabamba,3483,101103
+1806,1,Cajamarca,175,06
+4326,3,Zala,2570,0000
+2789,2,Jersey,1204,JE
+3048,2,Isla de Wight,1463,GB
+3922,3,Missouri,2166,00000
+5686,3,Tarma,3495,120701
+2790,2,Jordania,1205,JO
+3049,2,Kent,1464,GB
+1807,1,Callao,175,07
+5542,3,Aparicio Pomares,3483,101104
+2791,2,Almatynskaia,1206,KZ
+3923,3,Islas Mariana Norte,2167,00000
+4327,3,Zalaegerszeg,2571,0000
+3050,2,Kincardineshire,1465,GB
+5687,3,Acobamba,3495,120702
+2792,2,Kostanaiskaia,1207,KZ
+3924,3,Mississippi,2168,00000
+1808,1,Cusco,175,08
+3051,2,Kirkcudbrightshire,1466,GB
+5543,3,Jacas Chico,3483,101105
+2793,2,Severo-Kazakhstansk,1208,KZ
+4328,3,Irán,2572,0000
+3052,2,Kinross-shire,1467,GB
+3925,3,Montana,2169,00000
+5688,3,Huaricolca,3495,120703
+2794,2,Pavlodarskaia,1209,KZ
+1809,1,Huancavelica,175,09
+5544,3,Obas,3483,101106
+3053,2,Lancashire,1468,GB
+2795,2,Akmolinskaia,1210,KZ
+3926,3,Carolina del Norte,2170,00000
+4329,3,Iraq,2573,0000
+5689,3,Huasahuasi,3495,120704
+3054,2,Londonderry,1469,GB
+2796,2,Aktubinskaia,1211,KZ
+1810,1,Huánuco,175,10
+3927,3,Dakota del Norte,2171,00000
+5545,3,Pampamarca,3483,101107
+3055,2,Leicestershire,1470,GB
+2797,2,Atyrauskaia,1212,KZ
+4330,3,Cork,2574,0000
+3928,3,Nebraska,2172,00000
+5690,3,La Unión,3495,120705
+3056,2,Lincolnshire,1471,GB
+1811,1,Ica,175,11
+2798,2,Zapadno-Kazakhst,1213,KZ
+5546,3,Choras,3483,101108
+3929,3,New Hampshire,2173,00000
+3057,2,Lanarkshire,1472,GB
+2799,2,Mangystayskaia,1214,KZ
+4331,3,Clare,2575,0000
+5691,3,Palca,3495,120706
+3930,3,Nueva Jersey,2174,00000
+1812,1,Junín,175,12
+5547,3,Ica,3484,110101
+2800,2,Karagandinskaia,1215,KZ
+3058,2,Midlothian,1473,GB
+4332,3,Cavan,2576,0000
+5692,3,Palcamayo,3495,120707
+3931,3,Nuevo México,2175,00000
+3059,2,Merioneth,1474,GB
+2801,2,Vostochno-Kazakhstan,1216,KZ
+1813,1,La Libertad,175,13
+3932,3,Nevada,2176,00000
+5548,3,La Tinguiña,3484,110102
+3060,2,Mid Glamorgan,1475,GB
+2802,2,Gambilskaia,1217,KZ
+4333,3,Carlow,2577,0000
+5693,3,San Pedro de Cajas,3495,120708
+3933,3,Nueva York,2177,00000
+2803,2,Kyzilordinskaia,1218,KZ
+3061,2,Monmouthshire,1476,GB
+1814,1,Lambayeque,175,14
+5549,3,Los Aquijes,3484,110103
+2804,2,Kenia,1219,KE
+3934,3,Ohio,2178,00000
+3062,2,Morayshire,1477,GB
+5694,3,Tapo,3495,120709
+4334,3,Dublín,2578,0000
+1815,1,Lima,175,15
+2805,2,Kirguizistán,1220,KG
+3935,3,Oklahoma,2179,00000
+3063,2,Montgomeryshire,1478,GB
+5550,3,Ocucaje,3484,110104
+2806,2,Kiribati,1221,KI
+3936,3,Oregón,2180,00000
+3064,2,Middlesex,1479,GB
+5695,3,La Oroya,3496,120801
+1816,1,Loreto,175,16
+4335,3,Donegal,2579,0000
+2807,2,Kuwait (ciudad),1222,KW
+3937,3,Pennsylvania,2181,00000
+5551,3,Pachacutec,3484,110105
+3065,2,Northamptonshire,1480,GB
+2808,2,Laos,1223,LA
+5696,3,Chacapalpa,3496,120802
+3938,3,Puerto Rico,2182,00000
+1817,1,Madre de Dios,175,17
+3066,2,Norfolk,1481,GB
+2809,2,Lesoto,1224,LS
+5552,3,Parcona,3484,110106
+4336,3,Galway,2580,0000
+3067,2,Nairnshire,1482,GB
+3939,3,Rhode Island,2183,00000
+2810,2,Letonia,1225,LV
+5697,3,Huay-Huay,3496,120803
+1818,1,Moquegua,175,18
+3068,2,Nottinghamshire,1483,GB
+2811,2,Líbano,1226,LB
+3940,3,Carolina del Sur,2184,00000
+5553,3,Pueblo Nuevo,3484,110107
+4337,3,Kildare,2581,0000
+3069,2,Northumberland,1484,GB
+1819,1,Pasco,175,19
+3941,3,Dakota del Sur,2185,00000
+5698,3,Marcapomacocha,3496,120804
+5554,3,Salas,3484,110108
+3070,2,Orkney,1485,GB
+3942,3,Tennessee,2186,00000
+4338,3,Kilkenny,2582,0000
+1820,1,Piura,175,20
+3071,2,Oxfordshire,1486,GB
+3943,3,Texas,2187,00000
+5699,3,Morococha,3496,120805
+5555,3,San José de Los Molinos,3484,110109
+3072,2,Peeblesshire,1487,GB
+3944,3,Utah,2188,00000
+4339,3,Kerry,2583,0000
+1821,1,Puno,175,21
+5700,3,Paccha,3496,120806
+3073,2,Pembrokeshire,1488,GB
+3945,3,Virginia,2189,00000
+4340,3,Longford,2584,0000
+1822,1,San Martín,175,22
+5556,3,San Juan Bautista,3484,110110
+3946,3,Islas Vírgenes,2190,00000
+3074,2,Perthshire,1489,GB
+5701,3,Santa Bárbara de Carhuacayan,3496,120807
+3075,2,Radnorshire,1490,GB
+3947,3,Vermont,2191,00000
+1823,1,Tacna,175,23
+4341,3,Louth,2585,0000
+5557,3,Santiago,3484,110111
+3076,2,Renfrewshire,1491,GB
+3948,3,Washington,2192,00000
+1824,1,Tumbes,175,24
+3077,2,Ross-shire,1492,GB
+5702,3,Santa Rosa de Sacco,3496,120808
+3949,3,Wisconsin,2193,00000
+5558,3,Subtanjalla,3484,110112
+3078,2,Rutland,1493,GB
+4342,3,Limerick,2586,0000
+3950,3,Virginia Occidental,2194,00000
+1825,1,Ucayali,175,25
+3079,2,Roxburghshire,1494,GB
+5703,3,Suitucancha,3496,120809
+4343,3,Leitrim,2587,0000
+5559,3,Tate,3484,110113
+3951,3,Wyoming,2195,00000
+3080,2,East Sussex,1495,GB
+1826,2,Afganistán,241,AF
+5704,3,Yauli,3496,120810
+3952,3,El Salvador,2196,0000
+3081,2,Selkirkshire,1496,GB
+4344,3,Laois,2588,0000
+3953,3,Eritrea,2197,0000
+5560,3,Yauca del Rosario,3484,110114
+3082,2,South Glamorgan,1497,GB
+1827,2,Albania,242,AL
+5705,3,Chupaca,3497,120901
+3954,3,Álava,2198,0000
+4345,3,Meath,2589,0000
+3083,2,Shropshire,1498,GB
+3955,3,Albacete,2199,0000
+3084,2,Suffolk,1499,GB
+1828,2,Slesvig-Holstein,243,DE
+5706,3,Ahuac,3497,120902
+5561,3,Chincha Alta,3485,110201
+3956,3,Alicante,2200,0000
+3085,2,Shetland,1500,GB
+4346,3,Monaghan,2590,0000
+1829,2,Hamburgo,244,DE
+3957,3,Almería,2201,0000
+5707,3,Chongos Bajo,3497,120903
+3086,2,Somerset,1501,GB
+5562,3,Alto Laran,3485,110202
+4347,3,Mayo,2591,0000
+3958,3,Ávila,2202,0000
+3087,2,Staffordshire,1502,GB
+1830,2,Baja Sajonia,245,DE
+5708,3,Huachac,3497,120904
+3959,3,Badajoz,2203,0000
+5563,3,Chavin,3485,110203
+3088,2,Sutherland,1503,GB
+4348,3,Offaly,2592,0000
+3960,3,Baleares,2204,0000
+3089,2,Stirlingshire,1504,GB
+1831,2,Bremen,246,DE
+5709,3,Huamancaca Chico,3497,120905
+5564,3,Chincha Baja,3485,110204
+3961,3,Barcelona,2205,0000
+3090,2,West Sussex,1505,GB
+4349,3,Roscommon,2593,0000
+3091,2,Surrey,1506,GB
+1832,2,Renania N.Westfalia,247,DE
+3962,3,Burgos,2206,0000
+5710,3,San Juan de Iscos,3497,120906
+5565,3,El Carmen,3485,110205
+3092,2,Tyrone,1507,GB
+3963,3,Cáceres,2207,0000
+4350,3,Sligo,2594,0000
+1833,2,Hesse,248,DE
+3093,2,Warwickshire,1508,GB
+3964,3,Cádiz,2208,0000
+5566,3,Grocio Prado,3485,110206
+5711,3,San Juan de Jarpa,3497,120907
+3094,2,Worcestershire,1509,GB
+3965,3,Castellón,2209,0000
+4351,3,Tipperary,2595,0000
+1834,2,Renania-Palatinado,249,DE
+3095,2,Westmorland,1510,GB
+3966,3,Ciudad Real,2210,0000
+5567,3,Pueblo Nuevo,3485,110207
+3096,2,West Glamorgan,1511,GB
+5712,3,Tres de Diciembre,3497,120908
+3967,3,Córdoba,2211,0000
+1835,2,Baden-Wurtemberg,250,DE
+3097,2,Wiltshire,1512,GB
+3968,3,La Coruña,2212,0000
+3098,2,West Lothian,1513,GB
+5568,3,San Juan de Yanac,3485,110208
+5713,3,Yanacancha,3497,120909
+1836,2,Baviera,251,DE
+3969,3,Cuenca,2213,0000
+3099,2,Wigtownshire,1514,GB
+3100,2,North Yorkshire,1515,GB
+3970,3,Gerona,2214,0000
+5714,3,Trujillo,3498,130101
+1837,2,El Sarre,252,DE
+5569,3,San Pedro de Huacarpana,3485,110209
+3101,2,South Yorkshire,1516,GB
+3971,3,Granada,2215,0000
+1838,2,Berlín,253,DE
+3102,2,West Yorkshire,1517,GB
+3972,3,Guadalajara,2216,0000
+5715,3,El Porvenir,3498,130102
+5570,3,Sunampe,3485,110210
+3103,2,Rep.Centroafr.,1518,CF
+3973,3,Guipúzcoa,2217,0000
+1839,2,Brandenburgo,254,DE
+3104,2,Rep.Dominicana,1519,DO
+3974,3,Huelva,2218,0000
+5571,3,Tambo de Mora,3485,110211
+5716,3,Florencia de Mora,3498,130103
+3105,2,Praga,1520,CZ
+3975,3,Huesca,2219,0000
+1840,2,Meclenburgo-Pomeran.,255,DE
+5572,3,Nasca,3486,110301
+3976,3,Jaén,2220,0000
+3106,2,Stredocesky,1521,CZ
+5717,3,Huanchaco,3498,130104
+3977,3,León,2221,0000
+1841,2,Sajonia,256,DE
+3107,2,Jihocesky,1522,CZ
+5573,3,Changuillo,3486,110302
+3978,3,Lérida,2222,0000
+5718,3,La Esperanza,3498,130105
+3108,2,Plzensky,1523,CZ
+3979,3,La Rioja,2223,0000
+1842,2,Sajonia-Anhalt,257,DE
+3109,2,Karlovarsky,1524,CZ
+5574,3,El Ingenio,3486,110303
+3980,3,Lugo,2224,0000
+5719,3,Laredo,3498,130106
+3110,2,Ustecky,1525,CZ
+3981,3,Madrid,2225,0000
+1843,2,Turingia,258,DE
+3111,2,Liberecky,1526,CZ
+5575,3,Marcona,3486,110304
+5720,3,Moche,3498,130107
+3982,3,Málaga,2226,0000
+3112,2,Kralovehradecky,1527,CZ
+1844,2,Andorra,259,AD
+3983,3,Murcia,2227,0000
+3113,2,Pardubicky,1528,CZ
+5721,3,Poroto,3498,130108
+3984,3,Navarra,2228,0000
+5576,3,Vista Alegre,3486,110305
+3114,2,Vysocina,1529,CZ
+1845,2,Angola,260,AO
+3985,3,Orense,2229,0000
+3115,2,Jihomoravsky,1530,CZ
+5722,3,Salaverry,3498,130109
+5577,3,Palpa,3487,110401
+3986,3,Asturias,2230,0000
+1846,2,Anguilla,261,AI
+3116,2,Olomoucky,1531,CZ
+3987,3,Palencia,2231,0000
+5723,3,Simbal,3498,130110
+5578,3,Llipata,3487,110402
+3988,3,Las Palmas,2232,0000
+3117,2,Zlinsky,1532,CZ
+1847,2,Antártida,262,AQ
+3989,3,Pontevedra,2233,0000
+3118,2,Moravskoslezsky,1533,CZ
+5579,3,Río Grande,3487,110403
+5724,3,Victor Larco Herrera,3498,130111
+3990,3,Salamanca,2234,0000
+1848,2,Antigua/Barbuda,263,AG
+3119,2,República Congo,1534,CD
+5580,3,Santa Cruz,3487,110404
+3991,3,Sta.Cruz Tenerife,2235,0000
+3120,2,República Congo,1535,CG
+5725,3,Ascope,3499,130201
+1849,2,Arabia Saudí,264,SA
+3992,3,Cantabria,2236,0000
+3121,2,Reunión,1536,RE
+5581,3,Tibillo,3487,110405
+3993,3,Segovia,2237,0000
+3122,2,Ruanda,1537,RW
+5726,3,Chicama,3499,130202
+1850,2,Argelia,265,DZ
+3994,3,Sevilla,2238,0000
+3123,2,Alba,1538,RO
+5582,3,Pisco,3488,110501
+3995,3,Soria,2239,0000
+5727,3,Chocope,3499,130203
+1851,2,Capital Federal,266,AR
+3124,2,Arad,1539,RO
+3996,3,Tarragona,2240,0000
+3125,2,Arges,1540,RO
+5583,3,Huancano,3488,110502
+3997,3,Teruel,2241,0000
+3126,2,Bacau,1541,RO
+1852,2,Buenos Aires,267,AR
+5728,3,Magdalena de Cao,3499,130204
+3998,3,Toledo,2242,0000
+5584,3,Humay,3488,110503
+3127,2,Bihor,1542,RO
+3999,3,Valencia,2243,0000
+5729,3,Paijan,3499,130205
+1853,2,Catamarca,268,AR
+3128,2,Bistrita-Nasaud,1543,RO
+4000,3,Valladolid,2244,0000
+3129,2,Botosani,1544,RO
+5585,3,Independencia,3488,110504
+4001,3,Vizcaya,2245,0000
+1854,2,Córdoba,269,AR
+5730,3,Rázuri,3499,130206
+3130,2,Braila,1545,RO
+4002,3,Zamora,2246,0000
+5586,3,Paracas,3488,110505
+3131,2,Brasov,1546,RO
+4003,3,Zaragoza,2247,0000
+5731,3,Santiago de Cao,3499,130207
+1855,2,Corrientes,270,AR
+4004,3,Estonia,2248,0000
+3132,2,Bucuresti,1547,RO
+5587,3,San Andrés,3488,110506
+5732,3,Casa Grande,3499,130208
+4005,3,Etiopía,2249,0000
+1856,2,Entre Rios,271,AR
+3133,2,Buzau,1548,RO
+5588,3,San Clemente,3488,110507
+4006,3,República Adiguesia,2250,0000
+3134,2,Calarasi,1549,RO
+1857,2,Jujuy,272,AR
+5733,3,Bolívar,3500,130301
+3135,2,Caras-Severin,1550,RO
+4007,3,Rep.Tier.Altas Altái,2251,0000
+5589,3,Tupac Amaru Inca,3488,110508
+1858,2,Mendoza,273,AR
+3136,2,Cluj,1551,RO
+5734,3,Bambamarca,3500,130302
+4008,3,Rep.Bashkortostán,2252,0000
+3137,2,Constanta,1552,RO
+5590,3,Huancayo,3489,120101
+4009,3,República Buriatia,2253,0000
+1859,2,La Rioja,274,AR
+5735,3,Condormarca,3500,130303
+3138,2,Covasna,1553,RO
+4352,3,Waterford,2596,0000
+4010,3,República Daguestán,2254,0000
+3139,2,Dimbovita,1554,RO
+5591,3,Carhuacallanga,3489,120104
+1860,2,Salta,275,AR
+5736,3,Longotea,3500,130304
+3140,2,Dolj,1555,RO
+4011,3,República Ingushetia,2255,0000
+5592,3,Chacapampa,3489,120105
+3141,2,Galati,1556,RO
+1861,2,San Juan,276,AR
+5737,3,Uchumarca,3500,130305
+4353,3,Westmeath,2597,0000
+4012,3,R.Kabardina-Balkaria,2256,0000
+3142,2,Gorj,1557,RO
+5593,3,Chicche,3489,120106
+1862,2,San Luis,277,AR
+5738,3,Ucuncha,3500,130306
+4013,3,República Calmuquia,2257,0000
+3143,2,Giurgiu,1558,RO
+4354,3,Wicklow,2598,0000
+3144,2,Harghita,1559,RO
+5594,3,Chilca,3489,120107
+4014,3,Karachievo-Cherkesia,2258,0000
+1863,2,Santa Fé,278,AR
+5739,3,Chepen,3501,130401
+3145,2,Hunedoara,1560,RO
+4355,3,Wexford,2599,0000
+4015,3,República Carelia,2259,0000
+5595,3,Chongos Alto,3489,120108
+3146,2,Ialomita,1561,RO
+1864,2,Santiago del Estero,279,AR
+4016,3,República Komi,2260,0000
+5740,3,Pacanga,3501,130402
+4356,3,Is.Heard/Mcdon.,2600,0000
+3147,2,Iasi,1562,RO
+5596,3,Chupuro,3489,120111
+4017,3,República Mari,2261,0000
+1865,2,Tucumán,280,AR
+5059,3,Leoncio Prado,3433,050609
+5741,3,Pueblo Nuevo,3501,130403
+4018,3,República Mordovia,2262,0000
+5597,3,Colca,3489,120112
+4357,3,Is.Vírgenes USA,2601,0000
+5061,3,Lucanas,3433,050611
+1866,2,Chaco,281,AR
+4019,3,Yakutiya-Saha Rrepub,2263,0000
+5742,3,Julcan,3502,130501
+5063,3,Otoca,3433,050613
+5598,3,Cullhuas,3489,120113
+1867,2,Chubut,282,AR
+4358,3,Isl.Marianas N.,2602,0000
+4020,3,Rep.Osetia del Norte,2264,0000
+5064,3,Saisa,3433,050614
+5743,3,Calamarca,3502,130502
+3148,2,Ilfov,1563,RO
+5599,3,El Tambo,3489,120114
+5067,3,San Pedro,3433,050617
+1868,2,Formosa,283,AR
+4359,3,Isl.S.Sandwich,2603,0000
+3149,2,Maramures,1564,RO
+5069,3,Sancos,3433,050619
+5744,3,Carabamba,3502,130503
+5600,3,Huacrapuquio,3489,120116
+3150,2,Mehedinti,1565,RO
+1869,2,Misiones,284,AR
+4360,3,Isl.Turcas y C.,2604,0000
+5070,3,Santa Ana de Huaycahuacho,3433,050620
+3151,2,Mures,1566,RO
+5745,3,Huaso,3502,130504
+5601,3,Hualhuas,3489,120117
+1870,2,Neuquen,285,AR
+3152,2,Neamt,1567,RO
+5071,3,Santa Lucia,3433,050621
+3153,2,Olt,1568,RO
+4361,3,Isl.Vírgenes GB,2605,0000
+5072,3,Coracora,3434,050701
+5746,3,Otuzco,3503,130601
+1871,2,La Pampa,286,AR
+5602,3,Huancan,3489,120119
+3154,2,Prahova,1569,RO
+5073,3,Chumpi,3434,050702
+3155,2,Salaj,1570,RO
+4362,3,Isla Christmas,2606,0000
+1872,2,Rio Negro,287,AR
+5747,3,Agallpampa,3503,130602
+5075,3,Pacapausa,3434,050704
+5603,3,Huasicancha,3489,120120
+3156,2,Satu Mare,1571,RO
+5077,3,Puyusca,3434,050706
+5748,3,Charat,3503,130604
+1873,2,Santa Cruz,288,AR
+4363,3,Isla de Man,2607,0000
+3157,2,Sibiu,1572,RO
+5604,3,Huayucachi,3489,120121
+5079,3,Upahuacho,3434,050708
+3158,2,Suceava,1573,RO
+5749,3,Huaranchal,3503,130605
+5081,3,Colta,3435,050802
+1874,2,Tierra de Fuego,289,AR
+4364,3,Islandia,2608,0000
+5605,3,Ingenio,3489,120122
+3159,2,Teleorman,1574,RO
+5084,3,Marcabamba,3435,050805
+1875,2,Armenia,290,AM
+3160,2,Timis,1575,RO
+5750,3,La Cuesta,3503,130606
+4365,3,Islas Bouvet,2609,0000
+5085,3,Oyolo,3435,050806
+5606,3,Pariahuanca,3489,120124
+2812,2,Liberia,1227,LR
+3161,2,Tulcea,1576,RO
+1876,2,Aruba,291,AW
+5751,3,Mache,3503,130608
+5087,3,San Javier de Alpabamba,3435,050808
+4366,3,Islas Caimán,2610,0000
+3162,2,Vaslui,1577,RO
+1,0,Afganistán,,AF
+5607,3,Pilcomayo,3489,120125
+5093,3,Chilcayoc,3436,050904
+3163,2,Vilcea,1578,RO
+2,0,Albania,,AL
+1877,2,Aust Capital Terr,292,AU
+5752,3,Paranday,3503,130610
+4367,3,Islas Cocos,2611,0000
+5608,3,Pucara,3489,120126
+3164,2,Vrancea,1579,RO
+5095,3,Morcolla,3436,050906
+3,0,Alemania,,DE
+1878,2,Nueva Gales del Sur,293,AU
+4,0,Andorra,,AD
+3165,2,S.Cris.& Nieves,1580,KN
+5753,3,Salpo,3503,130611
+5097,3,San Pedro de Larcay,3436,050908
+4368,3,Islas Cook,2612,0000
+5609,3,Quichuay,3489,120127
+5,0,Angola,,AO
+3166,2,S.Pedr. Miquel.,1581,PM
+5099,3,Santiago de Paucaray,3436,050910
+1879,2,Territorio del Norte,294,AU
+6,0,Anguilla,,AI
+5754,3,Sinsicap,3503,130613
+3167,2,S.Tomé Príncipe,1582,ST
+4369,3,Islas Feroe,2613,0000
+5610,3,Quilcas,3489,120128
+5100,3,Soras,3436,050911
+7,0,Antártida,,AQ
+3168,2,Sáhara occid.,1583,EH
+1880,2,Queensland,295,AU
+5103,3,Apongo,3437,051003
+8,0,Antigua/Barbuda,,AG
+3169,2,Samoa americana,1584,AS
+4370,3,Islas Malvinas,2614,0000
+5105,3,Canaria,3437,051005
+5611,3,San Agustín,3489,120129
+9,0,Arabia Saudí,,SA
+3170,2,Samoa Occident.,1585,WS
+1881,2,Australia Meridional,296,AU
+10,0,Argelia,,DZ
+5106,3,Cayara,3437,051006
+3171,2,San Marino,1586,SM
+4371,3,Islas Niue,2615,0000
+11,0,Argentina,,AR
+5107,3,Colca,3437,051007
+5612,3,San Jerónimo de Tunan,3489,120130
+3172,2,San Vicente,1587,VC
+1882,2,Tasmania,297,AU
+12,0,Armenia,,AM
+5108,3,Huamanquiquia,3437,051008
+3173,2,Santa Helena,1588,SH
+4372,3,Islas Norfolk,2616,0000
+13,0,Aruba,,AW
+5109,3,Huancaraylla,3437,051009
+5613,3,Saño,3489,120132
+1883,2,Victoria,298,AU
+3174,2,Santa Lucía,1589,LC
+14,0,Australia,,AU
+5111,3,Sarhua,3437,051011
+5755,3,Usquil,3503,130614
+4373,3,Islas Pitcairn,2617,0000
+3175,2,Senegal,1590,SN
+15,0,Austria,,AT
+5614,3,Sapallanga,3489,120133
+5113,3,Vilcas Huaman,3438,051101
+1884,2,Autralia Occidental,299,AU
+16,0,Azerbaiyán,,AZ
+3176,2,Serbia/Monten.,1591,CS
+5115,3,Carhuanca,3438,051103
+5756,3,San Pedro de Lloc,3504,130701
+4374,3,Islas Salomón,2618,0000
+5615,3,Sicaya,3489,120134
+3177,2,Seychelles,1592,SC
+17,0,Azul,,BL
+1885,2,Burgenland,300,AT
+5118,3,Independencia,3438,051106
+18,0,Bahamas,,BS
+3178,2,Sierra Leona,1593,SL
+5124,3,Cospan,3439,060104
+4375,3,Islas Tokelau,2619,0000
+5757,3,Guadalupe,3504,130702
+19,0,Bahráin,,BH
+3179,2,Singapur,1594,SG
+5616,3,Santo Domingo de Acobamba,3489,120135
+1886,2,Carintia,301,AT
+5125,3,Encañada,3439,060105
+20,0,Bangladesh,,BD
+3180,2,Sint Maarten,1595,SX
+5126,3,Jesús,3439,060106
+4376,3,IslMenAlejEEUU,2620,0000
+5758,3,Jequetepeque,3504,130703
+21,0,Barbados,,BB
+5617,3,Viques,3489,120136
+1887,2,Baja Austria,302,AT
+3181,2,Siria,1596,SY
+5128,3,Los Baños del Inca,3439,060108
+22,0,Bélgica,,BE
+3182,2,Somalia,1597,SO
+4377,3,Central,2621,0000
+5130,3,Matara,3439,060110
+23,0,Belice,,BZ
+1888,2,Alta Austria,303,AT
+5618,3,Concepción,3490,120201
+5759,3,Pacasmayo,3504,130704
+3183,2,Sri Lanka,1598,LK
+24,0,Benín,,BJ
+5132,3,San Juan,3439,060112
+3184,2,Suazilandia,1599,SZ
+4378,3,Haifa,2622,0000
+1889,2,Salzburgo,304,AT
+5619,3,Aco,3490,120202
+25,0,Bermudas,,BM
+3185,2,Sudán,1600,SD
+5760,3,San José,3504,130705
+5134,3,Cachachi,3440,060202
+26,0,Bielorrusia,,BY
+3186,2,Sudán del Sur,1601,SS
+1890,2,Estiria,305,AT
+5137,3,Celendín,3441,060301
+4379,3,Jerusalén,2623,0000
+27,0,Bolivia,,BO
+5761,3,Tayabamba,3505,130801
+5620,3,Andamarca,3490,120203
+3187,2,Blekinge Län,1602,SE
+5142,3,José Gálvez,3441,060306
+28,0,Bonaire  Saba,,BQ
+1891,2,Tirol,306,AT
+3188,2,Dalarnas Län,1603,SE
+4380,3,Northern,2624,0000
+29,0,Bosnia-Herz.,,BA
+5143,3,Miguel Iglesias,3441,060307
+5762,3,Buldibuyo,3505,130802
+5621,3,Chambara,3490,120204
+30,0,Botsuana,,BW
+3189,2,Gotlands Län,1604,SE
+1892,2,Vorarlberg,307,AT
+5144,3,Oxamarca,3441,060308
+31,0,Brasil,,BR
+4381,3,Southern,2625,0000
+3190,2,Gävleborgs Län,1605,SE
+5763,3,Chillia,3505,130803
+5622,3,Cochas,3490,120205
+5145,3,Sorochuco,3441,060309
+32,0,Brunéi,,BN
+1893,2,Viena,308,AT
+3191,2,Hallands Län,1606,SE
+5147,3,Utco,3441,060311
+33,0,Bulgaria,,BG
+4382,3,Tel Aviv,2626,0000
+5764,3,Huancaspata,3505,130804
+3192,2,Jämtlands Län,1607,SE
+5623,3,Comas,3490,120206
+34,0,Burkina Faso,,BF
+5151,3,Chadin,3442,060403
+1894,2,Azerbaiyán,309,AZ
+35,0,Burundi,,BI
+3193,2,Jönköpings Län,1608,SE
+4383,3,Agrigento,2627,0000
+5154,3,Choropampa,3442,060406
+5765,3,Huaylillas,3505,130805
+1895,2,Azul,310,BL
+36,0,Bután,,BT
+5624,3,Heroínas Toledo,3490,120207
+3194,2,Kalmar Län,1609,SE
+5159,3,Llama,3442,060411
+37,0,Cabo Verde,,CV
+3195,2,Kronobergs Län,1610,SE
+4384,3,Alessandria,2628,0000
+1896,2,Bahamas,311,BS
+5160,3,Miracosta,3442,060412
+5766,3,Huayo,3505,130806
+38,0,Camboya,,KH
+338,1,Bahía,31,BR
+3196,2,Norrbottens Län,1611,SE
+39,0,Camerún,,CM
+5161,3,Paccha,3442,060413
+3197,2,Skåne Län,1612,SE
+1897,2,Bahráin,312,BH
+5767,3,Ongon,3505,130807
+4385,3,Ancona,2629,0000
+40,0,Canadá,,CA
+5162,3,Pion,3442,060414
+339,1,Ceará,31,BR
+3198,2,Stockholms Län,1613,SE
+41,0,Chad,,TD
+5163,3,Querocoto,3442,060415
+1898,2,Bangladesh,313,BD
+5768,3,Parcoy,3505,130808
+42,0,Chile,,CL
+340,1,Brasília,31,BR
+3199,2,Södermanlands Län,1614,SE
+4386,3,Aosta,2630,0000
+5164,3,San Juan de Licupis,3442,060416
+43,0,China,,CN
+3200,2,Uppsala Län,1615,SE
+1899,2,Barbados,314,BB
+5769,3,Pataz,3505,130809
+5166,3,Tocmoche,3442,060418
+44,0,Chipre,,CY
+341,1,Espírito Santo,31,BR
+3201,2,Värmlands Län,1616,SE
+4387,3,Ascoli Piceno,2631,0000
+45,0,Ciudad Vaticano,,VA
+5170,3,Cupisnique,3443,060503
+3202,2,Västerbottens Län,1617,SE
+1900,2,Amberes,315,BE
+342,1,Goiás,31,BR
+5770,3,Pias,3505,130810
+46,0,Colombia,,CO
+4388,3,L'Aquila,2632,0000
+5173,3,Santa Cruz de Toledo,3443,060506
+3203,2,Västernorrlands Län,1618,SE
+47,0,Comoras,,KM
+1901,2,Brabante,316,BE
+5178,3,Choros,3444,060603
+343,1,Maranhão,31,BR
+48,0,Corea del Norte,,KP
+5771,3,Santiago de Challas,3505,130811
+3204,2,Västmanlands Län,1619,SE
+4389,3,Arezzo,2633,0000
+5179,3,Cujillo,3444,060604
+49,0,Corea del Sur,,KR
+3205,2,Västra Götalands Län,1620,SE
+1902,2,Hainaut,317,BE
+344,1,Minas Gerais,31,BR
+5180,3,La Ramada,3444,060605
+50,0,Costa de Marfil,,CI
+5772,3,Taurija,3505,130812
+4390,3,Asti,2634,0000
+3206,2,Örebro Län,1621,SE
+51,0,Costa Rica,,CR
+5181,3,Pimpingos,3444,060606
+3207,2,Östergötlands Län,1622,SE
+1903,2,Lieja,318,BE
+345,1,Mato Grosso do Sul,31,BR
+5773,3,Urpay,3505,130813
+52,0,Croacia,,HR
+4391,3,Avellino,2635,0000
+3208,2,Argovia,1623,CH
+5183,3,San Andrés de Cutervo,3444,060608
+53,0,Cuba,,CU
+1904,2,Limburgo,319,BE
+3209,2,Inner-Rhoden,1624,CH
+54,0,Curaçao,,CW
+346,1,Mato Grosso,31,BR
+5774,3,Huamachuco,3506,130901
+4392,3,Bari,2636,0000
+5187,3,Santo Domingo de la Capilla,3444,060612
+3210,2,Ausser-Rhoden,1625,CH
+55,0,de Isl.Marshall,,MH
+1905,2,Luxemburgo,320,BE
+5190,3,Toribio Casanova,3444,060615
+3211,2,Berna,1626,CH
+347,1,Pará,31,BR
+56,0,Dinamarca,,DK
+5775,3,Chugay,3506,130902
+4393,3,Bergamo,2637,0000
+5195,3,Bellavista,3446,060802
+57,0,Dominica,,DM
+3212,2,Basilea provincia,1627,CH
+1906,2,Namur,321,BE
+5196,3,Chontali,3446,060803
+58,0,E.A.U.,,AE
+348,1,Paraíba,31,BR
+5776,3,Cochorco,3506,130903
+3213,2,Basilea ciudad,1628,CH
+4394,3,Biella,2638,0000
+59,0,Ecuador,,EC
+5197,3,Colasay,3446,060804
+3214,2,Friburgo,1629,CH
+1907,2,Oost-Vlaanderen,322,BE
+60,0,EE.UU.,,US
+349,1,Pernambuco,31,BR
+5777,3,Curgos,3506,130904
+3215,2,Ginebra,1630,CH
+5198,3,Huabal,3446,060805
+61,0,El Salvador,,SV
+4395,3,Belluno,2639,0000
+1908,2,West-Vlaanderen,323,BE
+5200,3,Pomahuaca,3446,060807
+1140,1,Turín,117,IT
+62,0,Eritrea,,ER
+5778,3,Marcabal,3506,130905
+350,1,Piauí,31,BR
+1141,1,Trapani,117,IT
+63,0,España,,ES
+5204,3,San José del Alto,3446,060811
+4396,3,Benevento,2640,0000
+1909,2,Brabante (valón),324,BE
+1142,1,Terni,117,IT
+351,1,Paraná,31,BR
+64,0,Estonia,,EE
+5779,3,Sanagoran,3506,130906
+5207,3,Chirinos,3447,060902
+1143,1,Trieste,117,IT
+4397,3,Bolonia,2641,0000
+5212,3,Tabaconas,3447,060907
+65,0,Etiopía,,ET
+1910,2,Bruselas (capital),325,BE
+1144,1,Treviso,117,IT
+352,1,Rio de Janeiro,31,BR
+5780,3,Sarin,3506,130907
+66,0,Federación Rusa,,RU
+5213,3,Pedro Gálvez,3448,061001
+1145,1,Udine,117,IT
+4398,3,Brindisi,2642,0000
+67,0,Filipinas,,PH
+1911,2,Belice,326,BZ
+5214,3,Chancay,3448,061002
+1146,1,Varese,117,IT
+353,1,Rio Grande do Norte,31,BR
+5781,3,Sartimbamba,3506,130908
+68,0,Finlandia,,FI
+5215,3,Eduardo Villanueva,3448,061003
+4399,3,Brescia,2643,0000
+1147,1,Verbania,117,IT
+1912,2,Benín,327,BJ
+69,0,Fiyi,,FJ
+5217,3,Ichocan,3448,061005
+354,1,Rondônia,31,BR
+1148,1,Vercelli,117,IT
+70,0,Francia,,FR
+5782,3,Santiago de Chuco,3507,131001
+5221,3,Bolívar,3449,061102
+1913,2,Bermudas,328,BM
+1149,1,Venecia,117,IT
+71,0,French S.Territ,,TF
+4400,3,Barletta-Andria-Tran,2644,0000
+355,1,Roraima,31,BR
+5224,3,El Prado,3449,061105
+1150,1,Vicenza,117,IT
+72,0,Gabón,,GA
+5783,3,Angasmarca,3507,131002
+5229,3,San Gregorio,3449,061110
+1914,2,Bielorrusia,329,BY
+73,0,Gambia,,GM
+1151,1,Verona,117,IT
+356,1,Rio Grande do Sul,31,BR
+4401,3,Bolzano,2645,0000
+74,0,Georgia,,GE
+5230,3,San Silvestre de Cochan,3449,061111
+1152,1,Medio Campidano,117,IT
+5784,3,Cachicadan,3507,131003
+1915,2,Bolivia,330,BO
+75,0,Ghana,,GH
+5231,3,Tongod,3449,061112
+357,1,Santa Catarina,31,BR
+1153,1,Viterbo,117,IT
+4402,3,Cagliari,2646,0000
+76,0,Gibraltar,,GI
+5232,3,Unión Agua Blanca,3449,061113
+1154,1,Vibo Valentia,117,IT
+1916,2,Bonaire  Saba,331,BQ
+5785,3,Mollebamba,3507,131004
+358,1,Sergipe,31,BR
+77,0,Granada,,GD
+1155,1,Zara,117,IT
+5234,3,San Bernardino,3450,061202
+4403,3,Campobasso,2647,0000
+78,0,Grecia,,GR
+5786,3,Mollepata,3507,131005
+1917,2,Bosnia-Herz.,332,BA
+359,1,São Paulo,31,BR
+1156,1,Jamaica,118,JM
+5237,3,Santa Cruz,3451,061301
+79,0,Groenlandia,,GL
+1157,1,Hokkaido,119,JP
+80,0,Guadalupe,,GP
+5239,3,Catache,3451,061303
+4404,3,Caserta,2648,0000
+5787,3,Quiruvilca,3507,131006
+1918,2,Botsuana,333,BW
+360,1,Tocantins,31,BR
+1158,1,Aomori,119,JP
+81,0,Guam,,GU
+5240,3,Chancaybaños,3451,061304
+1159,1,Iwate,119,JP
+1919,2,Acre,334,BR
+82,0,Guatemala,,GT
+4405,3,Chieti,2649,0000
+5788,3,Santa Cruz de Chuca,3507,131007
+5242,3,Ninabamba,3451,061306
+361,1,Brunéi,32,BN
+1160,1,Miyagi,119,JP
+83,0,Guayana Franc.,,GF
+5244,3,Saucepampa,3451,061308
+1920,2,Alagoas,335,BR
+1161,1,Akita,119,JP
+4406,3,Carbonia-Iglesias,2650,0000
+362,1,Burgas,33,BG
+84,0,Guernsey,,GG
+5789,3,Sitabamba,3507,131008
+5245,3,Sexi,3451,061309
+1162,1,Yamagata,119,JP
+1921,2,Amazonas,336,BR
+85,0,Guinea,,GN
+5248,3,Callao,3452,070101
+1163,1,Fukushima,119,JP
+363,1,Grad Sofiya,33,BG
+5790,3,Cascas,3508,131101
+86,0,Guinea Ecuator.,,GQ
+4407,3,Caltanisetta,2651,0000
+1164,1,Ibaragi,119,JP
+5251,3,La Perla,3452,070104
+1922,2,Amapá,337,BR
+87,0,Guinea-Bissau,,GW
+1165,1,Tochigi,119,JP
+5253,3,Ventanilla,3452,070106
+5791,3,Lucma,3508,131102
+88,0,Guyana,,GY
+4408,3,Cuneo,2652,0000
+1166,1,Gunma,119,JP
+1923,2,Bahía,338,BR
+364,1,Khaskovo,33,BG
+5255,3,Cusco,3453,080101
+89,0,Haití,,HT
+1167,1,Saitama,119,JP
+5258,3,San Jerónimo,3453,080104
+5792,3,Marmot,3508,131103
+90,0,Honduras,,HN
+365,1,Lovech,33,BG
+1924,2,Ceará,339,BR
+1168,1,Chiba,119,JP
+4409,3,Como,2653,0000
+5259,3,San Sebastian,3453,080105
+91,0,Hungría,,HU
+1169,1,Tokio,119,JP
+5262,3,Wanchaq,3453,080108
+92,0,Irán,,IR
+5793,3,Sayapullo,3508,131104
+1925,2,Brasília,340,BR
+366,1,Montana,33,BG
+1170,1,Kanagawa,119,JP
+4410,3,Cremona,2654,0000
+93,0,Iraq,,IQ
+5265,3,Acos,3454,080203
+1171,1,Niigata,119,JP
+94,0,Irlanda,,IE
+5794,3,Viru,3509,131201
+5267,3,Pomacanchi,3454,080205
+367,1,Plovdiv,33,BG
+1172,1,Toyama,119,JP
+1926,2,Espírito Santo,341,BR
+4411,3,Cosenza,2655,0000
+95,0,Is.Heard/Mcdon.,,HM
+5269,3,Sangarara,3454,080207
+1173,1,Ishikawa,119,JP
+96,0,Is.Vírgenes USA,,VI
+5795,3,Chao,3509,131202
+368,1,Ruse,33,BG
+1927,2,Goiás,342,BR
+5271,3,Ancahuasi,3455,080302
+1174,1,Fukui,119,JP
+4412,3,Catania,2656,0000
+97,0,Isl.Marianas N.,,MP
+1175,1,Yamanashi,119,JP
+5273,3,Chinchaypujio,3455,080304
+5796,3,Guadalupito,3509,131203
+369,1,Sofía,33,BG
+98,0,Isl.S.Sandwich,,GS
+1928,2,Maranhão,343,BR
+1176,1,Nagano,119,JP
+5274,3,Huarocondo,3455,080305
+4413,3,Catanzaro,2657,0000
+99,0,Isl.Turcas y C.,,TC
+1177,1,Gifu,119,JP
+5277,3,Pucyura,3455,080308
+5797,3,Chiclayo,3510,140101
+370,1,Varna,33,BG
+1929,2,Minas Gerais,344,BR
+100,0,Isl.Vírgenes GB,,VG
+1178,1,Shizuoka,119,JP
+4414,3,Stati Esteri,2658,0000
+5278,3,Zurite,3455,080309
+101,0,Isla Christmas,,CX
+1179,1,Aichi,119,JP
+5280,3,Coya,3456,080402
+5798,3,Chongoyape,3510,140102
+102,0,Isla de Man,,IM
+1930,2,Mato Grosso do Sul,345,BR
+1180,1,Mie,119,JP
+371,1,Burkina Faso,34,BF
+4415,3,Enna,2659,0000
+5281,3,Lamay,3456,080403
+103,0,Islandia,,IS
+1181,1,Shiga,119,JP
+5799,3,Eten,3510,140103
+372,1,Burundi,35,BI
+1182,1,Kioto,119,JP
+5283,3,Pisac,3456,080405
+104,0,Islas Bouvet,,BV
+1931,2,Mato Grosso,346,BR
+4416,3,Forli/Cesana,2660,0000
+1183,1,Osaka,119,JP
+5285,3,Taray,3456,080407
+105,0,Islas Caimán,,KY
+5800,3,Eten Puerto,3510,140104
+1184,1,Hyogo,119,JP
+373,1,Bután,36,BT
+1932,2,Pará,347,BR
+5287,3,Yanaoca,3457,080501
+106,0,Islas Cocos,,CC
+4417,3,Ferrara,2661,0000
+1185,1,Nara,119,JP
+5289,3,Kunturkanki,3457,080503
+107,0,Islas Cook,,CK
+1933,2,Paraíba,348,BR
+1186,1,Wakayama,119,JP
+374,1,Cabo Verde,37,CV
+5801,3,José Leonardo Ortiz,3510,140105
+5292,3,Pampamarca,3457,080506
+108,0,Islas Feroe,,FO
+4418,3,Foggia,2662,0000
+1187,1,Tottori,119,JP
+1934,2,Pernambuco,349,BR
+109,0,Islas Malvinas,,FK
+375,1,Camboya,38,KH
+5802,3,La Victoria,3510,140106
+1188,1,Shimane,119,JP
+110,0,Islas Niue,,NU
+4419,3,Florencia,2663,0000
+1935,2,Piauí,350,BR
+1189,1,Okayama,119,JP
+376,1,Camerún,39,CM
+5803,3,Lagunas,3510,140107
+111,0,Islas Norfolk,,NF
+1190,1,Hiroshima,119,JP
+4420,3,Fermo,2664,0000
+112,0,Islas Pitcairn,,PN
+1936,2,Paraná,351,BR
+377,1,Alberta,40,CA
+1191,1,Yamaguchi,119,JP
+5804,3,Monsefu,3510,140108
+113,0,Islas Salomón,,SB
+1192,1,Tokushima,119,JP
+4421,3,Ferrara,2665,0000
+1937,2,Rio de Janeiro,352,BR
+114,0,Islas Tokelau,,TK
+378,1,Columbia británica,40,CA
+1193,1,Kagawa,119,JP
+5805,3,Nueva Arica,3510,140109
+115,0,IslMenAlejEEUU,,UM
+4422,3,Fiume,2666,0000
+1194,1,Ehime,119,JP
+116,0,Israel,,IL
+1938,2,Rio Grande do Norte,353,BR
+379,1,Manitoba,40,CA
+117,0,Italia,,IT
+5806,3,Oyotun,3510,140110
+1195,1,Kochi,119,JP
+4423,3,Génova,2667,0000
+118,0,Jamaica,,JM
+1939,2,Rondônia,354,BR
+380,1,New Brunswick,40,CA
+1196,1,Fukuoka,119,JP
+119,0,Japón,,JP
+5807,3,Picsi,3510,140111
+4424,3,Gorizia,2668,0000
+1197,1,Saga,119,JP
+120,0,Jersey,,JE
+1940,2,Roraima,355,BR
+381,1,New Foundland/Labr.,40,CA
+121,0,Jordania,,JO
+1198,1,Nagasaki,119,JP
+4425,3,Grosseto,2669,0000
+5808,3,Pimentel,3510,140112
+122,0,Kazajistán,,KZ
+1199,1,Kumamoto,119,JP
+1941,2,Rio Grande do Sul,356,BR
+382,1,Nueva Escocia,40,CA
+123,0,Kenia,,KE
+1200,1,Oita,119,JP
+4426,3,Imperia,2670,0000
+5809,3,Reque,3510,140113
+124,0,Kirguizistán,,KG
+1201,1,Miyazaki,119,JP
+1942,2,Santa Catarina,357,BR
+383,1,Territorio Noreste,40,CA
+125,0,Kiribati,,KI
+1202,1,Kagoshima,119,JP
+4427,3,Isernia,2671,0000
+126,0,Kuwait,,KW
+1943,2,Sergipe,358,BR
+5810,3,Santa Rosa,3510,140114
+1203,1,Okinawa,119,JP
+384,1,Nunavut,40,CA
+127,0,Laos,,LA
+1204,1,Jersey,120,JE
+128,0,Lesoto,,LS
+4428,3,Crotone,2672,0000
+1944,2,São Paulo,359,BR
+5811,3,Saña,3510,140115
+385,1,Ontario,40,CA
+129,0,Letonia,,LV
+1205,1,Jordania,121,JO
+130,0,Líbano,,LB
+4429,3,Lucca,2673,0000
+1945,2,Tocantins,360,BR
+1206,1,Almatynskaia,122,KZ
+5812,3,Cayalti,3510,140116
+131,0,Liberia,,LR
+386,1,Isl.Príncipe Eduardo,40,CA
+1207,1,Kostanaiskaia,122,KZ
+132,0,Libia,,LY
+4430,3,Lecce,2674,0000
+1946,2,Brunéi,361,BN
+133,0,Liechtenstein,,LI
+387,1,Quebec,40,CA
+1208,1,Severo-Kazakhstansk,122,KZ
+5813,3,Patapo,3510,140117
+134,0,Lituania,,LT
+1947,2,Burgas,362,BG
+1209,1,Pavlodarskaia,122,KZ
+4431,3,Livorno,2675,0000
+135,0,Luxemburgo,,LU
+5814,3,Pomalca,3510,140118
+388,1,Saskatchewan,40,CA
+1210,1,Akmolinskaia,122,KZ
+136,0,Macao,,MO
+1948,2,Grad Sofiya,363,BG
+4432,3,Lodi,2676,0000
+1211,1,Aktubinskaia,122,KZ
+137,0,Macedonia,,MK
+5293,3,Quehue,3457,080507
+5815,3,Pucala,3510,140119
+138,0,Madagascar,,MG
+1212,1,Atyrauskaia,122,KZ
+1949,2,Khaskovo,364,BG
+389,1,Yukon Territory,40,CA
+5296,3,Checacupe,3458,080602
+4433,3,Latina,2677,0000
+139,0,Malaui,,MW
+5816,3,Tuman,3510,140120
+1213,1,Zapadno-Kazakhst,122,KZ
+5299,3,Pitumarca,3458,080605
+140,0,Maldivas,,MV
+1950,2,Lovech,365,BG
+390,1,Chad,41,TD
+1214,1,Mangystayskaia,122,KZ
+4434,3,Lucca,2678,0000
+5301,3,San Pedro,3458,080607
+141,0,Malí,,ML
+5817,3,Ferreñafe,3511,140201
+1215,1,Karagandinskaia,122,KZ
+1951,2,Montana,366,BG
+142,0,Malta,,MT
+5304,3,Capacmarca,3459,080702
+391,1,I - Iquique,42,CL
+1216,1,Vostochno-Kazakhstan,122,KZ
+4435,3,Monza e Brianza,2679,0000
+143,0,Marruecos,,MA
+5305,3,Chamaca,3459,080703
+5818,3,Cañaris,3511,140202
+1952,2,Plovdiv,367,BG
+144,0,Martinica,,MQ
+392,1,II - Antofagasta,42,CL
+1217,1,Gambilskaia,122,KZ
+5307,3,Livitaca,3459,080705
+145,0,Mauricio (Isl.),,MU
+4436,3,Macerata,2680,0000
+1218,1,Kyzilordinskaia,122,KZ
+1953,2,Ruse,368,BG
+5308,3,Llusco,3459,080706
+5819,3,Incahuasi,3511,140203
+146,0,Mauritania,,MR
+1219,1,Kenia,123,KE
+393,1,III - Copiapo,42,CL
+5310,3,Velille,3459,080708
+147,0,Mayotte,,YT
+1954,2,Sofía,369,BG
+4437,3,Messina,2681,0000
+1220,1,Kirguizistán,124,KG
+5311,3,Espinar,3460,080801
+5820,3,Manuel Antonio Mesones Muro,3511,140204
+148,0,México,,MX
+1221,1,Kiribati,125,KI
+394,1,IV - La Serena,42,CL
+1955,2,Varna,370,BG
+5312,3,Condoroma,3460,080802
+149,0,Micronesia,,FM
+4438,3,Milán,2682,0000
+1222,1,Kuwait (ciudad),126,KW
+150,0,Moldavia,,MD
+5821,3,Pitipo,3511,140205
+5314,3,Ocoruro,3460,080804
+1223,1,Laos,127,LA
+1956,2,Burkina Faso,371,BF
+395,1,V - Valparaiso,42,CL
+151,0,Mónaco,,MC
+4439,3,Mantova,2683,0000
+5317,3,Suyckutambo,3460,080807
+1224,1,Lesoto,128,LS
+152,0,Mongolia,,MN
+5822,3,Pueblo Nuevo,3511,140206
+5320,3,Echarate,3461,080902
+1225,1,Letonia,129,LV
+1957,2,Burundi,372,BI
+396,1,VI - Rancagua,42,CL
+153,0,Montserrat,,MS
+4440,3,Módena,2684,0000
+1226,1,Líbano,130,LB
+5322,3,Maranura,3461,080904
+154,0,Mozambique,,MZ
+5823,3,Lambayeque,3512,140301
+1958,2,Bután,373,BT
+1227,1,Liberia,131,LR
+397,1,VII - Talca,42,CL
+5324,3,Quellouno,3461,080906
+155,0,Myanmar,,MM
+4441,3,Massa Carrara,2685,0000
+1228,1,Libia,132,LY
+156,0,Naciones Unidas,,UN
+5824,3,Chochope,3512,140302
+5328,3,Pichari,3461,080910
+1959,2,Cabo Verde,374,CV
+1229,1,Liechtenstein,133,LI
+398,1,VIII - Concepción,42,CL
+157,0,Namibia,,NA
+5330,3,Villa Virgen,3461,080912
+4442,3,Matera,2686,0000
+1230,1,Lituania,134,LT
+5825,3,Illimo,3512,140303
+1960,2,Camboya,375,KH
+158,0,Naranja,,OR
+5331,3,Villa Kintiarina,3461,080913
+399,1,IX - Temuco,42,CL
+1231,1,Luxemburgo,135,LU
+159,0,Nauru,,NR
+5335,3,Colcha,3462,081004
+1961,2,Camerún,376,CM
+5826,3,Jayanca,3512,140304
+1232,1,Macao,136,MO
+4443,3,Nápoles,2687,0000
+160,0,Nepal,,NP
+5338,3,Paccaritambo,3462,081007
+400,1,X - Puerto Montt,42,CL
+1233,1,Macedonia,137,MK
+161,0,Nicaragua,,NI
+5340,3,Yaurisque,3462,081009
+1962,2,Alberta,377,CA
+5827,3,Mochumi,3512,140305
+4444,3,Novara,2688,0000
+1234,1,Madagascar,138,MG
+162,0,Níger,,NE
+5342,3,Caicay,3463,081102
+401,1,XI - Coyhaique,42,CL
+1235,1,Malaui,139,MW
+163,0,Nigeria,,NG
+5828,3,Morrope,3512,140306
+1963,2,Columbia británica,378,CA
+5343,3,Challabamba,3463,081103
+4445,3,Nuoro,2689,0000
+1236,1,Maldivas,140,MV
+164,0,Noruega,,NO
+402,1,XII - Punta Arenas,42,CL
+5344,3,Colquepata,3463,081104
+1237,1,Malí,141,ML
+165,0,Nueva Caledonia,,NC
+5829,3,Motupe,3512,140307
+1964,2,Manitoba,379,CA
+4446,3,Ogliastra,2690,0000
+1238,1,Malta,142,MT
+5346,3,Kosñipata,3463,081106
+166,0,Nueva Zelanda,,NZ
+241,1,Afganistán,1,AF
+1239,1,Marruecos,143,MA
+167,0,OTAN,,NT
+5830,3,Olmos,3512,140308
+5349,3,Camanti,3464,081203
+1965,2,New Brunswick,380,CA
+4447,3,Oristano,2691,0000
+1240,1,Martinica,144,MQ
+242,1,Albania,2,AL
+168,0,Países Bajos,,NL
+5350,3,Ccarhuayo,3464,081204
+5831,3,Pacora,3512,140309
+169,0,Pakistán,,PK
+1241,1,Mauricio (Isl.),145,MU
+5351,3,Ccatca,3464,081205
+1966,2,New Foundland/Labr.,381,CA
+4448,3,Olbia-Tempio,2692,0000
+170,0,Palaos,,PW
+1242,1,Mauritania,146,MR
+5353,3,Huaro,3464,081207
+5832,3,Salas,3512,140310
+171,0,Palestina,,PS
+1967,2,Nueva Escocia,382,CA
+1243,1,Mayotte,147,YT
+5354,3,Lucre,3464,081208
+4449,3,Palermo,2693,0000
+172,0,Panamá,,PA
+5358,3,Quiquijana,3464,081212
+1244,1,Aguascalientes,148,MX
+5833,3,San José,3512,140311
+173,0,PapuaNvaGuinea,,PG
+1968,2,Territorio Noreste,383,CA
+4450,3,Piacenza,2694,0000
+1245,1,Baja California,148,MX
+5362,3,Machupicchu,3465,081304
+174,0,Paraguay,,PY
+5834,3,Tucume,3512,140312
+5364,3,Ollantaytambo,3465,081306
+1246,1,Baja California S,148,MX
+1969,2,Nunavut,384,CA
+175,0,Perú,,PE
+4451,3,Padua,2695,0000
+5365,3,Yucay,3465,081307
+1247,1,Chihuahua,148,MX
+176,0,Polinesia fran.,,PF
+5835,3,Lima,3513,150101
+1970,2,Ontario,385,CA
+403,1,RM - Santiago,42,CL
+5369,3,Conayca,3466,090104
+1248,1,Chiapas,148,MX
+4452,3,Pescara,2696,0000
+177,0,Polonia,,PL
+1249,1,Campeche,148,MX
+5372,3,Huayllahuara,3466,090107
+5836,3,Ancón,3513,150102
+178,0,Portugal,,PT
+1971,2,Isl.Príncipe Eduardo,386,CA
+1250,1,Coahuila,148,MX
+4453,3,Perugia,2697,0000
+5373,3,Izcuchaca,3466,090108
+404,1,XIV - Los Ríos,42,CL
+179,0,Puerto Rico,,PR
+1251,1,Colima,148,MX
+1972,2,Quebec,387,CA
+5374,3,Laria,3466,090109
+180,0,Qatar,,QA
+5837,3,Ate,3513,150103
+4454,3,Pisa,2698,0000
+1252,1,Distrito Federal,148,MX
+5375,3,Manta,3466,090110
+181,0,Reino Unido,,GB
+405,1,XV - Arica y Parinac,42,CL
+1973,2,Saskatchewan,388,CA
+1253,1,Durango,148,MX
+5838,3,Barranco,3513,150104
+182,0,Rep.Centroafr.,,CF
+5376,3,Mariscal Cáceres,3466,090111
+4455,3,Pola,2699,0000
+1254,1,Guerrero,148,MX
+183,0,Rep.Dominicana,,DO
+406,1,Beijing (Pekín),43,CN
+5380,3,Pilchaca,3466,090115
+1974,2,Yukon Territory,389,CA
+1255,1,Guanajuato,148,MX
+5839,3,Breña,3513,150105
+184,0,República Checa,,CZ
+5383,3,Ascensión,3466,090118
+4456,3,Pordenone,2700,0000
+1256,1,Hidalgo,148,MX
+1975,2,Chad,390,TD
+407,1,Shanghai,43,CN
+5384,3,Huando,3466,090119
+185,0,República Congo,,CD
+1257,1,Jalisco,148,MX
+5840,3,Carabayllo,3513,150106
+4457,3,Prato,2701,0000
+5385,3,Acobamba,3467,090201
+186,0,República Congo,,CG
+1258,1,Michoacán,148,MX
+408,1,Tianjin,43,CN
+1976,2,I - Iquique,391,CL
+5386,3,Andabamba,3467,090202
+5841,3,Chaclacayo,3513,150107
+187,0,Reunión,,RE
+1259,1,Estado de México,148,MX
+4458,3,Parma,2702,0000
+409,1,Nei Mongol,43,CN
+188,0,Ruanda,,RW
+5390,3,Paucara,3467,090206
+1977,2,II - Antofagasta,392,CL
+1260,1,Morelos,148,MX
+5842,3,Chorrillos,3513,150108
+189,0,Rumanía,,RO
+4459,3,Pistoia,2703,0000
+5391,3,Pomacocha,3467,090207
+1261,1,Nayarit,148,MX
+410,1,Shanxi,43,CN
+1978,2,III - Copiapo,393,CL
+190,0,S.Cris.& Nieves,,KN
+5392,3,Rosario,3467,090208
+1262,1,Nuevo León,148,MX
+5843,3,Cieneguilla,3513,150109
+4460,3,Pesaro-Urbino,2704,0000
+191,0,S.Pedr. Miquel.,,PM
+1263,1,Oaxaca,148,MX
+5393,3,Lircay,3468,090301
+411,1,Hebei,43,CN
+1979,2,IV - La Serena,394,CL
+5394,3,Anchonga,3468,090302
+192,0,S.Tomé Príncipe,,ST
+1264,1,Puebla,148,MX
+5844,3,Comas,3513,150110
+4461,3,Pavia,2705,0000
+412,1,Liaoning,43,CN
+5395,3,Callanmarca,3468,090303
+193,0,Sáhara occid.,,EH
+1980,2,V - Valparaiso,395,CL
+1265,1,Quintana Roo,148,MX
+5396,3,Ccochaccasa,3468,090304
+5845,3,El Agustino,3513,150111
+194,0,Samoa americana,,AS
+413,1,Jilin,43,CN
+1266,1,Querétaro,148,MX
+4462,3,Potenza,2706,0000
+5398,3,Congalla,3468,090306
+1981,2,VI - Rancagua,396,CL
+195,0,Samoa Occident.,,WS
+1267,1,Sinaloa,148,MX
+414,1,Heilongjiang,43,CN
+5846,3,Independencia,3513,150112
+5399,3,Huanca-Huanca,3468,090307
+196,0,San Marino,,SM
+1268,1,San Luis Potosí,148,MX
+4463,3,Rávena,2707,0000
+1982,2,VII - Talca,397,CL
+197,0,San Vicente,,VC
+5401,3,Julcamarca,3468,090309
+1269,1,Sonora,148,MX
+5847,3,Jesús María,3513,150113
+415,1,Jiangsu,43,CN
+198,0,Santa Helena,,SH
+1270,1,Tabasco,148,MX
+5406,3,Arma,3469,090402
+199,0,Santa Lucía,,LC
+4464,3,Reggio Calabria,2708,0000
+1983,2,VIII - Concepción,398,CL
+5407,3,Aurahua,3469,090403
+1271,1,Tlaxcala,148,MX
+5848,3,La Molina,3513,150114
+200,0,Senegal,,SN
+416,1,Anhui,43,CN
+5408,3,Capillas,3469,090404
+201,0,Serbia/Monten.,,CS
+603,1,Utah,60,US
+4465,3,Reggio Emilia,2709,0000
+1984,2,IX - Temuco,399,CL
+5416,3,Tantara,3469,090412
+417,1,Shandong,43,CN
+5849,3,La Victoria,3513,150115
+202,0,Seychelles,,SC
+604,1,Virginia,60,US
+5419,3,Anco,3470,090502
+203,0,Sierra Leona,,SL
+4466,3,Ragusa,2710,0000
+605,1,Islas Vírgenes,60,US
+1985,2,X - Puerto Montt,400,CL
+5850,3,Lince,3513,150116
+204,0,Singapur,,SG
+418,1,Zhejiang,43,CN
+5420,3,Chinchihuasi,3470,090503
+606,1,Vermont,60,US
+4467,3,Rieti,2711,0000
+205,0,Sint Maarten,,SX
+5421,3,El Carmen,3470,090504
+607,1,Washington,60,US
+5851,3,Los Olivos,3513,150117
+1986,2,XI - Coyhaique,401,CL
+419,1,Jiangxi,43,CN
+206,0,Siria,,SY
+5422,3,La Merced,3470,090505
+608,1,Wisconsin,60,US
+4468,3,Roma,2712,0000
+207,0,Somalia,,SO
+5852,3,Lurigancho,3513,150118
+1987,2,XII - Punta Arenas,402,CL
+609,1,Virginia Occidental,60,US
+5426,3,San Pedro de Coris,3470,090509
+208,0,Sri Lanka,,LK
+420,1,Fujian,43,CN
+610,1,Wyoming,60,US
+4469,3,Rimini,2713,0000
+5427,3,Pachamarca,3470,090510
+209,0,Suazilandia,,SZ
+1988,2,RM - Santiago,403,CL
+5853,3,Lurin,3513,150119
+611,1,El Salvador,61,SV
+210,0,Sudán,,SD
+5428,3,Cosme,3470,090511
+421,1,Hunan,43,CN
+4470,3,Rovigo,2714,0000
+612,1,Eritrea,62,ER
+211,0,Sudán del Sur,,SS
+5429,3,Huaytara,3471,090601
+1989,2,XIV - Los Ríos,404,CL
+613,1,Álava,63,ES
+5854,3,Magdalena del Mar,3513,150120
+5430,3,Ayavi,3471,090602
+422,1,Hubei,43,CN
+4471,3,Salerno,2715,0000
+614,1,Albacete,63,ES
+5431,3,Córdova,3471,090603
+1990,2,XV - Arica y Parinac,405,CL
+615,1,Alicante,63,ES
+423,1,Henan,43,CN
+5858,3,Pucusana,3513,150124
+5432,3,Huayacundo Arma,3471,090604
+4472,3,Siena,2716,0000
+616,1,Almería,63,ES
+5434,3,Ocoyo,3471,090606
+1991,2,Beijing (Pekín),406,CN
+617,1,Ávila,63,ES
+424,1,Guangdong,43,CN
+5859,3,Puente Piedra,3513,150125
+5435,3,Pilpichaca,3471,090607
+4473,3,Sondrio,2717,0000
+618,1,Badajoz,63,ES
+1992,2,Shanghai,407,CN
+5440,3,San Isidro,3471,090612
+425,1,Hainan,43,CN
+619,1,Baleares,63,ES
+212,0,Suecia,,SE
+4474,3,La Spezia,2718,0000
+5860,3,Punta Hermosa,3513,150126
+5441,3,Santiago de Chocorvos,3471,090613
+620,1,Barcelona,63,ES
+1993,2,Tianjin,408,CN
+213,0,Suiza,,CH
+426,1,Guangxi,43,CN
+621,1,Burgos,63,ES
+214,0,Surinam,,SR
+5442,3,Santiago de Quirahuara,3471,090614
+4475,3,Siracusa,2719,0000
+5861,3,Punta Negra,3513,150127
+622,1,Cáceres,63,ES
+1994,2,Nei Mongol,409,CN
+215,0,Svalbard,,SJ
+427,1,Guizhou,43,CN
+5444,3,Tambo,3471,090616
+623,1,Cádiz,63,ES
+216,0,Tanzania,,TZ
+4476,3,Sassari,2720,0000
+5445,3,Pampas,3472,090701
+1995,2,Shanxi,410,CN
+5862,3,Rímac,3513,150128
+624,1,Castellón,63,ES
+428,1,Sichuan,43,CN
+217,0,Tayikistán,,TJ
+5446,3,Acostambo,3472,090702
+625,1,Ciudad Real,63,ES
+218,0,Terr.br.Oc.Ind.,,IO
+1996,2,Hebei,411,CN
+4477,3,Savona,2721,0000
+5863,3,San Bartolo,3513,150129
+5447,3,Acraquia,3472,090703
+429,1,Yunnan,43,CN
+626,1,Córdoba,63,ES
+219,0,Timor Oriental,,TL
+627,1,La Coruña,63,ES
+1997,2,Liaoning,412,CN
+220,0,Timor oriental,,TP
+5450,3,Daniel Hernández,3472,090706
+4478,3,Taranto,2722,0000
+430,1,Shaanxi,43,CN
+5864,3,San Borja,3513,150130
+221,0,Togo,,TG
+628,1,Cuenca,63,ES
+5453,3,Ñahuimpuquio,3472,090710
+1998,2,Jilin,413,CN
+222,0,Tonga,,TO
+629,1,Gerona,63,ES
+5454,3,Pazos,3472,090711
+431,1,Gansu,43,CN
+4479,3,Teramo,2723,0000
+223,0,TrinidadyTobago,,TT
+5865,3,San Isidro,3513,150131
+2001,2,Anhui,416,CN
+630,1,Granada,63,ES
+5455,3,Quishuar,3472,090713
+224,0,Túnez,,TN
+4480,3,Trento,2724,0000
+225,0,Turkmenistán,,TM
+5456,3,Salcabamba,3472,090714
+432,1,Ningxia,43,CN
+2003,2,Zhejiang,418,CN
+631,1,Guadalajara,63,ES
+226,0,Turquía,,TR
+5460,3,Tintay Puncu,3472,090718
+5866,3,San Juan de Lurigancho,3513,150132
+4481,3,Turín,2725,0000
+433,1,Qinghai,43,CN
+2004,2,Jiangxi,419,CN
+227,0,Tuvalu,,TV
+5465,3,Huanuco,3473,100101
+632,1,Guipúzcoa,63,ES
+228,0,Ucrania,,UA
+5466,3,Amarilis,3473,100102
+4482,3,Trapani,2726,0000
+5867,3,San Juan de Miraflores,3513,150133
+2007,2,Hubei,422,CN
+434,1,Xinjiang,43,CN
+229,0,Uganda,,UG
+633,1,Huelva,63,ES
+5468,3,Churubamba,3473,100104
+230,0,Unión Europea,,EU
+5469,3,Margos,3473,100105
+2008,2,Henan,423,CN
+4483,3,Terni,2727,0000
+634,1,Huesca,63,ES
+435,1,Xizang,43,CN
+231,0,Uruguay,,UY
+5868,3,San Luis,3513,150134
+3687,3,Mato Grosso,1931,0000
+2010,2,Hainan,425,CN
+232,0,Uzbekistán,,UZ
+4484,3,Trieste,2728,0000
+635,1,Jaén,63,ES
+3688,3,Pará,1932,0000
+233,0,Vanuatu,,VU
+436,1,Chong Qing,43,CN
+5869,3,San Martín de Porres,3513,150135
+2012,2,Guizhou,427,CN
+3689,3,Paraíba,1933,0000
+234,0,Venezuela,,VE
+636,1,León,63,ES
+4485,3,Treviso,2729,0000
+437,1,Chipre,44,CY
+235,0,Vietnam,,VN
+3690,3,Pernambuco,1934,0000
+2013,2,Sichuan,428,CN
+637,1,Lérida,63,ES
+5870,3,San Miguel,3513,150136
+236,0,Wallis Futuna,,WF
+3691,3,Piauí,1935,0000
+4486,3,Udine,2730,0000
+438,1,Ciudad Vaticano,45,VA
+237,0,Yemen,,YE
+2014,2,Yunnan,429,CN
+3692,3,Paraná,1936,0000
+638,1,La Rioja,63,ES
+5871,3,Santa Anita,3513,150137
+238,0,Yibuti,,DJ
+4487,3,Varese,2731,0000
+3693,3,Rio de Janeiro,1937,0000
+639,1,Lugo,63,ES
+439,1,ANTIOQUIA,46,CO
+2018,2,Qinghai,433,CN
+239,0,Zambia,,ZM
+3694,3,Rio Grande do Norte,1938,0000
+240,0,Zimbabue,,ZW
+640,1,Madrid,63,ES
+5872,3,Santa María del Mar,3513,150138
+4488,3,Verbania,2732,0000
+2020,2,Xizang,435,CN
+440,1,ATLÁNTICO,46,CO
+3695,3,Rondônia,1939,0000
+243,1,Slesvig-Holstein,3,DE
+641,1,Málaga,63,ES
+3696,3,Roraima,1940,0000
+244,1,Hamburgo,3,DE
+5873,3,Santa Rosa,3513,150139
+441,1,BOGOTÁ,46,CO
+2021,2,Chong Qing,436,CN
+4489,3,Vercelli,2733,0000
+3697,3,Rio Grande do Sul,1941,0000
+245,1,Baja Sajonia,3,DE
+642,1,Murcia,63,ES
+3698,3,Santa Catarina,1942,0000
+1006,1,Mayo,94,IE
+442,1,BOLÍVAR,46,CO
+246,1,Bremen,3,DE
+5874,3,Santiago de Surco,3513,150140
+4490,3,Venecia,2734,0000
+643,1,Navarra,63,ES
+3699,3,Sergipe,1943,0000
+247,1,Renania N.Westfalia,3,DE
+1007,1,Offaly,94,IE
+443,1,BOYACA,46,CO
+3700,3,São Paulo,1944,0000
+248,1,Hesse,3,DE
+5875,3,Surquillo,3513,150141
+644,1,Orense,63,ES
+4491,3,Vicenza,2735,0000
+3701,3,Tocantins,1945,0000
+444,1,CALDAS,46,CO
+1008,1,Roscommon,94,IE
+249,1,Renania-Palatinado,3,DE
+645,1,Asturias,63,ES
+3702,3,Brunéi,1946,0000
+250,1,Baden-Wurtemberg,3,DE
+5876,3,Villa El Salvador,3513,150142
+4492,3,Verona,2736,0000
+1009,1,Sligo,94,IE
+445,1,CAQUETA,46,CO
+3703,3,Burgas,1947,0000
+251,1,Baviera,3,DE
+646,1,Palencia,63,ES
+3704,3,Grad Sofiya,1948,0000
+252,1,El Sarre,3,DE
+446,1,CAUCA,46,CO
+4493,3,Medio Campidano,2737,0000
+1010,1,Tipperary,94,IE
+5877,3,Villa María del Triunfo,3513,150143
+3705,3,Khaskovo,1949,0000
+647,1,Las Palmas,63,ES
+253,1,Berlín,3,DE
+447,1,CESAR,46,CO
+3706,3,Lovech,1950,0000
+1011,1,Waterford,94,IE
+254,1,Brandenburgo,3,DE
+4494,3,Viterbo,2738,0000
+648,1,Pontevedra,63,ES
+5878,3,Barranca,3514,150201
+3707,3,Montana,1951,0000
+255,1,Meclenburgo-Pomeran.,3,DE
+448,1,CÓRDOBA,46,CO
+1012,1,Westmeath,94,IE
+3708,3,Plovdiv,1952,0000
+256,1,Sajonia,3,DE
+4495,3,Vibo Valentia,2739,0000
+649,1,Salamanca,63,ES
+5879,3,Paramonga,3514,150202
+3709,3,Ruse,1953,0000
+257,1,Sajonia-Anhalt,3,DE
+449,1,CUNDINAMARCA,46,CO
+1013,1,Wicklow,94,IE
+3710,3,Sofía,1954,0000
+258,1,Turingia,3,DE
+4496,3,Zara,2740,0000
+650,1,Sta.Cruz Tenerife,63,ES
+5880,3,Pativilca,3514,150203
+3711,3,Varna,1955,0000
+259,1,Andorra,4,AD
+450,1,CHOCO,46,CO
+1014,1,Wexford,94,IE
+651,1,Cantabria,63,ES
+260,1,Angola,5,AO
+3712,3,Burkina Faso,1956,0000
+4497,3,Jamaica,2741,0000
+451,1,HUILA,46,CO
+5881,3,Supe,3514,150204
+261,1,Anguilla,6,AI
+3713,3,Burundi,1957,0000
+652,1,Segovia,63,ES
+1015,1,Is.Heard/Mcdon.,95,HM
+262,1,Antártida,7,AQ
+4498,3,Hokkaido,2742,0000
+3714,3,Bután,1958,0000
+452,1,LA GUAJIRA,46,CO
+653,1,Sevilla,63,ES
+263,1,Antigua/Barbuda,8,AG
+5882,3,Supe Puerto,3514,150205
+3715,3,Cabo Verde,1959,0000
+1016,1,Is.Vírgenes USA,96,VI
+264,1,Arabia Saudí,9,SA
+4499,3,Aomori,2743,0000
+453,1,MAGDALENA,46,CO
+654,1,Soria,63,ES
+3716,3,Camboya,1960,0000
+265,1,Argelia,10,DZ
+5883,3,Cajatambo,3515,150301
+3717,3,Camerún,1961,0000
+1017,1,Isl.Marianas N.,97,MP
+266,1,Capital Federal,11,AR
+4500,3,Iwate,2744,0000
+454,1,META,46,CO
+655,1,Tarragona,63,ES
+3718,3,Alberta,1962,0000
+267,1,Buenos Aires,11,AR
+5884,3,Copa,3515,150302
+1018,1,Isl.S.Sandwich,98,GS
+268,1,Catamarca,11,AR
+455,1,NARIÑO,46,CO
+3719,3,Columbia británica,1963,0000
+656,1,Teruel,63,ES
+4501,3,Miyagi,2745,0000
+3720,3,Manitoba,1964,0000
+6030,3,Yavari,3526,160403
+5885,3,Gorgor,3515,150303
+1019,1,Isl.Turcas y C.,99,TC
+456,1,NORTE SANTANDER,46,CO
+657,1,Toledo,63,ES
+3721,3,New Brunswick,1965,0000
+5855,3,Pueblo Libre,3513,150121
+4502,3,Akita,2746,0000
+5856,3,Miraflores,3513,150122
+5886,3,Huancapon,3515,150304
+3722,3,New Foundland/Labr.,1966,0000
+1020,1,Isl.Vírgenes GB,100,VG
+457,1,QUINDIO,46,CO
+658,1,Valencia,63,ES
+5857,3,Pachacamac,3513,150123
+4503,3,Yamagata,2747,0000
+3723,3,Nueva Escocia,1967,0000
+5887,3,Manas,3515,150305
+3217,2,Cantón de Grisones,1632,CH
+1021,1,Isla Christmas,101,CX
+458,1,RISARALDA,46,CO
+3724,3,Territorio Noreste,1968,0000
+659,1,Valladolid,63,ES
+4504,3,Fukushima,2748,0000
+3218,2,Jura,1633,CH
+3725,3,Nunavut,1969,0000
+5888,3,Canta,3516,150401
+3219,2,Lucerna,1634,CH
+1022,1,Isla de Man,102,IM
+459,1,SANTANDER,46,CO
+660,1,Vizcaya,63,ES
+3726,3,Ontario,1970,0000
+4505,3,Ibaragi,2749,0000
+3220,2,Neuchatel,1635,CH
+5889,3,Arahuay,3516,150402
+1023,1,Islandia,103,IS
+460,1,SUCRE,46,CO
+3727,3,Isl.Príncipe Eduardo,1971,0000
+661,1,Zamora,63,ES
+3221,2,Nidwalden,1636,CH
+4506,3,Tochigi,2750,0000
+3728,3,Quebec,1972,0000
+3222,2,Obwalden,1637,CH
+5890,3,Huamantanga,3516,150403
+461,1,TOLIMA,46,CO
+662,1,Zaragoza,63,ES
+1024,1,Islas Bouvet,104,BV
+3729,3,Saskatchewan,1973,0000
+3223,2,St.Gallen,1638,CH
+4507,3,Gunma,2751,0000
+3730,3,Yukon Territory,1974,0000
+462,1,VALLE,46,CO
+663,1,Estonia,64,EE
+3224,2,Schaffhausen,1639,CH
+5891,3,Huaros,3516,150404
+1025,1,Islas Caimán,105,KY
+3731,3,Chad,1975,0000
+3225,2,Solothurn,1640,CH
+4508,3,Saitama,2752,0000
+664,1,Etiopía,65,ET
+463,1,ARAUCA,46,CO
+3732,3,I - Iquique,1976,0000
+3226,2,Schwyz,1641,CH
+5892,3,Lachaqui,3516,150405
+1026,1,Islas Cocos,106,CC
+3733,3,II - Antofagasta,1977,0000
+3227,2,Turgovia,1642,CH
+4509,3,Chiba,2753,0000
+464,1,CASANARE,46,CO
+665,1,República Adiguesia,66,RU
+3734,3,III - Copiapo,1978,0000
+3228,2,Ticino,1643,CH
+5893,3,San Buenaventura,3516,150406
+1027,1,Islas Cook,107,CK
+3229,2,Uri,1644,CH
+3735,3,IV - La Serena,1979,0000
+465,1,PUTUMAYO,46,CO
+4510,3,Tokio,2754,0000
+666,1,Rep.Tier.Altas Altái,66,RU
+3230,2,Vaud,1645,CH
+3736,3,V - Valparaiso,1980,0000
+1028,1,Islas Feroe,108,FO
+5894,3,Santa Rosa de Quives,3516,150407
+3231,2,Valais,1646,CH
+466,1,SAN ANDRÉS,46,CO
+3737,3,VI - Rancagua,1981,0000
+3232,2,Zug,1647,CH
+4511,3,Kanagawa,2755,0000
+667,1,Rep.Bashkortostán,66,RU
+1029,1,Islas Malvinas,109,FK
+3233,2,Zúrich,1648,CH
+3738,3,VII - Talca,1982,0000
+467,1,AMAZONAS,46,CO
+5895,3,San Vicente de Cañete,3517,150501
+3234,2,Surinam,1649,SR
+4512,3,Niigata,2756,0000
+668,1,República Buriatia,66,RU
+3739,3,VIII - Concepción,1983,0000
+1030,1,Islas Niue,110,NU
+468,1,GUAINIA,46,CO
+3235,2,Svalbard,1650,SJ
+5896,3,Asia,3517,150502
+3740,3,IX - Temuco,1984,0000
+4513,3,Toyama,2757,0000
+669,1,República Daguestán,66,RU
+3236,2,Tanzania,1651,TZ
+1031,1,Islas Norfolk,111,NF
+3741,3,X - Puerto Montt,1985,0000
+469,1,GUAVIARE,46,CO
+5897,3,Calango,3517,150503
+3742,3,XI - Coyhaique,1986,0000
+4514,3,Ishikawa,2758,0000
+3237,2,Tayikistán,1652,TJ
+670,1,República Ingushetia,66,RU
+470,1,VAUPES,46,CO
+1032,1,Islas Pitcairn,112,PN
+3743,3,XII - Punta Arenas,1987,0000
+3238,2,Terr.br.Oc.Ind.,1653,IO
+6362,3,San Antonio,3569,220912
+4515,3,Fukui,2759,0000
+3744,3,RM - Santiago,1988,0000
+3239,2,Timor Oriental,1654,TL
+4980,3,Cayarani,3425,040603
+471,1,VICHADA,46,CO
+1033,1,Islas Salomón,113,SB
+3745,3,XIV - Los Ríos,1989,0000
+3240,2,Timor oriental,1655,TP
+6363,3,Sauce,3569,220913
+4516,3,Yamanashi,2760,0000
+472,1,Comoras,47,KM
+3241,2,Togo,1656,TG
+4982,3,Iray,3425,040605
+1034,1,Islas Tokelau,114,TK
+3746,3,XV - Arica y Parinac,1990,0000
+4517,3,Nagano,2761,0000
+6364,3,Shapaja,3569,220914
+3242,2,Tonga,1657,TO
+3747,3,Beijing (Pekín),1991,0000
+473,1,Corea del Norte,48,KP
+3243,2,TrinidadyTobago,1658,TT
+4983,3,Río Grande,3425,040606
+1035,1,IslMenAlejEEUU,115,UM
+3748,3,Shanghai,1992,0000
+4518,3,Gifu,2762,0000
+6365,3,Tocache,3570,221001
+3244,2,Túnez,1659,TN
+3749,3,Tianjin,1993,0000
+474,1,Cheju-do,49,KR
+4984,3,Salamanca,3425,040607
+3245,2,Turkmenistán,1660,TM
+1036,1,Central,116,IL
+4519,3,Shizuoka,2763,0000
+3750,3,Nei Mongol,1994,0000
+6366,3,Nuevo Progreso,3570,221002
+3246,2,Adana,1661,TR
+475,1,Cholla-bukto,49,KR
+3751,3,Shanxi,1995,0000
+4985,3,Yanaquihua,3425,040608
+3247,2,Adiyaman,1662,TR
+1037,1,Haifa,116,IL
+4520,3,Aichi,2764,0000
+3752,3,Hebei,1996,0000
+3248,2,Afyon,1663,TR
+6367,3,Polvora,3570,221003
+476,1,Cholla-namdo,49,KR
+3753,3,Liaoning,1997,0000
+4986,3,Mollendo,3426,040701
+3249,2,Agri,1664,TR
+1038,1,Jerusalén,116,IL
+4521,3,Mie,2765,0000
+3754,3,Jilin,1998,0000
+3250,2,Amasya,1665,TR
+477,1,Ch´ungch´ong-bukto,49,KR
+6368,3,Shunte,3570,221004
+4988,3,Dean Valdivia,3426,040703
+3755,3,Heilongjiang,1999,0000
+3251,2,Ankara,1666,TR
+1039,1,Northern,116,IL
+4522,3,Shiga,2766,0000
+3756,3,Jiangsu,2000,0000
+3252,2,Antalya,1667,TR
+6369,3,Uchiza,3570,221005
+478,1,Ch´ungch´ong-namdo,49,KR
+4990,3,Mejia,3426,040705
+3757,3,Anhui,2001,0000
+3253,2,Artvin,1668,TR
+1040,1,Southern,116,IL
+4523,3,Kioto,2767,0000
+3758,3,Shandong,2002,0000
+3254,2,Aydin,1669,TR
+6370,3,Tacna,3571,230101
+4992,3,Cotahuasi,3427,040801
+479,1,Inch´on-jikhalsi,49,KR
+3255,2,Balikesir,1670,TR
+1041,1,Tel Aviv,116,IL
+3759,3,Zhejiang,2003,0000
+4524,3,Osaka,2768,0000
+3256,2,Bilecik,1671,TR
+3760,3,Jiangxi,2004,0000
+4995,3,Huaynacotas,3427,040804
+480,1,Kangwon-do,49,KR
+3257,2,Bingöl,1672,TR
+6371,3,Alto de la Alianza,3571,230102
+1042,1,Agrigento,117,IT
+3761,3,Fujian,2005,0000
+4525,3,Hyogo,2769,0000
+3258,2,Bitlis,1673,TR
+3762,3,Hunan,2006,0000
+4996,3,Pampamarca,3427,040805
+481,1,Kwangju-jikhalsi,49,KR
+3259,2,Bolu,1674,TR
+6372,3,Calana,3571,230103
+1043,1,Alessandria,117,IT
+3763,3,Hubei,2007,0000
+4526,3,Nara,2770,0000
+3260,2,Burdur,1675,TR
+3764,3,Henan,2008,0000
+4998,3,Quechualla,3427,040807
+482,1,Kyonggi-do,49,KR
+3261,2,Bursa,1676,TR
+1044,1,Ancona,117,IT
+6373,3,Ciudad Nueva,3571,230104
+3765,3,Guangdong,2009,0000
+4527,3,Wakayama,2771,0000
+3262,2,Canakkale,1677,TR
+3766,3,Hainan,2010,0000
+5006,3,Carmen Alto,3428,050104
+1045,1,Aosta,117,IT
+483,1,Kyongsang-bukto,49,KR
+3263,2,Cankiri,1678,TR
+6374,3,Inclan,3571,230105
+3767,3,Guangxi,2011,0000
+4528,3,Tottori,2772,0000
+3264,2,Corum,1679,TR
+5008,3,Ocros,3428,050106
+3768,3,Guizhou,2012,0000
+1046,1,Ascoli Piceno,117,IT
+3265,2,Denizli,1680,TR
+6375,3,Pachia,3571,230106
+484,1,Kyongsang-namdo,49,KR
+3769,3,Sichuan,2013,0000
+4529,3,Shimane,2773,0000
+3266,2,Diyarbakir,1681,TR
+5010,3,Quinua,3428,050108
+1047,1,L'Aquila,117,IT
+3770,3,Yunnan,2014,0000
+3267,2,Edirne,1682,TR
+485,1,Pusan-jikhalsi,49,KR
+6376,3,Palca,3571,230107
+3771,3,Shaanxi,2015,0000
+3268,2,Elazig,1683,TR
+4530,3,Okayama,2774,0000
+1048,1,Arezzo,117,IT
+3772,3,Gansu,2016,0000
+5012,3,San Juan Bautista,3428,050110
+3269,2,Erzincan,1684,TR
+486,1,Soul-t´ukpyolsi,49,KR
+6377,3,Pocollay,3571,230108
+3773,3,Ningxia,2017,0000
+3270,2,Erzurum,1685,TR
+4531,3,Hiroshima,2775,0000
+1049,1,Asti,117,IT
+3271,2,Eskisehir,1686,TR
+3774,3,Qinghai,2018,0000
+6378,3,Sama,3571,230109
+5013,3,Santiago de Pischa,3428,050111
+487,1,Taegu-jikhalsi,49,KR
+3272,2,Gaziantep,1687,TR
+3775,3,Xinjiang,2019,0000
+4532,3,Yamaguchi,2776,0000
+1050,1,Avellino,117,IT
+3273,2,Giresun,1688,TR
+3776,3,Xizang,2020,0000
+5016,3,Vinchos,3428,050114
+488,1,Taejon-jikhalsi,49,KR
+3274,2,Gümüshane,1689,TR
+6379,3,Coronel Gregorio Albarracín,3571,230110
+4533,3,Tokushima,2777,0000
+3777,3,Chong Qing,2021,0000
+1051,1,Bari,117,IT
+3275,2,Hakkari,1690,TR
+489,1,Ulsán,49,KR
+3778,3,Chipre,2022,0000
+5018,3,Andrés Avelino Cáceres,3428,050116
+3276,2,Hatay,1691,TR
+4534,3,Kagawa,2778,0000
+6380,3,La Yarada los Palos,3571,230111
+3779,3,Ciudad Vaticano,2023,0000
+1052,1,Bergamo,117,IT
+3277,2,Isparta,1692,TR
+3780,3,ANTIOQUIA,2024,0000
+490,1,Sejong,49,KR
+3278,2,Icel,1693,TR
+5019,3,Cangallo,3429,050201
+4535,3,Ehime,2779,0000
+1053,1,Biella,117,IT
+3279,2,Estanbul,1694,TR
+6381,3,Candarave,3572,230201
+3781,3,ATLÁNTICO,2025,0000
+3280,2,Esmirna,1695,TR
+491,1,Costa de Marfil,50,CI
+5020,3,Chuschi,3429,050202
+3782,3,BOGOTÁ,2026,0000
+4536,3,Kochi,2780,0000
+1054,1,Belluno,117,IT
+6382,3,Cairani,3572,230202
+3281,2,Kars,1696,TR
+3783,3,BOLÍVAR,2027,0000
+3282,2,Kastamonu,1697,TR
+492,1,San José,51,CR
+3784,3,BOYACA,2028,0000
+5021,3,Los Morochucos,3429,050203
+1055,1,Benevento,117,IT
+4537,3,Fukuoka,2781,0000
+6383,3,Camilaca,3572,230203
+3283,2,Kayseri,1698,TR
+3785,3,CALDAS,2029,0000
+3284,2,Kirklareli,1699,TR
+493,1,Alajuela,51,CR
+1056,1,Bolonia,117,IT
+3786,3,CAQUETA,2030,0000
+4538,3,Saga,2782,0000
+6384,3,Curibaya,3572,230204
+5022,3,María Parado de Bellido,3429,050204
+3285,2,Kirshehir,1700,TR
+3787,3,CAUCA,2031,0000
+494,1,Cartago,51,CR
+3286,2,Kocaeli,1701,TR
+1057,1,Brindisi,117,IT
+3788,3,CESAR,2032,0000
+5024,3,Totos,3429,050206
+4539,3,Nagasaki,2783,0000
+6385,3,Huanuara,3572,230205
+3287,2,Konya,1702,TR
+3789,3,CÓRDOBA,2033,0000
+495,1,Heredia,51,CR
+3288,2,Kütahya,1703,TR
+1058,1,Brescia,117,IT
+3790,3,CUNDINAMARCA,2034,0000
+5026,3,Carapo,3430,050302
+6386,3,Quilahuani,3572,230206
+4540,3,Kumamoto,2784,0000
+3289,2,Malatya,1704,TR
+3791,3,CHOCO,2035,0000
+3290,2,Manisa,1705,TR
+496,1,Liberia,51,CR
+1059,1,Barletta-Andria-Tran,117,IT
+3792,3,HUILA,2036,0000
+6387,3,Locumba,3573,230301
+4541,3,Oita,2785,0000
+3291,2,K.Marash,1706,TR
+5028,3,Santiago de Lucanamarca,3430,050304
+3793,3,LA GUAJIRA,2037,0000
+497,1,Puntarenas,51,CR
+3292,2,Mardin,1707,TR
+1060,1,Bolzano,117,IT
+3794,3,MAGDALENA,2038,0000
+6388,3,Ilabaya,3573,230302
+3293,2,Mugla,1708,TR
+4542,3,Miyazaki,2786,0000
+3795,3,META,2039,0000
+5031,3,Huamanguilla,3431,050403
+498,1,Limón,51,CR
+1061,1,Cagliari,117,IT
+3294,2,Mush,1709,TR
+3796,3,NARIÑO,2040,0000
+6389,3,Ite,3573,230303
+3295,2,Nevshehir,1710,TR
+4543,3,Kagoshima,2787,0000
+5032,3,Iguain,3431,050404
+1062,1,Campobasso,117,IT
+3797,3,NORTE SANTANDER,2041,0000
+3296,2,Nigde,1711,TR
+499,1,Zagrebacka,52,HR
+6390,3,Tarata,3574,230401
+3297,2,Ordu,1712,TR
+3798,3,QUINDIO,2042,0000
+4544,3,Okinawa,2788,0000
+1063,1,Caserta,117,IT
+5034,3,Santillana,3431,050406
+3298,2,Rize,1713,TR
+3799,3,RISARALDA,2043,0000
+500,1,Krapinsko-zagorska,52,HR
+3299,2,Sakarya,1714,TR
+4545,3,Jersey,2789,0000
+3800,3,SANTANDER,2044,0000
+6391,3,Héroes Albarracín,3574,230402
+1064,1,Chieti,117,IT
+5040,3,Chaca,3431,050412
+3300,2,Samsun,1715,TR
+3801,3,SUCRE,2045,0000
+501,1,Sisacko-moslavacka ,52,HR
+4546,3,Jordania,2790,0000
+3301,2,Siirt,1716,TR
+3802,3,TOLIMA,2046,0000
+1065,1,Carbonia-Iglesias,117,IT
+6392,3,Estique,3574,230403
+5042,3,Anco,3432,050502
+3302,2,Sinop,1717,TR
+3803,3,VALLE,2047,0000
+502,1,Karlovacka ,52,HR
+3303,2,Sivas,1718,TR
+4547,3,Almatynskaia,2791,0000
+3804,3,ARAUCA,2048,0000
+1066,1,Caltanisetta,117,IT
+5044,3,Chilcas,3432,050504
+6393,3,Estique-Pampa,3574,230404
+3304,2,Tekirdag,1719,TR
+3805,3,CASANARE,2049,0000
+4548,3,Kostanaiskaia,2792,0000
+503,1,Varazdinska ,52,HR
+3305,2,Tokat,1720,TR
+3806,3,PUTUMAYO,2050,0000
+1067,1,Cuneo,117,IT
+5046,3,Luis Carranza,3432,050506
+6394,3,Sitajara,3574,230405
+3306,2,Trabzon,1721,TR
+3807,3,SAN ANDRÉS,2051,0000
+3307,2,Tunceli,1722,TR
+1068,1,Como,117,IT
+504,1,Koprivnicko-krizevac,52,HR
+3808,3,AMAZONAS,2052,0000
+5047,3,Santa Rosa,3432,050507
+6395,3,Susapaya,3574,230406
+4549,3,Severo-Kazakhstansk,2793,0000
+3308,2,Shanliurfa,1723,TR
+3809,3,GUAINIA,2053,0000
+1069,1,Cremona,117,IT
+3309,2,Ushak,1724,TR
+505,1,Bjelovarsko-bilogors,52,HR
+5050,3,Anchihuay,3432,050510
+3810,3,GUAVIARE,2054,0000
+6396,3,Tarucachi,3574,230407
+4550,3,Pavlodarskaia,2794,0000
+3310,2,Van,1725,TR
+3811,3,VAUPES,2055,0000
+1070,1,Cosenza,117,IT
+3311,2,Yozgat,1726,TR
+5052,3,Aucara,3433,050602
+506,1,Rijecko-goranska ,52,HR
+3812,3,VICHADA,2056,0000
+6397,3,Ticaco,3574,230408
+4551,3,Akmolinskaia,2795,0000
+3312,2,Zonguldak,1727,TR
+1071,1,Catania,117,IT
+3813,3,Comoras,2057,0000
+3313,2,Aksaray,1728,TR
+5053,3,Cabana,3433,050603
+507,1,Licko-senjska ,52,HR
+4552,3,Aktubinskaia,2796,0000
+6398,3,Tumbes,3575,240101
+3314,2,Bayburt,1729,TR
+3814,3,Corea del Norte,2058,0000
+1072,1,Catanzaro,117,IT
+3315,2,Karaman,1730,TR
+3815,3,Cheju-do,2059,0000
+5054,3,Carmen Salcedo,3433,050604
+508,1,Viroviticko-podravac,52,HR
+6399,3,Corrales,3575,240102
+4553,3,Atyrauskaia,2797,0000
+1073,1,Stati Esteri,117,IT
+3316,2,Kirikkale,1731,TR
+3816,3,Cholla-bukto,2060,0000
+5055,3,Chaviña,3433,050605
+3817,3,Cholla-namdo,2061,0000
+3317,2,Batman,1732,TR
+509,1,Pozesko-slavonska ,52,HR
+1074,1,Enna,117,IT
+6400,3,La Cruz,3575,240103
+4554,3,Zapadno-Kazakhst,2798,0000
+3818,3,Ch´ungch´ong-bukto,2062,0000
+3318,2,Shirnak,1733,TR
+5056,3,Chipao,3433,050606
+1075,1,Forli/Cesana,117,IT
+510,1,Slavonskobrodska,52,HR
+3319,2,Bartin,1734,TR
+3819,3,Ch´ungch´ong-namdo,2063,0000
+4555,3,Mangystayskaia,2799,0000
+6401,3,Pampas de Hospital,3575,240104
+3320,2,Ardahan,1735,TR
+3820,3,Inch´on-jikhalsi,2064,0000
+5058,3,Laramate,3433,050608
+1076,1,Ferrara,117,IT
+511,1,Zadarska ,52,HR
+3321,2,Igdir,1736,TR
+3821,3,Kangwon-do,2065,0000
+6402,3,San Jacinto,3575,240105
+4556,3,Karagandinskaia,2800,0000
+5060,3,Llauta,3433,050610
+3322,2,Yalova,1737,TR
+3822,3,Kwangju-jikhalsi,2066,0000
+1077,1,Foggia,117,IT
+512,1,Osjecko-baranjska ,52,HR
+3323,2,Tuvalu,1738,TV
+3823,3,Kyonggi-do,2067,0000
+5062,3,Ocaña,3433,050612
+4557,3,Vostochno-Kazakhstan,2801,0000
+6403,3,San Juan de la Virgen,3575,240106
+1078,1,Florencia,117,IT
+3324,2,Chernigivs'ka,1739,UA
+3824,3,Kyongsang-bukto,2068,0000
+513,1,Sibensko-kninska  ,52,HR
+3325,2,Cherkas'ka,1740,UA
+3825,3,Kyongsang-namdo,2069,0000
+5065,3,San Cristóbal,3433,050615
+1079,1,Fermo,117,IT
+6404,3,Zorritos,3576,240201
+4558,3,Gambilskaia,2802,0000
+3326,2,Chernovits'ka,1741,UA
+3826,3,Pusan-jikhalsi,2070,0000
+514,1,Vukovarsko-srijemska,52,HR
+3327,2,Dnipropetrovs'ka,1742,UA
+5066,3,San Juan,3433,050616
+3827,3,Soul-t´ukpyolsi,2071,0000
+1080,1,Ferrara,117,IT
+6405,3,Casitas,3576,240202
+4559,3,Kyzilordinskaia,2803,0000
+3328,2,Donets'ka,1743,UA
+3828,3,Taegu-jikhalsi,2072,0000
+515,1,Splitsko-dalmatinska,52,HR
+3329,2,Harkivs'ka,1744,UA
+5068,3,San Pedro de Palco,3433,050618
+1081,1,Fiume,117,IT
+3829,3,Taejon-jikhalsi,2073,0000
+4560,3,Kenia,2804,0000
+6406,3,Canoas de Punta Sal,3576,240203
+516,1,Istarska,52,HR
+3330,2,Hmel'nits'ka,1745,UA
+3830,3,Ulsán,2074,0000
+1082,1,Génova,117,IT
+3331,2,Hersons'ka,1746,UA
+3831,3,Sejong,2075,0000
+5074,3,Coronel Castañeda,3434,050703
+6407,3,Zarumilla,3577,240301
+4561,3,Chachapoyas,3386,010101
+517,1,Dubrovacko-neretvans,52,HR
+3332,2,Ivano-Frankivs'ka,1747,UA
+3832,3,Costa de Marfil,2076,0000
+1083,1,Gorizia,117,IT
+3333,2,Kievs'ka,1748,UA
+3833,3,San José,2077,0000
+5076,3,Pullo,3434,050705
+6408,3,Aguas Verdes,3577,240302
+518,1,Medjimurska,52,HR
+4562,3,Asunción,3386,010102
+3334,2,Kirovograds'ka,1749,UA
+3834,3,Alajuela,2078,0000
+1084,1,Grosseto,117,IT
+3835,3,Cartago,2079,0000
+6409,3,Matapalo,3577,240303
+3335,2,Respublika Krim,1750,UA
+5078,3,San Francisco de Ravacayco,3434,050707
+4563,3,Balsas,3386,010103
+3836,3,Heredia,2080,0000
+519,1,Zagreb ciudad ,52,HR
+3336,2,L'vivsbka,1751,UA
+1085,1,Imperia,117,IT
+3837,3,Liberia,2081,0000
+6410,3,Papayal,3577,240304
+3337,2,Lugans'ka,1752,UA
+5080,3,Pausa,3435,050801
+4564,3,Cheto,3386,010104
+520,1,Cuba,53,CU
+3838,3,Puntarenas,2082,0000
+1086,1,Isernia,117,IT
+3338,2,Mikolaivs'ka,1753,UA
+6411,3,Calleria,3578,250101
+3839,3,Limón,2083,0000
+3339,2,m.Kiev,1754,UA
+5082,3,Corculla,3435,050803
+521,1,Curaçao,54,CW
+4565,3,Chiliquin,3386,010105
+1087,1,Crotone,117,IT
+3840,3,Zagrebacka,2084,0000
+3340,2,m.Sevastopil',1755,UA
+6412,3,Campoverde,3578,250102
+3841,3,Krapinsko-zagorska,2085,0000
+5083,3,Lampa,3435,050804
+3341,2,Odes'ka,1756,UA
+522,1,de Isl.Marshall,55,MH
+1088,1,Lucca,117,IT
+4566,3,Chuquibamba,3386,010106
+3342,2,Poltavs'ka,1757,UA
+3842,3,Sisacko-moslavacka ,2086,0000
+5086,3,Pararca,3435,050807
+6413,3,Iparia,3578,250103
+1089,1,Lecce,117,IT
+3343,2,Rivnens'ka,1758,UA
+3843,3,Karlovacka ,2087,0000
+523,1,Hovedstaden,56,DK
+4567,3,Granada,3386,010107
+3344,2,Sums'ka,1759,UA
+3844,3,Varazdinska ,2088,0000
+6414,3,Masisea,3578,250104
+1090,1,Livorno,117,IT
+5088,3,San José de Ushua,3435,050809
+3345,2,Ternopil's'ka,1760,UA
+4568,3,Huancas,3386,010108
+524,1,Midtjylland,56,DK
+3845,3,Koprivnicko-krizevac,2089,0000
+3346,2,Vinnits'ka,1761,UA
+1091,1,Lodi,117,IT
+6415,3,Yarinacocha,3578,250105
+5089,3,Sara Sara,3435,050810
+3846,3,Bjelovarsko-bilogors,2090,0000
+3347,2,Volins'ka,1762,UA
+525,1,Nordjylland,56,DK
+4569,3,La Jalca,3386,010109
+3348,2,Zakarpats'ka,1763,UA
+3847,3,Rijecko-goranska ,2091,0000
+1092,1,Latina,117,IT
+5090,3,Querobamba,3436,050901
+6416,3,Nueva Requena,3578,250106
+3349,2,Zaporiz'ka,1764,UA
+526,1,Sjaelland,56,DK
+4570,3,Leimebamba,3386,010110
+3848,3,Licko-senjska ,2092,0000
+1093,1,Lucca,117,IT
+3350,2,Zhitomirs'ka,1765,UA
+5091,3,Belén,3436,050902
+3849,3,Viroviticko-podravac,2093,0000
+6417,3,Manantay,3578,250107
+527,1,Syddanmark,56,DK
+3351,2,Uganda,1766,UG
+4571,3,Levanto,3386,010111
+3850,3,Pozesko-slavonska ,2094,0000
+1094,1,Monza e Brianza,117,IT
+5092,3,Chalcos,3436,050903
+3352,2,Unión Europea,1767,EU
+528,1,Dominica,57,DM
+6418,3,Raymondi,3579,250201
+3851,3,Slavonskobrodska,2095,0000
+4572,3,Magdalena,3386,010112
+3353,2,Uruguay,1768,UY
+1095,1,Macerata,117,IT
+3852,3,Zadarska ,2096,0000
+5094,3,Huacaña,3436,050905
+529,1,E.A.U.,58,AE
+3354,2,Uzbekistán,1769,UZ
+6419,3,Sepahua,3579,250202
+3853,3,Osjecko-baranjska ,2097,0000
+1096,1,Messina,117,IT
+3355,2,Vanuatu,1770,VU
+4573,3,Mariscal Castilla,3386,010113
+5096,3,Paico,3436,050907
+530,1,AZUAY,59,EC
+3854,3,Sibensko-kninska  ,2098,0000
+3356,2,Amazonas,1771,VE
+6420,3,Tahuania,3579,250203
+1097,1,Milán,117,IT
+3855,3,Vukovarsko-srijemska,2099,0000
+3357,2,Anzoategui,1772,VE
+4574,3,Molinopampa,3386,010114
+531,1,BOLIVAR,59,EC
+5098,3,San Salvador de Quije,3436,050909
+6421,3,Yurua,3579,250204
+3358,2,Apure,1773,VE
+1098,1,Mantova,117,IT
+3856,3,Splitsko-dalmatinska,2100,0000
+3359,2,Aragua,1774,VE
+4575,3,Montevideo,3386,010115
+5101,3,Huancapi,3437,051001
+532,1,CAÑAR,59,EC
+3857,3,Istarska,2101,0000
+6422,3,Padre Abad,3580,250301
+1099,1,Módena,117,IT
+3360,2,Barinas,1775,VE
+3858,3,Dubrovacko-neretvans,2102,0000
+5102,3,Alcamenca,3437,051002
+3361,2,Bolívar,1776,VE
+533,1,CARCHI,59,EC
+4576,3,Olleros,3386,010116
+6423,3,Irazola,3580,250302
+1100,1,Massa Carrara,117,IT
+3859,3,Medjimurska,2103,0000
+3362,2,Carabobo,1777,VE
+5104,3,Asquipata,3437,051004
+534,1,COTOPAXI,59,EC
+3363,2,Cojedes,1778,VE
+3860,3,Zagreb ciudad ,2104,0000
+4577,3,Quinjalca,3386,010117
+6424,3,Curimana,3580,250303
+1101,1,Matera,117,IT
+3861,3,Cuba,2105,0000
+3364,2,Delta Amacuro,1779,VE
+5110,3,Huaya,3437,051010
+535,1,CHIMBORAZO,59,EC
+3862,3,Curaçao,2106,0000
+3365,2,Distrito Federal,1780,VE
+6425,3,Neshuya,3580,250304
+1102,1,Nápoles,117,IT
+5112,3,Vilcanchos,3437,051012
+4578,3,San Francisco de Daguas,3386,010118
+3366,2,Falcon,1781,VE
+3863,3,de Isl.Marshall,2107,0000
+536,1,EL ORO,59,EC
+1103,1,Novara,117,IT
+3367,2,Guarico,1782,VE
+3864,3,Hovedstaden,2108,0000
+6426,3,Alexander Von Humboldt,3580,250305
+5114,3,Accomarca,3438,051102
+3368,2,Lara,1783,VE
+537,1,ESMERALDAS,59,EC
+4579,3,San Isidro de Maino,3386,010119
+3865,3,Midtjylland,2109,0000
+1104,1,Nuoro,117,IT
+3369,2,Merida,1784,VE
+3866,3,Nordjylland,2110,0000
+6427,3,Purus,3581,250401
+5116,3,Concepción,3438,051104
+3370,2,Miranda,1785,VE
+538,1,GUAYAS,59,EC
+4580,3,Soloco,3386,010120
+3867,3,Sjaelland,2111,0000
+1105,1,Ogliastra,117,IT
+3371,2,Monagas,1786,VE
+3619,3,Santa Fé,1863,0000
+3868,3,Syddanmark,2112,0000
+5117,3,Huambalpa,3438,051105
+539,1,IMBABURA,59,EC
+3372,2,Nueva Esparta,1787,VE
+4581,3,Sonche,3386,010121
+3869,3,Dominica,2113,0000
+1106,1,Oristano,117,IT
+3373,2,Portuguesa,1788,VE
+3870,3,E.A.U.,2114,0000
+5119,3,Saurama,3438,051107
+540,1,LOJA,59,EC
+3620,3,Santiago del Estero,1864,0000
+3374,2,Sucre,1789,VE
+4582,3,Bagua,3387,010201
+3871,3,AZUAY,2115,0000
+1107,1,Olbia-Tempio,117,IT
+3375,2,Tachira,1790,VE
+541,1,LOS RIOS,59,EC
+5120,3,Vischongo,3438,051108
+3621,3,Tucumán,1865,0000
+3872,3,BOLIVAR,2116,0000
+4583,3,Aramango,3387,010202
+3376,2,Trujillo,1791,VE
+1108,1,Palermo,117,IT
+3873,3,CAÑAR,2117,0000
+542,1,MANABI,59,EC
+3377,2,Vargas,1792,VE
+5121,3,Cajamarca,3439,060101
+3622,3,Chaco,1866,0000
+3874,3,CARCHI,2118,0000
+4584,3,Copallin,3387,010203
+3378,2,Yaracuy,1793,VE
+1109,1,Piacenza,117,IT
+3875,3,COTOPAXI,2119,0000
+543,1,MORONA SANTIAGO,59,EC
+5122,3,Asunción,3439,060102
+3379,2,Zulia,1794,VE
+3623,3,Chubut,1867,0000
+3876,3,CHIMBORAZO,2120,0000
+1110,1,Padua,117,IT
+3380,2,Vietnam,1795,VN
+4585,3,El Parco,3387,010204
+3877,3,EL ORO,2121,0000
+544,1,NAPO,59,EC
+5123,3,Chetilla,3439,060103
+3624,3,Formosa,1868,0000
+3381,2,Wallis Futuna,1796,WF
+1111,1,Pescara,117,IT
+4586,3,Imaza,3387,010205
+3878,3,ESMERALDAS,2122,0000
+3382,2,Yemen,1797,YE
+545,1,PASTAZA,59,EC
+5127,3,Llacanora,3439,060107
+3625,3,Misiones,1869,0000
+3879,3,GUAYAS,2123,0000
+3383,2,Yibuti,1798,DJ
+1112,1,Perugia,117,IT
+4587,3,La Peca,3387,010206
+3384,2,Zambia,1799,ZM
+546,1,PICHINCHA,59,EC
+3880,3,IMBABURA,2124,0000
+5129,3,Magdalena,3439,060109
+1113,1,Pisa,117,IT
+3626,3,Neuquen,1870,0000
+3881,3,LOJA,2125,0000
+3385,2,Zimbabue,1800,ZW
+4588,3,Jumbilla,3388,010301
+547,1,TUNGURAHUA,59,EC
+3882,3,LOS RIOS,2126,0000
+3386,2,Chachapoyas,1801,0101
+5131,3,Namora,3439,060111
+1114,1,Pola,117,IT
+3627,3,La Pampa,1871,0000
+3883,3,MANABI,2127,0000
+3387,2,Bagua,1801,0102
+4589,3,Chisquilla,3388,010302
+5133,3,Cajabamba,3440,060201
+3884,3,MORONA SANTIAGO,2128,0000
+548,1,ZAMORA CHINCHIPE,59,EC
+3388,2,Bongará,1801,0103
+1115,1,Pordenone,117,IT
+3628,3,Rio Negro,1872,0000
+3885,3,NAPO,2129,0000
+3389,2,Condorcanqui,1801,0104
+5135,3,Condebamba,3440,060203
+4590,3,Churuja,3388,010303
+1116,1,Prato,117,IT
+549,1,GALAPAGOS,59,EC
+3886,3,PASTAZA,2130,0000
+3390,2,Luya,1801,0105
+3629,3,Santa Cruz,1873,0000
+3887,3,PICHINCHA,2131,0000
+5136,3,Sitacocha,3440,060204
+4591,3,Corosha,3388,010304
+3391,2,Rodríguez de Mendoza,1801,0106
+1117,1,Parma,117,IT
+550,1,SUCUMBIOS,59,EC
+1999,2,Heilongjiang,414,CN
+3630,3,Tierra de Fuego,1874,0000
+3392,2,Utcubamba,1801,0107
+5138,3,Chumuch,3441,060302
+2000,2,Jiangsu,415,CN
+1118,1,Pistoia,117,IT
+3393,2,Huaraz,1802,0201
+551,1,ORELLANA,59,EC
+4592,3,Cuispes,3388,010305
+3631,3,Armenia,1875,0000
+2002,2,Shandong,417,CN
+3394,2,Aija,1802,0202
+1119,1,Pesaro-Urbino,117,IT
+2005,2,Fujian,420,CN
+5139,3,Cortegana,3441,060303
+3395,2,Antonio Raymondi,1802,0203
+4593,3,Florida,3388,010306
+552,1,STO DOMINGO TSACHILA,59,EC
+3632,3,Aruba,1876,0000
+2006,2,Hunan,421,CN
+3396,2,Asunción,1802,0204
+1120,1,Pavia,117,IT
+5140,3,Huasmin,3441,060304
+2009,2,Guangdong,424,CN
+4594,3,Jazan,3388,010307
+3397,2,Bolognesi,1802,0205
+553,1,SANTA ELENA,59,EC
+3633,3,Aust Capital Terr,1877,0000
+2011,2,Guangxi,426,CN
+1121,1,Potenza,117,IT
+3398,2,Carhuaz,1802,0206
+2015,2,Shaanxi,430,CN
+5141,3,Jorge Chávez,3441,060305
+554,1,ZONAS NO DELIMITADAS,59,EC
+4595,3,Recta,3388,010308
+2016,2,Gansu,431,CN
+3399,2,Carlos Fermín Fitzcarrald,1802,0207
+1122,1,Rávena,117,IT
+3634,3,Nueva Gales del Sur,1878,0000
+5146,3,Sucre,3441,060310
+2017,2,Ningxia,432,CN
+3400,2,Casma,1802,0208
+555,1,Alaska,60,US
+4596,3,San Carlos,3388,010309
+1123,1,Reggio Calabria,117,IT
+2019,2,Xinjiang,434,CN
+3401,2,Corongo,1802,0209
+3635,3,Territorio del Norte,1879,0000
+5148,3,La Libertad de Pallan,3441,060312
+556,1,Alabama,60,US
+2022,2,Chipre,437,CY
+3402,2,Huari,1802,0210
+1124,1,Reggio Emilia,117,IT
+4597,3,Shipasbamba,3388,010310
+3403,2,Huarmey,1802,0211
+2023,2,Ciudad Vaticano,438,VA
+3636,3,Queensland,1880,0000
+5149,3,Chota,3442,060401
+557,1,Arkansas,60,US
+3404,2,Huaylas,1802,0212
+1125,1,Ragusa,117,IT
+2024,2,ANTIOQUIA,439,CO
+4598,3,Valera,3388,010311
+5150,3,Anguia,3442,060402
+2025,2,ATLÁNTICO,440,CO
+3637,3,Australia Meridional,1881,0000
+3405,2,Mariscal Luzuriaga,1802,0213
+558,1,Samoa americana,60,US
+1126,1,Rieti,117,IT
+2026,2,BOGOTÁ,441,CO
+3406,2,Ocros,1802,0214
+4599,3,Yambrasbamba,3388,010312
+5152,3,Chiguirip,3442,060404
+3638,3,Tasmania,1882,0000
+2027,2,BOLÍVAR,442,CO
+559,1,Arizona,60,US
+1127,1,Roma,117,IT
+3407,2,Pallasca,1802,0215
+2028,2,BOYACA,443,CO
+4600,3,Nieva,3389,010401
+5153,3,Chimban,3442,060405
+3408,2,Pomabamba,1802,0216
+3639,3,Victoria,1883,0000
+1128,1,Rimini,117,IT
+2029,2,CALDAS,444,CO
+560,1,California,60,US
+3409,2,Recuay,1802,0217
+2030,2,CAQUETA,445,CO
+5155,3,Cochabamba,3442,060407
+4601,3,El Cenepa,3389,010402
+561,1,Colorado,60,US
+1129,1,Rovigo,117,IT
+3410,2,Santa,1802,0218
+2031,2,CAUCA,446,CO
+3640,3,Autralia Occidental,1884,0000
+2032,2,CESAR,447,CO
+3411,2,Sihuas,1802,0219
+5156,3,Conchan,3442,060408
+4602,3,Río Santiago,3389,010403
+562,1,Connecticut,60,US
+1130,1,Salerno,117,IT
+2033,2,CÓRDOBA,448,CO
+3412,2,Yungay,1802,0220
+3641,3,Burgenland,1885,0000
+2034,2,CUNDINAMARCA,449,CO
+5157,3,Huambos,3442,060409
+3413,2,Abancay,1803,0301
+1131,1,Siena,117,IT
+4603,3,Lamud,3390,010501
+563,1,Distrito de Columbia,60,US
+2035,2,CHOCO,450,CO
+3642,3,Carintia,1886,0000
+3414,2,Andahuaylas,1803,0302
+5158,3,Lajas,3442,060410
+2036,2,HUILA,451,CO
+1132,1,Sondrio,117,IT
+3415,2,Antabamba,1803,0303
+564,1,Delaware,60,US
+4604,3,Camporredondo,3390,010502
+3643,3,Baja Austria,1887,0000
+2037,2,LA GUAJIRA,452,CO
+2478,2,Evros,893,GR
+5165,3,Tacabamba,3442,060417
+1133,1,La Spezia,117,IT
+2038,2,MAGDALENA,453,CO
+565,1,Florida,60,US
+2479,2,Evvoia,894,GR
+4605,3,Cocabamba,3390,010503
+2039,2,META,454,CO
+3644,3,Alta Austria,1888,0000
+2480,2,Florina,895,GR
+5167,3,Chalamarca,3442,060419
+1134,1,Siracusa,117,IT
+566,1,Georgia,60,US
+2040,2,NARIÑO,455,CO
+2481,2,Fokis,896,GR
+4606,3,Colcamar,3390,010504
+3645,3,Salzburgo,1889,0000
+2041,2,NORTE SANTANDER,456,CO
+2482,2,Fthiotis,897,GR
+5168,3,Contumaza,3443,060501
+1135,1,Sassari,117,IT
+567,1,Guam,60,US
+2042,2,QUINDIO,457,CO
+2483,2,Grevena,898,GR
+4607,3,Conila,3390,010505
+3646,3,Estiria,1890,0000
+5169,3,Chilete,3443,060502
+2484,2,Ilia,899,GR
+2043,2,RISARALDA,458,CO
+1136,1,Savona,117,IT
+568,1,Hawai,60,US
+2485,2,Imathia,900,GR
+2044,2,SANTANDER,459,CO
+3647,3,Tirol,1891,0000
+4608,3,Inguilpata,3390,010506
+5171,3,Guzmango,3443,060504
+2045,2,SUCRE,460,CO
+1137,1,Taranto,117,IT
+2486,2,Ioannina,901,GR
+569,1,Iowa,60,US
+2046,2,TOLIMA,461,CO
+2487,2,Iraklion,902,GR
+3648,3,Vorarlberg,1892,0000
+4609,3,Longuita,3390,010507
+5172,3,San Benito,3443,060505
+570,1,Idaho,60,US
+1138,1,Teramo,117,IT
+2047,2,VALLE,462,CO
+2488,2,Kardhitsa,903,GR
+2048,2,ARAUCA,463,CO
+3649,3,Viena,1893,0000
+2489,2,Kastoria,904,GR
+4610,3,Lonya Chico,3390,010508
+1139,1,Trento,117,IT
+571,1,Illinois,60,US
+5174,3,Tantarica,3443,060507
+2049,2,CASANARE,464,CO
+2490,2,Kavala,905,GR
+3650,3,Azerbaiyán,1894,0000
+2491,2,Kefallinia,906,GR
+2050,2,PUTUMAYO,465,CO
+4611,3,Luya,3390,010509
+5175,3,Yonan,3443,060508
+572,1,Indiana,60,US
+2492,2,Kerkira,907,GR
+2051,2,SAN ANDRÉS,466,CO
+2814,2,Liechtenstein,1229,LI
+3651,3,Azul,1895,0000
+2052,2,AMAZONAS,467,CO
+2493,2,Khalkidhiki,908,GR
+5176,3,Cutervo,3444,060601
+4612,3,Luya Viejo,3390,010510
+573,1,Kansas,60,US
+2815,2,Lituania,1230,LT
+2053,2,GUAINIA,468,CO
+2494,2,Khania,909,GR
+3652,3,Bahamas,1896,0000
+2495,2,Khios,910,GR
+2054,2,GUAVIARE,469,CO
+5177,3,Callayuc,3444,060602
+4613,3,María,3390,010511
+574,1,Kentucky,60,US
+2816,2,Luxemburgo,1231,LU
+2496,2,Kikladhes,911,GR
+3653,3,Bahráin,1897,0000
+2055,2,VAUPES,470,CO
+2497,2,Kilkis,912,GR
+2056,2,VICHADA,471,CO
+5182,3,Querocotillo,3444,060607
+2817,2,Macao,1232,MO
+4614,3,Ocalli,3390,010512
+575,1,Louisiana,60,US
+2498,2,Korinthia,913,GR
+3654,3,Bangladesh,1898,0000
+2057,2,Comoras,472,KM
+2499,2,Kozani,914,GR
+2818,2,Macedonia,1233,MK
+2058,2,Corea del Norte,473,KP
+4615,3,Ocumal,3390,010513
+2500,2,Lakonia,915,GR
+5184,3,San Juan de Cutervo,3444,060609
+3655,3,Barbados,1899,0000
+576,1,Massachusetts,60,US
+2059,2,Cheju-do,474,KR
+2501,2,Larisa,916,GR
+2819,2,Madagascar,1234,MG
+2060,2,Cholla-bukto,475,KR
+4616,3,Pisuquia,3390,010514
+577,1,Maryland,60,US
+3656,3,Amberes,1900,0000
+2502,2,Lasithi,917,GR
+2061,2,Cholla-namdo,476,KR
+5185,3,San Luis de Lucma,3444,060610
+2820,2,Malaui,1235,MW
+2503,2,Lesvos,918,GR
+578,1,Maine,60,US
+2062,2,Ch´ungch´ong-bukto,477,KR
+4617,3,Providencia,3390,010515
+2504,2,Levkas,919,GR
+3657,3,Brabante,1901,0000
+2821,2,Maldivas,1236,MV
+5186,3,Santa Cruz,3444,060611
+2063,2,Ch´ungch´ong-namdo,478,KR
+2505,2,Magnisia,920,GR
+579,1,Michigan,60,US
+4618,3,San Cristóbal,3390,010516
+3658,3,Hainaut,1902,0000
+2064,2,Inch´on-jikhalsi,479,KR
+2822,2,Malí,1237,ML
+2506,2,Messinia,921,GR
+5188,3,Santo Tomas,3444,060613
+580,1,Minnesota,60,US
+2065,2,Kangwon-do,480,KR
+2507,2,Pella,922,GR
+2823,2,Malta,1238,MT
+3659,3,Lieja,1903,0000
+4619,3,San Francisco de Yeso,3390,010517
+2508,2,Pieria,923,GR
+2066,2,Kwangju-jikhalsi,481,KR
+581,1,Missouri,60,US
+5189,3,Socota,3444,060614
+2509,2,Piraievs,924,GR
+2067,2,Kyonggi-do,482,KR
+2824,2,Marruecos,1239,MA
+3660,3,Limburgo,1904,0000
+671,1,R.Kabardina-Balkaria,66,RU
+2510,2,Preveza,925,GR
+2068,2,Kyongsang-bukto,483,KR
+582,1,Islas Mariana Norte,60,US
+5191,3,Bambamarca,3445,060701
+2825,2,Martinica,1240,MQ
+2511,2,Rethimni,926,GR
+3661,3,Luxemburgo,1905,0000
+2069,2,Kyongsang-namdo,484,KR
+672,1,República Calmuquia,66,RU
+2512,2,Rodhopi,927,GR
+5192,3,Chugur,3445,060702
+2070,2,Pusan-jikhalsi,485,KR
+583,1,Mississippi,60,US
+3662,3,Namur,1906,0000
+2826,2,Mauricio (Isl.),1241,MU
+2513,2,Samos,928,GR
+2071,2,Soul-t´ukpyolsi,486,KR
+2514,2,Serrai,929,GR
+673,1,Karachievo-Cherkesia,66,RU
+584,1,Montana,60,US
+5193,3,Hualgayoc,3445,060703
+2072,2,Taegu-jikhalsi,487,KR
+2827,2,Mauritania,1242,MR
+3663,3,Oost-Vlaanderen,1907,0000
+2515,2,Thesprotia,930,GR
+2073,2,Taejon-jikhalsi,488,KR
+5194,3,Jaén,3446,060801
+674,1,República Carelia,66,RU
+585,1,Carolina del Norte,60,US
+2074,2,Ulsán,489,KR
+2516,2,Salónica,931,GR
+2828,2,Mayotte,1243,YT
+3664,3,West-Vlaanderen,1908,0000
+2075,2,Sejong,490,KR
+2517,2,Trikala,932,GR
+5199,3,Las Pirias,3446,060806
+586,1,Dakota del Norte,60,US
+675,1,República Komi,66,RU
+2518,2,Voiotia,933,GR
+2829,2,Aguascalientes,1244,MX
+2076,2,Costa de Marfil,491,CI
+3665,3,Brabante (valón),1909,0000
+2519,2,Xanthi,934,GR
+5201,3,Pucara,3446,060808
+2077,2,San José,492,CR
+587,1,Nebraska,60,US
+2520,2,Zakinthos,935,GR
+676,1,República Mari,66,RU
+2830,2,Baja California,1245,MX
+2078,2,Alajuela,493,CR
+3666,3,Bruselas (capital),1910,0000
+2521,2,Groenlandia,936,GL
+5202,3,Sallique,3446,060809
+2079,2,Cartago,494,CR
+588,1,New Hampshire,60,US
+2522,2,Guadalupe,937,GP
+677,1,República Mordovia,66,RU
+2831,2,Baja California S,1246,MX
+3667,3,Belice,1911,0000
+2080,2,Heredia,495,CR
+2523,2,Guam,938,GU
+5203,3,San Felipe,3446,060810
+2081,2,Liberia,496,CR
+589,1,Nueva Jersey,60,US
+2524,2,Guatemala,939,GT
+3668,3,Benín,1912,0000
+2832,2,Chihuahua,1247,MX
+678,1,Yakutiya-Saha Rrepub,66,RU
+2082,2,Puntarenas,497,CR
+5205,3,Santa Rosa,3446,060812
+2525,2,Guayana Franc.,940,GF
+2083,2,Limón,498,CR
+590,1,Nuevo México,60,US
+2833,2,Chiapas,1248,MX
+3669,3,Bermudas,1913,0000
+2526,2,Guernsey,941,GG
+679,1,Rep.Osetia del Norte,66,RU
+2084,2,Zagrebacka,499,HR
+5206,3,San Ignacio,3447,060901
+2527,2,Guinea,942,GN
+591,1,Nevada,60,US
+2085,2,Krapinsko-zagorska,500,HR
+2834,2,Campeche,1249,MX
+3670,3,Bielorrusia,1914,0000
+2528,2,Guinea Ecuator.,943,GQ
+2086,2,Sisacko-moslavacka ,501,HR
+680,1,República Tartaria,66,RU
+5208,3,Huarango,3447,060903
+2529,2,Guinea-Bissau,944,GW
+592,1,Nueva York,60,US
+2835,2,Coahuila,1250,MX
+3671,3,Bolivia,1915,0000
+2087,2,Karlovacka ,502,HR
+2530,2,Guyana,945,GY
+5209,3,La Coipa,3447,060904
+593,1,Ohio,60,US
+2088,2,Varazdinska ,503,HR
+681,1,República Tuva,66,RU
+2531,2,Haití,946,HT
+2836,2,Colima,1251,MX
+3672,3,Bonaire  Saba,1916,0000
+2089,2,Koprivnicko-krizevac,504,HR
+2532,2,Honduras,947,HN
+5210,3,Namballe,3447,060905
+594,1,Oklahoma,60,US
+682,1,República Udmurtia,66,RU
+2837,2,Distrito Federal,1252,MX
+2533,2,Bacs-Kiskun,948,HU
+2090,2,Bjelovarsko-bilogors,505,HR
+3673,3,Bosnia-Herz.,1917,0000
+2534,2,Baranya,949,HU
+595,1,Oregón,60,US
+2091,2,Rijecko-goranska ,506,HR
+5211,3,San José de Lourdes,3447,060906
+2838,2,Durango,1253,MX
+2535,2,Bekes,950,HU
+683,1,República Jacasia,66,RU
+3674,3,Botsuana,1918,0000
+2092,2,Licko-senjska ,507,HR
+2536,2,Bekescsaba,951,HU
+596,1,Pennsylvania,60,US
+5216,3,Gregorio Pita,3448,061004
+2839,2,Guerrero,1254,MX
+2093,2,Viroviticko-podravac,508,HR
+3675,3,Acre,1919,0000
+2537,2,Borsod-Abauj-Zemplen,952,HU
+684,1,República Chechenia,66,RU
+2094,2,Pozesko-slavonska ,509,HR
+597,1,Puerto Rico,60,US
+2538,2,Budapest,953,HU
+2840,2,Guanajuato,1255,MX
+5218,3,José Manuel Quiroz,3448,061006
+3676,3,Alagoas,1920,0000
+2095,2,Slavonskobrodska,510,HR
+2539,2,Csongrad,954,HU
+685,1,República Chuvashia,66,RU
+598,1,Rhode Island,60,US
+2096,2,Zadarska ,511,HR
+2841,2,Hidalgo,1256,MX
+2540,2,Debrecen,955,HU
+5219,3,José Sabogal,3448,061007
+3677,3,Amazonas,1921,0000
+2097,2,Osjecko-baranjska ,512,HR
+2541,2,Dunaujvaros,956,HU
+686,1,Territorio Altái,66,RU
+599,1,Carolina del Sur,60,US
+2842,2,Jalisco,1257,MX
+2098,2,Sibensko-kninska  ,513,HR
+2542,2,Eger,957,HU
+3678,3,Amapá,1922,0000
+5220,3,San Miguel,3449,061101
+2543,2,Fejer,958,HU
+2099,2,Vukovarsko-srijemska,514,HR
+600,1,Dakota del Sur,60,US
+2843,2,Michoacán,1258,MX
+687,1,Territorio Krasnodar,66,RU
+3679,3,Bahía,1923,0000
+2544,2,Gyor,959,HU
+5222,3,Calquis,3449,061103
+2100,2,Splitsko-dalmatinska,515,HR
+2101,2,Istarska,516,HR
+2545,2,Gyor-Moson-Sopron,960,HU
+601,1,Tennessee,60,US
+2844,2,Estado de México,1259,MX
+3680,3,Ceará,1924,0000
+688,1,Territ.Krasnoyarsk,66,RU
+5223,3,Catilluc,3449,061104
+2102,2,Dubrovacko-neretvans,517,HR
+2546,2,Hajdu-Bihar,961,HU
+602,1,Texas,60,US
+2845,2,Morelos,1260,MX
+2103,2,Medjimurska,518,HR
+2547,2,Heves,962,HU
+3681,3,Brasília,1925,0000
+5225,3,La Florida,3449,061106
+689,1,Territorio Primorye,66,RU
+2104,2,Zagreb ciudad ,519,HR
+2548,2,Hodmezovasarhely,963,HU
+2846,2,Nayarit,1261,MX
+2105,2,Cuba,520,CU
+3682,3,Espírito Santo,1926,0000
+5226,3,Llapa,3449,061107
+2549,2,Jasz-Nagykun-Szolnok,964,HU
+3482,2,Lauricocha,1810,1010
+690,1,Territorio Stavropol,66,RU
+2106,2,Curaçao,521,CW
+2847,2,Nuevo León,1262,MX
+2550,2,Kaposvar,965,HU
+2107,2,de Isl.Marshall,522,MH
+5227,3,Nanchoc,3449,061108
+3683,3,Goiás,1927,0000
+3483,2,Yarowilca,1810,1011
+2551,2,Kecskemet,966,HU
+2108,2,Hovedstaden,523,DK
+2848,2,Oaxaca,1263,MX
+691,1,Territ.Khabarovsk,66,RU
+2552,2,Komarom-Esztergom,967,HU
+5228,3,Niepos,3449,061109
+3684,3,Maranhão,1928,0000
+3484,2,Ica,1811,1101
+2109,2,Midtjylland,524,DK
+2553,2,Miskolc,968,HU
+2849,2,Puebla,1264,MX
+2110,2,Nordjylland,525,DK
+692,1,Área de Amur,66,RU
+5233,3,San Pablo,3450,061201
+2554,2,Nagykanizsa,969,HU
+3685,3,Minas Gerais,1929,0000
+2111,2,Sjaelland,526,DK
+3485,2,Chincha,1811,1102
+2850,2,Quintana Roo,1265,MX
+2555,2,Nograd,970,HU
+2112,2,Syddanmark,527,DK
+5235,3,San Luis,3450,061203
+693,1,Área de Arkhangelsk,66,RU
+2556,2,Nyiregyhaza,971,HU
+3686,3,Mato Grosso do Sul,1930,0000
+3486,2,Nasca,1811,1103
+2113,2,Dominica,528,DM
+2851,2,Querétaro,1266,MX
+2557,2,Pecs,972,HU
+2114,2,E.A.U.,529,AE
+5236,3,Tumbaden,3450,061204
+2558,2,Pest,973,HU
+694,1,Área de Astracán,66,RU
+2115,2,AZUAY,530,EC
+6096,3,Paucartambo,3537,190107
+3487,2,Palpa,1811,1104
+2852,2,Sinaloa,1267,MX
+2559,2,Somogy,974,HU
+2116,2,BOLIVAR,531,EC
+5238,3,Andabamba,3451,061302
+2560,2,Sopron,975,HU
+695,1,Área de Belgorod,66,RU
+2117,2,CAÑAR,532,EC
+3488,2,Pisco,1811,1105
+6097,3,San Francisco de Asís,3537,190108
+2853,2,San Luis Potosí,1268,MX
+2561,2,Szabolcs-Szat.-Bereg,976,HU
+2118,2,CARCHI,533,EC
+5241,3,La Esperanza,3451,061305
+696,1,Área de Bryansk,66,RU
+2562,2,Szeged,977,HU
+2119,2,COTOPAXI,534,EC
+3489,2,Huancayo,1812,1201
+2854,2,Sonora,1269,MX
+6098,3,Simon Bolívar,3537,190109
+5243,3,Pulan,3451,061307
+2120,2,CHIMBORAZO,535,EC
+2563,2,Szekesfehervar,978,HU
+697,1,Área de Vladímir,66,RU
+2121,2,EL ORO,536,EC
+2564,2,Szolnok,979,HU
+3490,2,Concepción,1812,1202
+2855,2,Tabasco,1270,MX
+6099,3,Ticlacayan,3537,190110
+5246,3,Uticyacu,3451,061310
+2122,2,ESMERALDAS,537,EC
+2565,2,Szombathely,980,HU
+698,1,Área de Volgogrado,66,RU
+2123,2,GUAYAS,538,EC
+6100,3,Tinyahuarco,3537,190111
+2856,2,Tlaxcala,1271,MX
+3491,2,Chanchamayo,1812,1203
+2566,2,Tatabanya,981,HU
+5247,3,Yauyucan,3451,061311
+2124,2,IMBABURA,539,EC
+2567,2,Tolna,982,HU
+699,1,Área de Vologda,66,RU
+2125,2,LOJA,540,EC
+6101,3,Vicco,3537,190112
+2857,2,Tamaulipas,1272,MX
+3492,2,Jauja,1812,1204
+5249,3,Bellavista,3452,070102
+2568,2,Vas,983,HU
+2126,2,LOS RIOS,541,EC
+2569,2,Veszprem,984,HU
+2858,2,Veracruz,1273,MX
+6102,3,Yanacancha,3537,190113
+2127,2,MANABI,542,EC
+2570,2,Zala,985,HU
+3493,2,Junín,1812,1205
+700,1,Área de Vorónezh,66,RU
+5250,3,Carmen de la Legua Reynoso,3452,070103
+2571,2,Zalaegerszeg,986,HU
+2128,2,MORONA SANTIAGO,543,EC
+2859,2,Yucatán,1274,MX
+6103,3,Yanahuanca,3538,190201
+2572,2,Irán,987,IR
+3494,2,Satipo,1812,1206
+2129,2,NAPO,544,EC
+701,1,Área de Ivánovo,66,RU
+5252,3,La Punta,3452,070105
+2573,2,Iraq,988,IQ
+2130,2,PASTAZA,545,EC
+2860,2,Zacatecas,1275,MX
+6104,3,Chacayan,3538,190202
+2574,2,Cork,989,IE
+2131,2,PICHINCHA,546,EC
+5254,3,Mi Perú,3452,070107
+3495,2,Tarma,1812,1207
+702,1,Área de Irkutsk,66,RU
+2575,2,Clare,990,IE
+2132,2,TUNGURAHUA,547,EC
+2861,2,Micronesia,1276,FM
+6105,3,Goyllarisquizga,3538,190203
+2576,2,Cavan,991,IE
+5256,3,Ccorca,3453,080102
+3496,2,Yauli,1812,1208
+2133,2,ZAMORA CHINCHIPE,548,EC
+703,1,Área de Kaliningrado,66,RU
+2577,2,Carlow,992,IE
+2134,2,GALAPAGOS,549,EC
+6106,3,Paucar,3538,190204
+2862,2,Moldavia,1277,MD
+5257,3,Poroy,3453,080103
+2578,2,Dublín,993,IE
+2135,2,SUCUMBIOS,550,EC
+3497,2,Chupaca,1812,1209
+704,1,Área de Kaluga,66,RU
+2579,2,Donegal,994,IE
+5260,3,Santiago,3453,080106
+2136,2,ORELLANA,551,EC
+2863,2,Mónaco,1278,MC
+2580,2,Galway,995,IE
+6107,3,San Pedro de Pillao,3538,190205
+3498,2,Trujillo,1813,1301
+2581,2,Kildare,996,IE
+705,1,Área de Kamchatka,66,RU
+2137,2,STO DOMINGO TSACHILA,552,EC
+5261,3,Saylla,3453,080107
+2864,2,Mongolia,1279,MN
+2582,2,Kilkenny,997,IE
+3499,2,Ascope,1813,1302
+2138,2,SANTA ELENA,553,EC
+6108,3,Santa Ana de Tusi,3538,190206
+2583,2,Kerry,998,IE
+706,1,Área de Kemerovo,66,RU
+5263,3,Acomayo,3454,080201
+2139,2,ZONAS NO DELIMITADAS,554,EC
+2865,2,Montserrat,1280,MS
+2584,2,Longford,999,IE
+6109,3,Tapuc,3538,190207
+3500,2,Bolívar,1813,1303
+2140,2,Alaska,555,US
+2585,2,Louth,1000,IE
+5264,3,Acopia,3454,080202
+707,1,Área de Kírov,66,RU
+2141,2,Alabama,556,US
+2866,2,Mozambique,1281,MZ
+2586,2,Limerick,1001,IE
+6110,3,Vilcabamba,3538,190208
+3501,2,Chepén,1813,1304
+2142,2,Arkansas,557,US
+5266,3,Mosoc Llacta,3454,080204
+2587,2,Leitrim,1002,IE
+2867,2,Myanmar,1282,MM
+5625,3,Manzanares,3490,120208
+708,1,Área de Kostromá,66,RU
+6111,3,Oxapampa,3539,190301
+3502,2,Julcán,1813,1305
+2588,2,Laois,1003,IE
+5268,3,Rondocan,3454,080206
+5626,3,Mariscal Castilla,3490,120209
+2589,2,Meath,1004,IE
+2868,2,Naciones Unidas,1283,UN
+709,1,Área de Kurgán,66,RU
+5627,3,Matahuasi,3490,120210
+6112,3,Chontabamba,3539,190302
+2590,2,Monaghan,1005,IE
+3503,2,Otuzco,1813,1306
+5270,3,Anta,3455,080301
+5628,3,Mito,3490,120211
+2591,2,Mayo,1006,IE
+2869,2,Namibia,1284,NA
+710,1,Área de Kursk,66,RU
+6113,3,Huancabamba,3539,190303
+6031,3,San Pablo,3526,160404
+2592,2,Offaly,1007,IE
+5272,3,Cachimayo,3455,080303
+3504,2,Pacasmayo,1813,1307
+6032,3,Requena,3527,160501
+2870,2,Naranja,1285,OR
+2593,2,Roscommon,1008,IE
+6114,3,Palcazu,3539,190304
+711,1,Área de Leningrado,66,RU
+6033,3,Alto Tapiche,3527,160502
+3505,2,Pataz,1813,1308
+5275,3,Limatambo,3455,080306
+2594,2,Sligo,1009,IE
+2871,2,Nauru,1286,NR
+6034,3,Capelo,3527,160503
+2595,2,Tipperary,1010,IE
+6115,3,Pozuzo,3539,190305
+712,1,Área de Lípetsk,66,RU
+6035,3,Emilio San Martín,3527,160504
+5276,3,Mollepata,3455,080307
+3506,2,Sánchez Carrión,1813,1309
+2596,2,Waterford,1011,IE
+2872,2,Nepal,1287,NP
+6036,3,Maquia,3527,160505
+2597,2,Westmeath,1012,IE
+6116,3,Puerto Bermúdez,3539,190306
+713,1,Área de Magadán,66,RU
+5279,3,Calca,3456,080401
+6037,3,Puinahua,3527,160506
+2873,2,Boaco,1288,NI
+2598,2,Wicklow,1013,IE
+3507,2,Santiago de Chuco,1813,1310
+6038,3,Saquena,3527,160507
+2599,2,Wexford,1014,IE
+6117,3,Villa Rica,3539,190307
+5282,3,Lares,3456,080404
+714,1,Área de Moscú,66,RU
+2874,2,Carazo,1289,NI
+6039,3,Soplin,3527,160508
+3508,2,Gran Chimú,1813,1311
+2600,2,Is.Heard/Mcdon.,1015,HM
+6040,3,Tapiche,3527,160509
+6118,3,Constitución,3539,190308
+5284,3,San Salvador,3456,080406
+2601,2,Is.Vírgenes USA,1016,VI
+2875,2,Chinandega,1290,NI
+715,1,Área de Múrmansk,66,RU
+6041,3,Jenaro Herrera,3527,160510
+3509,2,Virú,1813,1312
+2602,2,Isl.Marianas N.,1017,MP
+6119,3,Piura,3540,200101
+6042,3,Yaquerana,3527,160511
+5286,3,Yanatile,3456,080408
+2876,2,Chontales,1291,NI
+2603,2,Isl.S.Sandwich,1018,GS
+3510,2,Chiclayo,1814,1401
+716,1,Nizni Nóvgorod,66,RU
+6043,3,Contamana,3528,160601
+2604,2,Isl.Turcas y C.,1019,TC
+6120,3,Castilla,3540,200104
+5288,3,Checca,3457,080502
+2877,2,Estelí,1292,NI
+6044,3,Inahuaya,3528,160602
+3511,2,Ferreñafe,1814,1402
+2605,2,Isl.Vírgenes GB,1020,VG
+717,1,Área de Nóvgorod,66,RU
+5290,3,Langui,3457,080504
+6121,3,Catacaos,3540,200105
+2878,2,Granada,1293,NI
+2606,2,Isla Christmas,1021,CX
+3512,2,Lambayeque,1814,1403
+2607,2,Isla de Man,1022,IM
+6045,3,Padre Márquez,3528,160603
+718,1,Área de Novosibirsk,66,RU
+5291,3,Layo,3457,080505
+6122,3,Cura Mori,3540,200107
+2879,2,Jinotega,1294,NI
+2608,2,Islandia,1023,IS
+3513,2,Lima,1815,1501
+6046,3,Pampa Hermosa,3528,160604
+2880,2,León,1295,NI
+2609,2,Islas Bouvet,1024,BV
+719,1,Área de Omsk,66,RU
+6123,3,El Tallan,3540,200108
+5294,3,Tupac Amaru,3457,080508
+3514,2,Barranca,1815,1502
+2610,2,Islas Caimán,1025,KY
+2881,2,Madriz,1296,NI
+6047,3,Sarayacu,3528,160605
+5295,3,Sicuani,3458,080601
+6124,3,La Arena,3540,200109
+2611,2,Islas Cocos,1026,CC
+720,1,Área de Orenburg,66,RU
+3515,2,Cajatambo,1815,1503
+2612,2,Islas Cook,1027,CK
+2882,2,Managua,1297,NI
+5297,3,Combapata,3458,080603
+6048,3,Vargas Guerra,3528,160606
+6125,3,La Unión,3540,200110
+721,1,Área de Oriol,66,RU
+2613,2,Islas Feroe,1028,FO
+3516,2,Canta,1815,1504
+2614,2,Islas Malvinas,1029,FK
+5298,3,Marangani,3458,080604
+2883,2,Masaya,1298,NI
+6049,3,Barranca,3529,160701
+6126,3,Las Lomas,3540,200111
+722,1,Área de Penza,66,RU
+2615,2,Islas Niue,1030,NU
+3517,2,Cañete,1815,1505
+5300,3,San Pablo,3458,080606
+2616,2,Islas Norfolk,1031,NF
+2884,2,Matagalpa,1299,NI
+6127,3,Tambo Grande,3540,200114
+6050,3,Cahuapanas,3529,160702
+723,1,Territorio de Perm,66,RU
+3518,2,Huaral,1815,1506
+2617,2,Islas Pitcairn,1032,PN
+5302,3,Tinta,3458,080608
+2885,2,Nueva Segovia,1300,NI
+6051,3,Manseriche,3529,160703
+2618,2,Islas Salomón,1033,SB
+6128,3,Veintiseis de Octubre,3540,200115
+6052,3,Morona,3529,160704
+724,1,Área de Pskov,66,RU
+3519,2,Huarochirí,1815,1507
+5303,3,Santo Tomas,3459,080701
+2619,2,Islas Tokelau,1034,TK
+6053,3,Pastaza,3529,160705
+2886,2,Región Autó. CCNORTE,1301,NI
+2620,2,IslMenAlejEEUU,1035,UM
+3520,2,Huaura,1815,1508
+6054,3,Andoas,3529,160706
+6129,3,Ayabaca,3541,200201
+5306,3,Colquemarca,3459,080704
+725,1,Área Rostov del Don,66,RU
+2621,2,Central,1036,IL
+6055,3,Putumayo,3530,160801
+2622,2,Haifa,1037,IL
+3521,2,Oyón,1815,1509
+2887,2,Región Autó. CC SUR,1302,NI
+5309,3,Quiñota,3459,080707
+6056,3,Rosa Panduro,3530,160802
+6130,3,Frias,3541,200202
+726,1,Área de Riazán,66,RU
+2623,2,Jerusalén,1038,IL
+2624,2,Northern,1039,IL
+3522,2,Yauyos,1815,1510
+6057,3,Teniente Manuel Clavero,3530,160803
+2888,2,Río San Juan,1303,NI
+5313,3,Coporaque,3460,080803
+6131,3,Jilili,3541,200203
+2625,2,Southern,1040,IL
+727,1,Área de Samara,66,RU
+6058,3,Yaguas,3530,160804
+3523,2,Maynas,1816,1601
+2626,2,Tel Aviv,1041,IL
+6059,3,Tambopata,3531,170101
+2889,2,Rivas,1304,NI
+6132,3,Lagunas,3541,200204
+5315,3,Pallpata,3460,080805
+2627,2,Agrigento,1042,IT
+728,1,Área de Sarátov,66,RU
+6060,3,Inambari,3531,170102
+3524,2,Alto Amazonas,1816,1602
+2890,2,Níger,1305,NE
+2628,2,Alessandria,1043,IT
+6133,3,Montero,3541,200205
+6061,3,Las Piedras,3531,170103
+5316,3,Pichigua,3460,080806
+729,1,Área de Sakhalin,66,RU
+2629,2,Ancona,1044,IT
+6062,3,Laberinto,3531,170104
+2891,2,Nigeria,1306,NG
+3525,2,Loreto,1816,1603
+2630,2,Aosta,1045,IT
+6134,3,Pacaipampa,3541,200206
+5318,3,Alto Pichigua,3460,080808
+6063,3,Manu,3532,170201
+730,1,Área de Sverdlovsk,66,RU
+2631,2,Ascoli Piceno,1046,IT
+2892,2,Østfold Fylke,1307,NO
+6064,3,Fitzcarrald,3532,170202
+6135,3,Paimas,3541,200207
+3526,2,Mariscal Ramón Castilla,1816,1604
+5319,3,Santa Ana,3461,080901
+2632,2,L'Aquila,1047,IT
+6065,3,Madre de Dios,3532,170203
+2893,2,Akershus Fylke,1308,NO
+731,1,Área de Smolensk,66,RU
+2633,2,Arezzo,1048,IT
+6066,3,Huepetuhe,3532,170204
+3527,2,Requena,1816,1605
+6136,3,Sapillica,3541,200208
+5321,3,Huayopata,3461,080903
+2634,2,Asti,1049,IT
+6067,3,Iñapari,3533,170301
+2894,2,Oslo,1309,NO
+2635,2,Avellino,1050,IT
+6068,3,Iberia,3533,170302
+732,1,Área de Tambov,66,RU
+3528,2,Ucayali,1816,1606
+5323,3,Ocobamba,3461,080905
+6137,3,Sicchez,3541,200209
+2636,2,Bari,1051,IT
+6069,3,Tahuamanu,3533,170303
+2895,2,Hedmark Fylke,1310,NO
+2637,2,Bergamo,1052,IT
+6070,3,Moquegua,3534,180101
+5325,3,Kimbiri,3461,080907
+6138,3,Suyo,3541,200210
+3529,2,Datem del Marañón,1816,1607
+733,1,Área de Tver,66,RU
+2638,2,Biella,1053,IT
+6071,3,Carumas,3534,180102
+2896,2,Oppland Fylke,1311,NO
+2639,2,Belluno,1054,IT
+5326,3,Santa Teresa,3461,080908
+6072,3,Cuchumbaya,3534,180103
+3530,2,Putumayo,1816,1608
+6139,3,Huancabamba,3542,200301
+734,1,Área de Tomsk,66,RU
+2640,2,Benevento,1055,IT
+2897,2,Buskerud Fylke,1312,NO
+6073,3,Samegua,3534,180104
+2641,2,Bolonia,1056,IT
+3531,2,Tambopata,1817,1701
+5327,3,Vilcabamba,3461,080909
+6140,3,Canchaque,3542,200302
+6074,3,San Cristóbal,3534,180105
+735,1,Área de Tula,66,RU
+2642,2,Brindisi,1057,IT
+2898,2,Vestfold Fylke,1313,NO
+6075,3,Torata,3534,180106
+3532,2,Manu,1817,1702
+5329,3,Inkawasi,3461,080911
+2643,2,Brescia,1058,IT
+6076,3,Omate,3535,180201
+2899,2,Telemark Fylke,1314,NO
+6141,3,El Carmen de la Frontera,3542,200303
+2644,2,Barletta-Andria-Tran,1059,IT
+3533,2,Tahuamanu,1817,1703
+6077,3,Chojata,3535,180202
+5332,3,Paruro,3462,081001
+2143,2,Samoa americana,558,US
+2645,2,Bolzano,1060,IT
+6078,3,Coalaque,3535,180203
+2900,2,Aust-Agder Fylke,1315,NO
+6142,3,Huarmaca,3542,200304
+2646,2,Cagliari,1061,IT
+3534,2,Mariscal Nieto,1818,1801
+5333,3,Accha,3462,081002
+6079,3,Ichuña,3535,180204
+2647,2,Campobasso,1062,IT
+2144,2,Arizona,559,US
+6080,3,La Capilla,3535,180205
+6143,3,Lalaquiz,3542,200305
+2901,2,Vest-Agder Fylke,1316,NO
+5334,3,Ccapi,3462,081003
+2648,2,Caserta,1063,IT
+3535,2,General Sánchez Cerro,1818,1802
+6081,3,Lloque,3535,180206
+2649,2,Chieti,1064,IT
+2145,2,California,560,US
+2902,2,Rogaland Fylke,1317,NO
+6082,3,Matalaque,3535,180207
+5336,3,Huanoquite,3462,081005
+6144,3,San Miguel de El Faique,3542,200306
+2650,2,Carbonia-Iglesias,1065,IT
+3536,2,Ilo,1818,1803
+6083,3,Puquina,3535,180208
+2146,2,Colorado,561,US
+2651,2,Caltanisetta,1066,IT
+5337,3,Omacha,3462,081006
+2903,2,Hordaland Fylke,1318,NO
+3537,2,Pasco,1819,1901
+6084,3,Quinistaquillas,3535,180209
+6145,3,Sondor,3542,200307
+2652,2,Cuneo,1067,IT
+6085,3,Ubinas,3535,180210
+2653,2,Como,1068,IT
+2147,2,Connecticut,562,US
+5339,3,Pillpinto,3462,081008
+2904,2,Sogn og Fjordane F.,1319,NO
+6146,3,Sondorillo,3542,200308
+6086,3,Yunga,3535,180211
+3538,2,Daniel Alcides Carrión,1819,1902
+2654,2,Cremona,1069,IT
+6087,3,Ilo,3536,180301
+2655,2,Cosenza,1070,IT
+2148,2,Distrito de Columbia,563,US
+5341,3,Paucartambo,3463,081101
+3539,2,Oxapampa,1819,1903
+6147,3,Chulucanas,3543,200401
+2905,2,Møre og Romsdal F.,1320,NO
+6088,3,El Algarrobal,3536,180302
+2656,2,Catania,1071,IT
+2657,2,Catanzaro,1072,IT
+6089,3,Pacocha,3536,180303
+5345,3,Huancarani,3463,081105
+2149,2,Delaware,564,US
+3540,2,Piura,1820,2001
+6148,3,Buenos Aires,3543,200402
+2658,2,Stati Esteri,1073,IT
+2906,2,Sør-Trøndelag Fylke,1321,NO
+6090,3,Chaupimarca,3537,190101
+2659,2,Enna,1074,IT
+5347,3,Urcos,3464,081201
+2150,2,Florida,565,US
+6091,3,Huachon,3537,190102
+3541,2,Ayabaca,1820,2002
+6149,3,Chalaco,3543,200403
+2660,2,Forli/Cesana,1075,IT
+2907,2,Nord-Trøndelag Fylke,1322,NO
+6092,3,Huariaca,3537,190103
+2661,2,Ferrara,1076,IT
+5348,3,Andahuaylillas,3464,081202
+2151,2,Georgia,566,US
+3542,2,Huancabamba,1820,2003
+6093,3,Huayllay,3537,190104
+2662,2,Foggia,1077,IT
+6150,3,La Matanza,3543,200404
+2908,2,Nordland Fylke,1323,NO
+6094,3,Ninacaca,3537,190105
+2663,2,Florencia,1078,IT
+5352,3,Cusipata,3464,081206
+2152,2,Guam,567,US
+3543,2,Morropón,1820,2004
+6095,3,Pallanchacra,3537,190106
+2664,2,Fermo,1079,IT
+6151,3,Morropon,3543,200405
+2909,2,Troms Fylke,1324,NO
+5355,3,Marcapata,3464,081209
+2665,2,Ferrara,1080,IT
+2153,2,Hawai,568,US
+3544,2,Paita,1820,2005
+1272,1,Tamaulipas,148,MX
+6152,3,Salitral,3543,200406
+2666,2,Fiume,1081,IT
+2910,2,Finnmark Fylke,1325,NO
+5356,3,Ocongate,3464,081210
+1273,1,Veracruz,148,MX
+3545,2,Sullana,1820,2006
+2154,2,Iowa,569,US
+2667,2,Génova,1082,IT
+1274,1,Yucatán,148,MX
+2668,2,Gorizia,1083,IT
+6153,3,San Juan de Bigote,3543,200407
+5357,3,Oropesa,3464,081211
+2911,2,Nueva Caledonia,1326,NC
+3546,2,Talara,1820,2007
+2155,2,Idaho,570,US
+1275,1,Zacatecas,148,MX
+2669,2,Grosseto,1084,IT
+1276,1,Micronesia,149,FM
+5359,3,Urubamba,3465,081301
+2670,2,Imperia,1085,IT
+3547,2,Sechura,1820,2008
+6154,3,Santa Catalina de Mossa,3543,200408
+2912,2,Auckland,1327,NZ
+1277,1,Moldavia,150,MD
+2156,2,Illinois,571,US
+2671,2,Isernia,1086,IT
+1278,1,Mónaco,151,MC
+5360,3,Chinchero,3465,081302
+3548,2,Puno,1821,2101
+2672,2,Crotone,1087,IT
+2913,2,Bay of Plenty,1328,NZ
+6155,3,Santo Domingo,3543,200409
+1279,1,Mongolia,152,MN
+2157,2,Indiana,572,US
+2673,2,Lucca,1088,IT
+5361,3,Huayllabamba,3465,081303
+1280,1,Montserrat,153,MS
+2674,2,Lecce,1089,IT
+2914,2,Canterbury,1329,NZ
+6156,3,Yamango,3543,200410
+3549,2,Azángaro,1821,2102
+2158,2,Kansas,573,US
+1281,1,Mozambique,154,MZ
+5363,3,Maras,3465,081305
+2675,2,Livorno,1090,IT
+1282,1,Myanmar,155,MM
+6157,3,Paita,3544,200501
+2676,2,Lodi,1091,IT
+2915,2,Hawke´s Bay,1330,NZ
+3550,2,Carabaya,1821,2103
+2159,2,Kentucky,574,US
+1283,1,Naciones Unidas,156,UN
+5366,3,Huancavelica,3466,090101
+1284,1,Namibia,157,NA
+6158,3,Amotape,3544,200502
+2916,2,Manawatu-Wanganui,1331,NZ
+3551,2,Chucuito,1821,2104
+2160,2,Louisiana,575,US
+5367,3,Acobambilla,3466,090102
+1285,1,Naranja,158,OR
+6159,3,Arenal,3544,200503
+2917,2,Northland,1332,NZ
+1286,1,Nauru,159,NR
+3552,2,El Collao,1821,2105
+5368,3,Acoria,3466,090103
+2161,2,Massachusetts,576,US
+1287,1,Nepal,160,NP
+2918,2,Otago,1333,NZ
+6160,3,Colan,3544,200504
+3553,2,Huancané,1821,2106
+1288,1,Boaco,161,NI
+5370,3,Cuenca,3466,090105
+2162,2,Maryland,577,US
+1289,1,Carazo,161,NI
+2919,2,Southland,1334,NZ
+6161,3,La Huaca,3544,200505
+3554,2,Lampa,1821,2107
+1290,1,Chinandega,161,NI
+5371,3,Huachocolpa,3466,090106
+2163,2,Maine,578,US
+1291,1,Chontales,161,NI
+2920,2,Taranaki,1335,NZ
+6162,3,Tamarindo,3544,200506
+3555,2,Melgar,1821,2108
+5377,3,Moya,3466,090112
+1292,1,Estelí,161,NI
+2164,2,Michigan,579,US
+1293,1,Granada,161,NI
+2921,2,Waikato,1336,NZ
+6163,3,Vichayal,3544,200507
+3556,2,Moho,1821,2109
+5378,3,Nuevo Occoro,3466,090113
+1294,1,Jinotega,161,NI
+2165,2,Minnesota,580,US
+2922,2,West Coast,1337,NZ
+6164,3,Sullana,3545,200601
+1295,1,León,161,NI
+5379,3,Palca,3466,090114
+3557,2,San Antonio de Putina,1821,2110
+2166,2,Missouri,581,US
+1296,1,Madriz,161,NI
+5381,3,Vilca,3466,090116
+2923,2,Wellington,1338,NZ
+6165,3,Bellavista,3545,200602
+1297,1,Managua,161,NI
+3558,2,San Román,1821,2111
+2167,2,Islas Mariana Norte,582,US
+1298,1,Masaya,161,NI
+5382,3,Yauli,3466,090117
+2924,2,OTAN,1339,NT
+6166,3,Ignacio Escudero,3545,200603
+1299,1,Matagalpa,161,NI
+3559,2,Sandia,1821,2112
+2168,2,Mississippi,583,US
+5387,3,Anta,3467,090203
+1300,1,Nueva Segovia,161,NI
+2925,2,Drenthe,1340,NL
+6167,3,Lancones,3545,200604
+2169,2,Montana,584,US
+1301,1,Región Autó. CCNORTE,161,NI
+3560,2,Yunguyo,1821,2113
+5388,3,Caja,3467,090204
+2926,2,Flevoland,1341,NL
+4889,3,Santa Rosa,3419,030710
+6168,3,Marcavelica,3545,200605
+1302,1,Región Autó. CC SUR,161,NI
+3561,2,Moyobamba,1822,2201
+4890,3,Turpay,3419,030711
+1303,1,Río San Juan,161,NI
+2170,2,Carolina del Norte,585,US
+5389,3,Marcas,3467,090205
+2927,2,Frisia,1342,NL
+6169,3,Miguel Checa,3545,200606
+1304,1,Rivas,161,NI
+4891,3,Vilcabamba,3419,030712
+3562,2,Bellavista,1822,2202
+1305,1,Níger,162,NE
+5397,3,Chincho,3468,090305
+2928,2,Gelderland,1343,NL
+2171,2,Dakota del Norte,586,US
+4892,3,Virundo,3419,030713
+6170,3,Querecotillo,3545,200607
+1306,1,Nigeria,163,NG
+3563,2,El Dorado,1822,2203
+4893,3,Curasco,3419,030714
+2929,2,Groningen,1344,NL
+5400,3,Huayllay Grande,3468,090308
+1307,1,Østfold Fylke,164,NO
+2172,2,Nebraska,587,US
+6171,3,Salitral,3545,200608
+4894,3,Arequipa,3420,040101
+1308,1,Akershus Fylke,164,NO
+3564,2,Huallaga,1822,2204
+2930,2,Limburgo,1345,NL
+4895,3,Alto Selva Alegre,3420,040102
+1309,1,Oslo,164,NO
+6172,3,Pariñas,3546,200701
+2173,2,New Hampshire,588,US
+5402,3,San Antonio de Antaparco,3468,090310
+4896,3,Cayma,3420,040103
+3565,2,Lamas,1822,2205
+2931,2,Noord-Brabant,1346,NL
+1310,1,Hedmark Fylke,164,NO
+6173,3,El Alto,3546,200702
+4897,3,Cerro Colorado,3420,040104
+2174,2,Nueva Jersey,589,US
+5403,3,Santo Tomas de Pata,3468,090311
+4898,3,Characato,3420,040105
+3566,2,Mariscal Cáceres,1822,2206
+2932,2,Noord-Holland,1347,NL
+1311,1,Oppland Fylke,164,NO
+6174,3,La Brea,3546,200703
+2175,2,Nuevo México,590,US
+4899,3,Chiguata,3420,040106
+5404,3,Secclla,3468,090312
+3567,2,Picota,1822,2207
+2933,2,Overijssel,1348,NL
+4900,3,Jacobo Hunter,3420,040107
+1312,1,Buskerud Fylke,164,NO
+6175,3,Lobitos,3546,200704
+2176,2,Nevada,591,US
+5405,3,Castrovirreyna,3469,090401
+4901,3,La Joya,3420,040108
+3568,2,Rioja,1822,2208
+2934,2,Utrecht,1349,NL
+1313,1,Vestfold Fylke,164,NO
+4902,3,Mariano Melgar,3420,040109
+5409,3,Chupamarca,3469,090405
+6176,3,Los Organos,3546,200705
+2177,2,Nueva York,592,US
+3569,2,San Martín,1822,2209
+4903,3,Miraflores,3420,040110
+2935,2,Zeeland,1350,NL
+1314,1,Telemark Fylke,164,NO
+5410,3,Cocas,3469,090406
+4904,3,Mollebaya,3420,040111
+2178,2,Ohio,593,US
+6177,3,Mancora,3546,200706
+3570,2,Tocache,1822,2210
+2936,2,Zuid-Holland,1351,NL
+4905,3,Paucarpata,3420,040112
+1315,1,Aust-Agder Fylke,164,NO
+5411,3,Huachos,3469,090407
+2179,2,Oklahoma,594,US
+4906,3,Pocsi,3420,040113
+6178,3,Sechura,3547,200801
+3571,2,Tacna,1823,2301
+2937,2,Pakistán,1352,PK
+1316,1,Vest-Agder Fylke,164,NO
+4907,3,Polobaya,3420,040114
+5412,3,Huamatambo,3469,090408
+2180,2,Oregón,595,US
+4908,3,Quequeña,3420,040115
+3572,2,Candarave,1823,2302
+2938,2,Palaos,1353,PW
+1317,1,Rogaland Fylke,164,NO
+6179,3,Bellavista de la Unión,3547,200802
+5413,3,Mollepampa,3469,090409
+4909,3,Sabandia,3420,040116
+3573,2,Jorge Basadre,1823,2303
+2181,2,Pennsylvania,596,US
+4910,3,Sachaca,3420,040117
+2939,2,Palestina,1354,PS
+3574,2,Tarata,1823,2304
+1318,1,Hordaland Fylke,164,NO
+6180,3,Bernal,3547,200803
+5414,3,San Juan,3469,090410
+3575,2,Tumbes,1824,2401
+4911,3,San Juan de Siguas,3420,040118
+2182,2,Puerto Rico,597,US
+2940,2,Bocas Del Toro,1355,PA
+5415,3,Santa Ana,3469,090411
+1319,1,Sogn og Fjordane F.,164,NO
+6181,3,Cristo Nos Valga,3547,200804
+3576,2,Contralmirante Villar,1824,2402
+4912,3,San Juan de Tarucani,3420,040119
+3577,2,Zarumilla,1824,2403
+2183,2,Rhode Island,598,US
+2941,2,Cocle,1356,PA
+5417,3,Ticrapo,3469,090413
+4913,3,Santa Isabel de Siguas,3420,040120
+1320,1,Møre og Romsdal F.,164,NO
+6182,3,Vice,3547,200805
+3578,2,Coronel Portillo,1825,2501
+4914,3,Santa Rita de Siguas,3420,040121
+2942,2,Colon,1357,PA
+5418,3,Churcampa,3470,090501
+3579,2,Atalaya,1825,2502
+2184,2,Carolina del Sur,599,US
+4915,3,Socabaya,3420,040122
+6183,3,Rinconada Llicuar,3547,200806
+1321,1,Sør-Trøndelag Fylke,164,NO
+3580,2,Padre Abad,1825,2503
+2943,2,Chiriqui,1358,PA
+4916,3,Tiabaya,3420,040123
+5423,3,Locroja,3470,090506
+3581,2,Purús,1825,2504
+2185,2,Dakota del Sur,600,US
+6184,3,Puno,3548,210101
+4917,3,Uchumayo,3420,040124
+1322,1,Nord-Trøndelag Fylke,164,NO
+2944,2,Darien,1359,PA
+3582,3,Afganistán,1826,0000
+4918,3,Vitor,3420,040125
+5424,3,Paucarbamba,3470,090507
+2186,2,Tennessee,601,US
+6185,3,Acora,3548,210102
+4919,3,Yanahuara,3420,040126
+1323,1,Nordland Fylke,164,NO
+2945,2,Herrera,1360,PA
+4920,3,Yarabamba,3420,040127
+2187,2,Texas,602,US
+6186,3,Amantani,3548,210103
+5425,3,San Miguel de Mayocc,3470,090508
+1324,1,Troms Fylke,164,NO
+4921,3,Yura,3420,040128
+2188,2,Utah,603,US
+6187,3,Atuncolla,3548,210104
+1325,1,Finnmark Fylke,164,NO
+4922,3,José Luis Bustamante Y Rivero,3420,040129
+5433,3,Laramarca,3471,090605
+2189,2,Virginia,604,US
+4923,3,Camaná,3421,040201
+6188,3,Capachica,3548,210105
+1326,1,Nueva Caledonia,165,NC
+5436,3,Querco,3471,090608
+4924,3,José María Quimper,3421,040202
+6189,3,Chucuito,3548,210106
+1327,1,Auckland,166,NZ
+2190,2,Islas Vírgenes,605,US
+5437,3,Quito-Arma,3471,090609
+4925,3,Mariano Nicolás Valcárcel,3421,040203
+6190,3,Coata,3548,210107
+2191,2,Vermont,606,US
+4926,3,Mariscal Cáceres,3421,040204
+1328,1,Bay of Plenty,166,NZ
+5438,3,San Antonio de Cusicancha,3471,090610
+6191,3,Huata,3548,210108
+4927,3,Nicolás de Pierola,3421,040205
+2192,2,Washington,607,US
+1329,1,Canterbury,166,NZ
+4928,3,Ocoña,3421,040206
+6192,3,Mañazo,3548,210109
+5439,3,San Francisco de Sangayaico,3471,090611
+4929,3,Quilca,3421,040207
+2193,2,Wisconsin,608,US
+1330,1,Hawke´s Bay,166,NZ
+4930,3,Samuel Pastor,3421,040208
+6193,3,Paucarcolla,3548,210110
+4931,3,Caravelí,3422,040301
+2194,2,Virginia Occidental,609,US
+5443,3,Santo Domingo de Capillas,3471,090615
+1331,1,Manawatu-Wanganui,166,NZ
+6194,3,Pichacani,3548,210111
+4932,3,Acarí,3422,040302
+2195,2,Wyoming,610,US
+5448,3,Ahuaycha,3472,090704
+4933,3,Atico,3422,040303
+1332,1,Northland,166,NZ
+4934,3,Atiquipa,3422,040304
+6195,3,Plateria,3548,210112
+2196,2,El Salvador,611,SV
+5449,3,Colcabamba,3472,090705
+1333,1,Otago,166,NZ
+4935,3,Bella Unión,3422,040305
+6196,3,San Antonio,3548,210113
+4937,3,Chala,3422,040307
+2197,2,Eritrea,612,ER
+5451,3,Huachocolpa,3472,090707
+1334,1,Southland,166,NZ
+4939,3,Huanuhuanu,3422,040309
+6197,3,Tiquillaca,3548,210114
+4941,3,Lomas,3422,040311
+5452,3,Huaribamba,3472,090709
+2198,2,Álava,613,ES
+1335,1,Taranaki,166,NZ
+4944,3,Aplao,3423,040401
+6198,3,Vilque,3548,210115
+5457,3,Salcahuasi,3472,090715
+1336,1,Waikato,166,NZ
+2199,2,Albacete,614,ES
+4945,3,Andagua,3423,040402
+3583,3,Albania,1827,0000
+6199,3,Azángaro,3549,210201
+4950,3,Huancarqui,3423,040407
+1337,1,West Coast,166,NZ
+3584,3,Slesvig-Holstein,1828,0000
+5458,3,San Marcos de Rocchac,3472,090716
+6200,3,Achaya,3549,210202
+2200,2,Alicante,615,ES
+4951,3,Machaguay,3423,040408
+3585,3,Hamburgo,1829,0000
+1338,1,Wellington,166,NZ
+6201,3,Arapa,3549,210203
+4952,3,Orcopampa,3423,040409
+3586,3,Baja Sajonia,1830,0000
+5459,3,Surcubamba,3472,090717
+2201,2,Almería,616,ES
+6202,3,Asillo,3549,210204
+3587,3,Bremen,1831,0000
+4954,3,Tipan,3423,040411
+1339,1,OTAN,167,NT
+6203,3,Caminaca,3549,210205
+2202,2,Ávila,617,ES
+5461,3,Quichuas,3472,090719
+4956,3,Uraca,3423,040413
+3588,3,Renania N.Westfalia,1832,0000
+6204,3,Chupa,3549,210206
+1340,1,Drenthe,168,NL
+4958,3,Chivay,3424,040501
+3589,3,Hesse,1833,0000
+2203,2,Badajoz,618,ES
+5462,3,Andaymarca,3472,090720
+6205,3,José Domingo Choquehuanca,3549,210207
+4961,3,Callalli,3424,040504
+3590,3,Renania-Palatinado,1834,0000
+1341,1,Flevoland,168,NL
+6206,3,Muñani,3549,210208
+4962,3,Caylloma,3424,040505
+5463,3,Roble,3472,090721
+2204,2,Baleares,619,ES
+3591,3,Baden-Wurtemberg,1835,0000
+6207,3,Potoni,3549,210209
+4964,3,Huambo,3424,040507
+1342,1,Frisia,168,NL
+3592,3,Baviera,1836,0000
+6208,3,Saman,3549,210210
+5464,3,Pichos,3472,090722
+4970,3,Madrigal,3424,040513
+2205,2,Barcelona,620,ES
+3593,3,El Sarre,1837,0000
+6209,3,San Anton,3549,210211
+1343,1,Gelderland,168,NL
+4972,3,Sibayo,3424,040515
+3594,3,Berlín,1838,0000
+5467,3,Chinchao,3473,100103
+6210,3,San José,3549,210212
+4974,3,Tisco,3424,040517
+2206,2,Burgos,621,ES
+3595,3,Brandenburgo,1839,0000
+1344,1,Groningen,168,NL
+6211,3,San Juan de Salinas,3549,210213
+4976,3,Yanque,3424,040519
+5470,3,Quisqui (Kichki),3473,100106
+3596,3,Meclenburgo-Pomeran.,1840,0000
+1345,1,Limburgo,168,NL
+2207,2,Cáceres,622,ES
+4977,3,Majes,3424,040520
+6212,3,Santiago de Pupuja,3549,210214
+3597,3,Sajonia,1841,0000
+3416,2,Aymaraes,1803,0304
+6213,3,Tirapata,3549,210215
+5471,3,San Francisco de Cayran,3473,100107
+3598,3,Sajonia-Anhalt,1842,0000
+2208,2,Cádiz,623,ES
+1346,1,Noord-Brabant,168,NL
+3417,2,Cotabambas,1803,0305
+6214,3,Macusani,3550,210301
+3599,3,Turingia,1843,0000
+3418,2,Chincheros,1803,0306
+3600,3,Andorra,1844,0000
+5472,3,San Pedro de Chaulan,3473,100108
+6215,3,Ajoyani,3550,210302
+1347,1,Noord-Holland,168,NL
+2209,2,Castellón,624,ES
+3419,2,Grau,1803,0307
+3601,3,Angola,1845,0000
+6216,3,Ayapata,3550,210303
+3420,2,Arequipa,1804,0401
+1348,1,Overijssel,168,NL
+3602,3,Anguilla,1846,0000
+5473,3,Santa María del Valle,3473,100109
+2210,2,Ciudad Real,625,ES
+6217,3,Coasa,3550,210304
+3421,2,Camaná,1804,0402
+3603,3,Antártida,1847,0000
+1349,1,Utrecht,168,NL
+3422,2,Caravelí,1804,0403
+6218,3,Corani,3550,210305
+3604,3,Antigua/Barbuda,1848,0000
+2211,2,Córdoba,626,ES
+3423,2,Castilla,1804,0404
+5477,3,San Pablo de Pillao,3473,100113
+6219,3,Crucero,3550,210306
+1350,1,Zeeland,168,NL
+3605,3,Arabia Saudí,1849,0000
+3424,2,Caylloma,1804,0405
+6220,3,Ituata,3550,210307
+2212,2,La Coruña,627,ES
+3606,3,Argelia,1850,0000
+5484,3,San Rafael,3474,100207
+3425,2,Condesuyos,1804,0406
+1351,1,Zuid-Holland,168,NL
+6221,3,Ollachea,3550,210308
+3607,3,Capital Federal,1851,0000
+3426,2,Islay,1804,0407
+2213,2,Cuenca,628,ES
+6222,3,San Gaban,3550,210309
+5485,3,Tomay Kichwa,3474,100208
+3608,3,Buenos Aires,1852,0000
+3427,2,La Uniòn,1804,0408
+1352,1,Pakistán,169,PK
+6223,3,Usicayos,3550,210310
+3609,3,Catamarca,1853,0000
+3428,2,Huamanga,1805,0501
+2214,2,Gerona,629,ES
+5487,3,Chuquis,3475,100307
+6224,3,Juli,3551,210401
+3610,3,Córdoba,1854,0000
+3429,2,Cangallo,1805,0502
+1353,1,Palaos,170,PW
+6225,3,Desaguadero,3551,210402
+2215,2,Granada,630,ES
+3611,3,Corrientes,1855,0000
+3430,2,Huanca Sancos,1805,0503
+5488,3,Marías,3475,100311
+1354,1,Palestina,171,PS
+6226,3,Huacullani,3551,210403
+3612,3,Entre Rios,1856,0000
+3431,2,Huanta,1805,0504
+3613,3,Jujuy,1857,0000
+5493,3,Sillapata,3475,100322
+2216,2,Guadalajara,631,ES
+3432,2,La Mar,1805,0505
+6227,3,Kelluyo,3551,210404
+3614,3,Mendoza,1858,0000
+1355,1,Bocas Del Toro,172,PA
+3433,2,Lucanas,1805,0506
+6228,3,Pisacoma,3551,210405
+3615,3,La Rioja,1859,0000
+5494,3,Yanas,3475,100323
+3434,2,Parinacochas,1805,0507
+1356,1,Cocle,172,PA
+2217,2,Guipúzcoa,632,ES
+3616,3,Salta,1860,0000
+3435,2,Pàucar del Sara Sara,1805,0508
+5495,3,Huacaybamba,3476,100401
+3617,3,San Juan,1861,0000
+1357,1,Colon,172,PA
+2218,2,Huelva,633,ES
+3436,2,Sucre,1805,0509
+3618,3,San Luis,1862,0000
+5503,3,Jircan,3477,100505
+3437,2,Víctor Fajardo,1805,0510
+1358,1,Chiriqui,172,PA
+4021,3,República Tartaria,2265,0000
+2219,2,Huesca,634,ES
+3438,2,Vilcas Huamán,1805,0511
+4022,3,República Tuva,2266,0000
+5506,3,Punchao,3477,100508
+3439,2,Cajamarca,1806,0601
+1359,1,Darien,172,PA
+2220,2,Jaén,635,ES
+4023,3,República Udmurtia,2267,0000
+3440,2,Cajabamba,1806,0602
+5508,3,Singa,3477,100510
+2221,2,León,636,ES
+1360,1,Herrera,172,PA
+4024,3,República Jacasia,2268,0000
+3441,2,Celendín,1806,0603
+5509,3,Tantamayo,3477,100511
+3442,2,Chota,1806,0604
+4025,3,República Chechenia,2269,0000
+2222,2,Lérida,637,ES
+1361,1,Los Santos,172,PA
+3443,2,Contumazá,1806,0605
+5510,3,Rupa-Rupa,3478,100601
+4026,3,República Chuvashia,2270,0000
+3444,2,Cutervo,1806,0606
+2223,2,La Rioja,638,ES
+1362,1,Panamá,172,PA
+4027,3,Territorio Altái,2271,0000
+3445,2,Hualgayoc,1806,0607
+5511,3,Daniel Alomía Robles,3478,100602
+2224,2,Lugo,639,ES
+4028,3,Territorio Krasnodar,2272,0000
+3446,2,Jaén,1806,0608
+1363,1,Veraguas,172,PA
+3447,2,San Ignacio,1806,0609
+2225,2,Madrid,640,ES
+5517,3,Castillo Grande,3478,100608
+4029,3,Territ.Krasnoyarsk,2273,0000
+1364,1,Panamá,172,PA
+3448,2,San Marcos,1806,0610
+2226,2,Málaga,641,ES
+3449,2,San Miguel,1806,0611
+5518,3,Huacrachuco,3479,100701
+1365,1,PapuaNvaGuinea,173,PG
+4030,3,Territorio Primorye,2274,0000
+3450,2,San Pablo,1806,0612
+2227,2,Murcia,642,ES
+4936,3,Cahuacho,3422,040306
+3451,2,Santa Cruz,1806,0613
+1366,1,Paraguay,174,PY
+4031,3,Territorio Stavropol,2275,0000
+2228,2,Navarra,643,ES
+3452,2,Prov. Const. del Callao,1807,0701
+4938,3,Chaparra,3422,040308
+1367,1,Polinesia fran.,176,PF
+3453,2,Cusco,1808,0801
+2229,2,Orense,644,ES
+4032,3,Territ.Khabarovsk,2276,0000
+4940,3,Jaqui,3422,040310
+3454,2,Acomayo,1808,0802
+1368,1,Dolnoslaskie,177,PL
+3455,2,Anta,1808,0803
+2230,2,Asturias,645,ES
+4942,3,Quicacha,3422,040312
+4033,3,Área de Amur,2277,0000
+3456,2,Calca,1808,0804
+1369,1,Kujawsko-Pomorskie,177,PL
+3457,2,Canas,1808,0805
+2231,2,Palencia,646,ES
+3458,2,Canchis,1808,0806
+4034,3,Área de Arkhangelsk,2278,0000
+1370,1,Lubelskie,177,PL
+3459,2,Chumbivilcas,1808,0807
+2232,2,Las Palmas,647,ES
+3460,2,Espinar,1808,0808
+1371,1,Lubuskie,177,PL
+4035,3,Área de Astracán,2279,0000
+2233,2,Pontevedra,648,ES
+3461,2,La Convención,1808,0809
+1372,1,Lódzkie,177,PL
+3462,2,Paruro,1808,0810
+4036,3,Área de Belgorod,2280,0000
+2234,2,Salamanca,649,ES
+3463,2,Paucartambo,1808,0811
+1373,1,Malopolskie,177,PL
+4037,3,Área de Bryansk,2281,0000
+3464,2,Quispicanchi,1808,0812
+2235,2,Sta.Cruz Tenerife,650,ES
+3465,2,Urubamba,1808,0813
+1374,1,Mazowieckie,177,PL
+4038,3,Área de Vladímir,2282,0000
+2236,2,Cantabria,651,ES
+3466,2,Huancavelica,1809,0901
+1375,1,Opolskie,177,PL
+3467,2,Acobamba,1809,0902
+4039,3,Área de Volgogrado,2283,0000
+2237,2,Segovia,652,ES
+3468,2,Angaraes,1809,0903
+1376,1,Podkarpackie,177,PL
+4040,3,Área de Vologda,2284,0000
+3469,2,Castrovirreyna,1809,0904
+2238,2,Sevilla,653,ES
+1377,1,Podlaskie,177,PL
+3470,2,Churcampa,1809,0905
+2239,2,Soria,654,ES
+4041,3,Área de Vorónezh,2285,0000
+3471,2,Huaytará,1809,0906
+1378,1,Pomorskie,177,PL
+3472,2,Tayacaja,1809,0907
+2240,2,Tarragona,655,ES
+4042,3,Área de Ivánovo,2286,0000
+1379,1,Slaskie,177,PL
+3473,2,Huánuco,1810,1001
+3474,2,Ambo,1810,1002
+2241,2,Teruel,656,ES
+4043,3,Área de Irkutsk,2287,0000
+1380,1,Swietokrzyskie,177,PL
+3475,2,Dos de Mayo,1810,1003
+2242,2,Toledo,657,ES
+3476,2,Huacaybamba,1810,1004
+1381,1,Warminsko-mazurskie,177,PL
+4044,3,Área de Kaliningrado,2288,0000
+3477,2,Huamalíes,1810,1005
+2243,2,Valencia,658,ES
+3478,2,Leoncio Prado,1810,1006
+1382,1,Wielkopolskie,177,PL
+4045,3,Área de Kaluga,2289,0000
+3479,2,Marañón,1810,1007
+2244,2,Valladolid,659,ES
+3480,2,Pachitea,1810,1008
+1383,1,Zachodnio-Pomorskie,177,PL
+4046,3,Área de Kamchatka,2290,0000
+3481,2,Puerto Inca,1810,1009
+2245,2,Vizcaya,660,ES
+6428,3,NA,,
+1384,1,Minho-Lima,178,PT
+4047,3,Área de Kemerovo,2291,0000
+2246,2,Zamora,661,ES
+1385,1,Cávado,178,PT
+4048,3,Área de Kírov,2292,0000
+736,1,Área de Tyumen,66,RU
+2247,2,Zaragoza,662,ES
+1386,1,Ave,178,PT
+737,1,Área de Simbirsk,66,RU
+4049,3,Área de Kostromá,2293,0000
+738,1,Área de Chelíabinsk,66,RU
+2248,2,Estonia,663,EE
+1387,1,Grande Porto,178,PT
+739,1,Área de Zabaikalsk,66,RU
+4050,3,Área de Kurgán,2294,0000
+1388,1,Tâmega,178,PT
+740,1,Área de Yaroslavl,66,RU
+2249,2,Etiopía,664,ET
+741,1,Canal de Moscú,66,RU
+4051,3,Área de Kursk,2295,0000
+1389,1,Entre Douro e Vouga,178,PT
+2250,2,República Adiguesia,665,RU
+742,1,c.St-Peterburg,66,RU
+1390,1,Douro,178,PT
+4052,3,Área de Leningrado,2296,0000
+743,1,Área autonom.judía,66,RU
+2251,2,Rep.Tier.Altas Altái,666,RU
+4053,3,Área de Lípetsk,2297,0000
+744,1,Di.aut.Aginsk Buryat,66,RU
+1391,1,Alto Trás-os-Montes,178,PT
+4054,3,Área de Magadán,2298,0000
+745,1,Di.aut.Komy Permjats,66,RU
+2252,2,Rep.Bashkortostán,667,RU
+1392,1,Baixo Vouga,178,PT
+4055,3,Área de Moscú,2299,0000
+746,1,Distr.auton.Korjacs,66,RU
+4056,3,Área de Múrmansk,2300,0000
+747,1,Distr.aut.Nenekchky,66,RU
+2253,2,República Buriatia,668,RU
+1393,1,Baixo Mondego,178,PT
+4057,3,Nizni Nóvgorod,2301,0000
+748,1,Distr.auton.Taymir,66,RU
+1394,1,Pinhal Litoral,178,PT
+4058,3,Área de Nóvgorod,2302,0000
+749,1,Ust-Ordinsky Buryat,66,RU
+2254,2,República Daguestán,669,RU
+4059,3,Área de Novosibirsk,2303,0000
+750,1,Dis.Chanti-Mansyjsky,66,RU
+1395,1,Pinhal Interior N.,178,PT
+4060,3,Área de Omsk,2304,0000
+751,1,Distr.auton.Chukotka,66,RU
+2255,2,República Ingushetia,670,RU
+4061,3,Área de Orenburg,2305,0000
+752,1,Distr.auton.Evensky,66,RU
+1396,1,Pinhal Interior Sul,178,PT
+4062,3,Área de Oriol,2306,0000
+753,1,Dis.Jamalo-Nenekchky,66,RU
+2256,2,R.Kabardina-Balkaria,671,RU
+1397,1,Dão-Lafoes,178,PT
+754,1,Ilocos,67,PH
+4063,3,Área de Penza,2307,0000
+755,1,Cagayan Valley,67,PH
+2257,2,República Calmuquia,672,RU
+4064,3,Territorio de Perm,2308,0000
+1398,1,Serra da Estrela,178,PT
+756,1,Central Luzon,67,PH
+4065,3,Área de Pskov,2309,0000
+757,1,South Luzon,67,PH
+2258,2,Karachievo-Cherkesia,673,RU
+1399,1,Beira Interior Norte,178,PT
+4066,3,Área Rostov del Don,2310,0000
+758,1,Bicol,67,PH
+4067,3,Área de Riazán,2311,0000
+759,1,West Visayas,67,PH
+2259,2,República Carelia,674,RU
+1400,1,Beira Interior Sul,178,PT
+760,1,Cntrl Visayas,67,PH
+4068,3,Área de Samara,2312,0000
+761,1,East Visayas,67,PH
+4069,3,Área de Sarátov,2313,0000
+1401,1,Cova da Beira,178,PT
+2260,2,República Komi,675,RU
+762,1,West Mindanao,67,PH
+4070,3,Área de Sakhalin,2314,0000
+1402,1,Oeste,178,PT
+763,1,North Mindanao,67,PH
+2261,2,República Mari,676,RU
+4071,3,Área de Sverdlovsk,2315,0000
+764,1,Cntrl Mindanao,67,PH
+4072,3,Área de Smolensk,2316,0000
+765,1,South Mindanao,67,PH
+1403,1,Grande Lisboa,178,PT
+2262,2,República Mordovia,677,RU
+4073,3,Área de Tambov,2317,0000
+766,1,Ahvenanmaa,68,FI
+4074,3,Área de Tver,2318,0000
+767,1,Etelä-Suomi,68,FI
+1404,1,Península de Setúbal,178,PT
+2263,2,Yakutiya-Saha Rrepub,678,RU
+4075,3,Área de Tomsk,2319,0000
+768,1,Itä-Suomi,68,FI
+4076,3,Área de Tula,2320,0000
+1405,1,Médio Tejo,178,PT
+2264,2,Rep.Osetia del Norte,679,RU
+4077,3,Área de Tyumen,2321,0000
+1406,1,Lezíria do Tejo,178,PT
+4078,3,Área de Simbirsk,2322,0000
+2265,2,República Tartaria,680,RU
+4079,3,Área de Chelíabinsk,2323,0000
+1407,1,Alentejo Litoral,178,PT
+4080,3,Área de Zabaikalsk,2324,0000
+2266,2,República Tuva,681,RU
+4081,3,Área de Yaroslavl,2325,0000
+1408,1,Alto Alentejo,178,PT
+2267,2,República Udmurtia,682,RU
+4082,3,Canal de Moscú,2326,0000
+1409,1,Alentejo Central,178,PT
+4083,3,c.St-Peterburg,2327,0000
+2268,2,República Jacasia,683,RU
+4084,3,Área autonom.judía,2328,0000
+1410,1,Baixo Alentejo,178,PT
+2269,2,República Chechenia,684,RU
+4085,3,Di.aut.Aginsk Buryat,2329,0000
+1411,1,Algarve,178,PT
+2270,2,República Chuvashia,685,RU
+4086,3,Di.aut.Komy Permjats,2330,0000
+1412,1,Reg.Aut.dos Açores,178,PT
+2271,2,Territorio Altái,686,RU
+1413,1,Reg.Aut.da Madeira,178,PT
+4087,3,Distr.auton.Korjacs,2331,0000
+769,1,Lappi,68,FI
+2272,2,Territorio Krasnodar,687,RU
+1414,1,Puerto Rico,179,PR
+770,1,Länsi-Suomi,68,FI
+4088,3,Distr.aut.Nenekchky,2332,0000
+771,1,Oulu,68,FI
+1415,1,Doha,180,QA
+2273,2,Territ.Krasnoyarsk,688,RU
+772,1,Fiyi,69,FJ
+4089,3,Distr.auton.Taymir,2333,0000
+1416,1,El norte,180,QA
+773,1,Ain,70,FR
+2274,2,Territorio Primorye,689,RU
+774,1,Aisne,70,FR
+1417,1,La costa oeste,180,QA
+4090,3,Ust-Ordinsky Buryat,2334,0000
+775,1,Allier,70,FR
+2275,2,Territorio Stavropol,690,RU
+776,1,Alpes (Alta provenz),70,FR
+1418,1,El sur,180,QA
+4091,3,Dis.Chanti-Mansyjsky,2335,0000
+2276,2,Territ.Khabarovsk,691,RU
+777,1,Alpes (Altos),70,FR
+1419,1,Aberdeenshire,181,GB
+778,1,Alpes marítimos,70,FR
+2277,2,Área de Amur,692,RU
+4092,3,Distr.auton.Chukotka,2336,0000
+779,1,Ardèche,70,FR
+1420,1,Argyllshire,181,GB
+780,1,Las Ardenas,70,FR
+2278,2,Área de Arkhangelsk,693,RU
+781,1,Ariège,70,FR
+1421,1,Anglesey,181,GB
+782,1,Aube,70,FR
+2279,2,Área de Astracán,694,RU
+783,1,Aude,70,FR
+1422,1,Armagh,181,GB
+784,1,Aveyron,70,FR
+2280,2,Área de Belgorod,695,RU
+785,1,Bouches-du-Rhône,70,FR
+1423,1,Angus/Forfanshire,181,GB
+786,1,Calvados,70,FR
+2281,2,Área de Bryansk,696,RU
+1424,1,Antrim,181,GB
+787,1,Cantal,70,FR
+788,1,Charente,70,FR
+1425,1,Ayrshire,181,GB
+2282,2,Área de Vladímir,697,RU
+789,1,Charente-Maritime,70,FR
+4943,3,Yauca,3422,040313
+790,1,Cher,70,FR
+1426,1,Bedfordshire,181,GB
+2283,2,Área de Volgogrado,698,RU
+791,1,Corrèze,70,FR
+4093,3,Distr.auton.Evensky,2337,0000
+792,1,Côte-d'Or,70,FR
+1427,1,Bracknell Forest,181,GB
+4946,3,Ayo,3423,040403
+2284,2,Área de Vologda,699,RU
+793,1,Côtes-d'Armor,70,FR
+1428,1,Berkshire,181,GB
+4947,3,Chachas,3423,040404
+794,1,Creuse,70,FR
+2285,2,Área de Vorónezh,700,RU
+4094,3,Dis.Jamalo-Nenekchky,2338,0000
+795,1,Dordogne,70,FR
+1429,1,Brecknockshire,181,GB
+4948,3,Chilcaymarca,3423,040405
+796,1,Doubs,70,FR
+4095,3,Ilocos,2339,0000
+2286,2,Área de Ivánovo,701,RU
+797,1,Drôme,70,FR
+4096,3,Cagayan Valley,2340,0000
+4949,3,Choco,3423,040406
+1430,1,Bath&NthEstSomerset,181,GB
+798,1,Eure,70,FR
+4097,3,Central Luzon,2341,0000
+2287,2,Área de Irkutsk,702,RU
+799,1,Eure-et-Loir,70,FR
+4953,3,Pampacolca,3423,040410
+4098,3,South Luzon,2342,0000
+1431,1,Buteshire,181,GB
+800,1,Finistère,70,FR
+4099,3,Bicol,2343,0000
+4955,3,Uñon,3423,040412
+801,1,Corse-du-Sud,70,FR
+1432,1,Buckinghamshire,181,GB
+2288,2,Área de Kaliningrado,703,RU
+4100,3,West Visayas,2344,0000
+802,1,Corse-du-Nord,70,FR
+4957,3,Viraco,3423,040414
+4101,3,Cntrl Visayas,2345,0000
+1433,1,Berwickshire,181,GB
+803,1,Gard,70,FR
+2289,2,Área de Kaluga,704,RU
+4102,3,East Visayas,2346,0000
+4959,3,Achoma,3424,040502
+804,1,Garona (Alta),70,FR
+1434,1,Cambridgeshire,181,GB
+4103,3,West Mindanao,2347,0000
+805,1,Gers,70,FR
+2290,2,Área de Kamchatka,705,RU
+4104,3,North Mindanao,2348,0000
+4960,3,Cabanaconde,3424,040503
+806,1,Gironde,70,FR
+1435,1,Carmarthenshire,181,GB
+4105,3,Cntrl Mindanao,2349,0000
+807,1,Hérault,70,FR
+2291,2,Área de Kemerovo,706,RU
+4963,3,Coporaque,3424,040506
+4106,3,South Mindanao,2350,0000
+808,1,Ille-et-Vilaine,70,FR
+1436,1,Cardiganshire,181,GB
+809,1,Indre,70,FR
+4107,3,Ahvenanmaa,2351,0000
+2292,2,Área de Kírov,707,RU
+4965,3,Huanca,3424,040508
+810,1,Indre-et-Loire,70,FR
+1437,1,Caernarfonshire,181,GB
+4108,3,Etelä-Suomi,2352,0000
+811,1,Isère,70,FR
+4966,3,Ichupampa,3424,040509
+2293,2,Área de Kostromá,708,RU
+812,1,Jura,70,FR
+4109,3,Itä-Suomi,2353,0000
+1438,1,Cheshire,181,GB
+813,1,Landes,70,FR
+4967,3,Lari,3424,040510
+2294,2,Área de Kurgán,709,RU
+4110,3,Lappi,2354,0000
+814,1,Loir-et-Cher,70,FR
+1439,1,Cromartyshire,181,GB
+815,1,Loire,70,FR
+4968,3,Lluta,3424,040511
+2295,2,Área de Kursk,710,RU
+4111,3,Länsi-Suomi,2355,0000
+816,1,Loire (Haute),70,FR
+1440,1,Clackmannanshire,181,GB
+4969,3,Maca,3424,040512
+817,1,Loire-Atlantique,70,FR
+2296,2,Área de Leningrado,711,RU
+4112,3,Oulu,2356,0000
+1441,1,Cornualles,181,GB
+818,1,Loiret,70,FR
+4971,3,San Antonio de Chuca,3424,040514
+819,1,Lot,70,FR
+2297,2,Área de Lípetsk,712,RU
+4113,3,Fiyi,2357,0000
+820,1,Lot-et-Garonne,70,FR
+1442,1,Caithness,181,GB
+4973,3,Tapay,3424,040516
+821,1,Lozère,70,FR
+2298,2,Área de Magadán,713,RU
+4114,3,Ain,2358,0000
+4975,3,Tuti,3424,040518
+1443,1,Cumberland,181,GB
+822,1,Maine-et-Loire,70,FR
+4115,3,Aisne,2359,0000
+823,1,Manche,70,FR
+2299,2,Área de Moscú,714,RU
+4116,3,Allier,2360,0000
+1444,1,Derbyshire,181,GB
+4978,3,Chuquibamba,3425,040601
+824,1,Marne,70,FR
+4117,3,Alpes (Alta provenz),2361,0000
+825,1,Marne (Haute),70,FR
+1445,1,Denbighshire,181,GB
+4979,3,Andaray,3425,040602
+4118,3,Alpes (Altos),2362,0000
+2300,2,Área de Múrmansk,715,RU
+826,1,Mayenne,70,FR
+4119,3,Alpes marítimos,2363,0000
+827,1,Meurthe-et-Moselle,70,FR
+1446,1,Dumfriesshire,181,GB
+4981,3,Chichas,3425,040604
+4120,3,Ardèche,2364,0000
+828,1,Meuse,70,FR
+1447,1,Down,181,GB
+829,1,Morbihan,70,FR
+4987,3,Cocachacra,3426,040702
+4121,3,Las Ardenas,2365,0000
+830,1,Moselle,70,FR
+4122,3,Ariège,2366,0000
+1448,1,Dorset,181,GB
+4989,3,Islay,3426,040704
+831,1,Nièvre,70,FR
+4123,3,Aube,2367,0000
+832,1,Norte,70,FR
+4124,3,Aude,2368,0000
+1449,1,Dunbartonshire,181,GB
+4991,3,Punta de Bombón,3426,040706
+833,1,Oise,70,FR
+4125,3,Aveyron,2369,0000
+2301,2,Nizni Nóvgorod,716,RU
+1450,1,Durham,181,GB
+834,1,Orne,70,FR
+4126,3,Bouches-du-Rhône,2370,0000
+4993,3,Alca,3427,040802
+835,1,Pas-de-Calais,70,FR
+4127,3,Calvados,2371,0000
+1451,1,Devon,181,GB
+4994,3,Charcana,3427,040803
+836,1,Puy-de-Dôme,70,FR
+4128,3,Cantal,2372,0000
+2302,2,Área de Nóvgorod,717,RU
+4129,3,Charente,2373,0000
+1452,1,East Lothian,181,GB
+4997,3,Puyca,3427,040806
+837,1,Pirineos atlánticos,70,FR
+4130,3,Charente-Maritime,2374,0000
+2303,2,Área de Novosibirsk,718,RU
+838,1,Pirineos (Altos),70,FR
+4999,3,Sayla,3427,040808
+1453,1,Essex,181,GB
+4131,3,Cher,2375,0000
+839,1,Pirineos orientales,70,FR
+4132,3,Corrèze,2376,0000
+2304,2,Área de Omsk,719,RU
+840,1,Rin (Bajo),70,FR
+5000,3,Tauria,3427,040809
+1454,1,Fife,181,GB
+4133,3,Côte-d'Or,2377,0000
+841,1,Rin (Alto),70,FR
+2305,2,Área de Orenburg,720,RU
+4134,3,Côtes-d'Armor,2378,0000
+1455,1,Flintshire,181,GB
+5001,3,Tomepampa,3427,040810
+842,1,Ródano,70,FR
+4135,3,Creuse,2379,0000
+843,1,Saône (Haute),70,FR
+2306,2,Área de Oriol,721,RU
+5002,3,Toro,3427,040811
+4136,3,Dordogne,2380,0000
+1456,1,Fermanagh,181,GB
+844,1,Saône-et-Loire,70,FR
+4137,3,Doubs,2381,0000
+845,1,Sarthe,70,FR
+2307,2,Área de Penza,722,RU
+5003,3,Ayacucho,3428,050101
+1457,1,Gloucestershire,181,GB
+4138,3,Drôme,2382,0000
+846,1,Saboya,70,FR
+4139,3,Eure,2383,0000
+5004,3,Acocro,3428,050102
+847,1,Saboya (alta),70,FR
+2308,2,Territorio de Perm,723,RU
+1458,1,Hampshire,181,GB
+4140,3,Eure-et-Loir,2384,0000
+848,1,París,70,FR
+4141,3,Finistère,2385,0000
+5005,3,Acos Vinchos,3428,050103
+2309,2,Área de Pskov,724,RU
+849,1,Seine-Maritime,70,FR
+1459,1,Hertfordshire,181,GB
+4142,3,Corse-du-Sud,2386,0000
+850,1,Seine-et-Marne,70,FR
+5007,3,Chiara,3428,050105
+4143,3,Corse-du-Nord,2387,0000
+1460,1,Huntingdonshire,181,GB
+851,1,Yvelines,70,FR
+2310,2,Área Rostov del Don,725,RU
+4144,3,Gard,2388,0000
+5009,3,Pacaycasa,3428,050107
+852,1,Sèvres (Deux),70,FR
+4145,3,Garona (Alta),2389,0000
+1461,1,Hereford y Worcester,181,GB
+853,1,Somme,70,FR
+2311,2,Área de Riazán,726,RU
+854,1,Tarn,70,FR
+5011,3,San José de Ticllas,3428,050109
+1462,1,Invernesshire,181,GB
+855,1,Tarn-et-Garonne,70,FR
+2312,2,Área de Samara,727,RU
+5014,3,Socos,3428,050112
+856,1,Var,70,FR
+1463,1,Isla de Wight,181,GB
+857,1,Vaucluse,70,FR
+5015,3,Tambillo,3428,050113
+2313,2,Área de Sarátov,728,RU
+858,1,Vendée,70,FR
+1464,1,Kent,181,GB
+859,1,Vienne,70,FR
+5017,3,Jesús Nazareno,3428,050115
+2314,2,Área de Sakhalin,729,RU
+860,1,Vienne (Haute),70,FR
+1465,1,Kincardineshire,181,GB
+5023,3,Paras,3429,050205
+861,1,Vosges,70,FR
+2315,2,Área de Sverdlovsk,730,RU
+862,1,Yonne,70,FR
+5025,3,Sancos,3430,050301
+1466,1,Kirkcudbrightshire,181,GB
+863,1,Territ.-de-Belfort,70,FR
+2316,2,Área de Smolensk,731,RU
+864,1,Essonne,70,FR
+5027,3,Sacsamarca,3430,050303
+1467,1,Kinross-shire,181,GB
+865,1,Hauts-de-Seine,70,FR
+2317,2,Área de Tambov,732,RU
+5029,3,Huanta,3431,050401
+866,1,Seine-Saint-Denis,70,FR
+1468,1,Lancashire,181,GB
+867,1,Val-de-Marne,70,FR
+2318,2,Área de Tver,733,RU
+5030,3,Ayahuanco,3431,050402
+868,1,Val-d'Oise,70,FR
+1469,1,Londonderry,181,GB
+869,1,D.O.M.-T.O.M.,70,FR
+2319,2,Área de Tomsk,734,RU
+5033,3,Luricocha,3431,050405
+870,1,Guadalupe,70,FR
+1470,1,Leicestershire,181,GB
+871,1,Martinica,70,FR
+2320,2,Área de Tula,735,RU
+5035,3,Sivia,3431,050407
+872,1,Guyana,70,FR
+1471,1,Lincolnshire,181,GB
+873,1,Réunion,70,FR
+5036,3,Llochegua,3431,050408
+1472,1,Lanarkshire,181,GB
+2321,2,Área de Tyumen,736,RU
+874,1,Saint-Pierre-et-Miq.,70,FR
+5037,3,Canayre,3431,050409
+875,1,Wallis-et-Futuna,70,FR
+1473,1,Midlothian,181,GB
+2322,2,Área de Simbirsk,737,RU
+876,1,Hors-France,70,FR
+1474,1,Merioneth,181,GB
+877,1,French S.Territ,71,TF
+5038,3,Uchuraccay,3431,050410
+2323,2,Área de Chelíabinsk,738,RU
+878,1,Gabón,72,GA
+1475,1,Mid Glamorgan,181,GB
+879,1,Gambia,73,GM
+5039,3,Pucacolpa,3431,050411
+2324,2,Área de Zabaikalsk,739,RU
+880,1,Georgia,74,GE
+5041,3,San Miguel,3432,050501
+1476,1,Monmouthshire,181,GB
+881,1,Ghana,75,GH
+882,1,Gibraltar,76,GI
+2325,2,Área de Yaroslavl,740,RU
+5043,3,Ayna,3432,050503
+1477,1,Morayshire,181,GB
+883,1,Granada,77,GD
+884,1,Aitolia kai Akarnan,78,GR
+2326,2,Canal de Moscú,741,RU
+5045,3,Chungui,3432,050505
+1478,1,Montgomeryshire,181,GB
+885,1,Akhaia,78,GR
+886,1,Argolis,78,GR
+2327,2,c.St-Peterburg,742,RU
+1479,1,Middlesex,181,GB
+5048,3,Tambo,3432,050508
+887,1,Arkadhia,78,GR
+888,1,Arta,78,GR
+5049,3,Samugari,3432,050509
+2328,2,Área autonom.judía,743,RU
+1480,1,Northamptonshire,181,GB
+889,1,Attiki,78,GR
+5051,3,Puquio,3433,050601
+890,1,Dhodhekanisos,78,GR
+1481,1,Norfolk,181,GB
+2329,2,Di.aut.Aginsk Buryat,744,RU
+891,1,Dhrama,78,GR
+892,1,Evritania,78,GR
+1482,1,Nairnshire,181,GB
+6229,3,Pomata,3551,210406
+2330,2,Di.aut.Komy Permjats,745,RU
+893,1,Evros,78,GR
+894,1,Evvoia,78,GR
+6230,3,Zepita,3551,210407
+1483,1,Nottinghamshire,181,GB
+2331,2,Distr.auton.Korjacs,746,RU
+895,1,Florina,78,GR
+6231,3,Ilave,3552,210501
+896,1,Fokis,78,GR
+1484,1,Northumberland,181,GB
+897,1,Fthiotis,78,GR
+2332,2,Distr.aut.Nenekchky,747,RU
+6232,3,Capazo,3552,210502
+898,1,Grevena,78,GR
+1485,1,Orkney,181,GB
+899,1,Ilia,78,GR
+6233,3,Pilcuyo,3552,210503
+2333,2,Distr.auton.Taymir,748,RU
+900,1,Imathia,78,GR
+1486,1,Oxfordshire,181,GB
+901,1,Ioannina,78,GR
+6234,3,Santa Rosa,3552,210504
+2334,2,Ust-Ordinsky Buryat,749,RU
+902,1,Iraklion,78,GR
+1487,1,Peeblesshire,181,GB
+903,1,Kardhitsa,78,GR
+6235,3,Conduriri,3552,210505
+2335,2,Dis.Chanti-Mansyjsky,750,RU
+904,1,Kastoria,78,GR
+1488,1,Pembrokeshire,181,GB
+6236,3,Huancane,3553,210601
+905,1,Kavala,78,GR
+2336,2,Distr.auton.Chukotka,751,RU
+906,1,Kefallinia,78,GR
+6237,3,Cojata,3553,210602
+1489,1,Perthshire,181,GB
+907,1,Kerkira,78,GR
+2337,2,Distr.auton.Evensky,752,RU
+908,1,Khalkidhiki,78,GR
+6238,3,Huatasani,3553,210603
+1490,1,Radnorshire,181,GB
+909,1,Khania,78,GR
+2338,2,Dis.Jamalo-Nenekchky,753,RU
+910,1,Khios,78,GR
+6239,3,Inchupalla,3553,210604
+1491,1,Renfrewshire,181,GB
+911,1,Kikladhes,78,GR
+2339,2,Ilocos,754,PH
+912,1,Kilkis,78,GR
+6240,3,Pusi,3553,210605
+1492,1,Ross-shire,181,GB
+913,1,Korinthia,78,GR
+6241,3,Rosaspata,3553,210606
+2340,2,Cagayan Valley,755,PH
+914,1,Kozani,78,GR
+1493,1,Rutland,181,GB
+915,1,Lakonia,78,GR
+6242,3,Taraco,3553,210607
+916,1,Larisa,78,GR
+2341,2,Central Luzon,756,PH
+1494,1,Roxburghshire,181,GB
+917,1,Lasithi,78,GR
+6243,3,Vilque Chico,3553,210608
+918,1,Lesvos,78,GR
+2342,2,South Luzon,757,PH
+1495,1,East Sussex,181,GB
+919,1,Levkas,78,GR
+6244,3,Lampa,3554,210701
+2343,2,Bicol,758,PH
+920,1,Magnisia,78,GR
+1496,1,Selkirkshire,181,GB
+921,1,Messinia,78,GR
+6245,3,Cabanilla,3554,210702
+2344,2,West Visayas,759,PH
+922,1,Pella,78,GR
+1497,1,South Glamorgan,181,GB
+6246,3,Calapuja,3554,210703
+923,1,Pieria,78,GR
+2345,2,Cntrl Visayas,760,PH
+1498,1,Shropshire,181,GB
+924,1,Piraievs,78,GR
+6247,3,Nicasio,3554,210704
+925,1,Preveza,78,GR
+2346,2,East Visayas,761,PH
+1499,1,Suffolk,181,GB
+926,1,Rethimni,78,GR
+6248,3,Ocuviri,3554,210705
+927,1,Rodhopi,78,GR
+2347,2,West Mindanao,762,PH
+1500,1,Shetland,181,GB
+928,1,Samos,78,GR
+6249,3,Palca,3554,210706
+929,1,Serrai,78,GR
+2348,2,North Mindanao,763,PH
+1501,1,Somerset,181,GB
+930,1,Thesprotia,78,GR
+6250,3,Paratia,3554,210707
+931,1,Salónica,78,GR
+2349,2,Cntrl Mindanao,764,PH
+1502,1,Staffordshire,181,GB
+932,1,Trikala,78,GR
+6251,3,Pucara,3554,210708
+933,1,Voiotia,78,GR
+1503,1,Sutherland,181,GB
+2350,2,South Mindanao,765,PH
+934,1,Xanthi,78,GR
+6252,3,Santa Lucia,3554,210709
+935,1,Zakinthos,78,GR
+1504,1,Stirlingshire,181,GB
+2351,2,Ahvenanmaa,766,FI
+936,1,Groenlandia,79,GL
+6253,3,Vilavila,3554,210710
+1505,1,West Sussex,181,GB
+937,1,Guadalupe,80,GP
+2352,2,Etelä-Suomi,767,FI
+938,1,Guam,81,GU
+6254,3,Ayaviri,3555,210801
+1506,1,Surrey,181,GB
+939,1,Guatemala,82,GT
+2353,2,Itä-Suomi,768,FI
+940,1,Guayana Franc.,83,GF
+1507,1,Tyrone,181,GB
+6255,3,Antauta,3555,210802
+941,1,Guernsey,84,GG
+2354,2,Lappi,769,FI
+942,1,Guinea,85,GN
+1508,1,Warwickshire,181,GB
+6256,3,Cupi,3555,210803
+2355,2,Länsi-Suomi,770,FI
+943,1,Guinea Ecuator.,86,GQ
+944,1,Guinea-Bissau,87,GW
+1509,1,Worcestershire,181,GB
+6257,3,Llalli,3555,210804
+2356,2,Oulu,771,FI
+4146,3,Gers,2390,0000
+945,1,Guyana,88,GY
+946,1,Haití,89,HT
+4147,3,Gironde,2391,0000
+1510,1,Westmorland,181,GB
+2357,2,Fiyi,772,FJ
+6258,3,Macari,3555,210805
+947,1,Honduras,90,HN
+4148,3,Hérault,2392,0000
+2358,2,Ain,773,FR
+948,1,Bacs-Kiskun,91,HU
+1511,1,West Glamorgan,181,GB
+4149,3,Ille-et-Vilaine,2393,0000
+6259,3,Nuñoa,3555,210806
+949,1,Baranya,91,HU
+4150,3,Indre,2394,0000
+2359,2,Aisne,774,FR
+950,1,Bekes,91,HU
+1512,1,Wiltshire,181,GB
+6260,3,Orurillo,3555,210807
+4151,3,Indre-et-Loire,2395,0000
+951,1,Bekescsaba,91,HU
+2360,2,Allier,775,FR
+4152,3,Isère,2396,0000
+1513,1,West Lothian,181,GB
+952,1,Borsod-Abauj-Zemplen,91,HU
+2813,2,Libia,1228,LY
+6261,3,Santa Rosa,3555,210808
+953,1,Budapest,91,HU
+2361,2,Alpes (Alta provenz),776,FR
+269,1,Córdoba,11,AR
+1514,1,Wigtownshire,181,GB
+954,1,Csongrad,91,HU
+6262,3,Umachiri,3555,210809
+2362,2,Alpes (Altos),777,FR
+270,1,Corrientes,11,AR
+955,1,Debrecen,91,HU
+1515,1,North Yorkshire,181,GB
+956,1,Dunaujvaros,91,HU
+6263,3,Moho,3556,210901
+271,1,Entre Rios,11,AR
+2363,2,Alpes marítimos,778,FR
+957,1,Eger,91,HU
+1516,1,South Yorkshire,181,GB
+958,1,Fejer,91,HU
+6264,3,Conima,3556,210902
+272,1,Jujuy,11,AR
+2364,2,Ardèche,779,FR
+959,1,Gyor,91,HU
+1517,1,West Yorkshire,181,GB
+960,1,Gyor-Moson-Sopron,91,HU
+273,1,Mendoza,11,AR
+6265,3,Huayrapata,3556,210903
+2365,2,Las Ardenas,780,FR
+961,1,Hajdu-Bihar,91,HU
+1518,1,Rep.Centroafr.,182,CF
+274,1,La Rioja,11,AR
+962,1,Heves,91,HU
+6266,3,Tilali,3556,210904
+2366,2,Ariège,781,FR
+1519,1,Rep.Dominicana,183,DO
+963,1,Hodmezovasarhely,91,HU
+275,1,Salta,11,AR
+964,1,Jasz-Nagykun-Szolnok,91,HU
+2367,2,Aube,782,FR
+6267,3,Putina,3557,211001
+1520,1,Praga,184,CZ
+276,1,San Juan,11,AR
+965,1,Kaposvar,91,HU
+2368,2,Aude,783,FR
+966,1,Kecskemet,91,HU
+6268,3,Ananea,3557,211002
+1521,1,Stredocesky,184,CZ
+277,1,San Luis,11,AR
+967,1,Komarom-Esztergom,91,HU
+2369,2,Aveyron,784,FR
+968,1,Miskolc,91,HU
+1522,1,Jihocesky,184,CZ
+6269,3,Pedro Vilca Apaza,3557,211003
+278,1,Santa Fé,11,AR
+969,1,Nagykanizsa,91,HU
+2370,2,Bouches-du-Rhône,785,FR
+970,1,Nograd,91,HU
+1523,1,Plzensky,184,CZ
+6270,3,Quilcapuncu,3557,211004
+279,1,Santiago del Estero,11,AR
+971,1,Nyiregyhaza,91,HU
+2371,2,Calvados,786,FR
+972,1,Pecs,91,HU
+1524,1,Karlovarsky,184,CZ
+6271,3,Sina,3557,211005
+280,1,Tucumán,11,AR
+973,1,Pest,91,HU
+2372,2,Cantal,787,FR
+974,1,Somogy,91,HU
+1525,1,Ustecky,184,CZ
+6272,3,Juliaca,3558,211101
+281,1,Chaco,11,AR
+975,1,Sopron,91,HU
+2373,2,Charente,788,FR
+1526,1,Liberecky,184,CZ
+976,1,Szabolcs-Szat.-Bereg,91,HU
+282,1,Chubut,11,AR
+6273,3,Cabana,3558,211102
+977,1,Szeged,91,HU
+2374,2,Charente-Maritime,789,FR
+1527,1,Kralovehradecky,184,CZ
+283,1,Formosa,11,AR
+978,1,Szekesfehervar,91,HU
+6274,3,Cabanillas,3558,211103
+2375,2,Cher,790,FR
+1528,1,Pardubicky,184,CZ
+979,1,Szolnok,91,HU
+284,1,Misiones,11,AR
+6275,3,Caracoto,3558,211104
+980,1,Szombathely,91,HU
+1529,1,Vysocina,184,CZ
+2376,2,Corrèze,791,FR
+981,1,Tatabanya,91,HU
+285,1,Neuquen,11,AR
+1530,1,Jihomoravsky,184,CZ
+6276,3,Sandia,3559,211201
+982,1,Tolna,91,HU
+286,1,La Pampa,11,AR
+1531,1,Olomoucky,184,CZ
+2377,2,Côte-d'Or,792,FR
+983,1,Vas,91,HU
+287,1,Rio Negro,11,AR
+1532,1,Zlinsky,184,CZ
+6277,3,Cuyocuyo,3559,211202
+984,1,Veszprem,91,HU
+288,1,Santa Cruz,11,AR
+1533,1,Moravskoslezsky,184,CZ
+2378,2,Côtes-d'Armor,793,FR
+985,1,Zala,91,HU
+6278,3,Limbani,3559,211203
+1534,1,República Congo,185,CD
+289,1,Tierra de Fuego,11,AR
+986,1,Zalaegerszeg,91,HU
+2379,2,Creuse,794,FR
+1535,1,República Congo,186,CG
+987,1,Irán,92,IR
+290,1,Armenia,12,AM
+6279,3,Patambuco,3559,211204
+988,1,Iraq,93,IQ
+1536,1,Reunión,187,RE
+2380,2,Dordogne,795,FR
+989,1,Cork,94,IE
+1537,1,Ruanda,188,RW
+291,1,Aruba,13,AW
+6280,3,Phara,3559,211205
+990,1,Clare,94,IE
+1538,1,Alba,189,RO
+2381,2,Doubs,796,FR
+991,1,Cavan,94,IE
+1539,1,Arad,189,RO
+292,1,Aust Capital Terr,14,AU
+6281,3,Quiaca,3559,211206
+992,1,Carlow,94,IE
+1540,1,Arges,189,RO
+2382,2,Drôme,797,FR
+993,1,Dublín,94,IE
+1541,1,Bacau,189,RO
+293,1,Nueva Gales del Sur,14,AU
+6282,3,San Juan del Oro,3559,211207
+994,1,Donegal,94,IE
+1542,1,Bihor,189,RO
+2383,2,Eure,798,FR
+995,1,Galway,94,IE
+1543,1,Bistrita-Nasaud,189,RO
+294,1,Territorio del Norte,14,AU
+6283,3,Yanahuaya,3559,211208
+996,1,Kildare,94,IE
+1544,1,Botosani,189,RO
+2384,2,Eure-et-Loir,799,FR
+997,1,Kilkenny,94,IE
+295,1,Queensland,14,AU
+1545,1,Braila,189,RO
+6284,3,Alto Inambari,3559,211209
+998,1,Kerry,94,IE
+1546,1,Brasov,189,RO
+999,1,Longford,94,IE
+2385,2,Finistère,800,FR
+296,1,Australia Meridional,14,AU
+1547,1,Bucuresti,189,RO
+1000,1,Louth,94,IE
+6285,3,San Pedro de Putina Punco,3559,211210
+1548,1,Buzau,189,RO
+1001,1,Limerick,94,IE
+2386,2,Corse-du-Sud,801,FR
+297,1,Tasmania,14,AU
+1549,1,Calarasi,189,RO
+1002,1,Leitrim,94,IE
+6286,3,Yunguyo,3560,211301
+1550,1,Caras-Severin,189,RO
+298,1,Victoria,14,AU
+2387,2,Corse-du-Nord,802,FR
+6287,3,Anapia,3560,211302
+1551,1,Cluj,189,RO
+299,1,Autralia Occidental,14,AU
+2388,2,Gard,803,FR
+1552,1,Constanta,189,RO
+6288,3,Copani,3560,211303
+1553,1,Covasna,189,RO
+300,1,Burgenland,15,AT
+2389,2,Garona (Alta),804,FR
+1554,1,Dimbovita,189,RO
+6289,3,Cuturapi,3560,211304
+1555,1,Dolj,189,RO
+301,1,Carintia,15,AT
+2390,2,Gers,805,FR
+1556,1,Galati,189,RO
+1003,1,Laois,94,IE
+1557,1,Gorj,189,RO
+6290,3,Ollaraya,3560,211305
+302,1,Baja Austria,15,AT
+2391,2,Gironde,806,FR
+1558,1,Giurgiu,189,RO
+1559,1,Harghita,189,RO
+1004,1,Meath,94,IE
+6291,3,Tinicachi,3560,211306
+2392,2,Hérault,807,FR
+303,1,Alta Austria,15,AT
+1005,1,Monaghan,94,IE
+1560,1,Hunedoara,189,RO
+5898,3,Cerro Azul,3517,150504
+304,1,Salzburgo,15,AT
+1561,1,Ialomita,189,RO
+6292,3,Unicachi,3560,211307
+2393,2,Ille-et-Vilaine,808,FR
+1562,1,Iasi,189,RO
+305,1,Estiria,15,AT
+1563,1,Ilfov,189,RO
+6293,3,Moyobamba,3561,220101
+1564,1,Maramures,189,RO
+306,1,Tirol,15,AT
+1565,1,Mehedinti,189,RO
+1566,1,Mures,189,RO
+2394,2,Indre,809,FR
+307,1,Vorarlberg,15,AT
+308,1,Viena,15,AT
+1567,1,Neamt,189,RO
+2395,2,Indre-et-Loire,810,FR
+1568,1,Olt,189,RO
+309,1,Azerbaiyán,16,AZ
+1569,1,Prahova,189,RO
+2396,2,Isère,811,FR
+310,1,Azul,17,BL
+1570,1,Salaj,189,RO
+1571,1,Satu Mare,189,RO
+2397,2,Jura,812,FR
+311,1,Bahamas,18,BS
+1572,1,Sibiu,189,RO
+2398,2,Landes,813,FR
+1573,1,Suceava,189,RO
+6294,3,Calzada,3561,220102
+312,1,Bahráin,19,BH
+1574,1,Teleorman,189,RO
+5899,3,Chilca,3517,150505
+2399,2,Loir-et-Cher,814,FR
+313,1,Bangladesh,20,BD
+1575,1,Timis,189,RO
+6295,3,Habana,3561,220103
+1576,1,Tulcea,189,RO
+5900,3,Coayllo,3517,150506
+2400,2,Loire,815,FR
+314,1,Barbados,21,BB
+1577,1,Vaslui,189,RO
+5901,3,Imperial,3517,150507
+6296,3,Jepelacio,3561,220104
+2401,2,Loire (Haute),816,FR
+1578,1,Vilcea,189,RO
+315,1,Amberes,22,BE
+1579,1,Vrancea,189,RO
+5902,3,Lunahuana,3517,150508
+6297,3,Soritor,3561,220105
+2402,2,Loire-Atlantique,817,FR
+316,1,Brabante,22,BE
+1580,1,S.Cris.& Nieves,190,KN
+5903,3,Mala,3517,150509
+2403,2,Loiret,818,FR
+1581,1,S.Pedr. Miquel.,191,PM
+6298,3,Yantalo,3561,220106
+317,1,Hainaut,22,BE
+1582,1,S.Tomé Príncipe,192,ST
+2404,2,Lot,819,FR
+5904,3,Nuevo Imperial,3517,150510
+6299,3,Bellavista,3562,220201
+318,1,Lieja,22,BE
+1583,1,Sáhara occid.,193,EH
+1584,1,Samoa americana,194,AS
+2405,2,Lot-et-Garonne,820,FR
+5905,3,Pacaran,3517,150511
+319,1,Limburgo,22,BE
+6300,3,Alto Biavo,3562,220202
+1585,1,Samoa Occident.,195,WS
+2406,2,Lozère,821,FR
+1586,1,San Marino,196,SM
+5906,3,Quilmana,3517,150512
+320,1,Luxemburgo,22,BE
+6301,3,Bajo Biavo,3562,220203
+1587,1,San Vicente,197,VC
+5907,3,San Antonio,3517,150513
+321,1,Namur,22,BE
+2407,2,Maine-et-Loire,822,FR
+1588,1,Santa Helena,198,SH
+6302,3,Huallaga,3562,220204
+1589,1,Santa Lucía,199,LC
+5908,3,San Luis,3517,150514
+322,1,Oost-Vlaanderen,22,BE
+2408,2,Manche,823,FR
+1590,1,Senegal,200,SN
+6303,3,San Pablo,3562,220205
+323,1,West-Vlaanderen,22,BE
+5909,3,Santa Cruz de Flores,3517,150515
+1591,1,Serbia/Monten.,201,CS
+2409,2,Marne,824,FR
+6304,3,San Rafael,3562,220206
+5910,3,Zúñiga,3517,150516
+324,1,Brabante (valón),22,BE
+1592,1,Seychelles,202,SC
+2410,2,Marne (Haute),825,FR
+6305,3,San José de Sisa,3563,220301
+5911,3,Huaral,3518,150601
+1593,1,Sierra Leona,203,SL
+325,1,Bruselas (capital),22,BE
+2411,2,Mayenne,826,FR
+6306,3,Agua Blanca,3563,220302
+5912,3,Atavillos Alto,3518,150602
+326,1,Belice,23,BZ
+1594,1,Singapur,204,SG
+2412,2,Meurthe-et-Moselle,827,FR
+327,1,Benín,24,BJ
+6307,3,San Martín,3563,220303
+5913,3,Atavillos Bajo,3518,150603
+1595,1,Sint Maarten,205,SX
+2413,2,Meuse,828,FR
+328,1,Bermudas,25,BM
+1596,1,Siria,206,SY
+5914,3,Aucallama,3518,150604
+6308,3,Santa Rosa,3563,220304
+2414,2,Morbihan,829,FR
+329,1,Bielorrusia,26,BY
+1597,1,Somalia,207,SO
+5915,3,Chancay,3518,150605
+6309,3,Shatoja,3563,220305
+2415,2,Moselle,830,FR
+1598,1,Sri Lanka,208,LK
+330,1,Bolivia,27,BO
+5916,3,Ihuari,3518,150606
+6310,3,Saposoa,3564,220401
+2416,2,Nièvre,831,FR
+1599,1,Suazilandia,209,SZ
+331,1,Bonaire  Saba,28,BQ
+5917,3,Lampian,3518,150607
+6311,3,Alto Saposoa,3564,220402
+2417,2,Norte,832,FR
+1600,1,Sudán,210,SD
+332,1,Bosnia-Herz.,29,BA
+5918,3,Pacaraos,3518,150608
+6312,3,El Eslabón,3564,220403
+2418,2,Oise,833,FR
+1601,1,Sudán del Sur,211,SS
+333,1,Botsuana,30,BW
+5919,3,San Miguel de Acos,3518,150609
+2419,2,Orne,834,FR
+6313,3,Piscoyacu,3564,220404
+334,1,Acre,31,BR
+1602,1,Blekinge Län,212,SE
+5920,3,Santa Cruz de Andamarca,3518,150610
+5921,3,Sumbilca,3518,150611
+2420,2,Pas-de-Calais,835,FR
+335,1,Alagoas,31,BR
+6314,3,Sacanche,3564,220405
+1603,1,Dalarnas Län,212,SE
+5922,3,Veintisiete de Noviembre,3518,150612
+1604,1,Gotlands Län,212,SE
+336,1,Amazonas,31,BR
+2421,2,Puy-de-Dôme,836,FR
+5923,3,Matucana,3519,150701
+6315,3,Tingo de Saposoa,3564,220406
+1605,1,Gävleborgs Län,212,SE
+5924,3,Antioquia,3519,150702
+337,1,Amapá,31,BR
+6316,3,Lamas,3565,220501
+2422,2,Pirineos atlánticos,837,FR
+1606,1,Hallands Län,212,SE
+5925,3,Callahuanca,3519,150703
+4153,3,Jura,2397,0000
+5926,3,Carampoma,3519,150704
+1607,1,Jämtlands Län,212,SE
+2423,2,Pirineos (Altos),838,FR
+6317,3,Alonso de Alvarado,3565,220502
+5927,3,Chicla,3519,150705
+1608,1,Jönköpings Län,212,SE
+4154,3,Landes,2398,0000
+5928,3,Cuenca,3519,150706
+1609,1,Kalmar Län,212,SE
+2424,2,Pirineos orientales,839,FR
+6318,3,Barranquita,3565,220503
+5929,3,Huachupampa,3519,150707
+4155,3,Loir-et-Cher,2399,0000
+1610,1,Kronobergs Län,212,SE
+5930,3,Huanza,3519,150708
+1611,1,Norrbottens Län,212,SE
+2425,2,Rin (Bajo),840,FR
+4156,3,Loire,2400,0000
+6319,3,Caynarachi,3565,220504
+5931,3,Huarochiri,3519,150709
+1612,1,Skåne Län,212,SE
+5932,3,Lahuaytambo,3519,150710
+4157,3,Loire (Haute),2401,0000
+1613,1,Stockholms Län,212,SE
+2426,2,Rin (Alto),841,FR
+5933,3,Langa,3519,150711
+6320,3,Cuñumbuqui,3565,220505
+1614,1,Södermanlands Län,212,SE
+5934,3,Laraos,3519,150712
+2427,2,Ródano,842,FR
+4158,3,Loire-Atlantique,2402,0000
+1615,1,Uppsala Län,212,SE
+5935,3,Mariatana,3519,150713
+6321,3,Pinto Recodo,3565,220506
+1616,1,Värmlands Län,212,SE
+4159,3,Loiret,2403,0000
+5936,3,Ricardo Palma,3519,150714
+2428,2,Saône (Haute),843,FR
+1617,1,Västerbottens Län,212,SE
+6322,3,Rumisapa,3565,220507
+5937,3,San Andrés de Tupicocha,3519,150715
+4160,3,Lot,2404,0000
+2429,2,Saône-et-Loire,844,FR
+1618,1,Västernorrlands Län,212,SE
+5938,3,San Antonio,3519,150716
+4161,3,Lot-et-Garonne,2405,0000
+1619,1,Västmanlands Län,212,SE
+5939,3,San Bartolomé,3519,150717
+6323,3,San Roque de Cumbaza,3565,220508
+2430,2,Sarthe,845,FR
+4162,3,Lozère,2406,0000
+5940,3,San Damian,3519,150718
+1620,1,Västra Götalands Län,212,SE
+6324,3,Shanao,3565,220509
+5941,3,San Juan de Iris,3519,150719
+1621,1,Örebro Län,212,SE
+2431,2,Saboya,846,FR
+4163,3,Maine-et-Loire,2407,0000
+1622,1,Östergötlands Län,212,SE
+5942,3,San Juan de Tantaranche,3519,150720
+6325,3,Tabalosos,3565,220510
+4164,3,Manche,2408,0000
+1623,1,Argovia,213,CH
+2432,2,Saboya (alta),847,FR
+5943,3,San Lorenzo de Quinti,3519,150721
+1624,1,Inner-Rhoden,213,CH
+6326,3,Zapatero,3565,220511
+4165,3,Marne,2409,0000
+5944,3,San Mateo,3519,150722
+2433,2,París,848,FR
+1625,1,Ausser-Rhoden,213,CH
+5945,3,San Mateo de Otao,3519,150723
+1626,1,Berna,213,CH
+4166,3,Marne (Haute),2410,0000
+6327,3,Juanjuí,3566,220601
+2434,2,Seine-Maritime,849,FR
+1627,1,Basilea provincia,213,CH
+5946,3,San Pedro de Casta,3519,150724
+1628,1,Basilea ciudad,213,CH
+4167,3,Mayenne,2411,0000
+6328,3,Campanilla,3566,220602
+5947,3,San Pedro de Huancayre,3519,150725
+2435,2,Seine-et-Marne,850,FR
+1629,1,Friburgo,213,CH
+5948,3,Sangallaya,3519,150726
+4168,3,Meurthe-et-Moselle,2412,0000
+6329,3,Huicungo,3566,220603
+1630,1,Ginebra,213,CH
+5949,3,Santa Cruz de Cocachacra,3519,150727
+2436,2,Yvelines,851,FR
+1631,1,Glaris,213,CH
+4169,3,Meuse,2413,0000
+6330,3,Pachiza,3566,220604
+5950,3,Santa Eulalia,3519,150728
+1632,1,Cantón de Grisones,213,CH
+2437,2,Sèvres (Deux),852,FR
+1633,1,Jura,213,CH
+5951,3,Santiago de Anchucaya,3519,150729
+4170,3,Morbihan,2414,0000
+6331,3,Pajarillo,3566,220605
+1634,1,Lucerna,213,CH
+2438,2,Somme,853,FR
+5952,3,Santiago de Tuna,3519,150730
+1635,1,Neuchatel,213,CH
+4171,3,Moselle,2415,0000
+6332,3,Picota,3567,220701
+5953,3,Santo Domingo de Los Olleros,3519,150731
+1636,1,Nidwalden,213,CH
+2439,2,Tarn,854,FR
+5954,3,Surco,3519,150732
+1637,1,Obwalden,213,CH
+4172,3,Nièvre,2416,0000
+6333,3,Buenos Aires,3567,220702
+5955,3,Huacho,3520,150801
+1638,1,St.Gallen,213,CH
+2440,2,Tarn-et-Garonne,855,FR
+4173,3,Norte,2417,0000
+5956,3,Ambar,3520,150802
+1639,1,Schaffhausen,213,CH
+6334,3,Caspisapa,3567,220703
+2441,2,Var,856,FR
+1640,1,Solothurn,213,CH
+5957,3,Caleta de Carquin,3520,150803
+4174,3,Oise,2418,0000
+1641,1,Schwyz,213,CH
+5958,3,Checras,3520,150804
+6335,3,Pilluana,3567,220704
+2442,2,Vaucluse,857,FR
+1642,1,Turgovia,213,CH
+5959,3,Hualmay,3520,150805
+4175,3,Orne,2419,0000
+1643,1,Ticino,213,CH
+5960,3,Huaura,3520,150806
+6336,3,Pucacaca,3567,220705
+2443,2,Vendée,858,FR
+1644,1,Uri,213,CH
+5961,3,Leoncio Prado,3520,150807
+4176,3,Pas-de-Calais,2420,0000
+1645,1,Vaud,213,CH
+5962,3,Paccho,3520,150808
+2444,2,Vienne,859,FR
+6337,3,San Cristóbal,3567,220706
+1646,1,Valais,213,CH
+4177,3,Puy-de-Dôme,2421,0000
+5963,3,Santa Leonor,3520,150809
+1647,1,Zug,213,CH
+2445,2,Vienne (Haute),860,FR
+1648,1,Zúrich,213,CH
+5964,3,Santa María,3520,150810
+6338,3,San Hilarión,3567,220707
+1649,1,Surinam,214,SR
+5965,3,Sayan,3520,150811
+4178,3,Pirineos atlánticos,2422,0000
+2446,2,Vosges,861,FR
+6339,3,Shamboyacu,3567,220708
+1650,1,Svalbard,215,SJ
+5966,3,Vegueta,3520,150812
+1651,1,Tanzania,216,TZ
+5967,3,Oyon,3521,150901
+4179,3,Pirineos (Altos),2423,0000
+2447,2,Yonne,862,FR
+6340,3,Tingo de Ponasa,3567,220709
+1652,1,Tayikistán,217,TJ
+5968,3,Andajes,3521,150902
+5969,3,Caujul,3521,150903
+1653,1,Terr.br.Oc.Ind.,218,IO
+2448,2,Territ.-de-Belfort,863,FR
+4180,3,Pirineos orientales,2424,0000
+6341,3,Tres Unidos,3567,220710
+5970,3,Cochamarca,3521,150904
+1654,1,Timor Oriental,219,TL
+2449,2,Essonne,864,FR
+5971,3,Navan,3521,150905
+1655,1,Timor oriental,220,TP
+4181,3,Rin (Bajo),2425,0000
+6342,3,Rioja,3568,220801
+1656,1,Togo,221,TG
+5972,3,Pachangara,3521,150906
+1657,1,Tonga,222,TO
+2450,2,Hauts-de-Seine,865,FR
+4182,3,Rin (Alto),2426,0000
+6343,3,Awajun,3568,220802
+5973,3,Yauyos,3522,151001
+1658,1,TrinidadyTobago,223,TT
+5974,3,Alis,3522,151002
+2451,2,Seine-Saint-Denis,866,FR
+1659,1,Túnez,224,TN
+4183,3,Ródano,2427,0000
+6344,3,Elías Soplin Vargas,3568,220803
+5975,3,Allauca,3522,151003
+1660,1,Turkmenistán,225,TM
+5976,3,Ayaviri,3522,151004
+2452,2,Val-de-Marne,867,FR
+6345,3,Nueva Cajamarca,3568,220804
+4184,3,Saône (Haute),2428,0000
+1661,1,Adana,226,TR
+5977,3,Azángaro,3522,151005
+1662,1,Adiyaman,226,TR
+5978,3,Cacra,3522,151006
+6346,3,Pardo Miguel,3568,220805
+2453,2,Val-d'Oise,868,FR
+4185,3,Saône-et-Loire,2429,0000
+1663,1,Afyon,226,TR
+5979,3,Carania,3522,151007
+1664,1,Agri,226,TR
+6347,3,Posic,3568,220806
+2454,2,D.O.M.-T.O.M.,869,FR
+4186,3,Sarthe,2430,0000
+5980,3,Catahuasi,3522,151008
+1665,1,Amasya,226,TR
+5981,3,Chocos,3522,151009
+1666,1,Ankara,226,TR
+2455,2,Guadalupe,870,FR
+6348,3,San Fernando,3568,220807
+4187,3,Saboya,2431,0000
+5982,3,Cochas,3522,151010
+1667,1,Antalya,226,TR
+5983,3,Colonia,3522,151011
+2456,2,Martinica,871,FR
+6349,3,Yorongos,3568,220808
+1668,1,Artvin,226,TR
+4188,3,Saboya (alta),2432,0000
+5984,3,Hongos,3522,151012
+1669,1,Aydin,226,TR
+2457,2,Guyana,872,FR
+6350,3,Yuracyacu,3568,220809
+5985,3,Huampara,3522,151013
+1670,1,Balikesir,226,TR
+4189,3,París,2433,0000
+1671,1,Bilecik,226,TR
+5986,3,Huancaya,3522,151014
+2458,2,Réunion,873,FR
+6351,3,Tarapoto,3569,220901
+1672,1,Bingöl,226,TR
+5987,3,Huangascar,3522,151015
+4190,3,Seine-Maritime,2434,0000
+1673,1,Bitlis,226,TR
+5988,3,Huantan,3522,151016
+2459,2,Saint-Pierre-et-Miq.,874,FR
+6352,3,Alberto Leveau,3569,220902
+5989,3,Huañec,3522,151017
+4191,3,Seine-et-Marne,2435,0000
+5990,3,Laraos,3522,151018
+2460,2,Wallis-et-Futuna,875,FR
+6353,3,Cacatachi,3569,220903
+4192,3,Yvelines,2436,0000
+5991,3,Lincha,3522,151019
+2461,2,Hors-France,876,FR
+6354,3,Chazuta,3569,220904
+5992,3,Madean,3522,151020
+4193,3,Sèvres (Deux),2437,0000
+5993,3,Miraflores,3522,151021
+2462,2,French S.Territ,877,TF
+6355,3,Chipurana,3569,220905
+5994,3,Omas,3522,151022
+4194,3,Somme,2438,0000
+5995,3,Putinza,3522,151023
+2463,2,Gabón,878,GA
+6356,3,El Porvenir,3569,220906
+4195,3,Tarn,2439,0000
+5996,3,Quinches,3522,151024
+2464,2,Gambia,879,GM
+5997,3,Quinocay,3522,151025
+6357,3,Huimbayoc,3569,220907
+4196,3,Tarn-et-Garonne,2440,0000
+5998,3,San Joaquín,3522,151026
+2465,2,Georgia,880,GE
+6358,3,Juan Guerra,3569,220908
+5999,3,San Pedro de Pilas,3522,151027
+4197,3,Var,2441,0000
+2466,2,Ghana,881,GH
+6000,3,Tanta,3522,151028
+6359,3,La Banda de Shilcayo,3569,220909
+4198,3,Vaucluse,2442,0000
+6001,3,Tauripampa,3522,151029
+2467,2,Gibraltar,882,GI
+6002,3,Tomas,3522,151030
+6360,3,Morales,3569,220910
+4199,3,Vendée,2443,0000
+6003,3,Tupe,3522,151031
+2468,2,Granada,883,GD
+6004,3,Viñac,3522,151032
+6361,3,Papaplaya,3569,220911
+4200,3,Vienne,2444,0000
+6005,3,Vitis,3522,151033
+2469,2,Aitolia kai Akarnan,884,GR
+6006,3,Iquitos,3523,160101
+4620,3,San Jerónimo,3390,010518
+4201,3,Vienne (Haute),2445,0000
+6007,3,Alto Nanay,3523,160102
+2470,2,Akhaia,885,GR
+6008,3,Fernando Lores,3523,160103
+4202,3,Vosges,2446,0000
+4621,3,San Juan de Lopecancha,3390,010519
+6009,3,Indiana,3523,160104
+2471,2,Argolis,886,GR
+4203,3,Yonne,2447,0000
+4622,3,Santa Catalina,3390,010520
+6010,3,Las Amazonas,3523,160105
+2472,2,Arkadhia,887,GR
+6011,3,Mazan,3523,160106
+4623,3,Santo Tomas,3390,010521
+4204,3,Territ.-de-Belfort,2448,0000
+6012,3,Napo,3523,160107
+2473,2,Arta,888,GR
+4624,3,Tingo,3390,010522
+6013,3,Punchana,3523,160108
+4205,3,Essonne,2449,0000
+6014,3,Torres Causana,3523,160110
+2474,2,Attiki,889,GR
+4625,3,Trita,3390,010523
+6015,3,Belén,3523,160112
+4206,3,Hauts-de-Seine,2450,0000
+6016,3,San Juan Bautista,3523,160113
+4626,3,San Nicolás,3391,010601
+2475,2,Dhodhekanisos,890,GR
+4207,3,Seine-Saint-Denis,2451,0000
+6017,3,Yurimaguas,3524,160201
+2476,2,Dhrama,891,GR
+4627,3,Chirimoto,3391,010602
+6018,3,Balsapuerto,3524,160202
+4208,3,Val-de-Marne,2452,0000
+6019,3,Jeberos,3524,160205
+4628,3,Cochamal,3391,010603
+2477,2,Evritania,892,GR
+6020,3,Lagunas,3524,160206
+4209,3,Val-d'Oise,2453,0000
+4629,3,Huambo,3391,010604
+6021,3,Santa Cruz,3524,160210
+1676,1,Bursa,226,TR
+4210,3,D.O.M.-T.O.M.,2454,0000
+4630,3,Limabamba,3391,010605
+6022,3,Teniente Cesar López Rojas,3524,160211
+1677,1,Canakkale,226,TR
+6023,3,Nauta,3525,160301
+4211,3,Guadalupe,2455,0000
+4631,3,Longar,3391,010606
+6024,3,Parinari,3525,160302
+1678,1,Cankiri,226,TR
+6025,3,Tigre,3525,160303
+4212,3,Martinica,2456,0000
+4632,3,Mariscal Benavides,3391,010607
+6026,3,Trompeteros,3525,160304
+1679,1,Corum,226,TR
+4213,3,Guyana,2457,0000
+6027,3,Urarinas,3525,160305
+4633,3,Milpuc,3391,010608
+1680,1,Denizli,226,TR
+6028,3,Ramón Castilla,3526,160401
+4214,3,Réunion,2458,0000
+6029,3,Pebas,3526,160402
+4634,3,Omia,3391,010609
+1681,1,Diyarbakir,226,TR
+4215,3,Saint-Pierre-et-Miq.,2459,0000
+4635,3,Santa Rosa,3391,010610
+1682,1,Edirne,226,TR
+1683,1,Elazig,226,TR
+4636,3,Totora,3391,010611
+1684,1,Erzincan,226,TR
+4637,3,Vista Alegre,3391,010612
+1685,1,Erzurum,226,TR
+4638,3,Bagua Grande,3392,010701
+1686,1,Eskisehir,226,TR
+4639,3,Cajaruro,3392,010702
+1687,1,Gaziantep,226,TR
+4640,3,Cumba,3392,010703
+1688,1,Giresun,226,TR
+4641,3,El Milagro,3392,010704
+1689,1,Gümüshane,226,TR
+4642,3,Jamalca,3392,010705
+1690,1,Hakkari,226,TR
+4643,3,Lonya Grande,3392,010706
+1691,1,Hatay,226,TR
+4644,3,Yamon,3392,010707
+1692,1,Isparta,226,TR
+4645,3,Huaraz,3393,020101
+1693,1,Icel,226,TR
+4646,3,Cochabamba,3393,020102
+1694,1,Estanbul,226,TR
+4647,3,Colcabamba,3393,020103
+1695,1,Esmirna,226,TR
+1696,1,Kars,226,TR
+4648,3,Huanchay,3393,020104
+1697,1,Kastamonu,226,TR
+4649,3,Independencia,3393,020105
+1698,1,Kayseri,226,TR
+4650,3,Jangas,3393,020106
+1699,1,Kirklareli,226,TR
+4651,3,La Libertad,3393,020107
+1700,1,Kirshehir,226,TR
+4652,3,Olleros,3393,020108
+1701,1,Kocaeli,226,TR
+4653,3,Pampas Grande,3393,020109
+1702,1,Konya,226,TR
+4654,3,Pariacoto,3393,020110
+1703,1,Kütahya,226,TR
+4655,3,Pira,3393,020111
+1704,1,Malatya,226,TR
+4656,3,Tarica,3393,020112
+1705,1,Manisa,226,TR
+1706,1,K.Marash,226,TR
+4657,3,Aija,3394,020201
+4658,3,Coris,3394,020202
+1707,1,Mardin,226,TR
+1708,1,Mugla,226,TR
+4659,3,Huacllan,3394,020203
+1709,1,Mush,226,TR
+4660,3,La Merced,3394,020204
+1710,1,Nevshehir,226,TR
+4661,3,Succha,3394,020205
+1711,1,Nigde,226,TR
+4662,3,Llamellin,3395,020301
+1712,1,Ordu,226,TR
+4663,3,Aczo,3395,020302
+1713,1,Rize,226,TR
+4664,3,Chaccho,3395,020303
+1714,1,Sakarya,226,TR
+4665,3,Chingas,3395,020304
+1715,1,Samsun,226,TR
+4666,3,Mirgas,3395,020305
+1716,1,Siirt,226,TR
+4667,3,San Juan de Rontoy,3395,020306
+1717,1,Sinop,226,TR
+4668,3,Chacas,3396,020401
+1718,1,Sivas,226,TR
+4669,3,Acochaca,3396,020402
+1719,1,Tekirdag,226,TR
+4670,3,Chiquian,3397,020501
+1720,1,Tokat,226,TR
+1721,1,Trabzon,226,TR
+4671,3,Abelardo Pardo Lezameta,3397,020502
+1722,1,Tunceli,226,TR
+4672,3,Antonio Raymondi,3397,020503
+1723,1,Shanliurfa,226,TR
+4673,3,Aquia,3397,020504
+1724,1,Ushak,226,TR
+4674,3,Cajacay,3397,020505
+1725,1,Van,226,TR
+4675,3,Canis,3397,020506
+1726,1,Yozgat,226,TR
+4676,3,Colquioc,3397,020507
+1727,1,Zonguldak,226,TR
+4677,3,Huallanca,3397,020508
+1728,1,Aksaray,226,TR
+1729,1,Bayburt,226,TR
+4678,3,Huasta,3397,020509
+1730,1,Karaman,226,TR
+4679,3,Huayllacayan,3397,020510
+1731,1,Kirikkale,226,TR
+4680,3,La Primavera,3397,020511
+1732,1,Batman,226,TR
+4681,3,Mangas,3397,020512
+1733,1,Shirnak,226,TR
+4682,3,Pacllon,3397,020513
+1734,1,Bartin,226,TR
+4683,3,San Miguel de Corpanqui,3397,020514
+1735,1,Ardahan,226,TR
+4684,3,Ticllos,3397,020515
+1736,1,Igdir,226,TR
+4685,3,Carhuaz,3398,020601
+1737,1,Yalova,226,TR
+4686,3,Acopampa,3398,020602
+1738,1,Tuvalu,227,TV
+4687,3,Amashca,3398,020603
+1739,1,Chernigivs'ka,228,UA
+1740,1,Cherkas'ka,228,UA
+4688,3,Anta,3398,020604
+4689,3,Ataquero,3398,020605
+1741,1,Chernovits'ka,228,UA
+4690,3,Marcara,3398,020606
+1742,1,Dnipropetrovs'ka,228,UA
+4691,3,Pariahuanca,3398,020607
+4692,3,San Miguel de Aco,3398,020608
+4693,3,Shilla,3398,020609
+4694,3,Tinco,3398,020610
+4695,3,Yungar,3398,020611
+4696,3,San Luis,3399,020701
+4697,3,San Nicolás,3399,020702
+4698,3,Yauya,3399,020703
+4699,3,Casma,3400,020801
+4700,3,Buena Vista Alta,3400,020802
+4701,3,Comandante Noel,3400,020803
+4702,3,Yautan,3400,020804
+4703,3,Corongo,3401,020901
+4704,3,Aco,3401,020902
+4705,3,Bambas,3401,020903
+4706,3,Cusca,3401,020904
+4707,3,La Pampa,3401,020905
+4708,3,Yanac,3401,020906
+4709,3,Yupan,3401,020907
+4710,3,Huari,3402,021001
+4711,3,Anra,3402,021002
+4712,3,Cajay,3402,021003
+4713,3,Chavin de Huantar,3402,021004
+4714,3,Huacachi,3402,021005
+4715,3,Huacchis,3402,021006
+4716,3,Huachis,3402,021007
+4717,3,Huantar,3402,021008
+4718,3,Masin,3402,021009
+4719,3,Paucas,3402,021010
+4720,3,Ponto,3402,021011
+4721,3,Rahuapampa,3402,021012
+4722,3,Rapayan,3402,021013
+4723,3,San Marcos,3402,021014
+4724,3,San Pedro de Chana,3402,021015
+4725,3,Uco,3402,021016
+4726,3,Huarmey,3403,021101
+4727,3,Cochapeti,3403,021102
+4728,3,Culebras,3403,021103
+4729,3,Huayan,3403,021104
+4730,3,Malvas,3403,021105
+4731,3,Caraz,3404,021201
+4732,3,Huallanca,3404,021202
+4733,3,Huata,3404,021203
+4734,3,Huaylas,3404,021204
+4735,3,Mato,3404,021205
+4736,3,Pamparomas,3404,021206
+4737,3,Pueblo Libre,3404,021207
+4738,3,Santa Cruz,3404,021208
+4739,3,Santo Toribio,3404,021209
+4740,3,Yuracmarca,3404,021210
+4741,3,Piscobamba,3405,021301
+4742,3,Casca,3405,021302
+4743,3,Eleazar Guzmán Barron,3405,021303
+4744,3,Fidel Olivas Escudero,3405,021304
+4745,3,Llama,3405,021305
+4746,3,Llumpa,3405,021306
+4747,3,Lucma,3405,021307
+4748,3,Musga,3405,021308
+4749,3,Ocros,3406,021401
+4750,3,Acas,3406,021402
+4751,3,Cajamarquilla,3406,021403
+4752,3,Carhuapampa,3406,021404
+4753,3,Cochas,3406,021405
+4754,3,Congas,3406,021406
+4755,3,Llipa,3406,021407
+4756,3,San Cristóbal de Rajan,3406,021408
+4757,3,San Pedro,3406,021409
+4758,3,Santiago de Chilcas,3406,021410
+4759,3,Cabana,3407,021501
+4760,3,Bolognesi,3407,021502
+4761,3,Conchucos,3407,021503
+4762,3,Huacaschuque,3407,021504
+4763,3,Huandoval,3407,021505
+4764,3,Lacabamba,3407,021506
+4766,3,Pallasca,3407,021508
+4769,3,Tauca,3407,021511
+4775,3,Catac,3409,021702
+4776,3,Cotaparaco,3409,021703
+4777,3,Huayllapampa,3409,021704
+4779,3,Marca,3409,021706
+4782,3,Tapacocha,3409,021709
+4784,3,Chimbote,3410,021801
+4785,3,Cáceres del Perú,3410,021802
+4787,3,Macate,3410,021804
+4788,3,Moro,3410,021805
+4789,3,Nepeña,3410,021806
+4791,3,Santa,3410,021808
+4795,3,Alfonso Ugarte,3411,021903
+4797,3,Chingalpo,3411,021905
+4798,3,Huayllabamba,3411,021906
+4800,3,Ragash,3411,021908
+4803,3,Yungay,3412,022001
+4809,3,Shupluy,3412,022007
+4810,3,Yanama,3412,022008
+4811,3,Abancay,3413,030101
+4813,3,Circa,3413,030103
+4816,3,Lambrama,3413,030106
+4818,3,San Pedro de Cachora,3413,030108
+4819,3,Tamburco,3413,030109
+4821,3,Andarapa,3414,030202
+4822,3,Chiara,3414,030203
+4823,3,Huancarama,3414,030204
+4824,3,Huancaray,3414,030205
+4825,3,Huayana,3414,030206
+4829,3,Pampachiri,3414,030210
+4831,3,San Antonio de Cachi,3414,030212
+4834,3,Santa María de Chicmo,3414,030215
+4835,3,Talavera,3414,030216
+4837,3,Turpo,3414,030218
+4841,3,El Oro,3415,030302
+4845,3,Pachaconas,3415,030306
+4846,3,Sabaino,3415,030307
+4847,3,Chalhuanca,3416,030401
+4849,3,Caraybamba,3416,030403
+4851,3,Colcabamba,3416,030405
+4853,3,Ihuayllo,3416,030407
+4854,3,Justo Apu Sahuaraura,3416,030408
+4857,3,San Juan de Chacña,3416,030411
+4859,3,Soraya,3416,030413
+4860,3,Tapairihua,3416,030414
+4861,3,Tintay,3416,030415
+4862,3,Toraya,3416,030416
+4863,3,Yanaca,3416,030417
+4865,3,Cotabambas,3417,030502
+4867,3,Haquira,3417,030504
+4869,3,Challhuahuacho,3417,030506
+4872,3,Cocharcas,3418,030603
+4873,3,Huaccana,3418,030604
+4875,3,Ongoy,3418,030606
+4881,3,Curpahuasi,3419,030702
+4883,3,Huayllati,3419,030704
+4885,3,Micaela Bastidas,3419,030706
+4887,3,Progreso,3419,030708
+4888,3,San Antonio,3419,030709
+4765,3,Llapo,3407,021507
+4767,3,Pampas,3407,021509
+4768,3,Santa Rosa,3407,021510
+4770,3,Pomabamba,3408,021601
+4771,3,Huayllan,3408,021602
+4772,3,Parobamba,3408,021603
+4773,3,Quinuabamba,3408,021604
+4774,3,Recuay,3409,021701
+4778,3,Llacllin,3409,021705
+4780,3,Pampas Chico,3409,021707
+4781,3,Pararin,3409,021708
+4783,3,Ticapampa,3409,021710
+4786,3,Coishco,3410,021803
+4790,3,Samanco,3410,021807
+4792,3,Nuevo Chimbote,3410,021809
+4793,3,Sihuas,3411,021901
+4794,3,Acobamba,3411,021902
+4796,3,Cashapampa,3411,021904
+4799,3,Quiches,3411,021907
+4801,3,San Juan,3411,021909
+4802,3,Sicsibamba,3411,021910
+4804,3,Cascapara,3412,022002
+4805,3,Mancos,3412,022003
+4806,3,Matacoto,3412,022004
+4807,3,Quillo,3412,022005
+4808,3,Ranrahirca,3412,022006
+4812,3,Chacoche,3413,030102
+4814,3,Curahuasi,3413,030104
+4815,3,Huanipaca,3413,030105
+4817,3,Pichirhua,3413,030107
+4820,3,Andahuaylas,3414,030201
+4826,3,Kishuara,3414,030207
+4827,3,Pacobamba,3414,030208
+4828,3,Pacucha,3414,030209
+4830,3,Pomacocha,3414,030211
+4832,3,San Jerónimo,3414,030213
+4833,3,San Miguel de Chaccrampa,3414,030214
+4836,3,Tumay Huaraca,3414,030217
+4838,3,Kaquiabamba,3414,030219
+4839,3,José María Arguedas,3414,030220
+4840,3,Antabamba,3415,030301
+4842,3,Huaquirca,3415,030303
+4843,3,Juan Espinoza Medrano,3415,030304
+4844,3,Oropesa,3415,030305
+4848,3,Capaya,3416,030402
+4850,3,Chapimarca,3416,030404
+4852,3,Cotaruse,3416,030406
+4855,3,Lucre,3416,030409
+4856,3,Pocohuanca,3416,030410
+4858,3,Sañayca,3416,030412
+4864,3,Tambobamba,3417,030501
+4866,3,Coyllurqui,3417,030503
+4868,3,Mara,3417,030505
+4870,3,Chincheros,3418,030601
+4871,3,Anco_Huallo,3418,030602
+4874,3,Ocobamba,3418,030605
+4876,3,Uranmarca,3418,030607
+4877,3,Ranracancha,3418,030608
+4878,3,Rocchacc,3418,030609
+4879,3,El Porvenir,3418,030610
+4880,3,Chuquibambilla,3419,030701
+4882,3,Gamarra,3419,030703
+4884,3,Mamara,3419,030705
+4886,3,Pataypampa,3419,030707

@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.incloud.hcp.myibatis.mapper.ProveedorMapper">
+
+    <resultMap id="proveedorFilterResultMap" type="com.incloud.hcp.bean.ProveedorCustom">
+        <id property="idProveedor" column="id_proveedor"/>
+        <result property="ruc" column="ruc"/>
+        <result property="razonSocial" column="razon_social"/>
+        <result property="direccionFiscal" column="direccion_fiscal"/>
+		<result property="region" column="region"/>
+        <result property="email" column="email"/>
+		<result property="tipoProveedor" column="tipo_proveedor" />
+		<result property="tipoPersona" column="tipo_persona" />
+		<result property="estadoHomologacion" column="estado_homologacion" />
+		<result property="evaluacionHomologacion" column="evaluacion_homologacion" />
+		<result property="indBlackList" column="ind_black_list" />
+		<result property="indMigradoSap" column="ind_migrado_sap" />
+		<result property="indBlackListString" column="ind_black_list_string" />
+		<result property="codigoAcreedorSap" column="acreedor_codigo_sap" />
+    </resultMap>
+
+	<select id="getListProveedorByRuc" resultMap="proveedorFilterResultMap">
+		SELECT
+		p.id_proveedor,
+		p.ruc,
+		p.razon_social,
+		p.direccion_fiscal,
+		(SELECT u.descripcion from UBIGEO u WHERE u.ID_UBIGEO = p.ID_REGION AND u.NIVEL=1) as region,
+		p.email,
+		tp.descripcion as tipo_proveedor,
+		pr.valor as tipo_persona,
+		CASE p.ind_homologado WHEN '1' THEN 'Homologado' ELSE 'No Homologado' END AS estado_homologacion,
+		p.evaluacion_homologacion,
+		p.ind_black_list,
+		p.ind_migrado_sap,
+		p.acreedor_codigo_sap,
+		CASE p.ind_black_list WHEN '1' THEN 'Proveedor Observado' ELSE '' END AS ind_black_list_string
+		FROM PROVEEDOR p, TIPO_PROVEEDOR tp, PARAMETROS pr
+		WHERE tp.ID_TIPO_PROVEEDOR = p.ID_TIPO_PROVEEDOR
+			AND pr.MODULO = 'PROVEEDOR'
+			AND pr.TIPO = 'TIPO_PERSONA'
+			AND pr.CODIGO = p.TIPO_PERSONA
+			AND p.ruc = #{ruc}
+	</select>
+
+	<select id="getListProveedorMigrados" resultMap="proveedorFilterResultMap">
+		SELECT
+		p.id_proveedor,
+		p.ruc,
+		p.razon_social,
+		p.direccion_fiscal,
+  		p.email,
+		p.acreedor_codigo_sap
+		FROM PROVEEDOR p
+		WHERE  p.hcp_id is null
+	</select>
+
+	<select id="getListProveedorByFiltro" resultMap="proveedorFilterResultMap">
+		SELECT
+			p.id_proveedor,
+			p.ruc,
+			p.razon_social,
+			p.direccion_fiscal,
+			(SELECT u.descripcion from UBIGEO u WHERE u.ID_UBIGEO = p.ID_REGION AND u.NIVEL=1) as region,
+			p.email,
+			tp.descripcion as tipo_proveedor,
+			pr.valor as tipo_persona,
+			CASE p.ind_homologado WHEN '1' THEN 'Homologado' ELSE 'No Homologado' END AS estado_homologacion,
+			p.evaluacion_homologacion,
+			p.ind_black_list,
+			p.ind_migrado_sap,
+		    p.acreedor_codigo_sap,
+			CASE p.ind_black_list WHEN '1' THEN 'Proveedor Observado' ELSE '' END AS ind_black_list_string
+		FROM PROVEEDOR p, TIPO_PROVEEDOR tp, PARAMETROS pr, ESTADO_PROVEEDOR ES
+		<where>
+			<if test="estadoProveedor != null and estadoProveedor != ''">
+				es.CODIGO_ESTADO_PROVEEDOR = #{estadoProveedor}
+			</if>
+			<if test="tipoProveedor != null and tipoProveedor != ''">
+				p.ID_TIPO_PROVEEDOR = #{tipoProveedor}
+			</if>
+			<if test="tipoPersona != null and tipoPersona != ''">
+				AND p.TIPO_PERSONA = #{tipoPersona}
+			</if>
+			<if test="indHomologado != null and indHomologado != ''">
+				AND p.IND_HOMOLOGADO = #{indHomologado}
+			</if>
+			<if test="idsPais != null and idsPais.size() > 0">
+				AND p.id_pais IN
+				<foreach item="item" index="index" collection="idsPais"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+			</if>
+			<if test="idsRegion != null and idsRegion.size() > 0">
+				AND p.id_region IN
+				<foreach item="item" index="index" collection="idsRegion"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+			</if>
+			<if test="idsProvincia != null and idsProvincia.size() > 0">
+				AND p.id_provincia IN
+				<foreach item="item" index="index" collection="idsProvincia"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+			</if>
+			<if test="nroRuc != null and nroRuc != ''">
+				AND p.ruc = #{nroRuc}
+			</if>
+			<if test="marca != null and marca != ''">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_PRODUCTO pp WHERE pp.ID_PROVEEDOR = p.ID_PROVEEDOR AND UPPER(pp.MARCA) like '%'||UPPER(#{marca})||'%')
+			</if>
+			<if test="producto != null and producto != ''">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_PRODUCTO pp WHERE pp.ID_PROVEEDOR = p.ID_PROVEEDOR AND UPPER(pp.PRODUCTO) like '%'||UPPER(#{producto})||'%')
+			</if>
+			<if test="razonSocial != null and razonSocial != ''">
+				AND p.razon_social = #{razonSocial}
+			</if>
+			<if test="descripcionAdicional != null and descripcionAdicional != ''">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_PRODUCTO pp WHERE pp.ID_PROVEEDOR = p.ID_PROVEEDOR AND UPPER(pp.DESCRIPCION_ADICIONAL) like '%'||UPPER(#{descripcionAdicional})||'%')
+			</if>
+			<if test="idsLinea != null and idsLinea.size() > 0">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_LINEA_COMERCIAL lc WHERE lc.ID_PROVEEDOR = p.ID_PROVEEDOR AND lc.ID_LINEA_COMERCIAL IN
+				<foreach item="item" index="index" collection="idsLinea"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+				)
+			</if>
+			<if test="idsFamilia != null and idsFamilia.size() > 0">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_LINEA_COMERCIAL lc WHERE lc.ID_PROVEEDOR = p.ID_PROVEEDOR AND lc.ID_FAMILIA IN
+				<foreach item="item" index="index" collection="idsFamilia"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+				)
+			</if>
+			<if test="idsSubFamilia != null and idsSubFamilia.size() > 0">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_LINEA_COMERCIAL lc WHERE lc.ID_PROVEEDOR = p.ID_PROVEEDOR AND lc.ID_SUBFAMILIA IN
+				<foreach item="item" index="index" collection="idsSubFamilia"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+				)
+			</if>
+			AND tp.ID_TIPO_PROVEEDOR = p.ID_TIPO_PROVEEDOR
+			AND pr.MODULO = 'PROVEEDOR'
+			AND pr.TIPO = 'TIPO_PERSONA'
+			AND pr.CODIGO = p.TIPO_PERSONA
+			AND p.ID_ESTADO_PROVEEDOR = es.ID_ESTADO_PROVEEDOR
+		</where>
+
+		ORDER BY p.razon_social, p.evaluacion_homologacion desc
+	</select>
+
+	<select id="getListProveedorByFiltroPaginado" resultMap="proveedorFilterResultMap">
+		SELECT
+		p.id_proveedor,
+		p.ruc,
+		p.razon_social,
+		p.direccion_fiscal,
+		(SELECT u.descripcion from UBIGEO u WHERE u.ID_UBIGEO = p.ID_REGION AND u.NIVEL=1) as region,
+		p.email,
+		tp.descripcion as tipo_proveedor,
+		pr.valor as tipo_persona,
+		CASE p.ind_homologado WHEN '1' THEN 'Homologado' ELSE 'No Homologado' END AS estado_homologacion,
+		p.evaluacion_homologacion,
+		p.ind_black_list,
+		p.ind_migrado_sap,
+        p.acreedor_codigo_sap,
+		CASE p.ind_black_list WHEN '1' THEN 'Proveedor Observado' ELSE '' END AS ind_black_list_string
+		FROM PROVEEDOR p, TIPO_PROVEEDOR tp, PARAMETROS pr, ESTADO_PROVEEDOR ES
+		<where>
+			<if test="estadoProveedor != null and estadoProveedor != ''">
+				es.CODIGO_ESTADO_PROVEEDOR = #{estadoProveedor}
+			</if>
+			<if test="tipoProveedor != null and tipoProveedor != ''">
+				p.ID_TIPO_PROVEEDOR = #{tipoProveedor}
+			</if>
+			<if test="tipoPersona != null and tipoPersona != ''">
+				AND p.TIPO_PERSONA = #{tipoPersona}
+			</if>
+			<if test="indHomologado != null and indHomologado != ''">
+				AND p.IND_HOMOLOGADO = #{indHomologado}
+			</if>
+			<if test="idsPais != null and idsPais.size() > 0">
+				AND p.id_pais IN
+				<foreach item="item" index="index" collection="idsPais"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+			</if>
+			<if test="idsRegion != null and idsRegion.size() > 0">
+				AND p.id_region IN
+				<foreach item="item" index="index" collection="idsRegion"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+			</if>
+			<if test="idsProvincia != null and idsProvincia.size() > 0">
+				AND p.id_provincia IN
+				<foreach item="item" index="index" collection="idsProvincia"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+			</if>
+			<if test="nroRuc != null and nroRuc != ''">
+				AND p.ruc = #{nroRuc}
+			</if>
+			<if test="razonSocial != null and razonSocial != ''">
+				AND UPPER(p.razon_social) LIKE '%'||UPPER(#{razonSocial})||'%'
+			</if>
+			<if test="marca != null and marca != ''">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_PRODUCTO pp WHERE pp.ID_PROVEEDOR = p.ID_PROVEEDOR AND UPPER(pp.MARCA) like '%'||UPPER(#{marca})||'%')
+			</if>
+			<if test="producto != null and producto != ''">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_PRODUCTO pp WHERE pp.ID_PROVEEDOR = p.ID_PROVEEDOR AND UPPER(pp.PRODUCTO) like '%'||UPPER(#{producto})||'%')
+			</if>
+			<if test="descripcionAdicional != null and descripcionAdicional != ''">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_PRODUCTO pp WHERE pp.ID_PROVEEDOR = p.ID_PROVEEDOR AND UPPER(pp.DESCRIPCION_ADICIONAL) like '%'||UPPER(#{descripcionAdicional})||'%')
+			</if>
+			<if test="idsLinea != null and idsLinea.size() > 0">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_LINEA_COMERCIAL lc WHERE lc.ID_PROVEEDOR = p.ID_PROVEEDOR AND lc.ID_LINEA_COMERCIAL IN
+				<foreach item="item" index="index" collection="idsLinea"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+				)
+			</if>
+			<if test="idsFamilia != null and idsFamilia.size() > 0">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_LINEA_COMERCIAL lc WHERE lc.ID_PROVEEDOR = p.ID_PROVEEDOR AND lc.ID_FAMILIA IN
+				<foreach item="item" index="index" collection="idsFamilia"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+				)
+			</if>
+			<if test="idsSubFamilia != null and idsSubFamilia.size() > 0">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_LINEA_COMERCIAL lc WHERE lc.ID_PROVEEDOR = p.ID_PROVEEDOR AND lc.ID_SUBFAMILIA IN
+				<foreach item="item" index="index" collection="idsSubFamilia"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+				)
+			</if>
+			AND tp.ID_TIPO_PROVEEDOR = p.ID_TIPO_PROVEEDOR
+			AND pr.MODULO = 'PROVEEDOR'
+			AND pr.TIPO = 'TIPO_PERSONA'
+			AND pr.CODIGO = p.TIPO_PERSONA
+			AND p.ID_ESTADO_PROVEEDOR = es.ID_ESTADO_PROVEEDOR
+		</where>
+
+		ORDER BY p.razon_social, p.evaluacion_homologacion desc
+		LIMIT #{nroRegistros} OFFSET #{paginaMostrar}
+	</select>
+
+	<select id="getListProveedorByFiltroValidacion" resultMap="proveedorFilterResultMap">
+		SELECT
+		p.id_proveedor,
+		p.ruc,
+		p.razon_social,
+		p.direccion_fiscal,
+		(SELECT u.descripcion from UBIGEO u WHERE u.ID_UBIGEO = p.ID_REGION AND u.NIVEL=1) as region,
+		p.email,
+		tp.descripcion as tipo_proveedor,
+		pr.valor as tipo_persona,
+		CASE p.ind_homologado WHEN '1' THEN 'Homologado' ELSE 'No Homologado' END AS estado_homologacion,
+		p.evaluacion_homologacion,
+		p.ind_black_list,
+		p.ind_migrado_sap,
+        p.acreedor_codigo_sap,
+		CASE p.ind_black_list WHEN '1' THEN 'Proveedor Observado' ELSE '' END AS ind_black_list_string
+		FROM PROVEEDOR p, TIPO_PROVEEDOR tp, PARAMETROS pr, ESTADO_PROVEEDOR ES
+		<where>
+
+			<if test="tipoProveedor != null and tipoProveedor != ''">
+				p.ID_TIPO_PROVEEDOR = #{tipoProveedor}
+			</if>
+			<if test="tipoPersona != null and tipoPersona != ''">
+				AND p.TIPO_PERSONA = #{tipoPersona}
+			</if>
+			<if test="indHomologado != null and indHomologado != ''">
+				AND p.IND_HOMOLOGADO = #{indHomologado}
+			</if>
+			<if test="idsPais != null and idsPais.size() > 0">
+				AND p.id_pais IN
+				<foreach item="item" index="index" collection="idsPais"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+			</if>
+			<if test="idsRegion != null and idsRegion.size() > 0">
+				AND p.id_region IN
+				<foreach item="item" index="index" collection="idsRegion"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+			</if>
+			<if test="idsProvincia != null and idsProvincia.size() > 0">
+				AND p.id_provincia IN
+				<foreach item="item" index="index" collection="idsProvincia"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+			</if>
+			<if test="nroRuc != null and nroRuc != ''">
+				AND p.ruc = #{nroRuc}
+			</if>
+			<if test="razonSocial != null and razonSocial != ''">
+				AND UPPER(p.razon_social) LIKE '%'||UPPER(#{razonSocial})||'%'
+			</if>
+			<if test="marca != null and marca != ''">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_PRODUCTO pp WHERE pp.ID_PROVEEDOR = p.ID_PROVEEDOR AND UPPER(pp.MARCA) like '%'||UPPER(#{marca})||'%')
+			</if>
+			<if test="producto != null and producto != ''">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_PRODUCTO pp WHERE pp.ID_PROVEEDOR = p.ID_PROVEEDOR AND UPPER(pp.PRODUCTO) like '%'||UPPER(#{producto})||'%')
+			</if>
+			<if test="descripcionAdicional != null and descripcionAdicional != ''">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_PRODUCTO pp WHERE pp.ID_PROVEEDOR = p.ID_PROVEEDOR AND UPPER(pp.DESCRIPCION_ADICIONAL) like '%'||UPPER(#{descripcionAdicional})||'%')
+			</if>
+			<if test="idsLinea != null and idsLinea.size() > 0">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_LINEA_COMERCIAL lc WHERE lc.ID_PROVEEDOR = p.ID_PROVEEDOR AND lc.ID_LINEA_COMERCIAL IN
+				<foreach item="item" index="index" collection="idsLinea"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+				)
+			</if>
+			<if test="idsFamilia != null and idsFamilia.size() > 0">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_LINEA_COMERCIAL lc WHERE lc.ID_PROVEEDOR = p.ID_PROVEEDOR AND lc.ID_FAMILIA IN
+				<foreach item="item" index="index" collection="idsFamilia"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+				)
+			</if>
+			<if test="idsSubFamilia != null and idsSubFamilia.size() > 0">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_LINEA_COMERCIAL lc WHERE lc.ID_PROVEEDOR = p.ID_PROVEEDOR AND lc.ID_SUBFAMILIA IN
+				<foreach item="item" index="index" collection="idsSubFamilia"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+				)
+			</if>
+			AND tp.ID_TIPO_PROVEEDOR = p.ID_TIPO_PROVEEDOR
+			AND pr.MODULO = 'PROVEEDOR'
+			AND pr.TIPO = 'TIPO_PERSONA'
+			AND pr.CODIGO = p.TIPO_PERSONA
+			AND p.ID_ESTADO_PROVEEDOR = es.ID_ESTADO_PROVEEDOR
+			AND es.IND_VER_VALIDACION = '1'
+		</where>
+
+		ORDER BY p.razon_social, p.evaluacion_homologacion desc
+	</select>
+
+	<select id="getListProveedorByFiltroLicitacion" resultMap="proveedorFilterResultMap">
+		SELECT
+		p.id_proveedor,
+		p.ruc,
+		p.razon_social,
+		p.direccion_fiscal,
+		(SELECT u.descripcion from UBIGEO u WHERE u.ID_UBIGEO = p.ID_REGION AND u.NIVEL=1) as region,
+		p.email,
+		tp.descripcion as tipo_proveedor,
+		pr.valor as tipo_persona,
+		CASE p.ind_homologado WHEN '1' THEN 'Homologado' ELSE 'No Homologado' END AS estado_homologacion,
+		p.evaluacion_homologacion,
+		p.ind_black_list,
+		p.ind_migrado_sap,
+        p.acreedor_codigo_sap,
+		CASE p.ind_black_list WHEN '1' THEN 'Proveedor Observado' ELSE '' END AS ind_black_list_string
+		FROM PROVEEDOR p, TIPO_PROVEEDOR tp, PARAMETROS pr, ESTADO_PROVEEDOR ES
+		<where>
+
+			<if test="tipoProveedor != null and tipoProveedor != ''">
+				p.ID_TIPO_PROVEEDOR = #{tipoProveedor}
+			</if>
+			<if test="tipoPersona != null and tipoPersona != ''">
+				AND p.TIPO_PERSONA = #{tipoPersona}
+			</if>
+			<if test="indHomologado != null and indHomologado != ''">
+				AND p.IND_HOMOLOGADO = #{indHomologado}
+			</if>
+			<if test="idsPais != null and idsPais.size() > 0">
+				AND p.id_pais IN
+				<foreach item="item" index="index" collection="idsPais"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+			</if>
+			<if test="idsRegion != null and idsRegion.size() > 0">
+				AND p.id_region IN
+				<foreach item="item" index="index" collection="idsRegion"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+			</if>
+			<if test="idsProvincia != null and idsProvincia.size() > 0">
+				AND p.id_provincia IN
+				<foreach item="item" index="index" collection="idsProvincia"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+			</if>
+			<if test="nroRuc != null and nroRuc != ''">
+				AND p.ruc = #{nroRuc}
+			</if>
+			<if test="razonSocial != null and razonSocial != ''">
+				AND UPPER(p.razon_social) LIKE '%'||UPPER(#{razonSocial})||'%'
+			</if>
+			<if test="marca != null and marca != ''">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_PRODUCTO pp WHERE pp.ID_PROVEEDOR = p.ID_PROVEEDOR AND UPPER(pp.MARCA) like '%'||UPPER(#{marca})||'%')
+			</if>
+			<if test="producto != null and producto != ''">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_PRODUCTO pp WHERE pp.ID_PROVEEDOR = p.ID_PROVEEDOR AND UPPER(pp.PRODUCTO) like '%'||UPPER(#{producto})||'%')
+			</if>
+			<if test="descripcionAdicional != null and descripcionAdicional != ''">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_PRODUCTO pp WHERE pp.ID_PROVEEDOR = p.ID_PROVEEDOR AND UPPER(pp.DESCRIPCION_ADICIONAL) like '%'||UPPER(#{descripcionAdicional})||'%')
+			</if>
+			<if test="idsLinea != null and idsLinea.size() > 0">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_LINEA_COMERCIAL lc WHERE lc.ID_PROVEEDOR = p.ID_PROVEEDOR AND lc.ID_LINEA_COMERCIAL IN
+				<foreach item="item" index="index" collection="idsLinea"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+				)
+			</if>
+			<if test="idsFamilia != null and idsFamilia.size() > 0">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_LINEA_COMERCIAL lc WHERE lc.ID_PROVEEDOR = p.ID_PROVEEDOR AND lc.ID_FAMILIA IN
+				<foreach item="item" index="index" collection="idsFamilia"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+				)
+			</if>
+			<if test="idsSubFamilia != null and idsSubFamilia.size() > 0">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_LINEA_COMERCIAL lc WHERE lc.ID_PROVEEDOR = p.ID_PROVEEDOR AND lc.ID_SUBFAMILIA IN
+				<foreach item="item" index="index" collection="idsSubFamilia"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+				)
+			</if>
+			AND tp.ID_TIPO_PROVEEDOR = p.ID_TIPO_PROVEEDOR
+			AND pr.MODULO = 'PROVEEDOR'
+			AND pr.TIPO = 'TIPO_PERSONA'
+			AND pr.CODIGO = p.TIPO_PERSONA
+			AND  p.ID_ESTADO_PROVEEDOR = es.ID_ESTADO_PROVEEDOR AND (es.IND_VER_LICITACION = '1' or p.IND_MIGRADO_SAP = '1')
+
+		</where>
+
+		ORDER BY p.razon_social, p.evaluacion_homologacion desc
+	</select>
+
+	<select id="getListProveedorByFiltroLicitacionPaginado" resultMap="proveedorFilterResultMap">
+		SELECT
+		p.id_proveedor,
+		p.ruc,
+		p.razon_social,
+		p.direccion_fiscal,
+		(SELECT u.descripcion from UBIGEO u WHERE u.ID_UBIGEO = p.ID_REGION AND u.NIVEL=1) as region,
+		p.email,
+		tp.descripcion as tipo_proveedor,
+		pr.valor as tipo_persona,
+		CASE p.ind_homologado WHEN '1' THEN 'Homologado' ELSE 'No Homologado' END AS estado_homologacion,
+		p.evaluacion_homologacion,
+		p.ind_black_list,
+		p.ind_migrado_sap,
+        p.acreedor_codigo_sap,
+		CASE p.ind_black_list WHEN '1' THEN 'Proveedor Observado' ELSE '' END AS ind_black_list_string
+		FROM PROVEEDOR p, TIPO_PROVEEDOR tp, PARAMETROS pr, ESTADO_PROVEEDOR ES
+		<where>
+
+			<if test="tipoProveedor != null and tipoProveedor != ''">
+				p.ID_TIPO_PROVEEDOR = #{tipoProveedor}
+			</if>
+			<if test="tipoPersona != null and tipoPersona != ''">
+				AND p.TIPO_PERSONA = #{tipoPersona}
+			</if>
+			<if test="indHomologado != null and indHomologado != ''">
+				AND p.IND_HOMOLOGADO = #{indHomologado}
+			</if>
+			<if test="idsPais != null and idsPais.size() > 0">
+				AND p.id_pais IN
+				<foreach item="item" index="index" collection="idsPais"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+			</if>
+			<if test="idsRegion != null and idsRegion.size() > 0">
+				AND p.id_region IN
+				<foreach item="item" index="index" collection="idsRegion"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+			</if>
+			<if test="idsProvincia != null and idsProvincia.size() > 0">
+				AND p.id_provincia IN
+				<foreach item="item" index="index" collection="idsProvincia"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+			</if>
+			<if test="nroRuc != null and nroRuc != ''">
+				AND p.ruc = #{nroRuc}
+			</if>
+			<if test="razonSocial != null and razonSocial != ''">
+				AND UPPER(p.razon_social) LIKE '%'||UPPER(#{razonSocial})||'%'
+			</if>
+			<if test="marca != null and marca != ''">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_PRODUCTO pp WHERE pp.ID_PROVEEDOR = p.ID_PROVEEDOR AND UPPER(pp.MARCA) like '%'||UPPER(#{marca})||'%')
+			</if>
+			<if test="producto != null and producto != ''">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_PRODUCTO pp WHERE pp.ID_PROVEEDOR = p.ID_PROVEEDOR AND UPPER(pp.PRODUCTO) like '%'||UPPER(#{producto})||'%')
+			</if>
+			<if test="descripcionAdicional != null and descripcionAdicional != ''">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_PRODUCTO pp WHERE pp.ID_PROVEEDOR = p.ID_PROVEEDOR AND UPPER(pp.DESCRIPCION_ADICIONAL) like '%'||UPPER(#{descripcionAdicional})||'%')
+			</if>
+			<if test="idsLinea != null and idsLinea.size() > 0">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_LINEA_COMERCIAL lc WHERE lc.ID_PROVEEDOR = p.ID_PROVEEDOR AND lc.ID_LINEA_COMERCIAL IN
+				<foreach item="item" index="index" collection="idsLinea"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+				)
+			</if>
+			<if test="idsFamilia != null and idsFamilia.size() > 0">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_LINEA_COMERCIAL lc WHERE lc.ID_PROVEEDOR = p.ID_PROVEEDOR AND lc.ID_FAMILIA IN
+				<foreach item="item" index="index" collection="idsFamilia"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+				)
+			</if>
+			<if test="idsSubFamilia != null and idsSubFamilia.size() > 0">
+				AND EXISTS (SELECT 1 FROM PROVEEDOR_LINEA_COMERCIAL lc WHERE lc.ID_PROVEEDOR = p.ID_PROVEEDOR AND lc.ID_SUBFAMILIA IN
+				<foreach item="item" index="index" collection="idsSubFamilia"
+						 open="(" separator="," close=")">
+					#{item}
+				</foreach>
+				)
+			</if>
+			AND tp.ID_TIPO_PROVEEDOR = p.ID_TIPO_PROVEEDOR
+			AND pr.MODULO = 'PROVEEDOR'
+			AND pr.TIPO = 'TIPO_PERSONA'
+			AND pr.CODIGO = p.TIPO_PERSONA
+			AND  p.ID_ESTADO_PROVEEDOR = es.ID_ESTADO_PROVEEDOR AND (es.IND_VER_LICITACION = '1' or p.IND_MIGRADO_SAP = '1')
+
+
+		</where>
+
+		ORDER BY p.razon_social, p.evaluacion_homologacion desc
+		LIMIT #{nroRegistros} OFFSET #{paginaMostrar}
+	</select>
+
+	<update id="updateEstadoProveedor">
+		UPDATE proveedor
+		set id_estado_proveedor = #{idEstadoProveedor}
+		where id_proveedor = #{idProveedor}
+	</update>
+
+
+</mapper>

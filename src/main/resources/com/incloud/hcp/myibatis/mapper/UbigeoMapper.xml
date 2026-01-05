@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.incloud.hcp.myibatis.mapper.UbigeoMapper">
+
+    <resultMap id="ubigeoResultMap" type="com.incloud.hcp.domain.Ubigeo">
+        <id property="idUbigeo" column="id_ubigeo"/>
+        <result property="codigoUbigeoSap" column="codigo_ubigeo_sap"/>
+        <result property="descripcion" column="descripcion"/>
+        <result property="idPadre" column="id_padre"/>
+        <result property="nivel" column="nivel"/>
+    </resultMap>
+
+
+
+    <select id="getListUbigeoByCodigoParent" resultMap="ubigeoResultMap">
+        SELECT u.* FROM UBIGEO u WHERE u.id_padre = (SELECT id_ubigeo FROM UBIGEO WHERE codigo_ubigeo_sap = #{codigo})
+    </select>
+
+    <select id="getListUbigeoByNivel" resultMap="ubigeoResultMap">
+        SELECT u.* FROM UBIGEO u WHERE u.nivel = #{nivel}
+    </select>
+
+    <select id="getUbigeoByIdUbigeo" resultMap="ubigeoResultMap">
+        SELECT u.* FROM UBIGEO u WHERE u.id_ubigeo = #{idUbigeo}
+    </select>
+
+    <select id="getUbigeoByCodigo" resultMap="ubigeoResultMap">
+        SELECT u.* FROM UBIGEO u WHERE u.codigo_ubigeo_sap = #{codigo}
+    </select>
+
+    <select id="getListUbigeoByParent" resultMap="ubigeoResultMap">
+        SELECT u.*
+        FROM UBIGEO u
+        <if test="ids != null and ids.size() > 0">
+            WHERE u.id_padre IN
+            <foreach item="item" index="index" collection="ids"
+                     open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+    </select>
+
+    <select id="getListUbigeoByPadre" resultMap="ubigeoResultMap">
+        SELECT u.*
+        FROM UBIGEO u
+            WHERE u.id_padre = #{idPadre}
+    </select>
+</mapper>

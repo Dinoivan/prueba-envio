@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.incloud.hcp.myibatis.mapper.ProveedorHomologacionMapper">
+
+  <resultMap id="homologacionResultMap" type="com.incloud.hcp.domain.ProveedorHomologacion">
+      <id property="homologacion.lineaComercial.idLineaComercial" column="id_linea_comercial"/>
+      <result property="homologacion.lineaComercial.descripcion" column="linea_comercial"/>
+      <result property="homologacion.idHomologacion" column="id_homologacion"/>
+      <result property="homologacion.pregunta" column="pregunta"/>
+      <result property="homologacion.indAdjunto" column="ind_adjunto"/>
+      <result property="homologacion.peso" column="peso"/>
+      <result property="rutaAdjunto" column="ruta_adjunto"/>
+      <result property="archivoId" column="archivo_id"/>
+      <result property="archivoNombre" column="archivo_nombre"/>
+      <result property="archivoTipo" column="archivo_tipo"/>
+      <result property="homologacionRespuesta.respuesta" column="respuesta"/>
+      <result property="homologacionRespuesta.puntaje" column="puntaje"/>
+  </resultMap>
+
+  <select id="getListProveedorHomologacionByIdProveedor" resultMap="homologacionResultMap">
+      SELECT lc.id_linea_comercial,
+             lc.descripcion AS linea_comercial,
+             h.id_homologacion,
+             h.pregunta,
+             h.ind_adjunto,
+             h.peso,
+             ph.ruta_adjunto,
+             ph.archivo_nombre,
+             ph.archivo_id,
+             ph.archivo_tipo,
+             ph.respuesta,
+             ph.puntaje
+      FROM (  SELECT DISTINCT l.id_linea_comercial
+              FROM PROVEEDOR_LINEA_COMERCIAL l
+              WHERE l.id_proveedor = #{idProveedor}) plc
+      INNER JOIN LINEA_COMERCIAL lc ON plc.id_linea_comercial = lc.id_linea_comercial
+      INNER JOIN HOMOLOGACION h ON lc.id_linea_comercial = h.id_linea_comercial
+      LEFT JOIN ( SELECT r.respuesta, r.puntaje,  p.id_homologacion, p.ruta_adjunto, p.archivo_nombre, p.archivo_id, p.archivo_tipo
+                  FROM PROVEEDOR_HOMOLOGACION p
+                  INNER JOIN HOMOLOGACION_RESPUESTA r ON p.id_homologacion_respuesta = r.id_homologacion_respuesta
+                  WHERE p.id_proveedor = #{idProveedor}
+      ) ph ON h.id_homologacion = ph.id_homologacion;
+  </select>
+
+</mapper>

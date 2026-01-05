@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.incloud.hcp.myibatis.mapper.ContactoMapper">
+
+    <resultMap id="contactoResultMap" type="com.incloud.hcp.dto.CanalContactoDto">
+        <id property="codigoPais" column="codigo_pais"/>
+        <result property="pais" column="pais"/>
+        <result property="codigoRegion" column="codigo_region"/>
+        <result property="region" column="region"/>
+        <result property="codigoProvincia" column="codigo_provincia"/>
+        <result property="provincia" column="provincia"/>
+        <result property="direccion" column="direccion"/>
+        <result property="codigoArea" column="codigo_area"/>
+        <result property="area" column="area"/>
+        <result property="contacto" column="contacto"/>
+        <result property="email" column="email"/>
+        <result property="telefono" column="telefono"/>
+    </resultMap>
+
+    <resultMap id="sucursalDtoExcelResultMap" type="com.incloud.hcp.dto.reporte.SucursalDtoExcel">
+        <result property="codigoSap" column="codigo_sap"/>
+        <result property="ruc" column="ruc"/>
+        <result property="razonSocial" column="razon_social"/>
+        <result property="pais" column="pais"/>
+        <result property="region" column="region"/>
+        <result property="provincia" column="provincia"/>
+        <result property="direccion" column="direccion"/>
+        <result property="puntoAtencion" column="punto_atencion"/>
+        <result property="contacto" column="contacto"/>
+        <result property="correo" column="email"/>
+        <result property="telefono" column="telefono"/>
+    </resultMap>
+
+    <select id="getListContactoByIdProveedor" resultMap="contactoResultMap">
+        SELECT
+        pais.id_ubigeo AS codigo_pais,
+        pais.descripcion AS pais,
+        region.id_ubigeo AS codigo_region,
+        region.descripcion AS region,
+        provincia.id_ubigeo AS codigo_provincia,
+        provincia.descripcion AS provincia,
+        c.direccion,
+        c.area_empresa AS codigo_area,
+        p.valor AS area,
+        c.contacto,
+        c.email,
+        c.telefono
+        FROM proveedor_canal_contacto c
+        INNER JOIN UBIGEO pais ON c.id_pais = pais.id_ubigeo
+        INNER JOIN UBIGEO region ON c.id_region = region.id_ubigeo
+        INNER JOIN UBIGEO provincia ON c.id_provincia = provincia.id_ubigeo
+        LEFT JOIN PARAMETROS p ON p.modulo = 'CONTACTO' AND
+                                  p.tipo   = 'AREA' AND
+                                  c.area_empresa = p.codigo
+        WHERE c.id_proveedor = #{idProveedor}
+    </select>
+
+    <select id="getListAllSucursalContactoProveedor" resultMap="sucursalDtoExcelResultMap" >
+        SELECT
+            pv.acreedor_codigo_sap AS codigo_sap,
+            pv.ruc,
+            pv.razon_social,
+            pais.descripcion AS pais,
+            region.descripcion AS region,
+            provincia.descripcion AS provincia,
+            pcc.direccion,
+            COALESCE(p.valor, '-') AS punto_atencion,
+            pcc.contacto,
+            pcc.email,
+            pcc.telefono
+        FROM PROVEEDOR_CANAL_CONTACTO pcc
+        INNER JOIN PROVEEDOR pv ON pcc.id_proveedor = pv.id_proveedor
+        INNER JOIN UBIGEO pais ON pcc.id_pais = pais.id_ubigeo
+        INNER JOIN UBIGEO region ON pcc.id_region = region.id_ubigeo
+        LEFT JOIN UBIGEO  provincia ON pcc.id_provincia = provincia.id_ubigeo
+        LEFT JOIN PARAMETROS p ON p.modulo = 'CONTACTO' AND p.tipo = 'AREA' AND p.codigo = pcc.area_empresa
+        ORDER BY pv.razon_social;
+    </select>
+</mapper>

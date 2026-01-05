@@ -1,0 +1,6 @@
+id,descripcionEstadoProveedor,codigoEstadoProveedor,orden,indVerValidacion,indVerLicitacion
+1,REGISTRADO,REG,1,0,0
+2,APROBADO DATA MAESTRA,ADM,2,1,0
+3,RECHAZADO DATA MAESTRA,RDM,2,0,0
+4,HOMOLOGADO,HOM,3,1,1
+5,MIGRADO DE SAP,MIG,4,1,1

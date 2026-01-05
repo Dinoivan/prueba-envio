@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.incloud.hcp.myibatis.mapper.LineaComercialMapper">
+
+    <resultMap id="lineaComercialResultMap" type="com.incloud.hcp.bean.LineaFamilia">
+        <id property="id" column="id_linea_comercial"/>
+        <result property="descripcion" column="descripcion"/>
+    </resultMap>
+
+	<resultMap id="lineaComercialDtoExcelResultMap" type="com.incloud.hcp.dto.reporte.LineaComercialDtoExcel">
+		<result property="codigoSap" column="codigo_sap"/>
+		<result property="ruc" column="ruc"/>
+		<result property="razonSocial" column="razon_social"/>
+		<result property="lineaComercial" column="linea"/>
+		<result property="familia" column="familia"/>
+		<result property="subFamilia" column="subfamilia"/>
+		<result property="otraFamilia" column="otros_linea_comercial"/>
+	</resultMap>
+
+	<select id="getListFamiliaByIDs" resultMap="lineaComercialResultMap">
+		SELECT
+		id_linea_comercial,
+		descripcion
+		FROM linea_comercial lc
+		WHERE lc.id_padre IN
+		<foreach item="item" index="index" collection="ids"
+				 open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+
+	<select id="getListAllLineasComercialesProveedor" resultMap="lineaComercialDtoExcelResultMap">
+		SELECT
+		 pv.acreedor_codigo_sap AS codigo_sap,
+		 pv.ruc,
+		 pv.razon_social,
+		 linea.descripcion AS linea,
+		 familia.descripcion AS familia,
+		 subfamilia.descripcion AS subfamilia,
+		 plc.otros_linea_comercial
+		FROM PROVEEDOR_LINEA_COMERCIAL plc
+		INNER JOIN PROVEEDOR pv ON plc.id_proveedor = pv.id_proveedor
+		INNER JOIN LINEA_COMERCIAL linea ON plc.id_linea_comercial = linea.id_linea_comercial
+		INNER JOIN LINEA_COMERCIAL familia ON plc.id_familia = familia.id_linea_comercial
+		INNER JOIN LINEA_COMERCIAL subfamilia ON plc.id_subfamilia = subfamilia.id_linea_comercial
+		ORDER BY pv.razon_social;
+	</select>
+
+</mapper>

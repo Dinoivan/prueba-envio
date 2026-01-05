@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html>
+	<head>Proveedor Bacckend &amp; XSUAA</head>
+	<body>
+	<ul>
+		<li><a href="/swagger-ui.html">Swagger-UI</a></li>
+		<li><a href="/v1/sayHello">GET /v1/sayHello request that provides XSUAA user token details, but only if token matches.</a></li>
+		<li><a href="/v1/method">GET /v1/method request executes a method secured with Spring Global Method Security.</a></li>
+		<li><a href="/v1/getAdminData">GET /v1/getAdminData request to read sensitive data via Global Method Security. You will get a 403 (UNAUTHORIZED), in case you do not have Admin scope.</a></li>
+		<li><a href="/v2/sayHello">GET /v2/sayHello request that logs generic JWT info, but only if token matches.</a></li>
+		<li><a href="/v3/requestClientCredentialsToken">GET /v3/requestClientCredentialsToken request that requests the client credentials JWT token and writes it into the log.</a></li>
+		<li><a href="/v3/requestUserToken">GET /v3/requestUserToken request that exchanges a JWT token for a potential different client.</a></li>
+		<li><a href="/api/index/xsuaa-current-user">GET /api/index/xsuaa-current-user request that provides XSUAA user.</a></li>
+		<li><a href="/api/index/ias-user-info">GET /api/index/ias-user-info request that provides IAS (Authenticated user only).</a></li>
+		<!--<li><a href="/api/index/ias-user-all">GET /api/index/user-all request that provides IAS (All users).</a></li>-->
+	</ul>
+	</body>
+</html>

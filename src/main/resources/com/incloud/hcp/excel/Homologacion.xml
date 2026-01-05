@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<excel>
+    <header>
+        <title>LINEA COMERCIAL</title>
+    </header>
+    <header>
+        <title>VALOR</title>
+    </header>
+    <header>
+        <title>PESO</title>
+    </header>
+    <header>
+        <title>ES ADJUNTO</title>
+    </header>
+    <header>
+        <title>RESPUESTA</title>
+    </header>
+    <header>
+        <title>PUNTAJE</title>
+    </header>
+
+</excel>

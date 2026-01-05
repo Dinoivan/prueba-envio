@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.incloud.hcp.myibatis.mapper.DocumentoAceptacionNeoMapper">
+    <resultMap id="DocuAcepResultMap" type="com.incloud.hcp.dto.DocumentoAceptacionDto">
+        <id property="id" jdbcType="INTEGER" column="id_documento_aceptacion"/>
+        <result property="numeroDocumentoAceptacion" jdbcType="VARCHAR" column="numero_documento_aceptacion"/>
+        <result property="idTipoDocumentoAceptacion" jdbcType="INTEGER" column="id_tipo_documento_aceptacion"/>
+        <result property="tipoDocumentoAceptacion.id" jdbcType="INTEGER" column="id_tipo_documento_aceptacion"/>
+        <result property="tipoDocumentoAceptacion.descripcion" jdbcType="VARCHAR" column="tda_descripcion"/>
+        <result property="idEstadoDocumentoAceptacion" jdbcType="INTEGER" column="id_estado_documento_aceptacion"/>
+        <result property="estadoDocumentoAceptacion.id" jdbcType="INTEGER" column="id_estado_documento_aceptacion"/>
+        <result property="estadoDocumentoAceptacion.descripcion" jdbcType="VARCHAR" column="eda_descripcion"/>
+        <result property="idOrdenCompra" jdbcType="INTEGER" column="id_orden_compra"/>
+        <result property="numeroOrdenCompra" jdbcType="VARCHAR" column="numero_orden_compra"/>
+        <result property="posicionOrdenCompra" jdbcType="VARCHAR" column="posicion_orden_compra"/>
+        <result property="numeroGuiaProveedor" jdbcType="VARCHAR" column="numero_guia_proveedor"/>
+        <result property="proveedorRuc" jdbcType="VARCHAR" column="proveedor_ruc"/>
+        <result property="proveedorRazonSocial" jdbcType="VARCHAR" column="proveedor_razon_social"/>
+        <result property="usuarioSapRecepcion" jdbcType="VARCHAR" column="usuario_sap_recepcion"/>
+        <result property="usuarioSapAutoriza" jdbcType="VARCHAR" column="usuario_sap_autoriza"/>
+        <result property="codigoMoneda" jdbcType="VARCHAR" column="codigo_moneda"/>
+        <result property="fechaEmision" jdbcType="TIMESTAMP" column="fecha_emision"/>
+        <result property="fechaAceptacion" jdbcType="TIMESTAMP" column="fecha_aceptacion"/>
+        <result property="statusSap" jdbcType="VARCHAR" column="status_sap"/>
+        <result property="fechaPublicacion" jdbcType="VARCHAR" column="fecha_publicacion"/>
+        <result property="ordenCompra.infoSociedad.codigoSociedad" jdbcType="VARCHAR" column="codigo_sociedad"/>
+        <result property="ordenCompra.infoSociedad.razonSocial" jdbcType="VARCHAR" column="sociedad_razon_social"/>
+    </resultMap>
+    <resultMap id="DocuAcepConFechaPrefacturaMap" type="com.incloud.hcp.dto.DocumentoAceptacionDto">
+        <id property="id" jdbcType="INTEGER" column="id_documento_aceptacion"/>
+        <result property="numeroDocumentoAceptacion" jdbcType="VARCHAR" column="numero_documento_aceptacion"/>
+        <result property="idTipoDocumentoAceptacion" jdbcType="INTEGER" column="id_tipo_documento_aceptacion"/>
+        <result property="idEstadoDocumentoAceptacion" jdbcType="INTEGER" column="id_estado_documento_aceptacion"/>
+        <result property="numeroOrdenCompra" jdbcType="VARCHAR" column="numero_orden_compra"/>
+        <result property="posicionOrdenCompra" jdbcType="VARCHAR" column="posicion_orden_compra"/>
+        <result property="numeroGuiaProveedor" jdbcType="VARCHAR" column="numero_guia_proveedor"/>
+        <result property="proveedorRuc" jdbcType="VARCHAR" column="proveedor_ruc"/>
+        <result property="proveedorRazonSocial" jdbcType="VARCHAR" column="proveedor_razon_social"/>
+        <result property="usuarioSapRecepcion" jdbcType="VARCHAR" column="usuario_sap_recepcion"/>
+        <result property="usuarioSapAutoriza" jdbcType="VARCHAR" column="usuario_sap_autoriza"/>
+        <result property="codigoMoneda" jdbcType="VARCHAR" column="codigo_moneda"/>
+        <result property="fechaEmision" jdbcType="TIMESTAMP" column="fecha_emision"/>
+        <result property="fechaAceptacion" jdbcType="TIMESTAMP" column="fecha_aceptacion"/>
+        <result property="statusSap" jdbcType="VARCHAR" column="status_sap"/>
+        <result property="fechaPublicacion" jdbcType="VARCHAR" column="fecha_publicacion"/>
+        <result property="fechaContabilizacion" jdbcType="VARCHAR" column="fecha_contabilizacion"/>
+        <result property="fechaEmisionPrefactura" jdbcType="VARCHAR" column="fecha_emision_prefactura"/>
+        <result property="referencia" jdbcType="VARCHAR" column="referencia_prefactura"/>
+    </resultMap>
+    <select id="getDocuAcepPorFecsRucPg" parameterType="com.incloud.hcp.domain.DocumentoAceptacion" resultMap="DocuAcepResultMap">
+        SELECT
+        a.id_documento_aceptacion
+        ,a.numero_documento_aceptacion
+        ,a.id_tipo_documento_aceptacion
+        ,a.id_estado_documento_aceptacion
+        ,a.id_orden_compra
+        ,a.numero_orden_compra
+        ,a.posicion_orden_compra
+        ,a.numero_guia_proveedor
+        ,a.proveedor_ruc
+        ,a.proveedor_razon_social
+        ,a.usuario_sap_recepcion
+        ,a.usuario_sap_autoriza
+        ,a.codigo_moneda
+        ,a.fecha_emision
+        ,a.fecha_aceptacion
+        ,a.status_sap
+        ,a.fecha_publicacion
+        ,b.descripcion as tda_descripcion
+        ,c.descripcion as eda_descripcion
+        ,e.codigo_sociedad
+        ,e.razon_social as sociedad_razon_social
+        FROM documento_aceptacion a
+        INNER JOIN tipo_documento_aceptacion b ON a.id_tipo_documento_aceptacion = b.id_tipo_documento_aceptacion
+        INNER JOIN estado_documento_aceptacion c ON a.id_estado_documento_aceptacion = c.id_estado_documento_aceptacion
+        INNER JOIN orden_compra d ON a.id_orden_compra = d.id_orden_compra
+        INNER JOIN sociedad e ON d.sociedad = e.codigo_sociedad
+        WHERE a.id_estado_documento_aceptacion in (1)
+        AND a.fecha_emision between #{fechaInicio, jdbcType=DATE} AND #{fechaFin, jdbcType=DATE}
+        <if test="ruc != null and ruc != ''">
+            AND a.proveedor_ruc = #{ruc}
+        </if>
+        <if test="nroOC != null and nroOC != ''">
+            AND UPPER(a.numero_orden_compra) LIKE '%'||UPPER(#{nroOC})||'%'
+        </if>
+        <if test="nroGP != null and nroGP != ''">
+            AND UPPER(a.numero_guia_proveedor) LIKE '%'||UPPER(#{nroGP})||'%'
+        </if>
+        <if test="tipoDocumento != null and tipoDocumento != ''">
+            AND a.id_tipo_documento_aceptacion = #{tipoDocumento, jdbcType=INTEGER}
+        </if>
+        order by a.fecha_emision desc, a.id_documento_aceptacion desc
+        <if test="flagPaginador != null and flagPaginador != '' ">
+            LIMIT #{nroRegistros} OFFSET #{paginaMostrar}
+        </if>
+
+    </select>
+    <select id="getDocuAcepPorFecPrefactura" parameterType="com.incloud.hcp.domain.DocumentoAceptacion" resultMap="DocuAcepConFechaPrefacturaMap">
+        SELECT
+        a.id_documento_aceptacion,
+        a.numero_documento_aceptacion,
+        a.id_tipo_documento_aceptacion,
+        a.id_estado_documento_aceptacion,
+        a.numero_orden_compra,
+        a.posicion_orden_compra,
+        a.numero_guia_proveedor,
+        a.proveedor_ruc,
+        a.proveedor_razon_social,
+        a.usuario_sap_recepcion,
+        a.usuario_sap_autoriza,
+        a.codigo_moneda,
+        a.fecha_emision,
+        a.fecha_aceptacion,
+        a.status_sap,
+        a.fecha_publicacion,
+        a.fecha_contabilizacion,
+        up.fecha_emision AS fecha_emision_prefactura,
+        up.referencia AS referencia_prefactura
+        FROM documento_aceptacion a
+        LEFT JOIN (
+        SELECT
+        sub.id_documento_aceptacion,
+        sub.fecha_emision,
+        sub.referencia
+        FROM (
+        SELECT
+        b.id_documento_aceptacion,
+        c.id_prefactura,
+        c.fecha_emision,
+        c.referencia,
+        c.id_estado_prefactura,  -- Se incluye para filtrar más abajo
+        RANK() OVER (PARTITION BY b.id_documento_aceptacion ORDER BY c.id_prefactura DESC) AS rn
+        FROM prefactura_documento_aceptacion b
+        JOIN prefactura c ON b.id_prefactura = c.id_prefactura
+        WHERE c.id_estado_prefactura IN (1, 2)  -- Solo tomamos prefacturas con estado 1 o 2
+        ) sub
+        WHERE sub.rn = 1  -- Tomamos la última prefactura
+        ) up ON a.id_documento_aceptacion = up.id_documento_aceptacion
+        WHERE a.id_estado_documento_aceptacion NOT IN (4)
+        <if test="fechaInicio != null and fechaFin != null">
+            AND a.fecha_emision BETWEEN #{fechaInicio, jdbcType=DATE} AND #{fechaFin, jdbcType=DATE}
+        </if>
+        <if test="ruc != null and ruc != ''">
+            AND a.proveedor_ruc = #{ruc}
+        </if>
+        <if test="numeroDocumentoAceptacion != null and numeroDocumentoAceptacion != ''">
+            AND UPPER(a.numero_documento_aceptacion) LIKE '%' || UPPER(#{numeroDocumentoAceptacion}) || '%'
+        </if>
+        <if test="numeroOrdenCompra != null and numeroOrdenCompra != ''">
+            AND UPPER(a.numero_orden_compra) LIKE '%' || UPPER(#{numeroOrdenCompra}) || '%'
+        </if>
+        <if test="numeroGuiaProveedor != null and numeroGuiaProveedor != ''">
+            AND a.numero_guia_proveedor = #{numeroGuiaProveedor}
+        </if>
+        <if test="fechaContabilizacionDesde != null and fechaContabilizacionHasta != null">
+            AND a.fecha_contabilizacion BETWEEN #{fechaContabilizacionDesde, jdbcType=DATE} AND #{fechaContabilizacionHasta, jdbcType=DATE}
+        </if>
+        ORDER BY a.fecha_emision DESC, a.id_documento_aceptacion DESC
+    </select>
+
+
+</mapper>

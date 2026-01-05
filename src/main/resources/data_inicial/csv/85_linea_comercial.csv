@@ -1,0 +1,30 @@
+descripcion,nivel,indGeneral,descripcionPadre,codigoGrupoComercial
+Insumos Intermedios AA.BB.,2,0,BIENES,205
+Microinsumos,2,0,BIENES,240
+Premezclas AA.BB.,2,0,BIENES,245
+Veterinarios,2,0,BIENES,360
+Aseo y cuidado personal,2,0,BIENES,335
+Combustible,2,0,BIENES,150
+Insumos de crianza,2,0,BIENES,190
+Indumentarias y Seguridad Industrial,2,0,BIENES,290
+Repuestos de equipos industriales,2,0,BIENES,280
+Ferret. Y Mat. Contrucc.,2,0,BIENES,170
+Activos diversos,2,0,BIENES,100
+Envases y Empaques,2,0,BIENES,160
+Genética,2,0,BIENES,180
+Materias Primas,2,0,BIENES,230
+Productos Terminados,2,0,BIENES,260
+Agrícolas y tratamiento industrial,2,0,BIENES,110
+Suministros y Consumibles Indirectos,2,0,BIENES,330
+Servicios Especializados,2,0,SERVICIOS,300
+Alquileres,2,0,SERVICIOS,130
+Tranportes,2,0,SERVICIOS,350
+Almacenamiento,2,0,SERVICIOS,120
+Mantenimiento de equipos Industriales,2,0,SERVICIOS,220
+Mantenimiento Infraestructura,2,0,SERVICIOS,225
+Mantenimientos  Pecuarios,2,0,SERVICIOS,210
+Subcontratación,2,0,SERVICIOS,320
+Marketing y Publicidad,2,0,BIENES Y SERVICIOS,270
+Sistemas,2,0,BIENES Y SERVICIOS,310
+Laboratorios,2,0,BIENES Y SERVICIOS,340
+Obras Civiles y Proy.,2,0,BIENES Y SERVICIOS,250

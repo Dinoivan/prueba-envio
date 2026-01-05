@@ -1,0 +1,51 @@
+applications:
+  # API application.
+  - name: ((application-name))
+    instances: ((application-instances))
+    memory: ((application-memory))
+    timeout: ((application-timeout))
+    #random-route: true
+    routes:
+      - route: ((application-route))
+    path: ((application-path))
+    buildpacks:
+      - sap_java_buildpack_jakarta
+    services:
+      - jco-copeincaprovider-connectivity
+      - jco-copeincaprovider-destination
+      - xsuaa-copeincaprovider-authentication
+    env:
+      IAS_XSUAA_XCHANGE_ENABLED: true
+      SPRING_PROFILES_ACTIVE: ((profile))
+      USE_JCO: true
+      xsuaa_connectivity_instance_name: "xsuaa-copeincaprovider-authentication"
+      # # Accept any OAuth client of any identity zone
+      JAVA_OPTS: '-Djava.security.egd=file:///dev/./urandom -Xss349k -agentlib:jdwp=transport=dt_socket,address=8686,server=y,suspend=n'
+      # Accept any OAuth client of any identity zone
+      SAP_JWT_TRUST_ACL: '[{"clientid":"*","identityzone":"*"}]'
+
+  # Application Router as web server
+  - name: ((router-name))
+    path: ((router-path))
+    buildpacks:
+      - nodejs_buildpack
+    memory: ((router-memory))
+    routes:
+      - route: ((router-route))
+    services:
+      - xsuaa-copeincaprovider-authentication
+    env:
+      destinations: >
+        [
+          {"name":"token-copeincaprovider-destination",
+           "url":"https://((application-route))",
+           "forwardAuthToken": true}
+        ]
+...
+
+#  services:
+#  - my-application-logs
+#  - my-xsuaa
+#  - my-destination
+#  - my-connectivity
+#  - JBP_CONFIG_COMPONENTS: "jres: ['com.sap.xs.java.buildpack.jdk.SAPMachineJDK']"

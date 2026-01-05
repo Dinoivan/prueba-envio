@@ -1,0 +1,21 @@
+id,descripcionSubetapa,orden,indConfirmacionParticipacion,indObligatorio,indRenegociacion,indEnvioCorreoRecordatorio,diasEnvioCorreoRecordatorio,indRecepcionConsulta,indAbsolucionConsulta,indFechaReferencial,indSubetapaFinal
+1,Confirmación de Participación,1,1,0,0,0,,0,0,0,0
+2,Reunión de Despliegue,2,0,0,0,1,1,0,0,0,0
+3,Visitas Técnicas 01,2,0,0,0,1,1,0,0,0,0
+4,Visitas Técnicas 02,2,0,0,0,1,1,0,0,0,0
+5,Visitas Técnicas 03,2,0,0,0,1,1,0,0,0,0
+6,Visitas Técnicas 04,2,0,0,0,1,1,0,0,0,0
+7,Visitas Técnicas 05,2,0,0,0,1,1,0,0,0,0
+8,Recepción de Consultas,2,0,0,0,0,,1,0,0,0
+9,Absolución de Consultas,2,0,0,0,0,,0,1,1,0
+10,Envio de Muestras 01,2,0,0,0,1,1,0,0,0,0
+11,Envio de Muestras 02,2,0,0,0,1,1,0,0,0,0
+12,Envio de Muestras 03,2,0,0,0,1,1,0,0,0,0
+13,Envio de Muestras 04,2,0,0,0,1,1,0,0,0,0
+14,Envio de Muestras 05,2,0,0,0,1,1,0,0,0,0
+15,Reconocimiento de Rutas 01,2,0,0,0,1,1,0,0,0,0
+16,Reconocimiento de Rutas 02,2,0,0,0,1,1,0,0,0,0
+17,Reconocimiento de Rutas 03,2,0,0,0,1,1,0,0,0,0
+18,Reconocimiento de Rutas 04,2,0,0,0,1,1,0,0,0,0
+19,Reconocimiento de Rutas 05,2,0,0,0,1,1,0,0,0,0
+20,Presentación de Propuestas,3,0,1,1,0,,0,0,0,1

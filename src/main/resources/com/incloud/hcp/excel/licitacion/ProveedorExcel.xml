@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<excel>
+    <header>
+        <title>RUC</title>
+    </header>
+    <header>
+        <title>RAZON SOCIAL</title>
+    </header>
+    <header>
+        <title>TIPO PROVEEDOR</title>
+    </header>
+    <header>
+        <title>TIPO PERSONAL</title>
+    </header>
+    <header>
+        <title>CORREO ELECTRONICO</title>
+    </header>
+
+</excel>

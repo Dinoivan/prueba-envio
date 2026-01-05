@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<excel>
+    <header>
+        <title>CODIGO SAP</title>
+    </header>
+    <header>
+        <title>RUC</title>
+    </header>
+    <header>
+        <title>RAZON SOCIAL</title>
+    </header>
+    <header>
+        <title>LINEA COMERCIAL</title>
+    </header>
+    <header>
+        <title>FAMILIA</title>
+    </header>
+    <header>
+        <title>SUB FAMILIA</title>
+    </header>
+    <header>
+        <title>OTRA LINEA COMERCIAL</title>
+    </header>
+</excel>

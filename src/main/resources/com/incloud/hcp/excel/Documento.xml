@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<excel>
+    <header>
+        <title>RUC</title>
+    </header>
+    <header>
+        <title>RAZON SOCIAL</title>
+    </header>
+    <header>
+        <title>CODIGO SAP</title>
+    </header>
+    <header>
+        <title>TIPO PROVEEDOR</title>
+    </header>
+    <header>
+        <title>TIPO PERSONA</title>
+    </header>
+    <header>
+        <title>EMAIL PRINCIPAL</title>
+    </header>
+    <header>
+        <title>CONTACTO PRINCIPAL</title>
+    </header>
+    <header>
+        <title>TELEFONO PRINCIPAL</title>
+    </header>
+    <header>
+        <title>PROVEEDOR COMUNIDAD</title>
+    </header>
+    <header>
+        <title>PAIS</title>
+    </header>
+    <header>
+        <title>REGION</title>
+    </header>
+    <header>
+        <title>PROVINCIA</title>
+    </header>
+    <header>
+        <title>DISTRITO</title>
+    </header>
+    <header>
+        <title>UBIGEO</title>
+    </header>
+    <header>
+        <title>DIRECCION FISCAL</title>
+    </header>
+    <header>
+        <title>CONDICION PAGO</title>
+    </header>
+    <header>
+        <title>MONEDA</title>
+    </header>
+    <header>
+        <title>TIPO COMPROBANTE</title>
+    </header>
+    <header>
+        <title>SECTOR TRABAJO</title>
+    </header>
+    <header>
+        <title>VALIDADO</title>
+    </header>
+    <header>
+        <title>NOTA EVALUACION</title>
+    </header>
+    <header>
+        <title>NOTA HOMOLOGACION</title>
+    </header>
+    <header>
+        <title>NO CONFORMES REGISTRADOS</title>
+    </header>
+    <header>
+        <title>BLOQUEO CENTRAL</title>
+    </header>
+    <header>
+        <title>LICITACIONES GANADAS</title>
+    </header>
+    <header>
+        <title>LICITACIONES PERDIDAS</title>
+    </header>
+    <header>
+        <title>LICITACIONES EN LAS QUE PARTICIPO</title>
+    </header>
+    <header>
+        <title>EMAIL RETENCION</title>
+    </header>
+</excel>

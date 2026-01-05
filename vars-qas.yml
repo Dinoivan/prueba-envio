@@ -1,0 +1,19 @@
+# Application
+application-name: copeincaprovider-api
+application-instances: 1
+application-memory: 1G
+#application-disk: 1G
+application-timeout: 600
+application-route: qas-copeincaprovider.cfapps.us10-001.hana.ondemand.com
+application-path: target/copeincaproviderapp.war
+
+profile: qas
+
+# Router
+router-name: approuter-copeincaprovider-api
+router-path: approuter
+router-instances: 1
+router-memory: 512M
+router-route: qas-copeincaprovider-web.cfapps.us10-001.hana.ondemand.com
+
+# XSUAA

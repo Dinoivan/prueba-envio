@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<excel>
+    <header>
+        <title>NUMERO LICITACION</title>
+    </header>
+    <header>
+        <title>FECHA CIERRE RECEPCION OFERTA</title>
+    </header>
+    <header>
+        <title>FECHA CIERRE ULTIMA RENEGOCIACION</title>
+    </header>
+    <header>
+        <title>ESTADO LICITACION</title>
+    </header>
+    <header>
+        <title>FECHA PUBLICACION</title>
+    </header>
+
+</excel>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<excel>
+    <header>
+        <title>CODIGO SAP</title>
+    </header>
+    <header>
+        <title>RUC</title>
+    </header>
+    <header>
+        <title>RAZON SOCIAL</title>
+    </header>
+    <header>
+        <title>MARCA</title>
+    </header>
+    <header>
+        <title>PRODUCTO / SERVICIO</title>
+    </header>
+    <header>
+        <title>DESCRIPCION ADICIONAL</title>
+    </header>
+</excel>

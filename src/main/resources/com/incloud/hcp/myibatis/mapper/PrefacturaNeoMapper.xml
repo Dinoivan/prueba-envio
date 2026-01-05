@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.incloud.hcp.myibatis.mapper.PrefacturaNeoMapper">
+    <resultMap id="PrefacResultMap" type="com.incloud.hcp.dto.PrefacturaAprobacionDTO">
+        <id property="id" jdbcType="INTEGER" column="id_prefactura"/>
+        <result property="estadoPrefactura.id" jdbcType="INTEGER" column="id_estado_prefactura"/>
+        <result property="estadoPrefactura.descripcion" jdbcType="VARCHAR" column="ep_descripcion"/>
+        <result property="idEstadoPrefactura" jdbcType="INTEGER" column="id_estado_prefactura"/>
+        <result property="sociedad.codigoSociedad" jdbcType="VARCHAR" column="sociedad"/>
+        <result property="sociedad.ruc" jdbcType="VARCHAR" column="s_ruc"/>
+        <result property="sociedad.razonSocial" jdbcType="VARCHAR" column="s_razon_social"/>
+        <result property="sociedad.direccionFiscal" jdbcType="VARCHAR" column="s_direccion_fiscal"/>
+        <result property="sociedad.telefono" jdbcType="VARCHAR" column="s_telefono"/>
+        <result property="codigoSociedad" jdbcType="VARCHAR" column="sociedad"/>
+        <result property="proveedorRuc" jdbcType="VARCHAR" column="proveedor_ruc"/>
+        <result property="proveedorRazonSocial" jdbcType="VARCHAR" column="proveedor_razon_social"/>
+        <result property="fechaEmision" jdbcType="TIMESTAMP" column="fecha_emision"/>
+        <result property="fechaContabilizacion" jdbcType="TIMESTAMP" column="fecha_contablizacion"/>
+        <result property="fechaBase" jdbcType="TIMESTAMP" column="fecha_base"/>
+        <result property="indicadorImpuesto" jdbcType="VARCHAR" column="indicador_impuesto"/>
+        <result property="referencia" jdbcType="VARCHAR" column="referencia"/>
+        <result property="observaciones" jdbcType="VARCHAR" column="observaciones"/>
+        <result property="cadenaNumerosOrdenCompra" jdbcType="VARCHAR" column="cadena_numeros_orden_compra"/>
+        <result property="cadenaNumerosGuia" jdbcType="VARCHAR" column="cadena_numeros_guia"/>
+        <result property="codigoSap" jdbcType="VARCHAR" column="codigo_sap"/>
+        <result property="ejercicio" jdbcType="VARCHAR" column="ejercicio"/>
+        <result property="numeroDocumentoContable" jdbcType="VARCHAR" column="numero_documento_contable"/>
+        <result property="codigoMondeda" jdbcType="VARCHAR" column="codigo_moneda"/>
+        <result property="subTotal" jdbcType="NUMERIC" column="sub_total" />
+        <result property="igv" jdbcType="NUMERIC" column="igv" />
+        <result property="total" jdbcType="NUMERIC" column="total" />
+        <result property="fechaRecepcion" jdbcType="TIMESTAMP" column="fecha_recepcion"/>
+        <result property="fechaDescarte" jdbcType="TIMESTAMP" column="fecha_descarte"/>
+        <result property="fechaRegistroSap" jdbcType="TIMESTAMP" column="fecha_registro_sap"/>
+        <result property="usuarioRegistroSap" jdbcType="VARCHAR" column="usuario_registro_sap"/>
+        <result property="xmlEcmPath" jdbcType="VARCHAR" column="xml_ecm_path"/>
+        <result property="pdfEcmPath" jdbcType="VARCHAR" column="pdf_ecm_path"/>
+        <result property="centro" jdbcType="VARCHAR" column="centro"/>
+        <result property="usuarioComprador" jdbcType="VARCHAR" column="usuario_comprador"/>
+        <result property="motivoRechazo" jdbcType="VARCHAR" column="motivo_rechazo"/>
+        <result property="fechaPago" jdbcType="TIMESTAMP" column="fecha_pago"/>
+        <result property="fechaVencimiento" jdbcType="TIMESTAMP" column="fecha_vencimiento"/>
+        <result property="xmlEcmPath" jdbcType="VARCHAR" column="xml_ecm_path"/>
+        <result property="pdfEcmPath" jdbcType="VARCHAR" column="pdf_ecm_path"/>
+        <result property="xmlEcmPathCf" jdbcType="VARCHAR" column="xml_ecm_path_cf"/>
+        <result property="pdfEcmPathCf" jdbcType="VARCHAR" column="pdf_ecm_path_cf"/>
+        <result property="archivoIdPdfCf" jdbcType="VARCHAR" column="archivo_id_pdf_cf"/>
+        <result property="archivoIdXmlCf" jdbcType="VARCHAR" column="archivo_id_xml_cf"/>
+    </resultMap>
+    <select id="getPrefacturaListPg" parameterType="com.incloud.hcp.domain.Prefactura" resultMap="PrefacResultMap">
+        SELECT distinct
+        a.id_prefactura
+        , a.id_estado_prefactura
+        , a.sociedad
+        , a.proveedor_ruc
+        , a.fecha_emision
+        , a.referencia
+        , a.observaciones
+        , a.cadena_numeros_orden_compra
+        , a.cadena_numeros_guia
+        , a.codigo_sap
+        , a.codigo_moneda
+        , a.sub_total
+        , a.igv
+        , a.total
+        , a.fecha_recepcion
+        , a.fecha_descarte
+        , a.fecha_registro_sap
+        , a.xml_ecm_path
+        , a.pdf_ecm_path
+        , a.ejercicio
+        , a.numero_documento_contable
+        , a.fecha_base
+        , a.fecha_contablizacion
+        , a.proveedor_razon_social
+        , a.usuario_registro_sap
+        , a.indicador_impuesto
+        , a.centro
+        , a.usuario_comprador
+        , a.motivo_rechazo
+        , b.descripcion as ep_descripcion
+        , c.ruc as s_ruc
+        , c.razon_social as s_razon_social
+        , c.direccion_fiscal as s_direccion_fiscal
+        , c.telefono as s_telefono
+        , a.fecha_pago
+        , a.fecha_vencimiento
+        , a.xml_ecm_path_cf
+        , a.pdf_ecm_path_cf
+        , a.archivo_id_pdf_cf
+        , a.archivo_id_xml_cf
+        FROM prefactura a
+        INNER JOIN estado_prefactura b ON a.id_estado_prefactura = b.id_estado_prefactura
+        INNER JOIN sociedad c ON a.sociedad = c.codigo_sociedad
+        WHERE
+        a.id_estado_prefactura != 4
+        AND a.fecha_recepcion between #{fechaEntradaInicio, jdbcType=DATE} AND #{fechaEntradaFin, jdbcType=DATE}
+        <if test="fechaEmisionInicio != null and fechaEmisionFin != null ">
+            AND a.fecha_emision between #{fechaEmisionInicio, jdbcType=DATE} AND #{fechaEmisionFin, jdbcType=DATE}
+        </if>
+        <if test="ruc != null and ruc != ''">
+            AND UPPER(a.proveedor_ruc) LIKE '%'||UPPER(#{ruc})||'%'
+        </if>
+        <if test="referencia != null and referencia != ''">
+            AND UPPER(a.referencia) LIKE '%'||UPPER(#{referencia})||'%'
+        </if>
+        <if test="comprador != null and comprador != ''">
+            AND UPPER(a.usuario_comprador) LIKE '%'||UPPER(#{comprador})||'%'
+        </if>
+        <if test="centro != null and centro != ''">
+            AND UPPER(a.centro) LIKE '%'||UPPER(#{centro})||'%'
+        </if>
+        <if test="idEstado != null">
+            AND a.id_estado_prefactura = #{idEstado, jdbcType=INTEGER}
+        </if>
+        order by  a.id_prefactura desc
+        <if test="flagPaginador != null and flagPaginador != '' ">
+            LIMIT #{nroRegistros} OFFSET #{paginaMostrar}
+        </if>
+
+    </select>
+</mapper>

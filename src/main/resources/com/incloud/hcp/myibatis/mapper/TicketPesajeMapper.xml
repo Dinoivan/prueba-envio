@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.incloud.hcp.myibatis.mapper.TicketPesajeMapper">
+    <resultMap id="ticketResultMap" type="com.incloud.hcp.domain.balanza.TicketPesaje">
+        <id property="id" jdbcType="INTEGER" column="id_ticket_pesaje"/>
+        <result property="balanza" jdbcType="VARCHAR" column="balanza"/>
+        <result property="codigoCentro" jdbcType="VARCHAR" column="codigo_centro"/>
+        <result property="fechaCreacion" jdbcType="TIMESTAMP" column="fecha_registro"/>
+        <result property="fechaModificacion" jdbcType="TIMESTAMP" column="fecha_modificacion"/>
+        <result property="observacion" jdbcType="VARCHAR" column="observacion"/>
+        <result property="razSocialTransportista" jdbcType="VARCHAR" column="raz_social_transportista"/>
+        <result property="rucTransportista" jdbcType="VARCHAR" column="ruc_transportista"/>
+        <result property="carreta.id" jdbcType="INTEGER" column="id_carreta"/>
+        <result property="chofer.id" jdbcType="INTEGER" column="id_chofer"/>
+        <result property="estado.id" jdbcType="INTEGER" column="id_estado"/>
+        <result property="transporte.id" jdbcType="INTEGER" column="id_Transporte"/>
+        <result property="usuarioCreador" jdbcType="VARCHAR" column="usuario_creador"/>
+        <result property="usuarioModificador" jdbcType="VARCHAR" column="usuario_modificador"/>
+    </resultMap>
+    <select id="getTicketPesajeMap" parameterType="com.incloud.hcp.domain.balanza.TicketPesaje" resultMap="ticketResultMap">
+        SELECT
+        DISTINCT (tp.id_ticket_pesaje) AS id_ticket_pesaje, tp.balanza, tp.codigo_centro, tp.fecha_registro, tp.fecha_modificacion, tp.observacion,
+        tp.raz_social_transportista, tp.ruc_transportista, tp.id_carreta, tp.id_chofer, tp.id_estado, tp.id_transporte,
+        tp.usuario_creador, tp.usuario_modificador
+        FROM blz_ticket_pesaje tp
+        INNER JOIN blz_detalle_ticket dt ON tp.id_ticket_pesaje = dt.id_ticket_pesaje
+        WHERE tp.fecha_registro between #{fechaInicio, jdbcType=DATE} AND #{fechaFin, jdbcType=DATE}
+        <if test="nroTicket != null and nroTicket != ''">
+            AND tp.id_ticket_pesaje = #{nroTicket, jdbcType=INTEGER}
+        </if>
+        <if test="transportistaRuc != null and transportistaRuc != ''">
+            AND tp.ruc_transportista = #{transportistaRuc}
+        </if>
+        <if test="placaVehiculo != null and placaVehiculo != ''">
+            AND tp.id_transporte = #{placaVehiculo, jdbcType=INTEGER}
+        </if>
+        <if test="chofer != null and chofer != ''">
+            AND tp.id_chofer = #{chofer, jdbcType=INTEGER}
+        </if>
+        <if test="centro != null and centro != ''">
+            AND tp.codigo_centro = #{centro}
+        </if>
+        <if test="nSubticket != null and nSubticket != ''">
+            AND UPPER(dt.subticket) LIKE '%'||UPPER(#{nSubticket})||'%'
+        </if>
+        <if test="balanza != null and balanza != ''">
+            AND tp.balanza = #{balanza}
+        </if>
+        <if test="carreta != null and carreta != ''">
+            AND tp.id_carreta = #{carreta, jdbcType=INTEGER}
+        </if>
+        order by tp.id_ticket_pesaje asc
+    </select>
+</mapper>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.incloud.hcp.myibatis.mapper.RespuestaCondicionMapper">
+
+    <resultMap id="respuestaCondicionFilterResultMap" type="com.incloud.hcp.bean.RespuestaCondicion">
+		<id property="idCondicionRespuesta" column="id_condicion_respuesta"/>
+		<result property="indPredefinido" column="ind_predefinido"/>
+		<result property="opcion" column="opcion"/>
+		<result property="puntaje" column="puntaje"/>
+		<result property="usuarioCreacion" column="usuario_creacion"/>
+		<result property="usuarioModificacion" column="usuario_modificacion" />
+		<result property="fechaCreacion" column="fecha_creacion" />
+		<result property="fechaModificacion" column="fecha_modificacion" />
+    </resultMap>
+
+	<resultMap id="respuestaCondicionLicResultMap" type="com.incloud.hcp.bean.RespuestaCondicion">
+		<id property="idLicitacionGrupoCondicion" column="id_licitacion_grupo_condicion"/>
+		<result property="idCondicionRespuesta" column="id_condicion_respuesta"/>
+		<result property="indPredefinido" column="ind_predefinido"/>
+		<result property="opcion" column="opcion"/>
+		<result property="puntaje" column="puntaje"/>
+	</resultMap>
+
+	<select id="getListRespuestaCondicion" resultMap="respuestaCondicionFilterResultMap">
+		SELECT * FROM CONDICION_LIC_RESPUESTA
+		WHERE ID_CONDICION = #{idCondicion}
+		ORDER BY ID_CONDICION_RESPUESTA ASC;
+	</select>
+
+	<select id="getListRespuestaCondicionLic" resultMap="respuestaCondicionLicResultMap">
+		SELECT * FROM GRUPO_CONDICION_LIC_RESPUESTA
+		WHERE ID_LICITACION_GRUPO_CONDICION = #{idGrupoCondicion}
+		ORDER BY ID_CONDICION_RESPUESTA ASC;
+	</select>
+
+</mapper>

@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.incloud.hcp.myibatis.mapper.ReporteEstadisticoMapper">
+
+    <resultMap id="reporteEstadisticoAdjudicacionMap" type="com.incloud.hcp.dto.estadistico.ReporteEstadisticoAdjudicacionDto">
+        <result property="anno" jdbcType="INTEGER" column="ANNO" />
+        <result property="mes" jdbcType="INTEGER" column="MES" />
+        <result property="descripcionMes" jdbcType="VARCHAR" column="DESCRIPCION_MES" />
+        <result property="totalAdjudicados" jdbcType="INTEGER" column="TOTAL_ADJUDICACION" />
+        <result property="totalParticipacion" jdbcType="INTEGER" column="TOTAL_PARTICIPACION" />
+    </resultMap>
+
+    <select id="reporteEstadisticoAdjudicacion"
+            parameterType="com.incloud.hcp.dto.estadistico.ReporteEstadisticoAdjudicacionEntradaDto"
+            resultMap="reporteEstadisticoAdjudicacionMap">
+
+        SELECT
+        #{anno} ANNO,
+        to_number(p.valor) MES,
+        p.valor_asociado DESCRIPCION_MES,
+        (
+        SELECT count(1)
+        FROM ccomparativo_proveedor ccop
+        JOIN ccomparativo ccom ON ccom.id_ccomparativo = ccop.id_ccomparativo
+        JOIN proveedor prov ON prov.id_proveedor = ccop.id_proveedor
+        WHERE year(ccom.fecha_creacion) = #{anno}
+        AND month(ccom.fecha_creacion) =  TO_NUMBER(P.VALOR)
+        AND prov.ruc = #{ruc}
+
+        ) TOTAL_ADJUDICACION,
+
+        (
+        SELECT count(1) from licitacion lic
+        JOIN licitacion_proveedor lip on lip.id_licitacion = lic.id_licitacion
+        JOIN proveedor prov ON prov.id_proveedor = lip.id_proveedor
+        WHERE lic.fecha_publicacion IS NOT NULL
+        AND year(lic.fecha_publicacion) = #{anno}
+        AND month(lic.fecha_publicacion) = TO_NUMBER(P.VALOR)
+        AND lip.ind_si_participa = 'S'
+        AND prov.ruc = #{ruc}
+        ) TOTAL_PARTICIPACION
+
+        FROM PARAMETROS P
+        WHERE P.MODULO = 'PARAMETRIA'
+        AND P.TIPO = 'MES'
+        ORDER BY TO_NUMBER(P.VALOR)
+
+    </select>
+
+    <resultMap id="reporteEstadisticoParticipacionMap" type="com.incloud.hcp.dto.estadistico.ReporteEstadisticoParticipacionDto">
+        <result property="anno" jdbcType="INTEGER" column="ANNO" />
+        <result property="mes" jdbcType="INTEGER" column="MES" />
+        <result property="descripcionMes" jdbcType="VARCHAR" column="DESCRIPCION_MES" />
+        <result property="totalInvitacion" jdbcType="INTEGER" column="TOTAL_INVITACION" />
+        <result property="totalParticipacion" jdbcType="INTEGER" column="TOTAL_PARTICIPACION" />
+    </resultMap>
+
+    <select id="reporteEstadisticoParticipacion"
+            parameterType="com.incloud.hcp.dto.estadistico.ReporteEstadisticoParticipacionEntradaDto"
+            resultMap="reporteEstadisticoParticipacionMap">
+
+        SELECT
+        #{anno} ANNO,
+        to_number(p.valor) MES,
+        p.valor_asociado DESCRIPCION_MES,
+        (
+        SELECT count(1) from licitacion lic
+        JOIN licitacion_proveedor lip on lip.id_licitacion = lic.id_licitacion
+        JOIN proveedor prov ON prov.id_proveedor = lip.id_proveedor
+        WHERE lic.fecha_publicacion IS NOT NULL
+        AND year(lic.fecha_publicacion) = #{anno}
+        AND month(lic.fecha_publicacion) = TO_NUMBER(P.VALOR)
+        AND prov.ruc = #{ruc}
+
+        ) TOTAL_INVITACION,
+
+        (
+        SELECT count(1) from licitacion lic
+        JOIN licitacion_proveedor lip on lip.id_licitacion = lic.id_licitacion
+        JOIN proveedor prov ON prov.id_proveedor = lip.id_proveedor
+        WHERE lic.fecha_publicacion IS NOT NULL
+        AND year(lic.fecha_publicacion) = #{anno}
+        AND month(lic.fecha_publicacion) = TO_NUMBER(P.VALOR)
+        AND lip.ind_si_participa = 'S'
+        AND prov.ruc = #{ruc}
+        ) TOTAL_PARTICIPACION
+
+        FROM PARAMETROS P
+        WHERE P.MODULO = 'PARAMETRIA'
+        AND P.TIPO = 'MES'
+        ORDER BY TO_NUMBER(P.VALOR)
+
+    </select>
+
+    <resultMap id="reporteStatusPeticionOfertaResultMap" type="com.incloud.hcp.domain.Licitacion">
+        <id property="idLicitacion" column="ID_LICITACION"/>
+        <result property="estadoLicitacion" column="ESTADO_LICITACION" />
+        <result property="descripcionEstado" column="descripcionEstado" />
+        <result property="nroLicitacion" column="NRO_LICITACION"/>
+        <result property="anioLicitacion" column="ANIO_LICITACION"/>
+        <result property="puntoEntrega" column="PUNTO_ENTREGA"/>
+        <result property="descripcionPuntoEntrega" column="descripcionPuntoEntrega"/>
+        <result property="fechaEntregaInicio" column="FECHA_ENTREGA_INICIO"/>
+        <result property="fechaEntregaInicioString" column="fechaEntregaInicioString"/>
+
+        <result property="moneda.idMoneda" column="ID_MONEDA"/>
+        <result property="moneda.codigoMoneda" column="CODIGO_MONEDA"/>
+        <result property="moneda.sigla" column="SIGLA"/>
+        <result property="centroAlmacen1.idCentroAlmacen" column="ID_CENTRO"/>
+        <result property="centroAlmacen1.denominacion" column="DenominacionCentro"/>
+        <result property="centroAlmacen2.idCentroAlmacen" column="ID_ALMACEN"/>
+        <result property="centroAlmacen2.denominacion" column="DenominacionAlmacen"/>
+        <result property="fechaPublicacionString" column="fechaPublicacionString"/>
+        <result property="fechaInicioRecepcionOfertaString" column="fechaInicioRecepcionOfertaString"/>
+        <result property="fechaCierreRecepcionOfertaString" column="fechaCierreRecepcionOfertaString"/>
+        <result property="nroProveedoresACotizar" column="nroProveedoresACotizar"/>
+        <result property="nroProveedoresEnviaronCotizacion" column="nroProveedoresEnviaronCotizacion"/>
+
+        <result property="usuarioPublicacionId" column="USUARIO_PUBLICACION_ID"/>
+        <result property="usuarioPublicacionName" column="USUARIO_PUBLICACION_NAME"/>
+        <result property="usuarioPublicacionEmail" column="USUARIO_PUBLICACION_EMAIL"/>
+        <result property="fechaUltimaRenegociacionString" column="fecha_ultima_renegociacion"/>
+
+    </resultMap>
+
+    <select id="reporteStatusPeticionOferta" resultMap="reporteStatusPeticionOfertaResultMap">
+        SELECT U.ID_LICITACION ,
+        U.ESTADO_LICITACION ,
+        EST.VALOR as descripcionEstado,
+        U.NRO_LICITACION ,
+        U.ANIO_LICITACION,
+        U.PUNTO_ENTREGA ,
+        P.VALOR as descripcionPuntoEntrega,
+        U.FECHA_ENTREGA_INICIO ,
+        to_char(U.FECHA_ENTREGA_INICIO,'dd/mm/yyyy') as fechaEntregaInicioString,
+        U.ID_MONEDA ,
+        M.CODIGO_MONEDA,
+        M.SIGLA,
+        U.ID_CENTRO ,
+        '' as DenominacionCentro,
+        U.ID_ALMACEN,
+        '' as DenominacionAlmacen,
+        to_char(U.FECHA_PUBLICACION,'dd/mm/yyyy') as fechaPublicacionString,
+        to_char(U.FECHA_INICIO_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fechaInicioRecepcionOfertaString,
+        to_char(U.FECHA_CIERRE_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fechaCierreRecepcionOfertaString,
+        (select count(1) from LICITACION_PROVEEDOR X
+        WHERE X.ID_LICITACION = U.ID_LICITACION) nroProveedoresACotizar,
+        (select count(1) from COTIZACION Y
+        WHERE Y.ID_LICITACION = U.ID_LICITACION and y.estado_cotizacion = 'EN') nroProveedoresEnviaronCotizacion,
+        U.USUARIO_PUBLICACION_ID ,
+        U.USUARIO_PUBLICACION_NAME,
+        U.USUARIO_PUBLICACION_EMAIL,
+        to_char(u.FECHA_ULTIMA_RENEGOCIACION,'dd/mm/yyyy HH24:MI:SS') as fecha_ultima_renegociacion
+
+        FROM LICITACION U,
+        MONEDA M,
+        PARAMETROS P,
+        PARAMETROS EST
+        WHERE U.ID_MONEDA = M.ID_MONEDA
+        AND P.MODULO = 'LICITACION'
+        AND P.TIPO = 'PUNTO_ENTREGA'
+        AND U.PUNTO_ENTREGA = P.CODIGO
+
+        AND EST.MODULO = 'LICITACION'
+        AND EST.TIPO = 'ESTADO'
+        AND U.ESTADO_LICITACION = EST.CODIGO
+
+        <![CDATA[
+        AND U.FECHA_PUBLICACION >= #{fechaInicio}
+        AND U.FECHA_PUBLICACION  < #{fechaFin}
+        AND U.ESTADO_LICITACION <> 'AN'
+        ]]>
+
+        <if test="estadoLicitacion != null and estadoLicitacion != '' ">
+            AND (U.ESTADO_LICITACION = #{estadoLicitacion} )
+        </if>
+
+        <if test="estadoNotLicitacion != null and estadoNotLicitacion != '' ">
+            <![CDATA[
+            AND (U.ESTADO_LICITACION <> #{estadoNotLicitacion} )
+            ]]>
+        </if>
+
+        <if test="ruc != null and ruc != '' ">
+            AND EXISTS (SELECT X.ID_LICITACION FROM
+            LICITACION_PROVEEDOR X,
+            PROVEEDOR PROV
+            WHERE X.ID_LICITACION = U.ID_LICITACION
+            AND X.ID_PROVEEDOR = PROV.ID_PROVEEDOR
+            AND X.IND_SI_PARTICIPA = 'S'
+            AND PROV.RUC = #{ruc}
+            )
+        </if>
+        <if test="razonSocial != null and razonSocial != '' ">
+            AND EXISTS (SELECT X.ID_LICITACION FROM
+            LICITACION_PROVEEDOR X,
+            PROVEEDOR PROV
+            WHERE X.ID_LICITACION = U.ID_LICITACION
+            AND X.ID_PROVEEDOR = PROV.ID_PROVEEDOR
+            AND X.IND_SI_PARTICIPA = 'S'
+            AND UPPER(PROV.RAZON_SOCIAL) LIKE '%'||UPPER(#{razonSocial})||'%'
+            )
+        </if>
+
+        ORDER BY U.ANIO_LICITACION DESC, U.NRO_LICITACION DESC
+    </select>
+
+    <select id="reporteStatusPeticionOfertaPaginado" resultMap="reporteStatusPeticionOfertaResultMap">
+        SELECT U.ID_LICITACION ,
+        U.ESTADO_LICITACION ,
+        EST.VALOR as descripcionEstado,
+        U.NRO_LICITACION ,
+        U.ANIO_LICITACION,
+        U.PUNTO_ENTREGA ,
+        P.VALOR as descripcionPuntoEntrega,
+        U.FECHA_ENTREGA_INICIO ,
+        to_char(U.FECHA_ENTREGA_INICIO,'dd/mm/yyyy') as fechaEntregaInicioString,
+        U.ID_MONEDA ,
+        M.CODIGO_MONEDA,
+        M.SIGLA,
+        U.ID_CENTRO ,
+        '' as DenominacionCentro,
+        U.ID_ALMACEN,
+        '' as DenominacionAlmacen,
+        to_char(U.FECHA_PUBLICACION,'dd/mm/yyyy') as fechaPublicacionString,
+        to_char(U.FECHA_INICIO_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fechaInicioRecepcionOfertaString,
+        to_char(U.FECHA_CIERRE_RECEPCION_OFERTA,'dd/mm/yyyy HH24:MI:SS') as fechaCierreRecepcionOfertaString,
+        (select count(1) from LICITACION_PROVEEDOR X
+        WHERE X.ID_LICITACION = U.ID_LICITACION) nroProveedoresACotizar,
+        (select count(1) from COTIZACION Y
+        WHERE Y.ID_LICITACION = U.ID_LICITACION and y.estado_cotizacion = 'EN') nroProveedoresEnviaronCotizacion,
+        U.USUARIO_PUBLICACION_ID ,
+        U.USUARIO_PUBLICACION_NAME,
+        U.USUARIO_PUBLICACION_EMAIL,
+        to_char(u.FECHA_ULTIMA_RENEGOCIACION,'dd/mm/yyyy HH24:MI:SS') as fecha_ultima_renegociacion
+
+        FROM LICITACION U,
+        MONEDA M,
+        PARAMETROS P,
+        PARAMETROS EST
+        WHERE U.ID_MONEDA = M.ID_MONEDA
+        AND P.MODULO = 'LICITACION'
+        AND P.TIPO = 'PUNTO_ENTREGA'
+        AND U.PUNTO_ENTREGA = P.CODIGO
+
+        AND EST.MODULO = 'LICITACION'
+        AND EST.TIPO = 'ESTADO'
+        AND U.ESTADO_LICITACION = EST.CODIGO
+
+        <![CDATA[
+        AND U.FECHA_PUBLICACION >= #{fechaInicio}
+        AND U.FECHA_PUBLICACION  < #{fechaFin}
+        AND U.ESTADO_LICITACION <> 'AN'
+        ]]>
+
+        <if test="estadoLicitacion != null and estadoLicitacion != '' ">
+            AND (U.ESTADO_LICITACION = #{estadoLicitacion} )
+        </if>
+
+        <if test="estadoNotLicitacion != null and estadoNotLicitacion != '' ">
+            <![CDATA[
+            AND (U.ESTADO_LICITACION <> #{estadoNotLicitacion} )
+            ]]>
+        </if>
+
+        <if test="ruc != null and ruc != '' ">
+            AND EXISTS (SELECT X.ID_LICITACION FROM
+            LICITACION_PROVEEDOR X,
+            PROVEEDOR PROV
+            WHERE X.ID_LICITACION = U.ID_LICITACION
+            AND X.ID_PROVEEDOR = PROV.ID_PROVEEDOR
+            AND X.IND_SI_PARTICIPA = 'S'
+            AND PROV.RUC = #{ruc}
+            )
+        </if>
+        <if test="razonSocial != null and razonSocial != '' ">
+            AND EXISTS (SELECT X.ID_LICITACION FROM
+            LICITACION_PROVEEDOR X,
+            PROVEEDOR PROV
+            WHERE X.ID_LICITACION = U.ID_LICITACION
+            AND X.ID_PROVEEDOR = PROV.ID_PROVEEDOR
+            AND X.IND_SI_PARTICIPA = 'S'
+            AND UPPER(PROV.RAZON_SOCIAL) LIKE '%'||UPPER(#{razonSocial})||'%'
+            )
+        </if>
+
+        ORDER BY U.ANIO_LICITACION DESC, U.NRO_LICITACION DESC
+        LIMIT #{nroRegistros} OFFSET #{paginaMostrar}
+
+
+    </select>
+
+
+</mapper>
